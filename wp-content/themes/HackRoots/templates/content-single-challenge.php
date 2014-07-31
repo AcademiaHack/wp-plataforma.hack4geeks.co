@@ -1,4 +1,11 @@
 <?php while (have_posts()) : the_post(); ?>
+  <!-- <pre>
+    <h3><?php var_dump(get_the_category()[0]->cat_ID); ?></h3>
+  </pre>
+  <hr> -->
+  <h3>Template para los post de retos</h3>
+  
+
   <article <?php post_class(); ?>>
     <header>
       <h1 class="entry-title"><?php the_title(); ?></h1>
