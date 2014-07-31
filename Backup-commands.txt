@@ -1,5 +1,9 @@
 Backup DB:
-mysqldump -u «nombre del usuario de mysql» -p «nombre de la BD» > database.sql
+mysqldump -u hack -p hack_wp > hack_wp.sql
+clave: blanked
 
 Restore Backup DB:
-mysql -u «nombre del usuario de mysql» -p «nombre de la BD» < database.sql
+mysql -u hack -p hack_wp < hack_wp.sql
+Clave: blanked
+
+O por PhpMyAdmin, haciendo uso de la opción importar, en la pagina de la base de datos
