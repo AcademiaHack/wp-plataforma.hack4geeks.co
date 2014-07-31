@@ -20,3 +20,8 @@ function roots_wp_title($title) {
   return $title;
 }
 add_filter('wp_title', 'roots_wp_title', 10);
+
+
+function get_category_depth(){
+  return sizeof((get_ancestors(get_queried_object()->cat_ID, 'category')));
+}

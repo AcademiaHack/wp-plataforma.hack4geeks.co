@@ -1,7 +1,7 @@
 <?php 
     
    $queried_object = get_queried_object();
-   // echo "<pre><h5>"; var_dump(sizeof((get_ancestors($queried_object->cat_ID, 'category'))) ); echo "</h5></pre>";
+   // echo "<pre><h5>"; var_dump(get_category_depth()); echo "</h5></pre>";
 
    if ($queried_object->category_parent == 0) {
      if($queried_object->cat_ID == 2){
