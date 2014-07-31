@@ -10,8 +10,7 @@
        get_template_part('templates/category', 'sprint-template');
      }
    } else {
-        get_template_part('templates/category', 'challenge-template');
-      }
+      get_template_part('templates/category', 'challenge-template');
    }
  ?>
 
