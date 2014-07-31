@@ -7,12 +7,9 @@
      if($queried_object->cat_ID == 2){
        get_template_part('templates/category', 'news-template');
      }else{
-       get_template_part('templates/category', 'activities-template');
+       get_template_part('templates/category', 'sprint-template');
      }
    } else {
-      if($queried_object->category_parent == 3){
-        get_template_part('templates/category', 'sprint-template');
-      }else{
         get_template_part('templates/category', 'challenge-template');
       }
    }
