@@ -17,13 +17,13 @@ define('GOOGLE_ANALYTICS_ID', ''); // UA-XXXXX-Y (Note: Universal Analytics only
  * .main classes
  */
 function roots_main_class() {
-  if (roots_display_sidebar()) {
-    // Classes on pages with the sidebar
-    $class = 'col-sm-8';
-  } else {
+  // if (roots_display_sidebar()) {
+  //   // Classes on pages with the sidebar
+  //   $class = 'col-sm-8';
+  // } else {
     // Classes on full width pages
     $class = 'col-sm-12';
-  }
+  // }
 
   return apply_filters('roots/main_class', $class);
 }

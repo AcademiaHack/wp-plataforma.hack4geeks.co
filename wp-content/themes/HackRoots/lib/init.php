@@ -13,6 +13,14 @@ function roots_setup() {
     'primary_navigation' => __('Primary Navigation', 'roots')
   ));
 
+  register_nav_menus(array(
+    'header_menu_left' => __('Header Menu Left', 'roots')
+  ));
+
+  register_nav_menus(array(
+    'header_menu_right' => __('Header Menu Right', 'roots')
+  ));
+
   // Add post thumbnails
   // http://codex.wordpress.org/Post_Thumbnails
   // http://codex.wordpress.org/Function_Reference/set_post_thumbnail_size
@@ -36,22 +44,13 @@ add_action('after_setup_theme', 'roots_setup');
  * Register sidebars
  */
 function roots_widgets_init() {
-  register_sidebar(array(
+  /*register_sidebar(array(
     'name'          => __('Primary', 'roots'),
     'id'            => 'sidebar-primary',
     'before_widget' => '<section class="widget %1$s %2$s">',
     'after_widget'  => '</section>',
     'before_title'  => '<h3>',
     'after_title'   => '</h3>',
-  ));
-
-  register_sidebar(array(
-    'name'          => __('Footer', 'roots'),
-    'id'            => 'sidebar-footer',
-    'before_widget' => '<section class="widget %1$s %2$s">',
-    'after_widget'  => '</section>',
-    'before_title'  => '<h3>',
-    'after_title'   => '</h3>',
-  ));
+  ));*/
 }
 add_action('widgets_init', 'roots_widgets_init');
