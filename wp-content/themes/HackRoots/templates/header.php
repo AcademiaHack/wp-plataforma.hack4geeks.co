@@ -1,16 +1,21 @@
-<header class="banner navbar navbar-default navbar-static-top" role="banner">
+<header class="navbar navbar-default navbar-fixed-top" role="banner">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
+      <div class="row">
+        <div class="col-xs-6 col-sm-12 text-center">
+          <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>">
+            <img class="logo" src="wp-content/themes/HackRoots/assets/img/logo.png" alt="">
+          </a>
+        </div>
+      </div>
     </div>
-
-    <nav class="collapse navbar-collapse" role="navigation">
+    <nav id="categorias" class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
       <?php
         if (has_nav_menu('header_menu_left')) :
           wp_nav_menu(array('theme_location' => 'header_menu_left', 'menu_class' => 'nav navbar-nav'));
@@ -22,5 +27,7 @@
         endif;
       ?>
     </nav>
+    <div class="caret_header_2"></div>
   </div>
+  <div class="caret_header_3"></div>
 </header>
