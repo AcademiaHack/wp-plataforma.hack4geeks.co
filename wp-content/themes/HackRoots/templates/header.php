@@ -18,12 +18,12 @@
     <nav id="categorias" class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
       <?php
         if (has_nav_menu('header_menu_left')) :
-          wp_nav_menu(array('theme_location' => 'header_menu_left', 'menu_class' => 'nav navbar-nav'));
+          wp_nav_menu(array('theme_location' => 'header_menu_left', 'menu_class' => 'nav navbar-nav','after' => '<div class="caret_header"><span></span></div>'));
         endif;
       ?>
       <?php
         if (has_nav_menu('header_menu_right')) :
-          wp_nav_menu(array('theme_location' => 'header_menu_right', 'menu_class' => 'nav navbar-nav navbar-right'));
+          wp_nav_menu(array('theme_location' => 'header_menu_right', 'menu_class' => 'nav navbar-nav navbar-right','after' => '<div class="caret_header"><span></span></div>'));
         endif;
       ?>
     </nav>

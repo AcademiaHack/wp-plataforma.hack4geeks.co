@@ -42,96 +42,96 @@
 		{
 			$Custom_Text = $row1['value'];
 		}*/
-?>
-<?php /*?><link type="text/css" href="<?php echo $path; ?>css/style.css" rel="stylesheet" /><?php */?>
-<?php include 'UPB_theme.php'; ?>
+    ?>
+    <?php /*?><link type="text/css" href="<?php echo $path; ?>css/style.css" rel="stylesheet" /><?php */?>
+    <?php include 'UPB_theme.php'; ?>
 
-<?php
+    <?php
 
 
 
         if ( is_user_logged_in() ) // check if user logged in or not
         {
-?>
-<style type="text/css">
-.info {
+          ?>
+          <style type="text/css">
+            .info {
 
-	border: 1px solid #00529B;
+             border: 1px solid #00529B;
 
-	padding-bottom: 15px;
+             padding-bottom: 15px;
 
-	padding-top: 15px;
+             padding-top: 15px;
 
-	color: #00529B;
+             color: #00529B;
 
-	background-color: #BDE5F8;
+             background-color: #BDE5F8;
 
-}
+           }
 
-</style>
+         </style>
 
-<div id="upb-form">
-  <div class="main-edit-profile" align="center"> You are already registerd. <br />
-    <br />
-    <div id="main-upb-form">
-      <div   class="allready-regis-device all-log-device margin-left2"> <a href="<?php echo site_url(); ?>">
-        <div class="UltimatePB-Button"> Go back to Home-Page </div>
-        </a> <a href="<?php echo wp_logout_url( get_permalink() ); ?>" title="Logout">
-        <div class="UltimatePB-Button"> Logout </div>
-        </a> </div>
-      <br />
-      <br />
-    </div>
-  </div>
-</div>
-<?php
-		}
-		else
-		{
-			$countusers = count_users();
+         <div>
+          <div class="main-edit-profile" align="center"> Ya se encuentra registrado en el sístema <br />
+            <br />
+            <div>
+              <div   class="allready-regis-device all-log-device margin-left2"> <a href="<?php echo site_url(); ?>">
+                <div class="UltimatePB-Button"> Volver al inicio </div>
+              </a> <a href="<?php echo wp_logout_url( get_permalink() ); ?>" title="Logout">
+              <div class="UltimatePB-Button"> Cerrar sesión </div>
+            </a> </div>
+            <br />
+            <br />
+          </div>
+        </div>
+      </div>
+      <?php
+    }
+    else
+    {
+     $countusers = count_users();
 			//print_r($countusers);
-			if($countusers['total_users']<=100)
-			{
-			require_once('recaptchalib.php');
+     if($countusers['total_users']<=100)
+     {
+       require_once('recaptchalib.php');
 			// Get a key from https://www.google.com/recaptcha/admin/create
-			$publickey = "6LfLhOESAAAAAPWB64QP-rxYyuE2DcxfQZd0Anot";
-			$privatekey = "6LfLhOESAAAAAIu-Y4ySfijTeb_yVAdv28fVXS-p";
+       $publickey = "6LfLhOESAAAAAPWB64QP-rxYyuE2DcxfQZd0Anot";
+       $privatekey = "6LfLhOESAAAAAIu-Y4ySfijTeb_yVAdv28fVXS-p";
 			# the response from reCAPTCHA
-			$resp = null;
+       $resp = null;
 			# the error code from reCAPTCHA, if any
-			$error = null;
+       $error = null;
 			# was there a reCAPTCHA response?
-			if ($_POST["recaptcha_response_field"])
-			{
-				$resp = recaptcha_check_answer ($privatekey,
-				$_SERVER["REMOTE_ADDR"],
-				$_POST["recaptcha_challenge_field"],
-				$_POST["recaptcha_response_field"]);
-				if ($resp->is_valid)
-				{
-					$submit = 1;
-				}
-				else
-				{
-?>
-<style type="text/css">
-.error
-	{
-		border: 1px solid #00529B;
-		padding-bottom:15px;
-		padding-top:15px;
-		color: #D8000C;
-		background-color: #FFBABA;
-	}
-</style>
-<div class="error" align="center"> Sorry, you didn't enter the correct captcha code. </div>
-<br />
-<br />
-<br />
-<?php
-$submit = 0;
-	}
-}
+       if ($_POST["recaptcha_response_field"])
+       {
+        $resp = recaptcha_check_answer ($privatekey,
+          $_SERVER["REMOTE_ADDR"],
+          $_POST["recaptcha_challenge_field"],
+          $_POST["recaptcha_response_field"]);
+        if ($resp->is_valid)
+        {
+         $submit = 1;
+       }
+       else
+       {
+        ?>
+        <style type="text/css">
+          .error
+          {
+            border: 1px solid #00529B;
+            padding-bottom:15px;
+            padding-top:15px;
+            color: #D8000C;
+            background-color: #FFBABA;
+          }
+        </style>
+        <div class="error" align="center"> Sorry, you didn't enter the correct captcha code. </div>
+        <br />
+        <br />
+        <br />
+        <?php
+        $submit = 0;
+      }
+    }
 if($submit) // checking if the submit button is pressed or not
 {
 $user_name = $_POST['user_name']; // receiving username
@@ -141,181 +141,194 @@ $user_confirm_password = $_POST['user_confirm_password']; // receving confirm pa
 $user_id = username_exists( $user_name ); // checking if username is already exists.
 if ( !$user_id and email_exists($user_email) == false )
 {
-if($pwd_show != "no")
-{
-	$random_password = $inputPassword;
+  if($pwd_show != "no")
+  {
+   $random_password = $inputPassword;
 //echo $random_password;die;
-}
-else
-{
-	$random_password = $inputPassword;
-}
-$user_id = wp_create_user( $user_name, $random_password, $user_email );
-$subject = get_bloginfo('name');
-$subject .= " - Registration";
-$message = "This is your password : " . $random_password;
-$qry1 = "select * from $upb_fields where registration = '1' and user_group like '%".$content['role']."%' order by ordering asc";
-$reg1 = $wpdb->get_results($qry1);
+ }
+ else
+ {
+   $random_password = $inputPassword;
+ }
+ $user_id = wp_create_user( $user_name, $random_password, $user_email );
+ $subject = get_bloginfo('name');
+ $subject .= " - Registration";
+ $message = "This is your password : " . $random_password;
+ $qry1 = "select * from $upb_fields where registration = '1' and user_group like '%".$content['role']."%' order by ordering asc";
+ $reg1 = $wpdb->get_results($qry1);
 //$reg1=mysql_query($qry1);
 
 //$count = mysql_num_rows($reg1);
-if(!empty($reg1))
-{
- foreach($reg1 as $row1)
+ if(!empty($reg1))
  {
-	$Customfield = str_replace(" ","_",$row1->Name);
+   foreach($reg1 as $row1)
+   {
+     $Customfield = str_replace(" ","_",$row1->Name);
 	//echo $Customfield;die;
-	add_user_meta( $user_id, $Customfield, $_POST[$Customfield], true );	
-	update_user_meta( $user_id, $Customfield, $_POST[$Customfield], $prev_value );
- }
+     add_user_meta( $user_id, $Customfield, $_POST[$Customfield], true );	
+     update_user_meta( $user_id, $Customfield, $_POST[$Customfield], $prev_value );
+   }
 
-}
-if($content['role']!="")
-{   
-	if($content['role']=='Subscriber' || $content['role']=='Administrator' || $content['role']=='Editor' || $content['role']=='Author' || $content['role']=='Contributor')
-	{
-	$role = strtolower($content['role']);
-	}
-	else
-	{
-	$role = $content['role'];	
-	}
-	$user_id = wp_update_user( array( 'ID' => $user_id, 'role' => $content['role'] ) );
-}
-wp_mail( $user_email, $subject, $message );
-?>
-<style type="text/css">
-.success
-{
-	border: 1px solid #00529B;
-	padding-bottom:15px;
-	padding-top:15px;
-	color: #4F8A10;
-	background-color: #DFF2BF;
-}
+ }
+ if($content['role']!="")
+ {   
+   if($content['role']=='Subscriber' || $content['role']=='Administrator' || $content['role']=='Editor' || $content['role']=='Author' || $content['role']=='Contributor')
+   {
+     $role = strtolower($content['role']);
+   }
+   else
+   {
+     $role = $content['role'];	
+   }
+   $user_id = wp_update_user( array( 'ID' => $user_id, 'role' => $content['role'] ) );
+ }
+ wp_mail( $user_email, $subject, $message );
+ ?>
+ <style type="text/css">
+  .success
+  {
+   border: 1px solid #00529B;
+   padding-bottom:15px;
+   padding-top:15px;
+   color: #4F8A10;
+   background-color: #DFF2BF;
+ }
 </style>
 <div id="upb-form">
-  <div id="main-upb-form">
-    <div class="info-text-success" align="center"> Registration successful. Please check your email for password. <br />
-      <span style="font-style:italic;"> To resend the password, go to <a href="<?php echo $pageURL; ?><?php echo $sign; ?>login3=1" title="Lost Password">forgot password</a> page. </span> </div>
+  <div>
+    <div class="info-text-success" align="center"> ¡Registro exitoso! Verifique su correo electronico para obtener una contraseña <br />
+      <span style="font-style:italic;"> Para reenviar su contraseña haga <a href="<?php echo $pageURL; ?><?php echo $sign; ?>login3=1" title="Lost Password">click aquí</a> </span> </div>
+    </div>
   </div>
-</div>
-<div class="UltimatePB-Button-area" style="padding-bottom: 59px;">
-  <div class="UltimatePB-Button-inp upb-success-page" style="margin-top: 12px;"> <a href="<?php echo $pageURL; ?><?php echo $sign; ?>login2=1" title="Registration"> login Now. </a> </div>
-</div>
-<?php
+  <div class="UltimatePB-Button-area" style="padding-bottom: 59px;">
+    <div class="UltimatePB-Button-inp upb-success-page" style="margin-top: 12px;"> <a href="<?php echo $pageURL; ?><?php echo $sign; ?>login2=1" title="Registration"> Inicie sesión </a> </div>
+  </div>
+  <?php
 }
 else
 {
 	$random_password = __('User already exists.  Password inherited.');
 //					print_r($random_password);
 //					print_r($user_id);
-?>
-<div upb-form>
-  <div id="main-upb-form">
-    <div class="main-edit-profile" align="center"> Sorry, the username or e-mail is already taken. <br />
-      <br />
-      <div align="center" style="width:430px;"> <a href="javascript:void(0);" onclick="javascript:history.back();" title="Registration">
-        <div class="UltimatePB-Button"> Go back to Registration. </div>
+  ?>
+  <div upb-form>
+    <div>
+      <div class="main-edit-profile" align="center"> Disculpe, el nombre de usuario o correo ya está siendo utilizado <br />
+        <br />
+        <div align="center" style="width:430px;"> <a href="javascript:void(0);" onclick="javascript:history.back();" title="Registration">
+          <div class="UltimatePB-Button"> Volver al registro </div>
         </a> &nbsp; <a href="<?php echo site_url(); ?>">
-        <div class="UltimatePB-Button"> Go back to Home-Page </div>
-        </a> </div>
+        <div class="UltimatePB-Button"> Volver al inicio </div>
+      </a> </div>
     </div>
   </div>
 </div>
 <?php
-	}
+}
 }
 else
 {
-?>
-<script type="text/javascript">
-                    function validateRegister()
-                    {
-                        var user_name = document.getElementById("user_name").value;
-                        var inputPassword = document.getElementById("inputPassword").value;
-                        var user_confirm_password = document.getElementById("user_confirm_password").value;
-                        var user_email = document.getElementById('user_email').value;
-                        var recaptcha_response_field = document.getElementById('recaptcha_response_field').value;
-                        if (user_name==null || user_name=="")
-                        {
-                            document.getElementById('divuser_name').style.display = 'block';
-                            document.getElementById("user_name").focus();
-                            return false;
-                        }
-                        if(user_email==null || user_email=="")
-                        {
-                            document.getElementById('divuser_email').style.display = 'block';
-                            document.getElementById('divuser_name').style.display = 'none';
-                            document.getElementById("user_email").focus();
-                            return false;
-                        }
-                        if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(user_email)))
-                        {
-                            document.getElementById('divuser_email').innerHTML="Please enter a proper e-mail address.";
-                            document.getElementById('divuser_email').style.display = 'block';
-                            document.getElementById('divuser_name').style.display = 'none';
-                            document.getElementById("user_email").focus();
-                            return false;	
-                        }
-                        if(inputPassword==null || inputPassword=="")
-                        {									
-                            document.getElementById('divinputPassword').style.display = 'block';
-                            alert(document.getElementById('divinputPassword').style.margin = '-27px 0 23px !important');							
-                            document.getElementById('divuser_name').style.display = 'none';
-                            document.getElementById('divuser_email').style.display = 'none';
-                            document.getElementById("inputPassword").focus();
-                            return false;
-                        }
-                        if(user_confirm_password==null || user_confirm_password=="")
-                        {
-                            document.getElementById('divuser_confirm_password').style.display = 'block';
-                            document.getElementById('divuser_confirm_password').style.margin = '-27px 0 23px !important';							
-                            document.getElementById('divinputPassword').style.display = 'none';
-                            document.getElementById('divuser_name').style.display = 'none';
-                            document.getElementById('divuser_email').style.display = 'none';
-                            document.getElementById("user_confirm_password").focus();
-                            return false;
-                        }
-                        if(inputPassword != user_confirm_password)
-                        {
-                            with(document.getElementById('divuser_confirm_password'))
-                            {
-                                innerHTML="Password and confirm password do not match.";
-                                with(style)
-                                {
-                                    display = 'block';
-									
-                                }
-                            }
-                            document.getElementById('divinputPassword').style.display = 'none';
-                            document.getElementById('divuser_name').style.display = 'none';
-                            document.getElementById('divuser_email').style.display = 'none';
-                            document.getElementById("user_confirm_password").focus();
-                            return false;
-                        }
-                        if(recaptcha_response_field==null || recaptcha_response_field=="")
-                        {
-                            with(document.getElementById('divrecaptcha_response_field'))
-                            {
-                                style.display = 'block';								
-                                style.width = '299px';
-                                style.marginLeft = '170px';								
-                            }
-                            document.getElementById('divuser_confirm_password').style.display = 'none';
-                            document.getElementById('divinputPassword').style.display = 'none';
-                            document.getElementById('divuser_name').style.display = 'none';
-                            document.getElementById('divuser_email').style.display = 'none';
-                            document.getElementById("recaptcha_response_field").focus();
-                            return false;
-                        }
-                        return true;
-                    }
-                </script>
-<div id="upb-form">
-  <form method="post" action="" id="registerform" name="registerform" onsubmit="javascript:return validateRegister();">
-    <div class="info-text"><?php echo $Custom_Text;?></div>
-    <div id="main-upb-form"  >
+  ?>
+  <script type="text/javascript">
+    function validateRegister()
+    {
+      var user_name = document.getElementById("user_name").value;
+      var inputPassword = document.getElementById("inputPassword").value;
+      var user_confirm_password = document.getElementById("user_confirm_password").value;
+      var user_email = document.getElementById('user_email').value;
+      var recaptcha_response_field = document.getElementById('recaptcha_response_field').value;
+      if (user_name==null || user_name=="")
+      {
+        document.getElementById('divuser_name').style.display = 'block';
+        document.getElementById("user_name").focus();
+        return false;
+      }
+      if(user_email==null || user_email=="")
+      {
+        document.getElementById('divuser_email').style.display = 'block';
+        document.getElementById('divuser_name').style.display = 'none';
+        document.getElementById("user_email").focus();
+        return false;
+      }
+      if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(user_email)))
+      {
+        document.getElementById('divuser_email').innerHTML="Please enter a proper e-mail address.";
+        document.getElementById('divuser_email').style.display = 'block';
+        document.getElementById('divuser_name').style.display = 'none';
+        document.getElementById("user_email").focus();
+        return false;	
+      }
+      if(inputPassword==null || inputPassword=="")
+      {									
+        document.getElementById('divinputPassword').style.display = 'block';
+        alert(document.getElementById('divinputPassword').style.margin = '-27px 0 23px !important');							
+        document.getElementById('divuser_name').style.display = 'none';
+        document.getElementById('divuser_email').style.display = 'none';
+        document.getElementById("inputPassword").focus();
+        return false;
+      }
+      if(user_confirm_password==null || user_confirm_password=="")
+      {
+        document.getElementById('divuser_confirm_password').style.display = 'block';
+        document.getElementById('divuser_confirm_password').style.margin = '-27px 0 23px !important';							
+        document.getElementById('divinputPassword').style.display = 'none';
+        document.getElementById('divuser_name').style.display = 'none';
+        document.getElementById('divuser_email').style.display = 'none';
+        document.getElementById("user_confirm_password").focus();
+        return false;
+      }
+      if(inputPassword != user_confirm_password)
+      {
+        with(document.getElementById('divuser_confirm_password'))
+        {
+          innerHTML="Password and confirm password do not match.";
+          with(style)
+          {
+            display = 'block';
+
+          }
+        }
+        document.getElementById('divinputPassword').style.display = 'none';
+        document.getElementById('divuser_name').style.display = 'none';
+        document.getElementById('divuser_email').style.display = 'none';
+        document.getElementById("user_confirm_password").focus();
+        return false;
+      }
+      if(recaptcha_response_field==null || recaptcha_response_field=="")
+      {
+        with(document.getElementById('divrecaptcha_response_field'))
+        {
+          style.display = 'block';								
+          style.width = '299px';
+          style.marginLeft = '170px';								
+        }
+        document.getElementById('divuser_confirm_password').style.display = 'none';
+        document.getElementById('divinputPassword').style.display = 'none';
+        document.getElementById('divuser_name').style.display = 'none';
+        document.getElementById('divuser_email').style.display = 'none';
+        document.getElementById("recaptcha_response_field").focus();
+        return false;
+      }
+      return true;
+    }
+  </script>
+  <div>
+    <form method="post" action="" id="registerform" name="registerform" onsubmit="javascript:return validateRegister();">
+
+      <div>
+        <div class="col-sm-4 col-sm-offset-4">
+          <div class="formtable">
+            <label for="user_login">Usuario</label>
+            <input type="text" size="20" onblur="javascript:validete_userName();" onkeyup="javascript:validete_userName();" onfocus="javascript:validete_userName();" onchange="javascript:validete_userName();" value="<?php echo (!empty($_POST['user_name']))?  $_POST['user_name']: ''; ?>" class="form-control" id="user_name" name="user_name">
+            <div class="" id="nameErr"></div>
+            <div class="reg_frontErr" id="divuser_name" style="display:none;">Campo requerido</div>
+            <label for="user_email">Correo electrónico</label>
+            <input type="text" onblur="javascript:validete_email();" onkeyup="javascript:validete_email();" onfocus="javascript:validete_email();" onchange="" size="25" value="<?php echo (!empty($_POST['user_email']))?  $_POST['user_email']: ''; ?>" class="form-control" id="user_email" name="user_email">
+            <div class="" id="emailErr"></div>
+            <div class="reg_frontErr" id="divuser_email" style="display:none;">Campo requerido</div>
+          </div>
+
+    <!-- <div id="main-upb-form">
       <div class="formtable">
         <div class="lable-text">
           <label for="user_login">Username<br>
@@ -337,12 +350,23 @@ else
           <div class="" id="emailErr"></div>
           <div class="reg_frontErr" id="divuser_email" style="display:none;">Please enter an email address.</div>
         </div>
-      </div>
+      </div> -->
       <?php
-if($pwd_show == "no")
-{
-?>
-      <div class="formtable">
+      if($pwd_show == "no")
+      {
+        ?>
+
+        <div class="formtable">
+          <label for="user_password">Contraseña</label>
+          <input id="inputPassword" class="form-control" name="inputPassword" type="password" onfocus="javascript:document.getElementById('user_confirm_password').value = '';" />
+          <div id="complexity" class="default" style="display:none;"></div>
+          <div id="password_info" class="password-pro">Su contraseña debe poseer un mínimo de 7 caracteres</div>
+          <label for="user_confirm_password">Confirmar contraseña</label>
+          <input id="user_confirm_password" class="form-control" name="user_confirm_password" type="password"/>
+          <div class="reg_frontErr" id="divuser_confirm_password" style="display:none;">Verifique que sus contraseñas coincidan</div>
+        </div>
+
+      <!-- <div class="formtable">
         <div class="lable-text">
           <label for="user_password"> Password <br>
           </label>
@@ -363,14 +387,28 @@ if($pwd_show == "no")
           <input id="user_confirm_password" name="user_confirm_password" type="password"/>
           <div class="reg_frontErr" id="divuser_confirm_password" style="display:none;">Please enter a confirm password.</div>
         </div>
-      </div>
-<?php
-}
-else
-{
-$random_password = wp_generate_password( $length=12, $include_standard_special_chars=false );
-?>
+      </div> -->
+      <?php
+    }
+    else
+    {
+      $random_password = wp_generate_password( $length=12, $include_standard_special_chars=false );
+      ?>
+
       <div class="formtable" style="display:none;">
+        <label for="user_password">Contraseña</label>
+        <input id="inputPassword" class="form-control" name="inputPassword" type="hidden" value="<?php echo $random_password; ?>" />
+        <div id="complexity" class="default" style="display:none;"></div>
+        <div id="password_info" class="password-pro">Su contraseña debe poseer un mínimo de 7 caracteres</div>
+        <div class="reg_frontErr" id="divinputPassword" style="display:none;margin: -27px 0 23px !important; margin-left: 258px !important;">Campo requerido</div>
+      </div>
+      <div class="formtable" style="display:none;">
+        <label for="user_confirm_password">Confirmar contraseña</label>
+        <input id="user_confirm_password" name="user_confirm_password" value="<?php echo $random_password; ?>" type="hidden"/>
+        <div class="reg_frontErr" id="divuser_confirm_password" style="display:none;margin: -27px 0 23px !important; ">Verifique que sus contraseñas coincidan</div>
+      </div>
+
+      <!-- <div class="formtable" style="display:none;">
         <div class="lable-text">
           <label for="user_password"> Password <br>
           </label>
@@ -391,161 +429,167 @@ $random_password = wp_generate_password( $length=12, $include_standard_special_c
           <input id="user_confirm_password" name="user_confirm_password" value="<?php echo $random_password; ?>" type="hidden"/>
           <div class="reg_frontErr" id="divuser_confirm_password" style="display:none;margin: -27px 0 23px !important; ">Please enter a confirm password.</div>
         </div>
-      </div>
-<?php
-}
-?>
-      <!-- Custom field in Registeration form start -->      
-      <div class="input_box">
-        <?php 
+      </div> -->
+      <?php
+    }
+    ?>
+    <!-- Custom field in Registeration form start -->      
+    <div class="input_box">
+      <?php 
 //echo $content['role'];
-if($content['role']!="")
-{
-$role = $content['role'];
-}
-else
-{
-$role = "subscriber";	
-}
-$qry1 = "select * from $upb_fields where registration = '1' and user_group like '%".$role."%' order by ordering asc";
-$reg1 = $wpdb->get_results($qry1);
+      if($content['role']!="")
+      {
+        $role = $content['role'];
+      }
+      else
+      {
+        $role = "subscriber";	
+      }
+      $qry1 = "select * from $upb_fields where registration = '1' and user_group like '%".$role."%' order by ordering asc";
+      $reg1 = $wpdb->get_results($qry1);
 
 //echo $qry1;
 	 //$reg1=mysql_query($qry1);
-	 foreach($reg1 as $row1)
-	 {
+      foreach($reg1 as $row1)
+      {
 		 //$key = "CustomField".$row1['Id'];
-		 $key = str_replace(" ","_",$row1->Name);
-		 $value = "";
-		 if($row1->Type=='text')
-		 {?>
-        <div class="formtable">
-          <div class="lable-text">
-            <label for="<?php echo $key;?>"><?php echo $row1->Name;?></label>
-          </div>
-          <div class="input-box">
-            <input type="text" class="regular-text <?php echo $row1->Class;?>" maxlength="<?php echo $row1->Max_Lenght;?>" value="<?php echo $value;?>" id="<?php echo $key;?>" name="<?php echo $key;?>" <?php if($row1->Readonly==1)echo 'readonly';?> <?php if($row1->Require==1)echo 'required';?>>
-          </div>
+       $key = str_replace(" ","_",$row1->Name);
+       $value = "";
+       if($row1->Type=='text')
+         {?>
+       <div class="formtable">
+        <div class="lable-text">
+          <label for="<?php echo $key;?>"><?php echo $row1->Name;?></label>
         </div>
-<?php }
-if($row1->Type=='textarea')
-{?>
-        <div class="formtable">
-          <div class="lable-text">
-            <label for="<?php echo $key;?>"><?php echo $row1->Name;?></label>
-          </div>
-          <div class="input-box">
-            <textarea  class="regular-text <?php echo $row1->Class;?>" maxlength="<?php echo $row1->Max_Lenght;?>" cols="<?php echo $row1->Cols;  ?>" rows="<?php echo $row1->Rows;  ?>" id="<?php echo $key;?>" name="<?php echo $key;?>" <?php if($row1->Readonly==1)echo 'readonly';?> <?php if($row1->Require==1)echo 'required';?>><?php echo $value; ?></textarea>
-          </div>
+        <div class="input-box">
+          <input type="text" class="regular-text <?php echo $row1->Class;?>" maxlength="<?php echo $row1->Max_Lenght;?>" value="<?php echo $value;?>" id="<?php echo $key;?>" name="<?php echo $key;?>" <?php if($row1->Readonly==1)echo 'readonly';?> <?php if($row1->Require==1)echo 'required';?>>
         </div>
-        <?php }
-if($row1->Type=='radio')
-{?>
-        <div class="formtable">
-          <div class="lable-text">
-            <label for="<?php echo $key;?>"><?php echo $row1->Name;?></label>
-          </div>
-          <div class="input-box">
-            <?php 
-									$arr_radio = explode(',',$row1->Option_Value);
-									foreach($arr_radio as $radio)
-									{?>
-            <div class="radio_option"><?php echo $radio; ?></div>
-            <input type="radio" class="regular-text  <?php echo $row1->Class;?>" value="<?php echo $radio;?>" id="<?php echo $key;?>" style="width:50px;" name="<?php echo $key;?>" <?php if($value == $radio)echo 'checked' ?> <?php if($row1->Readonly==1)echo 'readonly';?>>
-            <?php }?>
-          </div>
-        </div>
-        <?php }
-
-								  if($row1->Type=='checkbox')
-								 {
-									 ?>
-        <div class="formtable">
-          <div class="lable-text">
-            <label for="<?php echo $key;?>"><?php echo $row1->Name; ?></label>
-          </div>
-          <div class="input-box">
-            <?php 
-									$arr_radio = explode(',',$row1->Option_Value);
-									//print_r($value);die;
-									$radio_count = 1;
-									foreach($arr_radio as $radio)
-									{?>
-            <div  class="upb-check-text"><?php echo $radio; ?> </div>
-            <input type="checkbox" class="regular-text <?php echo $row1->Class;?>" 
-                                        value="<?php echo $radio;?>" id="<?php echo $key;?>"  name="<?php echo $row1->Name.'[]';?>" 
-
-										<?php if($value!=""){if(in_array($radio,$value))echo 'checked';} ?> 
-
-										<?php if($row1->Readonly==1)echo 'readonly';?>>
-            <?php $radio_count++; } ?>
-          </div>
-        </div>
-        <?php }
-								 if($row1->Type=='file')
-								 {?>
-        <div class="formtable">
-          <div class="lable-text">
-            <label for="<?php echo $key;?>"><?php echo $row1->Name;?></label>
-          </div>
-          <div class="input-box">
-            <input type="file" class="regular-text <?php echo $row1->Class;?>" value="" id="<?php echo $key;?>" name="<?php echo $key;?>">
-          </div>
-        </div>
-        <?php }
-
-								 if($row1->Type=='select')
-								 {?>
-        <div class="formtable">
-          <div class="lable-text">
-            <label for="<?php echo $key;?>"><?php echo $row1->Name;?></label>
-          </div>
-          <div class="input-box>">
-            <select class="regular-text <?php echo $row1->Class;?>" id="<?php echo $key;?>" name="<?php echo $key;?>" <?php if($row1->Readonly==1)echo 'readonly';?> <?php if($row1->Require==1)echo 'required';?>>
-              <?php
-									$arr = explode(',',$row1->Option_Value);
-									foreach($arr as $ar)
-									{
-										?>
-              <option value="<?php echo $ar;?>" <?php if($ar==$value)echo 'selected';?>><?php echo $ar;?></option>
-              <?php	
-									}
-									?>
-            </select>
-          </div>
-        </div>
-        <?php }
-							 }
-						?>
       </div>
-      <!-- Custom field in Registration form end -->
-      
-      <div class="formtable" align="center"> <?php echo recaptcha_get_html($publickey, $error); ?> </div>
-      <div class="reg_frontErr" id="divrecaptcha_response_field" style="display:none;width: 299px !important; margin-left: 170px !important;"> Please fill this to prove you aren't a robot. </div>
-      <br class="clear">
+      <?php }
+      if($row1->Type=='textarea')
+        {?>
+      <div class="formtable">
+        <div class="lable-text">
+          <label for="<?php echo $key;?>"><?php echo $row1->Name;?></label>
+        </div>
+        <div class="input-box">
+          <textarea  class="regular-text <?php echo $row1->Class;?>" maxlength="<?php echo $row1->Max_Lenght;?>" cols="<?php echo $row1->Cols;  ?>" rows="<?php echo $row1->Rows;  ?>" id="<?php echo $key;?>" name="<?php echo $key;?>" <?php if($row1->Readonly==1)echo 'readonly';?> <?php if($row1->Require==1)echo 'required';?>><?php echo $value; ?></textarea>
+        </div>
+      </div>
+      <?php }
+      if($row1->Type=='radio')
+        {?>
+      <div class="formtable">
+        <div class="lable-text">
+          <label for="<?php echo $key;?>"><?php echo $row1->Name;?></label>
+        </div>
+        <div class="input-box">
+          <?php 
+          $arr_radio = explode(',',$row1->Option_Value);
+          foreach($arr_radio as $radio)
+           {?>
+         <div class="radio_option"><?php echo $radio; ?></div>
+         <input type="radio" class="regular-text  <?php echo $row1->Class;?>" value="<?php echo $radio;?>" id="<?php echo $key;?>" style="width:50px;" name="<?php echo $key;?>" <?php if($value == $radio)echo 'checked' ?> <?php if($row1->Readonly==1)echo 'readonly';?>>
+         <?php }?>
+       </div>
+     </div>
+     <?php }
+
+     if($row1->Type=='checkbox')
+     {
+      ?>
+      <div class="formtable">
+        <div class="lable-text">
+          <label for="<?php echo $key;?>"><?php echo $row1->Name; ?></label>
+        </div>
+        <div class="input-box">
+          <?php 
+          $arr_radio = explode(',',$row1->Option_Value);
+									//print_r($value);die;
+          $radio_count = 1;
+          foreach($arr_radio as $radio)
+           {?>
+         <div  class="upb-check-text"><?php echo $radio; ?> </div>
+         <input type="checkbox" class="regular-text <?php echo $row1->Class;?>" 
+         value="<?php echo $radio;?>" id="<?php echo $key;?>"  name="<?php echo $row1->Name.'[]';?>" 
+
+         <?php if($value!=""){if(in_array($radio,$value))echo 'checked';} ?> 
+
+         <?php if($row1->Readonly==1)echo 'readonly';?>>
+         <?php $radio_count++; } ?>
+       </div>
+     </div>
+     <?php }
+     if($row1->Type=='file')
+       {?>
+     <div class="formtable">
+      <div class="lable-text">
+        <label for="<?php echo $key;?>"><?php echo $row1->Name;?></label>
+      </div>
+      <div class="input-box">
+        <input type="file" class="regular-text <?php echo $row1->Class;?>" value="" id="<?php echo $key;?>" name="<?php echo $key;?>">
+      </div>
     </div>
-    <div class="UltimatePB-Button-area" >
-      <input type="submit" value="Register" class="button button-primary button-large" id="submit" name="submit" >
-      <input type="reset" value="Reset" class="button button-primary button-large" id="reset" name="reset" />
+    <?php }
+
+    if($row1->Type=='select')
+     {?>
+   <div class="formtable">
+    <div class="lable-text">
+      <label for="<?php echo $key;?>"><?php echo $row1->Name;?></label>
     </div>
-  </form>
+    <div class="input-box>">
+      <select class="regular-text <?php echo $row1->Class;?>" id="<?php echo $key;?>" name="<?php echo $key;?>" <?php if($row1->Readonly==1)echo 'readonly';?> <?php if($row1->Require==1)echo 'required';?>>
+        <?php
+        $arr = explode(',',$row1->Option_Value);
+        foreach($arr as $ar)
+        {
+          ?>
+          <option value="<?php echo $ar;?>" <?php if($ar==$value)echo 'selected';?>><?php echo $ar;?></option>
+          <?php	
+        }
+        ?>
+      </select>
+    </div>
+  </div>
+  <?php }
+}
+?>
+</div>
+<!-- Custom field in Registration form end -->
+
+<div class="formtable" align="center"> <?php echo recaptcha_get_html($publickey, $error); ?> </div>
+<div class="reg_frontErr" id="divrecaptcha_response_field" style="display:none;width: 299px !important; margin-left: 170px !important;"> Please fill this to prove you aren't a robot. </div>
+<br class="clear">
+</div>
+  <div class="col-sm-4 col-sm-offset-4">
+    <div class="row">
+      <div class="col-sm-6">
+        <input type="submit" value="Registar" class="btn btn-primary btn-block" id="submit" name="submit" >
+      </div>
+      <div class="col-sm-6">
+        <input type="reset" value="Vaciar" class="btn btn-primary btn-block" id="reset" name="reset" />
+      </div>
+    </div>
+  </div>
+</form>
 </div>
 <?php
-			}	
+}	
 
-			}
-		}
+}
+}
 ?>
 <script language="javascript" type="text/javascript">
 
-			var name=false;
-			var email=false;
-			function validete_userName()
-			{
-				jQuery.ajax(
-				{
-					type: "POST",
-					url: '<?php echo get_option('siteurl').'/wp-admin/admin-ajax.php';?>?action=ajaxcalls&cookie=encodeURIComponent(document.cookie)&function=validateUser&name=' + jQuery("#user_name").val(),
+ var name=false;
+ var email=false;
+ function validete_userName()
+ {
+  jQuery.ajax(
+  {
+   type: "POST",
+   url: '<?php echo get_option('siteurl').'/wp-admin/admin-ajax.php';?>?action=ajaxcalls&cookie=encodeURIComponent(document.cookie)&function=validateUser&name=' + jQuery("#user_name").val(),
 					//url : '<?php //echo $path; ?>ajaxCalls.php?function=validateUser&name=' + jQuery("#user_name").val(),
 					success : function (serverResponse)
 					{
@@ -569,13 +613,13 @@ if($row1->Type=='radio')
 
 				})
 
-			}
-			function validete_email()
-			{
-				jQuery.ajax(
-				{
-					type: "POST",
-					url: '<?php echo get_option('siteurl').'/wp-admin/admin-ajax.php';?>?action=ajaxcalls&cookie=encodeURIComponent(document.cookie)&function=validateEmail&email=' + jQuery("#user_email").val(),
+}
+function validete_email()
+{
+  jQuery.ajax(
+  {
+   type: "POST",
+   url: '<?php echo get_option('siteurl').'/wp-admin/admin-ajax.php';?>?action=ajaxcalls&cookie=encodeURIComponent(document.cookie)&function=validateEmail&email=' + jQuery("#user_email").val(),
 					//url : '<?php //echo $path; ?>ajaxCalls.php?function=validateEmail&email=' + jQuery("#user_email").val(),
 					success : function (serverResponse)
 					{
@@ -596,8 +640,8 @@ if($row1->Type=='radio')
 						}
 					}
 				})
-			}
-        </script>
+}
+</script>
 <?php
-	}
+}
 ?>

@@ -1,11 +1,10 @@
 <?php get_template_part('templates/page', 'header'); ?>
 
-<h1 class="sprint text-center">Sprint 1</h1>
 <div id="badges_carousel" class="carousel slide" data-ride="carousel">
-
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
+      <h1 class="text-center">Sprint 1</h1>
       <div class="badges">
       	<div class="badges">
       		<div class="badge-container">

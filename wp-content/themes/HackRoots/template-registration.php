@@ -4,7 +4,10 @@ Template Name: Registration Template
 */
 ?>
 
+<header class="login-header text-center">
+	<img src="wp-content/themes/HackRoots/assets/img/full-logo.png" alt="">
+</header>
+
 <?php while (have_posts()) : the_post(); ?>
-	<h3>Template para el Registro de Usuarios</h3>
 	<?php get_template_part('templates/content', 'page'); ?>
 <?php endwhile; ?>
