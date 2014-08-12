@@ -71,67 +71,72 @@
          </style>
 
          <div>
-          <div class="main-edit-profile" align="center"> Ya se encuentra registrado en el sístema <br />
-            <br />
-            <div>
-              <div   class="allready-regis-device all-log-device margin-left2"> <a href="<?php echo site_url(); ?>">
-                <div class="UltimatePB-Button"> Volver al inicio </div>
-              </a> <a href="<?php echo wp_logout_url( get_permalink() ); ?>" title="Logout">
-              <div class="UltimatePB-Button"> Cerrar sesión </div>
-            </a> </div>
-            <br />
-            <br />
+         <h3 class="text-center">Ya se encuentra registrado en el sístema</h3>
+          <div class="col-sm-4 col-sm-offset-4">
+            <div class="row">
+              <div class="col-sm-6">
+                <a class="btn btn-primary btn-block" href="<?php echo site_url(); ?>">
+                  Volver al inicio
+                </a>
+              </div>
+              <div class="col-sm-6">
+                <a class="btn btn-primary btn-block" href="<?php echo wp_logout_url( get_permalink() ); ?>" title="Logout">
+                  Cerrar sesión
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <?php
-    }
-    else
-    {
-     $countusers = count_users();
+    </div>
+    <?php
+  }
+  else
+  {
+   $countusers = count_users();
 			//print_r($countusers);
-     if($countusers['total_users']<=100)
-     {
-       require_once('recaptchalib.php');
+   if($countusers['total_users']<=100)
+   {
+     require_once('recaptchalib.php');
 			// Get a key from https://www.google.com/recaptcha/admin/create
-       $publickey = "6LfLhOESAAAAAPWB64QP-rxYyuE2DcxfQZd0Anot";
-       $privatekey = "6LfLhOESAAAAAIu-Y4ySfijTeb_yVAdv28fVXS-p";
+     $publickey = "6LfLhOESAAAAAPWB64QP-rxYyuE2DcxfQZd0Anot";
+     $privatekey = "6LfLhOESAAAAAIu-Y4ySfijTeb_yVAdv28fVXS-p";
 			# the response from reCAPTCHA
-       $resp = null;
+     $resp = null;
 			# the error code from reCAPTCHA, if any
-       $error = null;
+     $error = null;
 			# was there a reCAPTCHA response?
-       if ($_POST["recaptcha_response_field"])
-       {
-        $resp = recaptcha_check_answer ($privatekey,
-          $_SERVER["REMOTE_ADDR"],
-          $_POST["recaptcha_challenge_field"],
-          $_POST["recaptcha_response_field"]);
-        if ($resp->is_valid)
+     if ($_POST["recaptcha_response_field"])
+     {
+      $resp = recaptcha_check_answer ($privatekey,
+        $_SERVER["REMOTE_ADDR"],
+        $_POST["recaptcha_challenge_field"],
+        $_POST["recaptcha_response_field"]);
+      if ($resp->is_valid)
+      {
+       $submit = 1;
+     }
+     else
+     {
+      ?>
+      <style type="text/css">
+        .error
         {
-         $submit = 1;
-       }
-       else
-       {
-        ?>
-        <style type="text/css">
-          .error
-          {
-            border: 1px solid #00529B;
-            padding-bottom:15px;
-            padding-top:15px;
-            color: #D8000C;
-            background-color: #FFBABA;
-          }
-        </style>
-        <div class="error" align="center"> Sorry, you didn't enter the correct captcha code. </div>
-        <br />
-        <br />
-        <br />
-        <?php
-        $submit = 0;
-      }
+          border: 1px solid #00529B;
+          padding-bottom:15px;
+          padding-top:15px;
+          color: #D8000C;
+          background-color: #FFBABA;
+        }
+      </style>
+      <div class="error" align="center"> Sorry, you didn't enter the correct captcha code. </div>
+      <br />
+      <br />
+      <br />
+      <?php
+      $submit = 0;
     }
+  }
 if($submit) // checking if the submit button is pressed or not
 {
 $user_name = $_POST['user_name']; // receiving username
@@ -562,16 +567,16 @@ else
 <div class="reg_frontErr" id="divrecaptcha_response_field" style="display:none;width: 299px !important; margin-left: 170px !important;"> Please fill this to prove you aren't a robot. </div>
 <br class="clear">
 </div>
-  <div class="col-sm-4 col-sm-offset-4">
-    <div class="row">
-      <div class="col-sm-6">
-        <input type="submit" value="Registar" class="btn btn-primary btn-block" id="submit" name="submit" >
-      </div>
-      <div class="col-sm-6">
-        <input type="reset" value="Vaciar" class="btn btn-primary btn-block" id="reset" name="reset" />
-      </div>
+<div class="col-sm-4 col-sm-offset-4">
+  <div class="row">
+    <div class="col-sm-6">
+      <input type="submit" value="Registar" class="btn btn-primary btn-block" id="submit" name="submit" >
+    </div>
+    <div class="col-sm-6">
+      <input type="reset" value="Vaciar" class="btn btn-primary btn-block" id="reset" name="reset" />
     </div>
   </div>
+</div>
 </form>
 </div>
 <?php
