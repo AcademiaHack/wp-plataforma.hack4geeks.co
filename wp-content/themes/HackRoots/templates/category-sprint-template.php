@@ -36,6 +36,7 @@
       </div>
     </div>
     <div class="item">
+      <h1 class="text-center">Sprint 2</h1>
       <div class="badges">
       	<div class="badges">
       		<div class="badge-container">
@@ -67,6 +68,7 @@
       </div>
     </div>
     <div class="item">
+      <h1 class="text-center">Sprint 3</h1>
       <div class="badges">
       	<div class="badges">
       		<div class="badge-container">
@@ -98,6 +100,7 @@
       </div>
     </div>
     <div class="item">
+      <h1 class="text-center">Sprint 4</h1>
       <div class="badges">
       	<div class="badges">
       		<div class="badge-container">
@@ -129,6 +132,7 @@
       </div>
     </div>
     <div class="item">
+      <h1 class="text-center">Sprint 5</h1>
       <div class="badges">
       	<div class="badges">
       		<div class="badge-container">
