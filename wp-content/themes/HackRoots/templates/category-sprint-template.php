@@ -1,179 +1,61 @@
-<?php get_template_part('templates/page', 'header'); ?>
-
+<?php get_template_part('templates/page', 'header');
+ $activity = get_category_by_slug('activities');
+$args = array(
+  'orderby' => 'slug',
+  'order' => 'ASC',  
+  'hierarchical' =>0,
+  'hide_empty' =>0,
+  'parent' =>strval($activity->cat_ID)
+  );
+$categories = get_categories($args);
+ ?>
 <div id="badges_carousel" class="carousel slide" data-ride="carousel">
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
-    <div class="item active">
-      <h1 class="text-center">Sprint 1</h1>
+  <?php 
+  foreach ($categories as $key => $value){
+   
+    $args = array(
+  'orderby' => 'slug',
+  'order' => 'ASC',  
+  'hierarchical' =>0,
+  'hide_empty' =>0,
+  'parent' =>strval($value->cat_ID)
+  );
+$category = get_categories($args);
+	?>
+    <div class="item <?php if ($key==0){echo active;}?>">
+      <h1 class="text-center"><?php echo $value->name ?></h1>
       <div class="badges">
       	<div class="badges">
+		<?php  
+			foreach ($category as $cat){ 
+		?>
+		
       		<div class="badge-container">
-      			<a href="http://localhost/Hack/?cat=8">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/1_1.png" alt="">
+      			<a href="<?php  echo get_category_link( $cat->cat_ID )?>">
+      				<img class="img-responsive badge-img" src="/wp-content/themes/HackRoots/assets/img/<?php  echo $cat->slug ?>.png" alt="">
       			</a>
       		</div>
-      		<div class="badge-container">
-      			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/1_2.png" alt="">
-      			</a>
-      		</div>
-      		<div class="badge-container">
-      			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/1_3.png" alt="">
-      			</a>
-      		</div>
-      		<div class="badge-container">
-      			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/1_4.png" alt="">
-      			</a>
-      		</div>
-      		<div class="badge-container">
-      			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/1_5.png" alt="">
-      			</a>
-      		</div>
+      		 <?php } ?>
       	</div>
       </div>
     </div>
-    <div class="item">
-      <h1 class="text-center">Sprint 2</h1>
-      <div class="badges">
-      	<div class="badges">
-      		<div class="badge-container">
-      			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/2_1.png" alt="">
-      			</a>
-      		</div>
-      		<div class="badge-container">
-      			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/2_2.png" alt="">
-      			</a>
-      		</div>
-      		<div class="badge-container">
-      			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/2_3.png" alt="">
-      			</a>
-      		</div>
-      		<div class="badge-container">
-      			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/2_4.png" alt="">
-      			</a>
-      		</div>
-      		<div class="badge-container">
-      			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/2_5.png" alt="">
-      			</a>
-      		</div>
-      	</div>
-      </div>
-    </div>
-    <div class="item">
-      <h1 class="text-center">Sprint 3</h1>
-      <div class="badges">
-      	<div class="badges">
-      		<div class="badge-container">
-      			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/3_1.png" alt="">
-      			</a>
-      		</div>
-      		<div class="badge-container">
-      			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/3_2.png" alt="">
-      			</a>
-      		</div>
-      		<div class="badge-container">
-      			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/3_3.png" alt="">
-      			</a>
-      		</div>
-      		<div class="badge-container">
-      			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/3_4.png" alt="">
-      			</a>
-      		</div>
-      		<div class="badge-container">
-      			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/3_5.png" alt="">
-      			</a>
-      		</div>
-      	</div>
-      </div>
-    </div>
-    <div class="item">
-      <h1 class="text-center">Sprint 4</h1>
-      <div class="badges">
-      	<div class="badges">
-      		<div class="badge-container">
-      			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/4_1.png" alt="">
-      			</a>
-      		</div>
-      		<div class="badge-container">
-      			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/4_2.png" alt="">
-      			</a>
-      		</div>
-      		<div class="badge-container">
-      			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/4_3.png" alt="">
-      			</a>
-      		</div>
-      		<div class="badge-container">
-      			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/4_4.png" alt="">
-      			</a>
-      		</div>
-      		<div class="badge-container">
-      			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/4_5.png" alt="">
-      			</a>
-      		</div>
-      	</div>
-      </div>
-    </div>
-    <div class="item">
-      <h1 class="text-center">Sprint 5</h1>
-      <div class="badges">
-      	<div class="badges">
-      		<div class="badge-container">
-      			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/5_1.png" alt="">
-      			</a>
-      		</div>
-      		<div class="badge-container">
-      			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/5_2.png" alt="">
-      			</a>
-      		</div>
-      		<div class="badge-container">
-      			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/5_3.png" alt="">
-      			</a>
-      		</div>
-      		<div class="badge-container">
-      			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/5_4.png" alt="">
-      			</a>
-      		</div>
-      		<div class="badge-container">
-      			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/5_5.png" alt="">
-      			</a>
-      		</div>
-      	</div>
-      </div>
-    </div>
-  </div>
+	 <?php
+	 }
+	 ?>
+    
 
 <!-- Indicators -->
 <div id="breadcumb">
   	<a class="next-prev" data-target="#badges_carousel" data-slide="prev"><div class="arrow-left"></div></a>
   	  <ol class="carousel-indicators">
-  	    <li data-target="#badges_carousel" data-slide-to="0" class="active">1</li>
-  	    <li data-target="#badges_carousel" data-slide-to="1">2</li>
-  	    <li data-target="#badges_carousel" data-slide-to="2">3</li>
-  	    <li data-target="#badges_carousel" data-slide-to="3">4</li>
-  	    <li data-target="#badges_carousel" data-slide-to="4">5</li>
+	  <?php 
+	   foreach ($categories as $key => $value){
+   ?>
+  	    <li data-target="#badges_carousel" data-slide-to="<?php echo $key ?>" <?php if ($key==0){echo "class='active'";}?>><?php echo $key+1 ?></li>
+		<?php } ?>
+  	    
   	  </ol>
   	<a class="next-prev" data-target="#badges_carousel" data-slide="next"><div class="arrow-right"></div></a>
 </div>
