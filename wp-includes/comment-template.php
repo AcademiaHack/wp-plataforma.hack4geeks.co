@@ -2200,7 +2200,7 @@ function comment_form( $args = array(), $post_id = null ) {
 						?>
 						<?php echo $args['comment_notes_after']; ?>
 						<p class="form-submit">
-							<input name="submit" type="submit" id="<?php echo esc_attr( $args['id_submit'] ); ?>" value="<?php echo esc_attr( $args['label_submit'] ); ?>" />
+							<input class="btn btn-primary" name="submit" type="submit" id="<?php echo esc_attr( $args['id_submit'] ); ?>" value="<?php echo esc_attr( $args['label_submit'] ); ?>" />
 							<?php comment_id_fields( $post_id ); ?>
 						</p>
 						<?php
