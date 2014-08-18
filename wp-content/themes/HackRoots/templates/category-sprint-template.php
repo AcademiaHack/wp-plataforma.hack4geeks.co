@@ -8,28 +8,28 @@
       <div class="badges">
       	<div class="badges">
       		<div class="badge-container">
-      			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/badge-3.png" alt="">
+      			<a href="http://localhost/Hack/?cat=8">
+      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/1_1.png" alt="">
       			</a>
       		</div>
       		<div class="badge-container">
       			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/badge-2.png" alt="">
+      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/1_2.png" alt="">
       			</a>
       		</div>
       		<div class="badge-container">
       			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/badge-1.png" alt="">
+      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/1_3.png" alt="">
       			</a>
       		</div>
       		<div class="badge-container">
       			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/badge-4.png" alt="">
+      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/1_4.png" alt="">
       			</a>
       		</div>
       		<div class="badge-container">
       			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/badge-5.png" alt="">
+      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/1_5.png" alt="">
       			</a>
       		</div>
       	</div>
@@ -41,27 +41,27 @@
       	<div class="badges">
       		<div class="badge-container">
       			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/badge-1.png" alt="">
+      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/2_1.png" alt="">
       			</a>
       		</div>
       		<div class="badge-container">
       			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/badge-2.png" alt="">
+      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/2_2.png" alt="">
       			</a>
       		</div>
       		<div class="badge-container">
       			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/badge-3.png" alt="">
+      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/2_3.png" alt="">
       			</a>
       		</div>
       		<div class="badge-container">
       			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/badge-4.png" alt="">
+      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/2_4.png" alt="">
       			</a>
       		</div>
       		<div class="badge-container">
       			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/badge-5.png" alt="">
+      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/2_5.png" alt="">
       			</a>
       		</div>
       	</div>
@@ -73,27 +73,27 @@
       	<div class="badges">
       		<div class="badge-container">
       			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/badge-1.png" alt="">
+      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/3_1.png" alt="">
       			</a>
       		</div>
       		<div class="badge-container">
       			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/badge-2.png" alt="">
+      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/3_2.png" alt="">
       			</a>
       		</div>
       		<div class="badge-container">
       			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/badge-3.png" alt="">
+      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/3_3.png" alt="">
       			</a>
       		</div>
       		<div class="badge-container">
       			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/badge-4.png" alt="">
+      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/3_4.png" alt="">
       			</a>
       		</div>
       		<div class="badge-container">
       			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/badge-5.png" alt="">
+      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/3_5.png" alt="">
       			</a>
       		</div>
       	</div>
@@ -105,27 +105,27 @@
       	<div class="badges">
       		<div class="badge-container">
       			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/badge-1.png" alt="">
+      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/4_1.png" alt="">
       			</a>
       		</div>
       		<div class="badge-container">
       			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/badge-2.png" alt="">
+      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/4_2.png" alt="">
       			</a>
       		</div>
       		<div class="badge-container">
       			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/badge-3.png" alt="">
+      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/4_3.png" alt="">
       			</a>
       		</div>
       		<div class="badge-container">
       			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/badge-4.png" alt="">
+      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/4_4.png" alt="">
       			</a>
       		</div>
       		<div class="badge-container">
       			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/badge-5.png" alt="">
+      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/4_5.png" alt="">
       			</a>
       		</div>
       	</div>
@@ -137,27 +137,27 @@
       	<div class="badges">
       		<div class="badge-container">
       			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/badge-1.png" alt="">
+      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/5_1.png" alt="">
       			</a>
       		</div>
       		<div class="badge-container">
       			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/badge-2.png" alt="">
+      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/5_2.png" alt="">
       			</a>
       		</div>
       		<div class="badge-container">
       			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/badge-3.png" alt="">
+      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/5_3.png" alt="">
       			</a>
       		</div>
       		<div class="badge-container">
       			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/badge-4.png" alt="">
+      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/5_4.png" alt="">
       			</a>
       		</div>
       		<div class="badge-container">
       			<a href="#">
-      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/badge-5.png" alt="">
+      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/5_5.png" alt="">
       			</a>
       		</div>
       	</div>

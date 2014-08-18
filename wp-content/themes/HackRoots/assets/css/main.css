@@ -6425,13 +6425,18 @@ header.navbar-default {
 }
 #badges_carousel h1 {
   margin: 0;
-  padding-top: 40px;
+  padding-top: 80px;
   color: #fff;
 }
 #badges_carousel .item {
   background: rgba(14, 18, 119, 0.6);
   min-height: 470px;
 }
+
+#badges_carousel .carousel-control {
+  width: 8%;
+}
+
 #badges_carousel .carousel-control.left,
 #badges_carousel .carousel-control.right {
   background: transparent;
@@ -6500,7 +6505,7 @@ header.navbar-default {
   color: #fff;
 }
 .badges {
-  padding: 3% 4.5%;
+  padding: 1% 4.5%;
 }
 .badge-container {
   width: 20%;
