@@ -6669,7 +6669,7 @@ header.profile {
 } /* IE < 8 */
 
 .archive {
-  background-position-y: 204px;
+  background-position-y: 290px;
 }
 
 .archive .badge-container.off {
@@ -6711,6 +6711,11 @@ header.profile {
 .reto-background {
   padding-top: 150px;
   background-color: #fff;
+}
+
+.btn-large {
+  font-size: 30px;
+  margin: 20px 0;
 }
 
 /*# sourceMappingURL=main.css.map */

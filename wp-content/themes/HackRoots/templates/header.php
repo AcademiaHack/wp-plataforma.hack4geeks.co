@@ -10,7 +10,7 @@
       <div class="row">
         <div class="col-xs-6 col-sm-12 text-center">
           <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>">
-            <img class="logo" src="/wp-content/themes/HackRoots/assets/img/logo.png" alt="">
+            <img class="logo" src="wp-content/themes/HackRoots/assets/img/logo.png" alt="">
           </a>
         </div>
       </div>

@@ -34,7 +34,7 @@ $category = get_categories($args);
 		
       		<div class="badge-container">
       			<a href="<?php  echo get_category_link( $cat->cat_ID )?>">
-      				<img class="img-responsive badge-img" src="/wp-content/themes/HackRoots/assets/img/<?php  echo $cat->slug ?>.png" alt="">
+      				<img class="img-responsive badge-img" src="wp-content/themes/HackRoots/assets/img/<?php  echo $cat->slug ?>.png" alt="">
       			</a>
       		</div>
       		 <?php } ?>
