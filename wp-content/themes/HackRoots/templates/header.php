@@ -1,3 +1,10 @@
+<?php
+    // Get the ID of a given category
+    $category_id = get_cat_ID( 'noticias' );
+
+    // Get the URL of this category
+    $category_link = get_category_link( $category_id );
+?>
 <header class="navbar navbar-default navbar-fixed-top" role="banner">
   <div class="container">
     <div class="navbar-header">
@@ -9,7 +16,7 @@
       </button>
       <div class="row">
         <div class="col-xs-6 col-sm-12 text-center">
-          <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>">
+          <a class="navbar-brand" href="<?php echo $category_link; ?>">
             <img class="logo" src="wp-content/themes/HackRoots/assets/img/logo.png" alt="">
           </a>
         </div>
@@ -17,14 +24,20 @@
     </div>
     <nav id="categorias" class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
       <?php
-        if (has_nav_menu('header_menu_left')) :
-          wp_nav_menu(array('theme_location' => 'header_menu_left', 'menu_class' => 'nav navbar-nav','after' => '<div class="caret_header"><span></span></div>'));
-        endif;
-      ?>
-      <?php
-        if (has_nav_menu('header_menu_right')) :
-          wp_nav_menu(array('theme_location' => 'header_menu_right', 'menu_class' => 'nav navbar-nav navbar-right','after' => '<div class="caret_header"><span></span></div>'));
-        endif;
+        if(!is_page_template('template-profile.php')){
+          if(is_user_logged_in()){
+            if (has_nav_menu('header_menu')){
+              wp_nav_menu(array('theme_location' => 'header_menu', 'menu_class' => 'nav navbar-nav','after' => '<div class="caret_header"><span></span></div>'));
+            }
+            if (has_nav_menu('header_logged')){
+              wp_nav_menu(array('theme_location' => 'header_logged', 'menu_class' => 'nav navbar-nav navbar-right','after' => '<div class="caret_header"><span></span></div>'));
+            }
+          }else{
+            if (has_nav_menu('header_not_logged')){
+              wp_nav_menu(array('theme_location' => 'header_not_logged', 'menu_class' => 'nav navbar-nav navbar-right','after' => '<div class="caret_header"><span></span></div>'));
+            }
+          }
+        }        
       ?>
     </nav>
     <div class="caret_header_2"></div>

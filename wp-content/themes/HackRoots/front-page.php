@@ -1,5 +1,7 @@
-<?php get_template_part('templates/page', 'header'); ?>
-
+<?php query_posts('cat=5');?>
+<br>
+<br>
+<br>		
 <?php if (!have_posts()) : ?>
   <div class="alert alert-info">
     <?php _e('No se encontro ningun artículo.', 'roots'); ?>

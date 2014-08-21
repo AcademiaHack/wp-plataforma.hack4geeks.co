@@ -14,11 +14,15 @@ function roots_setup() {
   ));
 
   register_nav_menus(array(
-    'header_menu_left' => __('Header Menu Left', 'roots')
+    'header_menu' => __('Header Menu', 'roots')
   ));
 
   register_nav_menus(array(
-    'header_menu_right' => __('Header Menu Right', 'roots')
+    'header_logged' => __('Header Logged Buttons', 'roots')
+  ));
+
+  register_nav_menus(array(
+    'header_not_logged' => __('Header Not_Logged Buttons', 'roots')
   ));
 
   // Add post thumbnails

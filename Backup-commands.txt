@@ -1,9 +1,9 @@
 Backup DB:
-mysqldump -u hack -p hack_wp > hack_wp.sql
-clave: blanked
+mysqldump -u wordpress -p wordpress > /vagrant/hack_wp.sql
+clave: wordpress
 
 Restore Backup DB:
-mysql -u hack -p hack_wp < hack_wp.sql
+mysql -u wordpress -p wordpress < hack_wp.sql
 Clave: blanked
 
 O por PhpMyAdmin, haciendo uso de la opción importar, en la pagina de la base de datos
