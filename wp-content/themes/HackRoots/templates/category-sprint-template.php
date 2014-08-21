@@ -1,7 +1,7 @@
 <?php get_template_part('templates/page', 'header');
  $activity = get_category_by_slug('activities');
 $args = array(
-  'orderby' => 'slug',
+  'orderby' => 'id',
   'order' => 'ASC',  
   'hierarchical' =>0,
   'hide_empty' =>0,
@@ -16,7 +16,7 @@ $categories = get_categories($args);
   foreach ($categories as $key => $value){
    
     $args = array(
-  'orderby' => 'slug',
+  'orderby' => 'id',
   'order' => 'ASC',  
   'hierarchical' =>0,
   'hide_empty' =>0,
