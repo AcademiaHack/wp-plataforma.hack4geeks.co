@@ -17,7 +17,7 @@
       <div class="row">
         <div class="col-xs-6 col-sm-12 text-center">
           <a class="navbar-brand" href="<?php echo $category_link; ?>">
-            <img class="logo" src="wp-content/themes/HackRoots/assets/img/logo.png" alt="">
+            <img class="logo" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/logo.png" alt="">
           </a>
         </div>
       </div>
