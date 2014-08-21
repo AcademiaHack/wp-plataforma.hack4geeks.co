@@ -8,12 +8,6 @@
 <header class="navbar navbar-default navbar-fixed-top" role="banner">
   <div class="container">
     <div class="navbar-header">
-      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
       <div class="row">
         <div class="col-xs-6 col-sm-12 text-center">
           <a class="navbar-brand" href="<?php echo $category_link; ?>">
@@ -41,6 +35,12 @@
       ?>
     </nav>
     <div class="caret_header_2"></div>
+    <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
   </div>
   <div class="caret_header_3"></div>
 </header>

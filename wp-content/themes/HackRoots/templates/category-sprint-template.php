@@ -45,26 +45,28 @@ $category = get_categories($args);
 	 }
 	 ?>
     
+  </div>
 
-<!-- Indicators -->
-<div id="breadcumb">
-  	<a class="next-prev" data-target="#badges_carousel" data-slide="prev"><div class="arrow-left"></div></a>
-  	  <ol class="carousel-indicators">
-	  <?php 
-	   foreach ($categories as $key => $value){
-   ?>
-  	    <li data-target="#badges_carousel" data-slide-to="<?php echo $key ?>" <?php if ($key==0){echo "class='active'";}?>><?php echo $key+1 ?></li>
-		<?php } ?>
-  	    
-  	  </ol>
-  	<a class="next-prev" data-target="#badges_carousel" data-slide="next"><div class="arrow-right"></div></a>
-</div>
+  <!-- Indicators -->
+  <div id="breadcumb">
+      <a class="next-prev" data-target="#badges_carousel" data-slide="prev"><div class="arrow-left"></div></a>
+        <ol class="carousel-indicators">
+      <?php 
+       foreach ($categories as $key => $value){
+     ?>
+          <li data-target="#badges_carousel" data-slide-to="<?php echo $key ?>" <?php if ($key==0){echo "class='active'";}?>><?php echo $key+1 ?></li>
+      <?php } ?>
+          
+        </ol>
+      <a class="next-prev" data-target="#badges_carousel" data-slide="next"><div class="arrow-right"></div></a>
+  </div>
 
-  <!-- Controls -->
-  <a class="left carousel-control" href="#badges_carousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-  </a>
-  <a class="right carousel-control" href="#badges_carousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-  </a>
+    <!-- Controls -->
+    <a class="left carousel-control" href="#badges_carousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#badges_carousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+
 </div>
