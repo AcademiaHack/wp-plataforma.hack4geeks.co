@@ -44,27 +44,27 @@ $posts = query_posts( 'cat='.$category->term_id	 );
 		<div class="badges">
 			<div class="badge-container off">
 				 
-					<img class="img-responsive badge-img off" src="wp-content/themes/HackRoots/assets/img/cat/<?php echo $naanterior?>.png" alt="">
+					<img class="img-responsive badge-img off" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $naanterior?>.png" alt="">
 			 
 			</div>
 			<div class="badge-container off">
 				 
-					<img class="img-responsive badge-img off" src="wp-content/themes/HackRoots/assets/img/cat/<?php echo $nanterior?>.png" alt="">
+					<img class="img-responsive badge-img off" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $nanterior?>.png" alt="">
 				 
 			</div>
 			<div class="badge-container">
 			 
-					<img class="img-responsive badge-img on" src="wp-content/themes/HackRoots/assets/img/cat/<?php echo $nimagen?>.png" alt="">
+					<img class="img-responsive badge-img on" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $nimagen?>.png" alt="">
 				 
 			</div>
 			<div class="badge-container off">
 				 
-					<img class="img-responsive badge-img off" src="wp-content/themes/HackRoots/assets/img/cat/<?php echo $nposterior?>.png" alt="">
+					<img class="img-responsive badge-img off" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $nposterior?>.png" alt="">
 				 
 			</div>
 			<div class="badge-container off">
 				 
-					<img class="img-responsive badge-img off" src="wp-content/themes/HackRoots/assets/img/cat/<?php echo $npposterior?>.png" alt="">
+					<img class="img-responsive badge-img off" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $npposterior?>.png" alt="">
 				 
 			</div>
 		</div>
