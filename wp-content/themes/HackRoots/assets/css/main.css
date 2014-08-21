@@ -6754,7 +6754,7 @@ header.profile {
 }
 
 .reto-background {
-  padding-top: 150px;
+  padding-top: 15%;
   background-color: #fff;
 }
 
@@ -6848,4 +6848,86 @@ body.single {
   border-color: #1465C0;
   color: #fff;
 }
+
+.reto-bg {
+  background: rgba(14, 18, 119, 0.6);
+  text-align: center;
+  padding-top: 30px;
+  height: 220px;
+  overflow: hidden;
+}
+
+.badge-boxes {
+  width: 100%;
+  position: relative;
+  padding: 0 1%;
+}
+
+.badge-box {
+  display: inline-block;
+  width: 18%;
+}
+
+.badge-box img {
+  width: 100%;
+}
+
+.badge-box.space {
+  
+}
+
+.badge-box.off {
+
+}
+
+.badge-box.on {
+  position: absolute;
+  margin-left: -9%;
+  top: 90px;
+}
+
+@media (min-width: 1300px) {
+  .reto-bg {
+    height: 220px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .reto-bg {
+    height: 160px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .reto-bg {
+    height: 130px;
+  }
+}
+
+
+@media (max-width: 1000px) {
+  .reto-bg {
+    height: 120px;
+  }
+}
+
+@media (max-width: 850px) {
+  .reto-bg {
+    height: 100px;
+  }
+}
+
+@media (max-width: 700px) {
+  .reto-bg {
+    height: 80px;
+  }
+}
+
+@media (max-width: 550px) {
+  .reto-bg {
+    height: 60px;
+  }
+}
+
+
 /*# sourceMappingURL=main.css.map */
