@@ -1,5 +1,5 @@
 Backup DB:
-mysqldump -u wordpress -p wordpress > /vagrant/hack_wp.sql
+mysqldump -u wordpress -p wordpress > /vagrant/wordpress/hack_wp.sql
 clave: wordpress
 
 Restore Backup DB:
