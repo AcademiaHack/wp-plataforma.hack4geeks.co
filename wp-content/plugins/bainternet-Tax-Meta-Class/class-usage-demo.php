@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: Demo Tax meta class
+Plugin Name: Categoria Number meta class
 Plugin URI: http://en.bainternet.info
-Description: Tax meta class usage demo
+Description: Tax meta class usage para el numero de la categoria
 Version: 1.9.9
 Author: Bainternet, Ohad Raz
 Author URI: http://en.bainternet.info

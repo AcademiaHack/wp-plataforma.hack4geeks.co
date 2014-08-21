@@ -682,10 +682,9 @@ if (!class_exists('wpCommentAttachment')){
         public function displayFormAtt()
         {
             $required = ATT_REQ ? ' <span class="required">*</span>' : '';
-            echo '<p class="comment-form-url comment-form-attachment">'.
-                '<label for="attachment">' . ATT_TITLE . $required .'<small class="attachmentRules">&nbsp;&nbsp;(Allowed file types: <strong>'. $this->displayAllowedFileTypes() .'</strong>, maximum file size: <strong>'. ATT_MAX .'MB(s).</strong></small></label>'.
-                '</p>'.
-                '<p class="comment-form-url comment-form-attachment"><input id="attachment" name="attachment" type="file" /></p>';
+            echo '<div id="comment-form-upload">'. 
+                '<p class="comment-form-url comment-form-attachment"><input id="attachment" name="attachment" type="file" /></p>'.
+				'</div>';
         }
 
 
