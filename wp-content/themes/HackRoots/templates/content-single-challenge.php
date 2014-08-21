@@ -5,15 +5,28 @@
   <hr> -->
 
   <article <?php post_class(); ?>>
-    <header>
+    <div class="parent-category">
       <div class="container">
-        <h1 class="entry-title"><?php the_title(); ?></h1>
-        <?php get_template_part('templates/entry-meta'); ?>
+        <div class="pull-right">
+          <span>Como buscar, HTML</span>
+          <img class="small-category" src="wp-content/themes/HackRoots/assets/img/1_1.png" alt="">
+        </div>
       </div>
-    </header>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+          <div class="row">
+            <div class="col-sm-4 col-sm-offset-4 text-center">
+              <img class="img-responsive" src="wp-content/themes/HackRoots/assets/img/challenge-accepted.jpg" alt="">
+              <h1 class="entry-title"><?php the_title(); ?></h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="container">
       <div class="entry-content">
-        <h2 class="entry-title"><?php the_title(); ?></h2>
         <?php the_content(); ?>
       </div>
       <footer>

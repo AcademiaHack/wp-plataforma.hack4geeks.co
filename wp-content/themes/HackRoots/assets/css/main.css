@@ -6664,7 +6664,7 @@ header.profile {
 
 .reto-header {
   background: rgba(14, 18, 119, 0.6);
-  height: 180px;
+  height: 182px;
   padding-top: 30px;
 } /* IE < 8 */
 
@@ -6682,7 +6682,6 @@ header.profile {
   -o-transform: rotate(180deg);
   transform: rotate(180deg);
   zoom: 1;
-  max-height: 128px;
   height: auto;
   overflow: hidden;
 }
@@ -6693,7 +6692,7 @@ header.profile {
   display: block;
   max-width: 100%;
   height: auto !important;
-  margin-top: -122px;
+  margin-top: -55%;
   width: auto9;
   -ms-interpolation-mode: bicubic;
   float: right;
@@ -6716,6 +6715,28 @@ header.profile {
 .btn-large {
   font-size: 30px;
   margin: 20px 0;
+}
+
+.parent-category {
+  padding: 5px 0;
+  background-color: #0D4F99;
+  color: #fff;
+  margin: 20px 0;
+}
+
+.small-category {
+  width: 30px;
+  margin-left: 10px;
+}
+
+body.single {
+  background-color: #EBE9E9;
+}
+
+#respond {
+  background-color: #fff;
+  padding: 10px 20px;
+  margin-bottom: 20px;
 }
 
 /*# sourceMappingURL=main.css.map */
