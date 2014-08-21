@@ -6475,7 +6475,11 @@ header.navbar-default {
 }
 #badges_carousel .item {
   /*background: rgba(14, 18, 119, 0.6);*/
-  min-height: 400px;
+}
+
+#badges_carousel .carousel-inner > .active, .carousel-inner > .next, .carousel-inner > .prev {
+  display: inline-block;
+  width: 100%;
 }
 
 #badges_carousel .carousel-control {
@@ -6496,9 +6500,15 @@ header.navbar-default {
   border-right: 1px solid #CBD0D5;
   border-left: 1px solid #CBD0D5;
   border-bottom: 1px solid #fff;
-  margin: 20px auto;
+  margin: 50px auto;
   display: table;
 }
+
+#badges_carousel #breadcumb.active {
+  width: auto;
+  display: table;
+}
+
 #badges_carousel .carousel-indicators {
   position: relative;
   display: inline-block;
@@ -6556,10 +6566,12 @@ header.navbar-default {
   width: 20%;
   float: left;
   position: relative;
+  margin: 0 -1px;
 }
 .badge-container a .badge-img {
   opacity: 0.7;
   position: relative;
+  width: 100%;
 }
 .badge-container a .badge-img:hover {
   opacity: 1;
@@ -6702,7 +6714,7 @@ header.profile {
 } /* IE < 8 */
 
 .archive {
-  background-position-y: 290px;
+  background-position-y: -54%;
 }
 
 .archive .badge-container.off {
