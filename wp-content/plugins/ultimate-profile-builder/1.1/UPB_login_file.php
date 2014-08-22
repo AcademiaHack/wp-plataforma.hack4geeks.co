@@ -338,7 +338,7 @@
 
 
 
-                                Please enter a username.
+                                Introduzca un nombre de usuario
 
 
 
@@ -368,7 +368,7 @@
 
 
 
-                                            Please enter a password.
+                                            Introduzca su contraseña
 
 
 
@@ -750,7 +750,7 @@
 
                                                 <input type="text" size="20" value="<?php echo $user_login; ?>" class="input" id="user_login" name="user_login" >
 
-                                                <div class="reg_frontErr" id="divuser_login" style="display:none;">Please enter a username.</div>
+                                                <div class="reg_frontErr" id="divuser_login" style="display:none;">Introduzca un nombre de usuario</div>
 
                                             </div>
 
@@ -776,7 +776,7 @@
 
                                                     <input type="password" size="20" value="" class="input" id="user_pass" name="user_pass" >
 
-                                                    <div class="reg_frontErr" id="divuser_pass" style="display:none;">Please enter a password.</div>
+                                                    <div class="reg_frontErr" id="divuser_pass" style="display:none;">Introduzca su contraseña</div>
 
 
 
@@ -808,7 +808,7 @@
 
                                                     <div class="input-box">
 
-                                                        <input type="checkbox" value="true" id="rememberme" name="rememberme"> <span class="remember-me">Remember Me</span></div>
+                                                        <input type="checkbox" value="true" id="rememberme" name="rememberme"> <span class="remember-me">Recuerdame</span></div>
 
 
 
@@ -842,7 +842,7 @@
 
 
 
-                                                    <div class="UltimatePB-forgot-pass"> Forget Password?<a href="<?php echo $pageURL; ?><?php echo $sign; ?>login3=1" title="Lost Password">Click here</a> to resend </div>
+                                                    <div class="UltimatePB-forgot-pass">¿Olvidó su contraseña?<a href="<?php echo $pageURL; ?><?php echo $sign; ?>login3=1" title="Lost Password">Click here</a> to resend </div>
 
 
 

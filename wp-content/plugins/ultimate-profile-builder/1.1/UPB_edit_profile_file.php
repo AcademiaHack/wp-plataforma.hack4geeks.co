@@ -1064,7 +1064,7 @@ else {
 
 
 
-                            <div class="reg_frontErr" id="divuser_confirm_password" style="display:none;margin: -26px 0 23px !important; margin-left: 223px !important;">Password and confirm password do not match.</div>
+                            <div class="reg_frontErr" id="divuser_confirm_password" style="display:none;margin: -26px 0 23px !important; margin-left: 223px !important;">Su contraseña no coincide</div>
 
 
 
