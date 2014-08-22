@@ -6911,6 +6911,10 @@ footer {
   display: none;
 }
 
+.menu-username{
+  display: block !important;
+}
+
 @media (min-width: 1300px) {
   .reto-bg {
     height: 220px;

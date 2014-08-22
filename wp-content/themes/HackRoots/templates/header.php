@@ -14,20 +14,26 @@
     </div>
     <nav id="categorias" class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
       <?php
-        if(!is_page_template('template-profile.php')){
-          if(is_user_logged_in()){
-            if (has_nav_menu('header_menu')){
-              wp_nav_menu(array('theme_location' => 'header_menu', 'menu_class' => 'nav navbar-nav','after' => '<div class="caret_header"><span></span></div>'));
-            }
-            if (has_nav_menu('header_logged')){
-              wp_nav_menu(array('theme_location' => 'header_logged', 'menu_class' => 'nav navbar-nav navbar-right','after' => '<div class="caret_header"><span></span></div>'));
-            }
-          }else{
-            if (has_nav_menu('header_not_logged')){
-              wp_nav_menu(array('theme_location' => 'header_not_logged', 'menu_class' => 'nav navbar-nav navbar-right','after' => '<div class="caret_header"><span></span></div>'));
-            }
+        if(is_user_logged_in()){
+          if (has_nav_menu('header_menu')){
+            wp_nav_menu(array('theme_location' => 'header_menu', 
+                              'menu_class' => 'nav navbar-nav',
+                              'after' => '<div class="caret_header"><span></span></div>',
+                              'walker' => new Roots_Nav_Walker));
           }
-        }        
+          if (has_nav_menu('header_logged')){
+            wp_nav_menu(array('theme_location' => 'header_logged',
+                              'menu_class' => 'nav navbar-nav navbar-right',
+                              'walker' => new Roots_Nav_Walker));
+          }
+        }else{
+          if (has_nav_menu('header_not_logged')){
+            wp_nav_menu(array('theme_location' => 'header_not_logged',
+                              'menu_class' => 'nav navbar-nav navbar-right',
+                              'after' => '<div class="caret_header"><span></span></div>',
+                              'walker' => new Roots_Nav_Walker));
+          }
+        }       
       ?>
     </nav>
     <div class="caret_header_2"></div>

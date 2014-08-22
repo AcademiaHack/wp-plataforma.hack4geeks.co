@@ -1,0 +1,317 @@
+[33mcommit cd7a99de0395f856db1082f4cb83d9dbeb6a621a[m
+Author: AngelAlarcon <adalarcon@stcsoltions.com.ve>
+Date:   Thu Aug 21 18:36:00 2014 -0430
+
+    responsive de retos
+
+[33mcommit f670f35f88b15aa34312998a816e24f7b754bd7e[m
+Merge: 8915502 4d46ad9
+Author: AngelAlarcon <adalarcon@stcsoltions.com.ve>
+Date:   Thu Aug 21 17:45:09 2014 -0430
+
+    Merge branch 'master' of github.com:maldoxd/Hack
+
+[33mcommit 8915502535c66deea6895499d987556f0b934117[m
+Author: AngelAlarcon <adalarcon@stcsoltions.com.ve>
+Date:   Thu Aug 21 17:45:02 2014 -0430
+
+    fix vista actividades
+
+[33mcommit 4d46ad9701ad0dab5f6177e1f8bef996afd8af37[m
+Author: Leonel Maldonado <lmaldonado@4geeks.co>
+Date:   Thu Aug 21 17:35:23 2014 -0430
+
+    respaldo BD, cambio ruta para el backup
+
+[33mcommit 78f5b70b4993bfaa9a1647b895c923d26fc28f0a[m
+Merge: d10e7fc 36a7930
+Author: Leonel Maldonado <lmaldonado@4geeks.co>
+Date:   Thu Aug 21 17:25:02 2014 -0430
+
+    Merge branch 'master' of https://github.com/maldoxd/Hack.git
+
+[33mcommit d10e7fcd74a6cd47a0f714e2418bc9c524909c8c[m
+Author: Leonel Maldonado <lmaldonado@4geeks.co>
+Date:   Thu Aug 21 17:24:58 2014 -0430
+
+    foto user
+
+[33mcommit c4711a114d7b6552c944226beceb08463d41f1c6[m
+Author: Leonel Maldonado <lmaldonado@4geeks.co>
+Date:   Thu Aug 21 17:24:28 2014 -0430
+
+    Cambio nombre de imagenes del tema, configuracion categorias
+
+[33mcommit 36a7930bf37d9399a0b2fbc6b3474f55f9936896[m
+Author: AngelAlarcon <adalarcon@stcsoltions.com.ve>
+Date:   Thu Aug 21 17:20:15 2014 -0430
+
+    responsive basico
+
+[33mcommit 85592b1aaa6560bc7942b9862a950a3035f61b47[m
+Merge: 99607cb 087243c
+Author: AngelAlarcon <adalarcon@stcsoltions.com.ve>
+Date:   Thu Aug 21 16:53:29 2014 -0430
+
+    Merge branch 'master' of github.com:maldoxd/Hack
+
+[33mcommit 99607cbe5736adb4fc7773bc06b4405e127f8af3[m
+Author: AngelAlarcon <adalarcon@stcsoltions.com.ve>
+Date:   Thu Aug 21 16:53:15 2014 -0430
+
+    parte del resonsive
+
+[33mcommit 087243cf32d380a485820247b3098b62192a4ec7[m
+Author: Leonel Maldonado <lmaldonado@4geeks.co>
+Date:   Thu Aug 21 16:48:55 2014 -0430
+
+    DB script, header logo
+
+[33mcommit 974b3c1f6d1d605d27c10a0f758da59c695a0832[m
+Author: Leonel Maldonado <lmaldonado@4geeks.co>
+Date:   Thu Aug 21 16:22:05 2014 -0430
+
+    PAgina de reto, cambios al plugin de los comentarios
+
+[33mcommit 82f62a8e369c65d56b3032154861c4ae2974e31a[m
+Merge: ed976e2 e7b6d18
+Author: AngelAlarcon <adalarcon@stcsoltions.com.ve>
+Date:   Thu Aug 21 15:04:22 2014 -0430
+
+    Merge branch 'master' of github.com:maldoxd/Hack
+
+[33mcommit e7b6d18180ca2bd1bae230c8c026ddcf39d9b31a[m
+Author: Leonel Maldonado <lmaldonado@4geeks.co>
+Date:   Thu Aug 21 15:03:48 2014 -0430
+
+    eliminar fotos extras
+
+[33mcommit ed976e2ba36e14ff325524562e7cf819f17bbbd1[m
+Author: AngelAlarcon <adalarcon@stcsoltions.com.ve>
+Date:   Thu Aug 21 15:00:45 2014 -0430
+
+    merge
+
+[33mcommit 5b30452c8e7c9283224c6c403f631df6c4a4ca69[m
+Author: AngelAlarcon <adalarcon@stcsoltions.com.ve>
+Date:   Thu Aug 21 14:56:19 2014 -0430
+
+    vista reto
+
+[33mcommit cc4e8f980b82b84fa4e55dfe9e0021986fd06f9f[m
+Merge: 15e7080 3747519
+Author: Glister <jfuentes@stcsolutions.com.ve>
+Date:   Wed Aug 20 22:52:00 2014 -0430
+
+    Merge branch 'master' of github.com:maldoxd/Hack
+
+[33mcommit 15e70809cb1cb1bb933a6fd681dff925f18f70b7[m
+Author: Glister <jfuentes@stcsolutions.com.ve>
+Date:   Wed Aug 20 21:32:42 2014 -0430
+
+    creación del front-page template y arreglo del header
+
+[33mcommit 37475195dff2966e4cd18b30d6641f1789c4b461[m
+Merge: ae135b9 45c2cc4
+Author: Leonel Maldonado <lmaldonado@4geeks.co>
+Date:   Wed Aug 20 17:47:19 2014 -0430
+
+    Merge branch 'master' of https://github.com/maldoxd/Hack.git
+
+[33mcommit ae135b9378816608ba13c18ea3cdbe6d9cf0677d[m
+Author: Leonel Maldonado <lmaldonado@4geeks.co>
+Date:   Wed Aug 20 17:38:40 2014 -0430
+
+    plugin field extra, pagina de categoria
+
+[33mcommit 45c2cc4859a140f2076a0be115a308018c2e5156[m
+Author: Glister <jfuentes@stcsolutions.com.ve>
+Date:   Wed Aug 20 16:01:46 2014 -0430
+
+    gitignore para el wp-config.php
+
+[33mcommit a3f17cc510f8827dcfac40179c335f80ef1081ea[m
+Merge: a163f8a 3be3b35
+Author: Leonel Maldonado <lmaldonado@4geeks.co>
+Date:   Wed Aug 20 11:08:40 2014 -0430
+
+    Merge branch 'master' of https://github.com/maldoxd/Hack.git
+
+[33mcommit a163f8a648eab7c3cb46bac71aeffcddd370b50f[m
+Author: Leonel Maldonado <lmaldonado@4geeks.co>
+Date:   Wed Aug 20 11:08:36 2014 -0430
+
+    cambio backup command
+
+[33mcommit 3be3b35d38cd7860bec5e00908bdf5446b1799fc[m
+Author: AngelAlarcon <adalarcon@stcsoltions.com.ve>
+Date:   Wed Aug 20 11:02:17 2014 -0430
+
+    vista de detalle de actividades
+
+[33mcommit 2f96fb6a687e6a38548f9d4efa9c43835ba8622b[m
+Merge: 94c94d3 94beab0
+Author: AngelAlarcon <adalarcon@stcsoltions.com.ve>
+Date:   Tue Aug 19 12:01:14 2014 -0430
+
+    Merge branch 'master' of github.com:maldoxd/Hack
+
+[33mcommit 94beab054c06ed01788a81e6f2c16b8544269bab[m
+Author: Leonel Maldonado <lmaldonado@4geeks.co>
+Date:   Mon Aug 18 17:41:49 2014 -0430
+
+    cambios para el box
+
+[33mcommit 94c94d308a1e46b9fd5e2386839617077ed6a6b1[m
+Merge: 9073439 ffe5721
+Author: AngelAlarcon <adalarcon@stcsoltions.com.ve>
+Date:   Mon Aug 18 17:22:06 2014 -0430
+
+    Merge branch 'master' of github.com:maldoxd/Hack
+
+[33mcommit 9073439e52fb8436aea4f9a3e313194e8a36a8bd[m
+Author: AngelAlarcon <adalarcon@stcsoltions.com.ve>
+Date:   Mon Aug 18 17:21:56 2014 -0430
+
+    inicio de vista de actividades detalladas
+
+[33mcommit ffe5721e058fba80b8fafc7dea47ad7e8c950310[m
+Merge: 718e130 ab5164c
+Author: Leonel Maldonado <lmaldonado@4geeks.co>
+Date:   Mon Aug 18 17:19:25 2014 -0430
+
+    Merge branch 'master' of https://github.com/maldoxd/Hack.git
+
+[33mcommit 718e13084bf0a7328a888ff29f5dcb03469c6abb[m
+Author: Leonel Maldonado <lmaldonado@4geeks.co>
+Date:   Mon Aug 18 17:17:37 2014 -0430
+
+    carrusell vista de actividades, logo al cambiar permalinks
+
+[33mcommit ab5164c97397b4ff65fa11e1836b31f587d718e1[m
+Author: AngelAlarcon <adalarcon@stcsoltions.com.ve>
+Date:   Mon Aug 18 15:22:00 2014 -0430
+
+    vista de editar perfil
+
+[33mcommit faaac06360c44e87529809086c75d4e54ef80b2e[m
+Merge: 32396a8 60d9e03
+Author: AngelAlarcon <adalarcon@stcsoltions.com.ve>
+Date:   Mon Aug 18 11:51:47 2014 -0430
+
+    Merge branch 'master' of github.com:maldoxd/Hack
+
+[33mcommit 32396a8cc08cd2732830b1c82ba21327937f36e3[m
+Author: AngelAlarcon <adalarcon@stcsoltions.com.ve>
+Date:   Mon Aug 18 11:51:10 2014 -0430
+
+    carousel de sprint
+
+[33mcommit 60d9e03ba61adcd1ad1e4b242bfade63c4fc3c23[m
+Author: Leonel Maldonado <lmaldonado@4geeks.co>
+Date:   Fri Aug 15 17:33:01 2014 -0430
+
+    Plugin para  subir archivos a los comentarios, paquete idiomas español
+
+[33mcommit 5dd4b362649679eb1b16ad7709a196233a65576d[m
+Author: AngelAlarcon <adalarcon@stcsoltions.com.ve>
+Date:   Fri Aug 15 10:57:55 2014 -0430
+
+    hack sql
+
+[33mcommit 693dccd7e75dcf4a38e938a078d9905b12eb96d0[m
+Author: AngelAlarcon <adalarcon@stcsoltions.com.ve>
+Date:   Tue Aug 12 17:01:37 2014 -0430
+
+    vista de perfil de usuario
+
+[33mcommit 208b5bae3b788926ca0d52242687a229f5f16228[m
+Author: AngelAlarcon <adalarcon@stcsoltions.com.ve>
+Date:   Tue Aug 12 15:04:15 2014 -0430
+
+    vista de registro e inicio de sesion
+
+[33mcommit e31d0555548399e98d7f3ca96e69e7f3ba8bfdc8[m
+Author: AngelAlarcon <adalarcon@stcsoltions.com.ve>
+Date:   Sun Aug 10 21:34:22 2014 -0430
+
+    inicio de vista home, header y actividades
+
+[33mcommit 40ec682c1f11f6c9e444d283438f92a959cc8067[m
+Author: Glister <jfuentes@stcsolutions.com.ve>
+Date:   Thu Aug 7 14:24:22 2014 -0430
+
+    commit del vendor
+
+[33mcommit 91cdc7f612df99aa74d8017f0c31a5dc9857674b[m
+Merge: 58a6fbc 653e96b
+Author: Leonel Maldonado <lmaldonado@4geeks.co>
+Date:   Thu Aug 7 12:01:45 2014 -0430
+
+    Merge branch 'master' of https://github.com/maldoxd/Hack.git
+
+[33mcommit 58a6fbc3dd665f54a717720dd0c7424e0379937a[m
+Author: Leonel Maldonado <lmaldonado@4geeks.co>
+Date:   Thu Aug 7 11:51:09 2014 -0430
+
+    test roots files
+
+[33mcommit 653e96b09013498ba909240a9372026e80712cf1[m
+Author: Glister <jfuentes@stcsolutions.com.ve>
+Date:   Wed Aug 6 11:12:28 2014 -0430
+
+    404 meanwhile
+
+[33mcommit daa31e4d4252fabb2c39f84a9126b0816648bbbe[m
+Author: Glister <jfuentes@stcsolutions.com.ve>
+Date:   Tue Aug 5 16:30:44 2014 -0430
+
+    profile templates y UPB activado, agregados usuarios lmaldonado y adalarcon en la base de datos
+
+[33mcommit e0d910283fc85577f0b28802fb171ebc5994e03e[m
+Author: Glister <jfuentes@stcsolutions.com.ve>
+Date:   Fri Aug 1 12:44:59 2014 -0430
+
+    configuracion del header el footer, y eliminacion de los sidebars
+
+[33mcommit b7d4a18740c0e61ac77687358e3b0ae6af914068[m
+Author: Glister <jfuentes@stcsolutions.com.ve>
+Date:   Thu Jul 31 16:41:32 2014 -0430
+
+    bugfixes en category templates y agregado del profile template
+
+[33mcommit 17a788e78d4062f03b1e65c26558f99d19468c8c[m
+Author: Glister <jfuentes@stcsolutions.com.ve>
+Date:   Thu Jul 31 16:06:46 2014 -0430
+
+    templates para posts
+
+[33mcommit 8c3af8da94fadc09c40e4771143d5c35720ffb90[m
+Author: Glister <jfuentes@stcsolutions.com.ve>
+Date:   Thu Jul 31 15:04:21 2014 -0430
+
+    bugfix
+
+[33mcommit 34a186975e1f4df174cd9a4f27b254fbb51efc06[m
+Author: Glister <jfuentes@stcsolutions.com.ve>
+Date:   Thu Jul 31 14:19:45 2014 -0430
+
+    los category templates que son en realidad
+
+[33mcommit 51ce68fc9c9a777308a7bcab5630b96b8d44a19b[m
+Author: Glister <jfuentes@stcsolutions.com.ve>
+Date:   Thu Jul 31 13:54:54 2014 -0430
+
+    comandos de backup de la bd y sql
+
+[33mcommit 4e468341ab46caa08be409b6261288b700dd4a05[m
+Author: Glister <jfuentes@stcsolutions.com.ve>
+Date:   Thu Jul 31 13:48:55 2014 -0430
+
+    Category-templates basic
+
+[33mcommit c0f4f08a67f02ef8acd5724abff2c802137ec92d[m
+Author: Leonel Maldonado <lmaldonado@4geeks.co>
+Date:   Wed Jul 30 15:16:16 2014 -0430
+
+    Commit Inicial proyecto wordpress
