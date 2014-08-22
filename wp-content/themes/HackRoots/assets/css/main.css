@@ -6374,7 +6374,6 @@ header.navbar-default {
   position: absolute;
   height: 20px;
   width: 100%;
-  overflow: hidden;
   z-index: 100;
   bottom: -20px;
 }
@@ -6383,10 +6382,10 @@ header.navbar-default {
   display: block;
   position: absolute;
   content: "";
-  height: 30px;
+  height: 20px;
   width: 100%;
   background: #eee;
-  left: 1170px;
+  left: 1140px;
   bottom: 0px;
 }
 
@@ -6394,10 +6393,10 @@ header.navbar-default {
   display: block;
   position: absolute;
   content: "";
-  height: 30px;
+  height: 20px;
   width: 100%;
   background: #eee;
-  right: 1170px;
+  right: 1140px;
   bottom: 0px;
 }
 
@@ -6903,8 +6902,8 @@ body.single {
   width: 15%;
 }
 
-.page-template-template-registration-php .caret_header_3:after {
-  width: 10%;
+.comment-form-comment label {
+  display: none;
 }
 
 /*Remover en caso de agregar footer*/
@@ -6928,6 +6927,13 @@ footer {
   .reto-bg {
     height: 130px;
   }
+  .caret_header_3:before {
+    left: 900px;
+  }
+
+  .caret_header_3:after {
+    right: 970px;
+  }
 }
 
 
@@ -6937,9 +6943,29 @@ footer {
   }
 }
 
+@media (max-width: 992px) {
+  .caret_header_3:before {
+    left: 700px;
+  }
+
+  .caret_header_3:after {
+    right: 750px;
+  }
+}
+
 @media (max-width: 850px) {
   .reto-bg {
     height: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .caret_header_3:before {
+    left: 50%;
+  }
+
+  .caret_header_3:after {
+    right: 50%;
   }
 }
 
