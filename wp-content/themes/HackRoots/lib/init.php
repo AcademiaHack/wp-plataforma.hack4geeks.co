@@ -9,9 +9,7 @@ function roots_setup() {
 
   // Register wp_nav_menu() menus
   // http://codex.wordpress.org/Function_Reference/register_nav_menus
-  register_nav_menus(array(
-    'primary_navigation' => __('Primary Navigation', 'roots')
-  ));
+  
 
   register_nav_menus(array(
     'header_menu' => __('Header Menu', 'roots')
@@ -23,6 +21,10 @@ function roots_setup() {
 
   register_nav_menus(array(
     'header_not_logged' => __('Header Not_Logged Buttons', 'roots')
+  ));
+
+  register_nav_menus(array(
+    'header_profile' => __('Header Profile', 'roots')
   ));
 
   // Add post thumbnails
