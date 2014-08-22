@@ -2,7 +2,7 @@
 global $wpdb;
  
 $category =get_queried_object(); 
-
+//echo "<pre><h5>"; var_dump($category ); echo "</h5></pre>"; 
 $nimagen = get_tax_meta($category->term_id,'text_cat_id'); 
 $nanterior= $nimagen-1;
 $naanterior = $nanterior-2;
@@ -79,8 +79,8 @@ $posts = query_posts( 'cat='.$category->term_id	 );
 		<div class="row">
 			<div class="col-sm-8 col-sm-offset-2">
 				<p class="text-center">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque elit lacus, tristique nec lacus ut, vulputate interdum risus. Etiam facilisis, odio id tincidunt eleifend, felis massa scelerisque est, at lobortis leo libero vel quam. Duis porttitor vehicula quam vitae dignissim. Curabitur accumsan lobortis diam, quis adipiscing ligula adipiscing id. Quisque suscipit, enim ac blandit sollicitudin, sem enim aliquam sapien, a fermentum enim lacus sit amet nunc. Morbi vitae volutpat sem. In consectetur a diam eu tempor. Morbi ornare velit vitae lectus vulputate, eu posuere lectus rhoncus.
-				</p>
+				 <?php echo $category->category_description ?>
+				 </p>
 			</div>
 		</div>
 		<div class="row">
