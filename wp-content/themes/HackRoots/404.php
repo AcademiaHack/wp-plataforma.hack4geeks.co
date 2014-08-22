@@ -1,13 +1,21 @@
-<div class="col-xs-12 col-sm-6 pull-right">
-  <div class="img-container">
-    <div class="error-text">
-      <h1>
-        <span>ERROR</span><br>
-        404
-      </h1>
-      <p>
-      	<?php _e('Page not found','roots'); ?>
-      </p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <img src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/404_guy.png" alt="">
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="img-container">
+        <div class="error-text">
+          <h1>
+            <span>ERROR</span><br>
+            404
+          </h1>
+          <p>
+            Página no <br>
+            encontrada
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
