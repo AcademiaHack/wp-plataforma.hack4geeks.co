@@ -1,47 +1,45 @@
 <?php
 
-	$path =  plugin_dir_url(__FILE__);  // define path to link and scripts
-	$pageURL = get_permalink();
-	$sign = strpos($pageURL,'?')?'&':'?';
-	extract($_REQUEST);
-	if($login1)
-	{
-		include 'UPB_register_file.php';
-	}
-	else if($login3)
-	{
-		include 'UPB_recover_password_file.php';
-	}
-	else if($login4)
-	{
-		include 'UPB_view_profile_file.php';
-	}
-	else if($login5)
-	{
-		include 'UPB_edit_profile_file.php';
-	}
-	else
-	{
-        ?>
-        <?php /*?><link type="text/css" href="<?php echo $path; ?>css/bootstrap-min.css" rel="stylesheet" /><?php */?>
-
-        <?php include 'UPB_theme.php'; ?>
+$path    = plugin_dir_url(__FILE__); // define path to link and scripts
+$pageURL = get_permalink();
+$sign    = strpos($pageURL, '?') ? '&' : '?';
+extract($_REQUEST);
+if ($login1) {
+    include 'UPB_register_file.php';
+} else if ($login3) {
+    include 'UPB_recover_password_file.php';
+} else if ($login4) {
+    include 'UPB_view_profile_file.php';
+} else if ($login5) {
+    include 'UPB_edit_profile_file.php';
+} else {
+?>
+        <?php
+    /*?><link type="text/css" href="<?php echo $path; ?>css/bootstrap-min.css" rel="stylesheet" /><?php */
+?>
 
         <?php
+    include 'UPB_theme.php';
+?>
 
-        if ( is_user_logged_in() )
-        {
-            ?>
+        <?php
+    
+    if (is_user_logged_in()) {
+?>
             <div id="upb-form">
                 <div class="col-sm-4 col-sm-offset-4">
                     <div class="row">
                         <div class="col-sm-6">
-                            <a class="btn btn-primary btn-block" href="<?php echo site_url(); ?>">
+                            <a class="btn btn-primary btn-block" href="<?php
+        echo site_url();
+?>">
                                 Volver al inicio
                             </a>
                         </div>
                         <div class="col-sm-6">
-                            <a class="btn btn-primary btn-block" href="<?php echo wp_logout_url( get_permalink() ); ?>" title="Logout">
+                            <a class="btn btn-primary btn-block" href="<?php
+        echo wp_logout_url(get_permalink());
+?>" title="Logout">
                                 Cerrar sesión
                             </a>
                         </div>
@@ -52,12 +50,16 @@
                     <div class="main-edit-profile" align="center">
                         You are already logged-in.<br /><br />
                         <div  class="all-log-device margin-left2">
-                            <a href="<?php echo site_url(); ?>">
+                            <a href="<?php
+        echo site_url();
+?>">
                                 <div class="UltimatePB-Button">
                                     Go back to site
                                 </div>
                             </a>
-                            <a href="<?php echo wp_logout_url( get_permalink() ); ?>" title="Logout">
+                            <a href="<?php
+        echo wp_logout_url(get_permalink());
+?>" title="Logout">
                                 <div class="UltimatePB-Button">
                                     Logout
                                 </div>
@@ -68,19 +70,15 @@
 
             </div>
             <?php
-        }
-
-
-
-        else
-
-
-
-        {
-
-
-
-            ?>
+    }
+    
+    
+    
+    else {
+        
+        
+        
+?>
 
 
 
@@ -109,74 +107,66 @@
 
 
             <?php
-
-
-
-            $submit = $_POST['submit'];
-
-
-
-            if($submit)
-
-
-
-            {
-
-
-
-                $user_login = $_POST['user_login'];
-
-
-
-                $user_pass = $_POST['user_pass'];
-
-
-
-                $rememberme = $_POST['rememberme'];
-
-
-
-
-
-
-
-                $creds = array();
-
-
-
-                $creds['user_login'] = trim($user_login);
-
-
-
-                $creds['user_password'] = trim($user_pass);
-
-
-
-                $creds['remember'] = $rememberme;
-
-
-
-                $user = wp_signon($creds,false);
-
-
-
-
-
-
-
-                if ( is_wp_error($user) )
-
-
-
-                {
-
-
-
-                   $loginErr= "Contraseña incorrecta";
-
-
-
-                   ?>
+        
+        
+        
+        $submit = $_POST['submit'];
+        
+        
+        
+        if ($submit) {
+            
+            
+            
+            $user_login = $_POST['user_login'];
+            
+            
+            
+            $user_pass = $_POST['user_pass'];
+            
+            
+            
+            $rememberme = $_POST['rememberme'];
+            
+            
+            
+            
+            
+            
+            
+            $creds = array();
+            
+            
+            
+            $creds['user_login'] = trim($user_login);
+            
+            
+            
+            $creds['user_password'] = trim($user_pass);
+            
+            
+            
+            $creds['remember'] = $rememberme;
+            
+            
+            
+            $user = wp_signon($creds, false);
+            
+            
+            
+            
+            
+            
+            
+            if (is_wp_error($user)) {
+                
+                
+                
+                $loginErr = "Contraseña incorrecta";
+                
+                
+                
+?>
 
 
 
@@ -289,10 +279,8 @@
 
 
                             }
-
-
-
-                            return true;
+ 
+                           return true;
 
 
 
@@ -304,11 +292,13 @@
 
 
 
-                    <form method="post" action="" id="loginform" name="loginform" onsubmit="javascript:return validateLogin();">
+                    <form method="post" action="#" id="loginform" name="loginform" onsubmit="javascript:return validateLogin();">
 
                         <div class="col-sm-4 col-sm-offset-4">
                             <label for="user_login">Usuario</label>
-                            <input type="text" size="20" value="<?php echo $user_login; ?>" class="form-control" id="user_login" name="user_login" >
+                            <input type="text" size="20" value="<?php
+                echo $user_login;
+?>" class="form-control" id="user_login" name="user_login" >
                             <div class="reg_frontErr" id="divuser_login" style="display:none;margin: -16px 0 23px !important; margin-left: 223px !important;">
                                 Nombre de usuario es requerido
                             </div>
@@ -318,7 +308,9 @@
                                 Introduzca su contraseña
                             </div>
                             <div id="loginErr" class="reg_frontErr">
-                                <?php echo $loginErr; ?>
+                                <?php
+                echo $loginErr;
+?>
                             </div>
                             <div>
                                 <input type="checkbox" value="true" id="rememberme" name="rememberme"> <span class="remember-me">Recuerdame</span>
@@ -328,7 +320,11 @@
                             </div>
                             <div>
                                 ¿Olvidó su contraseña? haga
-                                <a href="<?php echo $pageURL; ?><?php echo $sign; ?>login3=1" title="Lost Password">
+                                <a href="<?php
+                echo $pageURL;
+?><?php
+                echo $sign;
+?>login3=1" title="Lost Password">
                                     click aquí
                                 </a>
                                 para recuperarla
@@ -339,22 +335,18 @@
                 </form>
             </div>
             <?php
-
-
-
-        }
-
-
-
-        else
-
-
-
-        {
-
-
-
-            ?>
+                
+                
+                
+            }
+            
+            
+            
+            else {
+                
+                
+                
+?>
 
 
 
@@ -367,12 +359,16 @@
                 <div class="col-sm-4 col-sm-offset-4">
                     <div class="row">
                         <div class="col-sm-6">
-                            <a class="btn btn-primary btn-block" href="<?php echo site_url(); ?>">
+                            <a class="btn btn-primary btn-block" href="<?php
+                echo site_url();
+?>">
                                 Volver al inicio
                             </a>
                         </div>
                         <div class="col-sm-6">
-                            <a class="btn btn-primary btn-block" href="<?php echo wp_logout_url( get_permalink() ); ?>" title="Logout">
+                            <a class="btn btn-primary btn-block" href="<?php
+                echo wp_logout_url(get_permalink());
+?>" title="Logout">
                                 Cerrar sesión
                             </a>
                         </div>
@@ -382,12 +378,18 @@
                         <!-- <div class="col-sm-4 col-sm-offset-4">
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <a class="btn btn-primary btn-block" href="<?php echo $pageURL; ?><?php echo $sign; ?>login4=1" title="View Profile">
+                                    <a class="btn btn-primary btn-block" href="<?php
+                echo $pageURL;
+?><?php
+                echo $sign;
+?>login4=1" title="View Profile">
                                         Ver perfil
                                     </a>
                                 </div>
                                 <div class="col-sm-6">
-                                    <a class="btn btn-primary btn-block" href="<?php echo wp_logout_url( get_permalink() ); ?>" title="Logout">
+                                    <a class="btn btn-primary btn-block" href="<?php
+                echo wp_logout_url(get_permalink());
+?>" title="Logout">
                                         Cerrar sesión
                                     </a>
                                 </div>
@@ -397,12 +399,18 @@
                         <!-- <div id="main-upb-form">
                            <div class="main-edit-profile" align="center">
                             <div class="all-log-device margin-left2" >
-                                <a href="<?php echo $pageURL; ?><?php echo $sign; ?>login4=1" title="View Profile">
+                                <a href="<?php
+                echo $pageURL;
+?><?php
+                echo $sign;
+?>login4=1" title="View Profile">
                                     <div class="UltimatePB-Button">
                                         View Profile
                                     </div>
                                 </a>
-                                <a href="<?php echo wp_logout_url( get_permalink() ); ?>" title="Logout">
+                                <a href="<?php
+                echo wp_logout_url(get_permalink());
+?>" title="Logout">
                                     <div class="UltimatePB-Button">
                                         Logout
                                     </div>
@@ -418,28 +426,24 @@
 
 
                 <?php
-
-
-
-
-
+                
+                
+                
+                
+                
             }
-
-
-
+            
+            
+            
         }
-
-
-
-        else
-
-
-
-        {
-
-
-
-            ?>
+        
+        
+        
+        else {
+            
+            
+            
+?>
 
 
 
@@ -523,13 +527,8 @@
 
 
 
-                        }
-
-
-
-                        return true;
-
-
+                        } 
+                           return true;
 
                     }
 
@@ -539,18 +538,22 @@
 
 
 
-                <form method="post" action="" id="loginform" name="loginform" onsubmit="javascript:return validateLogin();">
+                <form method="post" action="#" id="loginform" name="loginform" onsubmit="javascript:return validateLogin();">
 
                     <div class="col-sm-4 col-sm-offset-4">
                         <label for="user_login">Usuario</label>
-                        <input type="text" size="20" value="<?php echo $user_login; ?>" id="user_login" name="user_login" class="form-control">
+                        <input type="text" size="20" value="<?php
+            echo $user_login;
+?>" id="user_login" name="user_login" class="form-control">
                         <div class="reg_frontErr" id="divuser_login" style="display:none;margin: -16px 0 23px !important; margin-left: 223px !important;">
                             Nombre de usuario es requerido
                         </div>
                         <label for="user_pass">Contraseña</label>
                         <input type="password" size="20" value="" id="user_pass" name="user_pass" class="form-control">
                         <div id="loginErr" class="reg_frontErr">
-                            <?php echo $loginErr; ?>
+                            <?php
+            echo $loginErr;
+?>
                         </div>
                         <div>
                             <input type="checkbox" value="true" id="rememberme" name="rememberme"> <span class="remember-me">Recuerdame</span>
@@ -560,7 +563,11 @@
                         </div>
                         <div>
                             ¿Olvidó su contraseña? haga
-                            <a href="<?php echo $pageURL; ?><?php echo $sign; ?>login3=1" title="Lost Password">
+                            <a href="<?php
+            echo $pageURL;
+?><?php
+            echo $sign;
+?>login3=1" title="Lost Password">
                                 click aquí
                             </a>
                             para recuperarla
@@ -574,7 +581,9 @@
                         <label for="user_login"> Username </label>
                     </div>
                     <div class="input-box">
-                        <input type="text" size="20" value="<?php echo $user_login; ?>" class="input" id="user_login" name="user_login" >
+                        <input type="text" size="20" value="<?php
+            echo $user_login;
+?>" class="input" id="user_login" name="user_login" >
                         <div class="reg_frontErr" id="divuser_login" style="display:none;">Please enter a username.</div>
                     </div>
                 </div>
@@ -586,7 +595,9 @@
                         <input type="password" size="20" value="" class="input" id="user_pass" name="user_pass" >
                         <div class="reg_frontErr" id="divuser_pass" style="display:none;">Please enter a password.</div>
                         <div id="loginErr" class="reg_frontErr">
-                            <?php echo $loginErr; ?>
+                            <?php
+            echo $loginErr;
+?>
                         </div>
                     </div>
                 </div>
@@ -603,22 +614,26 @@
             <div class="UltimatePB-Button-inp">
                 <input type="submit" value="Log In" class="button button-primary button-large" id="login" name="submit">
             </div>
-            <div class="UltimatePB-forgot-pass"> Forget Password?<a href="<?php echo $pageURL; ?><?php echo $sign; ?>login3=1" title="Lost Password">Click here</a> to resend </div>
+            <div class="UltimatePB-forgot-pass"> Forget Password?<a href="<?php
+            echo $pageURL;
+?><?php
+            echo $sign;
+?>login3=1" title="Lost Password">Click here</a> to resend </div>
         </div> -->
     </form>
 </div>
 <?php
-
-
-
-}
-
-
-
-}
-
-
-
+            
+            
+            
+        }
+        
+        
+        
+    }
+    
+    
+    
 }
 
 

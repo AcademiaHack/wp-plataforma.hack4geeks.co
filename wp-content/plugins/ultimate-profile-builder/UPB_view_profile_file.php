@@ -132,15 +132,11 @@
 							</div>
 							 <div class="row">
 								<div class="col-sm-6">
-									<a class="btn btn-default btn-flat btn-block" href="<?php echo $pageURL; ?><?php echo $sign; ?>login5=1" title="Edit Profile">
+									<a class="btn btn-default btn-flat btn-block" id="editPerfil" href="<?php echo $pageURL; ?><?php echo $sign; ?>login5=1" title="Edit Profile">
 										Editar
 									</a>
 								</div>
-								<div class="col-sm-6">
-									<a class="btn btn-default btn-flat btn-block" href="<?php echo wp_logout_url( get_permalink() ); ?>" title="Logout">
-										Cerrar sesión
-									</a>
-								</div>
+								 
 							</div>  
 						</div>
 					</div>
