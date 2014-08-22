@@ -6804,6 +6804,20 @@ body.single {
   padding-top: 65px;
 }
 
+.page-template-template-prox-php {
+  background-image: url('../img/fondo_mosaico.jpg');
+  padding-top: 65px;
+}
+
+.white-box-shadow {
+  background-color: #fff;
+  color: #0C0C18;
+  padding: 15px 0;
+  width: 70%;
+  margin-left: 15%;
+  margin-bottom: 40px;
+}
+
 .img-container {
   background-image: url('../img/white_hexagon.png');
   background-size: 100% 100%;
