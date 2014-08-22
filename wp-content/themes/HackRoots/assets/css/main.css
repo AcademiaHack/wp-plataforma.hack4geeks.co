@@ -1,4 +1,4 @@
-/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -6384,9 +6384,9 @@ header.navbar-default {
   position: absolute;
   content: "";
   height: 30px;
-  width: 20%;
+  width: 100%;
   background: #eee;
-  left: 0;
+  left: 1170px;
   bottom: 0px;
 }
 
@@ -6395,9 +6395,9 @@ header.navbar-default {
   position: absolute;
   content: "";
   height: 30px;
-  width: 20%;
+  width: 100%;
   background: #eee;
-  right: 0;
+  right: 1170px;
   bottom: 0px;
 }
 
@@ -6417,7 +6417,7 @@ header.navbar-default {
   background-image: url('../img/blue-background.jpg');
   -webkit-background-size: cover;
   background-size: cover;
-  padding: 50px 0;
+  padding: 50px 0 30px;
   text-align: center;
   color: #fff;
 }
@@ -6451,6 +6451,9 @@ header.navbar-default {
   background-position-y: 145%;
   -webkit-background-size: 83% auto;
   background-size: 83% auto;
+}
+.archive {
+  background: #fff;
 }
 .sprint {
   margin: 0 0 30px;
@@ -6714,9 +6717,6 @@ header.profile {
   padding-top: 30px;
 } /* IE < 8 */
 
-.archive {
-  background-position-y: -54%;
-}
 
 .archive .badge-container.off {
   width: 20%;
@@ -6764,7 +6764,7 @@ header.profile {
 }
 
 .parent-category {
-  padding: 5px 0;
+  padding: 25px 0 5px;
   background-color: #0D4F99;
   color: #fff;
   margin: 20px 0;
@@ -6798,7 +6798,7 @@ body.single {
   .navbar-default .navbar-collapse {
     border-color: #e7e7e7;
     position: absolute;
-    top: 70px;
+    top: 69px;
     left: 0;
   }
   #categorias ul {
@@ -6886,6 +6886,32 @@ body.single {
   top: 90px;
 }
 
+.page-template-template-profile-php .caret_header_3:after {
+  width: 100%;
+}
+
+.home .caret_header_2:before,
+.archive .caret_header_2:before,
+.single .caret_header_2:before,
+.page-template-template-login-php .caret_header_2:before,
+.page-template-template-registration-php .caret_header_2:before {
+  width: 50%;
+}
+
+.page-template-template-login-php .caret_header_2:after,
+.page-template-template-registration-php .caret_header_2:after {
+  width: 15%;
+}
+
+.page-template-template-registration-php .caret_header_3:after {
+  width: 10%;
+}
+
+/*Remover en caso de agregar footer*/
+footer {
+  display: none;
+}
+
 @media (min-width: 1300px) {
   .reto-bg {
     height: 220px;
@@ -6930,4 +6956,4 @@ body.single {
 }
 
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=main.css.map 
