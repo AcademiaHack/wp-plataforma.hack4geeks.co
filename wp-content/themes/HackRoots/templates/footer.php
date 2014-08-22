@@ -15,3 +15,9 @@
 		echo("<div id='username-text' class='hidden-xs hidden-sm hidden-md hidden-lg'>Usuario</div>");
 	}
 ?>
+<script> 
+	$(function() { 
+		$(".menu-username>a").text($("#username-text").text()); 
+	});
+	 
+</script> 

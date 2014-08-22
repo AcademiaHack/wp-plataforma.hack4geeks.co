@@ -5,8 +5,7 @@
 ?>
 
 <section id="comments">
-
-  <?php if (current_user_can( 'manage_options' )) : ?>
+v
 
   <?php if (have_comments()) : ?>
     <h3><?php printf(_n('Una respuesta to &ldquo;%2$s&rdquo;', '%1$s respuestas a &ldquo;%2$s&rdquo;', get_comments_number(), 'roots'), number_format_i18n(get_comments_number()), get_the_title()); ?></h3>
@@ -38,8 +37,7 @@
       <?php _e('Comments are closed.', 'roots'); ?>
     </div
 	
-  <?php endif; ?>
-  <?php endif; ?>
+  <?php endif; ?>v
 </section><!-- /#comments -->
  
 <section id="respond">
@@ -76,9 +74,7 @@ comment_form($comment_args); ?>
   <script>
   
   $(function() {
-	$( "<div id='mergeOption'></div>" ).insertAfter( ".form-submit" ); 
-	$( "#comment-form-upload" ).appendTo( "#mergeOption" );
-	$( ".form-submit" ).appendTo( "#mergeOption" ); 
+ $( "#comment-form-upload" ).remove(); 
 });
   </script>
 </section><!-- /#respond -->

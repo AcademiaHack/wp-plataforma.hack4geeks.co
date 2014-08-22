@@ -8,7 +8,7 @@ $nimagen = get_tax_meta(get_the_category()[0]->term_id,'text_cat_id');
     <div class="parent-category">
       <div class="container">
         <div class="pull-right">
-          <span>Como buscar, HTML</span>
+          <span><?php echo get_the_category()[0]->name ?></span>
           <img class="small-category" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $nimagen?>.png" alt="">
         </div>
       </div>
