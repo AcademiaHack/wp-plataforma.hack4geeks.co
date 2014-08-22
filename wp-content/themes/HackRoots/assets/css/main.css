@@ -6816,6 +6816,7 @@ body.single {
   padding: 65px 0;
 }
 
+
 .error-text h1 {
   color: #1461B9;
   font-size: 110px;
@@ -6832,6 +6833,34 @@ body.single {
 .error-text p {
   color: #333;
   font-size: 34px;
+}
+
+.img-container2 {
+  position: relative;
+  margin: 0 auto;
+  width: 673px;
+}
+
+.error-text2 {
+  position: absolute;
+  top: 200px;
+  text-align: center;
+  padding: 0 10px;
+  width: 340px;
+}
+
+.error-text2 h1 {
+  color: #1461B9;
+  font-size: 54px;
+  line-height: 70px;
+  font-weight: 100;
+  margin: 0;
+}
+
+.error-text2 p {
+  margin-top: 10px;
+  color: #333;
+  font-size: 32px;
 }
 
 @media (max-width: 768px) {

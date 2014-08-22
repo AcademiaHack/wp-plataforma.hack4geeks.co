@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-6">
-      <img class="logo" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/404_guy.png" alt="">
+      <img src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/404_guy.png" alt="">
     </div>
     <div class="col-xs-12 col-sm-6">
       <div class="img-container">
