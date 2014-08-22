@@ -59,5 +59,5 @@ var UTIL = {
 };
 
 $(document).ready(UTIL.loadEvents);
-
+  $(".menu-username>a").text($("#username-text").text());
 })(jQuery); // Fully reference jQuery after this point.
