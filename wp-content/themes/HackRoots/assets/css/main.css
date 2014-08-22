@@ -6413,9 +6413,7 @@ header.navbar-default {
   border-color: transparent #eee transparent transparent;
 }
 .post header {
-  background-image: url('../img/blue-background.jpg');
-  -webkit-background-size: cover;
-  background-size: cover;
+  background-image: url('../img/fondo_mosaico.jpg');
   padding: 50px 0 30px;
   text-align: center;
   color: #fff;
@@ -6634,9 +6632,7 @@ select:-webkit-autofill {
   padding-top: 30px;
 }
 header.profile {
-  background-image: url('../img/blue-background.jpg');
-  -webkit-background-size: 70% 70%;
-  background-size: 70% 70%;
+  background-image: url('../img/fondo_mosaico.jpg');
   padding: 70px 0 30px;
   color: #fff;
   margin-top: -12px;
@@ -6761,7 +6757,7 @@ header.profile {
 }
 
 .reto-background {
-  padding-top: 15%;
+  padding-top: 10%;
   background-color: #fff;
 }
 
@@ -6791,7 +6787,6 @@ body.single {
   padding: 10px 20px;
   margin-bottom: 20px;
   width: 60%;
-  margin-left: 20%;
 }
 
 .navbar-toggle {
@@ -6802,6 +6797,41 @@ body.single {
 
 .page-template-template-profile-php {
   padding-top: 60px;
+}
+
+.error404 {
+  background-image: url('../img/fondo_mosaico.jpg');
+  padding-top: 65px;
+}
+
+.img-container {
+  background-image: url('../img/white_hexagon.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  height: 425px;
+  width: 381px;
+  padding: 65px 0;
+}
+
+.error-text h1 {
+  color: #1461B9;
+  font-size: 110px;
+  line-height: 70px;
+  font-weight: 100;
+  margin: 0;
+}
+
+.error-text h1 span {
+  color: #1461B9;
+  font-size: 52px;
+}
+
+.error-text p {
+  color: #333;
+  font-size: 34px;
 }
 
 @media (max-width: 768px) {
@@ -6856,7 +6886,7 @@ body.single {
 }
 
 .alert-info {
-  background-image: url('../img/blue-background.jpg');
+  background-image: url('../img/fondo_mosaico.jpg');
   background-size: 50%;
   border-color: #1465C0;
   color: #fff;
