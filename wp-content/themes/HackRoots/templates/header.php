@@ -21,11 +21,20 @@
                               'after' => '<div class="caret_header"><span></span></div>',
                               'walker' => new Roots_Nav_Walker));
           }
-          if (has_nav_menu('header_logged')){
-            wp_nav_menu(array('theme_location' => 'header_logged',
-                              'menu_class' => 'nav navbar-nav navbar-right',
-                              'walker' => new Roots_Nav_Walker));
-          }
+
+          if(is_page_template('template-profile.php')){
+            if (has_nav_menu('header_profile')){
+              wp_nav_menu(array('theme_location' => 'header_profile',
+                                'menu_class' => 'nav navbar-nav navbar-right',
+                                'walker' => new Roots_Nav_Walker));
+            }
+          }else{
+            if (has_nav_menu('header_logged')){
+              wp_nav_menu(array('theme_location' => 'header_logged',
+                                'menu_class' => 'nav navbar-nav navbar-right',
+                                'walker' => new Roots_Nav_Walker));
+            }
+          }          
         }else{
           if (has_nav_menu('header_not_logged')){
             wp_nav_menu(array('theme_location' => 'header_not_logged',
