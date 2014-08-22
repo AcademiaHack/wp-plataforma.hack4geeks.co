@@ -12,7 +12,6 @@
   </header>
   <div class="container">
     <div class="entry-summary">
-      <h2><?php the_title(); ?></h2>
       <?php get_template_part('templates/entry-meta'); ?>
       <?php the_excerpt(); ?>
     </div>

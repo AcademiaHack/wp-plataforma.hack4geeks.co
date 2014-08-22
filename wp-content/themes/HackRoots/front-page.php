@@ -1,4 +1,9 @@
-<?php query_posts('cat=5');?>
+<?php 
+  $noticias_id = get_cat_ID( 'noticias' );
+  
+  query_posts('cat='.$noticias_id);
+?>
+
 <?php if (!have_posts()) : ?>
   <div class="alert alert-info">
     <?php _e('No se encontro ningun artículo.', 'roots'); ?>
@@ -12,8 +17,8 @@
 <?php if ($wp_query->max_num_pages > 1) : ?>
   <nav class="post-nav">
     <ul class="pager">
-      <li class="previous"><?php next_posts_link(__('&larr; Older posts', 'roots')); ?></li>
-      <li class="next"><?php previous_posts_link(__('Newer posts &rarr;', 'roots')); ?></li>
+      <li class="previous"><?php next_posts_link(__('&larr; Entradas anteriores', 'roots')); ?></li>
+      <li class="next"><?php previous_posts_link(__('Entradas posteriores &rarr;', 'roots')); ?></li>
     </ul>
   </nav>
 <?php endif; ?>
