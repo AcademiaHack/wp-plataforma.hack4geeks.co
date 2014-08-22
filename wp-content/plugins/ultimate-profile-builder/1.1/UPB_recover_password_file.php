@@ -4,11 +4,11 @@
 
 
 
-	$pageURL = get_permalink();
+	 $pageURL = get_permalink();
 
 
 
-	$sign = strpos($pageURL,'?')?'&':'?';
+	 $sign = strpos($pageURL,'?')?'&':'?';
 
 
 
@@ -16,7 +16,7 @@
 
 	//print_r($_REQUEST);die;	
 
-	extract($_REQUEST);
+	 extract($_REQUEST);
 
 
 
@@ -24,75 +24,75 @@
 
 
 
-	if($login1)
+	 if($login1)
 
 
 
-	{
+	 {
 
 
 
-		include 'UPB_register_file.php';
+	 	include 'UPB_register_file.php';
 
 
 
-	}
+	 }
 
 
 
-	else if($login2)
+	 else if($login2)
 
 
 
-	{
+	 {
 
 
 
-		include 'UPB_login_file.php';
+	 	include 'UPB_login_file.php';
 
 
 
-	}
+	 }
 
 
 
-	else if($login4)
+	 else if($login4)
 
 
 
-	{
+	 {
 
 
 
-		include 'UPB_view_profile_file.php';
+	 	include 'UPB_view_profile_file.php';
 
 
 
-	}
+	 }
 
 
 
-	else if($login5)
+	 else if($login5)
 
 
 
-	{
+	 {
 
 
 
-		include 'UPB_edit_profile_file.php';
+	 	include 'UPB_edit_profile_file.php';
 
 
 
-	}
+	 }
 
 
 
-	else
+	 else
 
 
 
-	{
+	 {
 
 
 
@@ -100,95 +100,95 @@
 
 
 
-?>
+	 	?>
 
 
 
-      <?php /*?>  <link type="text/css" href="<?php echo $path; ?>css/style.css" rel="stylesheet" /><?php */?>
+	 	<?php /*?>  <link type="text/css" href="<?php echo $path; ?>css/style.css" rel="stylesheet" /><?php */?>
 
-<?php include 'UPB_theme.php'; ?>
+	 	<?php include 'UPB_theme.php'; ?>
 
-<?php
+	 	<?php
 
 
 
-		$user_login = $_POST['user_login'];
+	 	$user_login = $_POST['user_login'];
 
 
 
-		if($user_login)
+	 	if($user_login)
 
 
 
-		{
+	 	{
 
 
 
-			$lostErr= "Username or E-mail does not exist in our system";
+	 		$lostErr= "Username or E-mail does not exist in our system";
 
 
 
-			$lostErrC = 'lostErr';
+	 		$lostErrC = 'lostErr';
 
 
 
-		}
+	 	}
 
 
 
-		else
+	 	else
 
 
 
-		{
+	 	{
 
 
 
-			$lostErrC = 'noErr';
+	 		$lostErrC = 'noErr';
 
 
 
-		}
+	 	}
 
 
 
-		global $wpdb;
+	 	global $wpdb;
 
 
 
-		$wp_usermeta=$wpdb->prefix."usermeta";
+	 	$wp_usermeta=$wpdb->prefix."usermeta";
 
 
 
-		$wp_users=$wpdb->prefix."users";
+	 	$wp_users=$wpdb->prefix."users";
 
 
 
-		if(username_exists( $user_login ))
+	 	if(username_exists( $user_login ))
 
 
 
-		{
+	 	{
 
-			$userstatus = 1;
+	 		$userstatus = 1;
 
-			$user_id = username_exists( $user_login );
+	 		$user_id = username_exists( $user_login );
 
 
 
-			$user_info = get_userdata($user_id);
+	 		$user_info = get_userdata($user_id);
 
 
 
-			$user_email = $user_info->user_email;
+	 		$user_email = $user_info->user_email;
 
 
 
-			$random_password = wp_generate_password( $length=12, $include_standard_special_chars=false );
+	 		$random_password = wp_generate_password( $length=12, $include_standard_special_chars=false );
 
 
 
-			wp_set_password( $random_password, $user_id );
+	 		wp_set_password( $random_password, $user_id );
 
 
 
@@ -196,15 +196,15 @@
 
 
 
-			$subject = get_bloginfo('name');
+	 		$subject = get_bloginfo('name');
 
 
 
-			$subject .= " - Lost Password";
+	 		$subject .= " - Lost Password";
 
 
 
-			$message = "This is your new password : " . $random_password;
+	 		$message = "This is your new password : " . $random_password;
 
 
 
@@ -212,149 +212,149 @@
 
 
 
-			wp_mail( $user_email, $subject, $message );
+	 		wp_mail( $user_email, $subject, $message );
 
 
 
-?>
+	 		?>
 
 
 
-			<style type="text/css">
+	 		<style type="text/css">
 
 
 
-                #recoverErr
+	 			#recoverErr
 
 
 
-                {
+	 			{
 
 
 
-                    display:none;
+	 				display:none;
 
 
 
-                    width:300px;
+	 				width:300px;
 
 
 
-                }
+	 			}
 
 
 
-            </style>
+	 		</style>
 
 
 
-          <div id="upb-form">  
+	 		<div id="upb-form">  
 
-          
+	 			
 
-          
+	 			
 
 
 
-          <div class="main-edit-profile" align="left">
+	 			<div class="main-edit-profile" align="left">
 
 
 
-                Password has been sent to your registered email.
+	 				Password has been sent to your registered email.
 
 
 
-                <br />
+	 				<br />
 
-           <div id="main-upb-form">  
+	 				<div id="main-upb-form">  
 
-                <div class="UPB-margin-left3">
+	 					<div class="UPB-margin-left3">
 
 
 
-                    <a href="<?php echo site_url(); ?>">
+	 						<a href="<?php echo site_url(); ?>">
 
 
 
-                        <div class="UltimatePB-Button">
+	 							<div class="UltimatePB-Button">
 
 
 
-                            Go back to Home-Page
+	 								Go back to Home-Page
 
 
 
-                        </div>
+	 							</div>
 
 
 
-                    </a>
+	 						</a>
 
 
 
-                    <a href="<?php echo $pageURL; ?><?php echo $sign; ?>login2=1" title="Login">
+	 						<a href="<?php echo $pageURL; ?><?php echo $sign; ?>login2=1" title="Login">
 
 
 
-                        <div class="UltimatePB-Button">
+	 							<div class="UltimatePB-Button">
 
 
 
-                            Go back to Login
+	 								Go back to Login
 
 
 
-                        </div>
+	 							</div>
 
 
 
-                    </a>
+	 						</a>
 
 
 
-                </div>
+	 					</div>
 
-</div>
+	 				</div>
 
-            </div>
+	 			</div>
 
-            
+	 			
 
-            
+	 			
 
-            </div>
+	 		</div>
 
 
 
-<?php
+	 		<?php
 
 
 
-		}
+	 	}
 
 
 
-		else if (email_exists( $user_login ))
+	 	else if (email_exists( $user_login ))
 
 
 
-		{
+	 	{
 
-			$userstatus = 1;
+	 		$userstatus = 1;
 
-			$user_id = email_exists( $user_login );
+	 		$user_id = email_exists( $user_login );
 
 
 
-			$user_email = $user_login;
+	 		$user_email = $user_login;
 
 
 
-			$random_password = wp_generate_password( $length=12, $include_standard_special_chars=false );
+	 		$random_password = wp_generate_password( $length=12, $include_standard_special_chars=false );
 
 
 
-			wp_set_password( $random_password, $user_id );
+	 		wp_set_password( $random_password, $user_id );
 
 
 
@@ -362,15 +362,15 @@
 
 
 
-			$subject = get_bloginfo('name');
+	 		$subject = get_bloginfo('name');
 
 
 
-			$subject .= " - Lost Password";
+	 		$subject .= " - Lost Password";
 
 
 
-			$message = "This is your new password : " . $random_password;
+	 		$message = "This is your new password : " . $random_password;
 
 
 
@@ -378,312 +378,312 @@
 
 
 
-			wp_mail($user_email, $subject, $message);
+	 		wp_mail($user_email, $subject, $message);
 
 
 
-?>
+	 		?>
 
 
 
-			<div class="main-edit-profile" align="center">
+	 		<div class="main-edit-profile" align="center">
 
 
 
-				Password has been sent to your registered email.
+	 			Password has been sent to your registered email.
 
 
 
-				<br />
+	 			<br />
 
 
 
-				<div class="margin-left">
+	 			<div class="margin-left">
 
 
 
-					<a href="<?php echo site_url(); ?>">
+	 				<a href="<?php echo site_url(); ?>">
 
 
 
-						<div class="UltimatePB-Button">
+	 					<div class="UltimatePB-Button">
 
 
 
-							Go back to Home-Page
+	 						Go back to Home-Page
 
 
 
-						</div>
+	 					</div>
 
 
 
-					</a>
+	 				</a>
 
 
 
-					<a href="<?php echo $pageURL; ?><?php echo $sign; ?>login2=1" title="Login">
+	 				<a href="<?php echo $pageURL; ?><?php echo $sign; ?>login2=1" title="Login">
 
 
 
-						<div class="UltimatePB-Button">
+	 					<div class="UltimatePB-Button">
 
 
 
-							Go back to Login
+	 						Go back to Login
 
 
 
-						</div>
+	 					</div>
 
 
 
-					</a>
+	 				</a>
 
 
 
-				</div>
+	 			</div>
 
 
 
-			</div>
+	 		</div>
 
 
 
-<?php
+	 		<?php
 
 
 
-		}
+	 	}
 
 
 
-		else
+	 	else
 
 
 
-		{
+	 	{
 
-			$userstatus = 0;
+	 		$userstatus = 0;
 
 
 
-?>
+	 		?>
 
 
 
-			<style type="text/css">
+	 		<style type="text/css">
 
 
 
-			
+	 			
 
-				.noErr{
+	 			.noErr{
 
 
 
-					display:none;
+	 				display:none;
 
 
 
-					width:300px;
+	 				width:300px;
 
 
 
-					margin: -20px 0 23px 223px !important;					
+	 				margin: -20px 0 23px 223px !important;					
 
 
 
-				}
+	 			}
 
 
 
-			</style>
+	 		</style>
 
 
 
-<?php
+	 		<?php
 
 
 
-		}
+	 	}
 
 
 
-?>
+	 	?>
 
 
 
-		<script language="javascript" type="text/javascript">
+	 	<script language="javascript" type="text/javascript">
 
 
 
-			function validate123()
+	 		function validate123()
 
 
 
-			{
+	 		{
 
 
 
-				var a = document.getElementById("user_login").value;
+	 			var a = document.getElementById("user_login").value;
 
 
 
-				if(a == "" || a == NULL)
+	 			if(a == "" || a == NULL)
 
 
 
-				{
+	 			{
 
 
 
-					document.getElementById('recoverErr').innerHTML='Username or E-mail is required';
+	 				document.getElementById('recoverErr').innerHTML='Campo requerido';
 
 
 
-					document.getElementById('recoverErr').style.display = 'block';
+	 				document.getElementById('recoverErr').style.display = 'block';
 
 
 
-					document.getElementById("user_login").focus();
+	 				document.getElementById("user_login").focus();
 
 
 
-					return false;
+	 				return false;
 
 
 
-				}
+	 			}
 
 
 
-				else
+	 			else
 
 
 
-				{
+	 			{
 
 
 
-					return true;
+	 				return true;
 
 
 
-				}
+	 			}
 
 
 
-			}
+	 		}
 
 
 
-		</script>
+	 	</script>
 
-<?php if($userstatus==0) : ?>
+	 	<?php if($userstatus==0) : ?>
 
-		<div id="upb-form">
+	 		<div id="upb-form">
 
 
 
-<div>Forgot Password?</div>
+	 			<div>Forgot Password?</div>
 
-	<form method="post" action="" id="lostpasswordform" name="lostpasswordform" onsubmit="javascript:return validate123();">
+	 			<form method="post" action="" id="lostpasswordform" name="lostpasswordform" onsubmit="javascript:return validate123();">
 
-			<div id="main-upb-form" >
+	 				<div id="main-upb-form" >
 
 
 
-			
+	 					
 
 
 
-					<div class="text-lable">
+	 					<div class="text-lable">
 
-     <div class="formtable">
+	 						<div class="formtable">
 
-<div class="lable-text">
+	 							<div class="lable-text">
 
-						<label for="user_login">
+	 								<label for="user_login">
 
 
 
-							Username / E-mail:
+	 									Username / E-mail:
 
 
 
-						</label></div>
+	 								</label></div>
 
-<div class="input-box">
+	 								<div class="input-box">
 
-						<input type="text" size="20" value="" class="input" id="user_login" name="user_login">
+	 									<input type="text" size="20" value="" class="input" id="user_login" name="user_login">
 
-      
+	 									
 
-      <div class="reg_frontErr <?php echo $lostErrC; ?>" id="recoverErr"><?php echo $lostErr; ?></div>
+	 									<div class="reg_frontErr <?php echo $lostErrC; ?>" id="recoverErr"><?php echo $lostErr; ?></div>
 
-      </div>
+	 								</div>
 
-      			
+	 								
 
-      </div>
+	 							</div>
 
 
 
-						<br />
+	 							<br />
 
 
 
-						<br />
+	 							<br />
 
 
 
-			
+	 							
 
 
 
-						<div style="clear:both;"></div>
+	 							<div style="clear:both;"></div>
 
 
 
-						<div class="login-info">Please enter your registered username or email, and we will resend your password.</div>
+	 							<div class="login-info">Please enter your registered username or email, and we will resend your password.</div>
 
 
 
-					</div>
+	 						</div>
 
 
 
-				
+	 						
 
-			</div>
+	 					</div>
 
-	<div class="UltimatePB-Button-area" align="center" >
+	 					<div class="UltimatePB-Button-area" align="center" >
 
 
 
-						<input type="submit" value="Submit" class="button button-primary button-large" id="PRSubmit" name="PRSubmit">
+	 						<input type="submit" value="Submit" class="button button-primary button-large" id="PRSubmit" name="PRSubmit">
 
 
 
-					</div>
+	 					</div>
 
 
 
-				</form>
+	 				</form>
 
 
 
-		</div>
+	 			</div>
 
-<?php endif; ?>
+	 		<?php endif; ?>
 
-<?php
+	 		<?php
 
 
 
-	}
+	 	}
 
 
 
-?>
+	 	?>

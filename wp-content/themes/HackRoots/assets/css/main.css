@@ -6450,10 +6450,6 @@ header.navbar-default {
 }
 .category {
   padding-top: 28px;
-  background-image: url('../img/hexagon-background.png');
-  background-position-y: 145%;
-  -webkit-background-size: 83% auto;
-  background-size: 83% auto;
 }
 .category-activities {
   background-image: url('../img/hexagon-background.png');
@@ -6867,17 +6863,21 @@ body.single {
 }
 
 .reto-bg {
-  background: rgba(14, 18, 119, 0.6);
   text-align: center;
-  padding-top: 30px;
   height: 220px;
   overflow: hidden;
+  background-image: url('../img/hexagon-background.png');
+  background-position-y: 145%;
+  -webkit-background-size: 83% auto;
+  background-size: 83% auto;
 }
 
 .badge-boxes {
   width: 100%;
   position: relative;
   padding: 0 1%;
+  background: rgba(14, 18, 119, 0.6);
+  padding-top: 30px;
 }
 
 .badge-box {
@@ -6911,7 +6911,8 @@ body.single {
 .archive .caret_header_2:before,
 .single .caret_header_2:before,
 .page-template-template-login-php .caret_header_2:before,
-.page-template-template-registration-php .caret_header_2:before {
+.page-template-template-registration-php .caret_header_2:before,
+.page-template-template-profile-php .caret_header_2:before {
   width: 50%;
 }
 
@@ -7051,6 +7052,18 @@ footer {
 #comment-form-upload:before:hover {
   border: 1px solid #1461B9;
   background-color: rgba(11, 52, 156, 0.5);
+}
+
+.reg_frontErr, #password_info, .formtable .input-box .reg_frontErr {
+  background-color: #fff;
+  border: 1px solid #E72D2D;
+  border-radius: 5px;
+  color: #E72D2D;
+  font-size: 12px;
+  padding: 10px;
+  margin: 6px 0;
+  float: left;
+  width: 100% !important;
 }
 
 @media (min-width: 1300px) {
