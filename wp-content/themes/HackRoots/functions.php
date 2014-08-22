@@ -32,3 +32,10 @@ foreach ($roots_includes as $file) {
   require_once $filepath;
 }
 unset($file, $filepath);
+// custom admin login logo
+function custom_login_logo() {
+	echo '<style type="text/css">
+	h1 a { background-image: url('.get_bloginfo('template_directory').'/assets/img/full-logo.png) !important; }
+	</style>';
+}
+add_action('login_head', 'custom_login_logo');
