@@ -6568,14 +6568,15 @@ header.navbar-default {
   position: relative;
   margin: 0 -1px;
 }
-.badge-container a .badge-img {
-  opacity: 0.7;
-  position: relative;
-  width: 100%;
+
+.badge-container .badge-img.off {
+  display: block;
+  max-width: 100%;
+  height: auto !important;
+  width: auto\9; /* ie8+9 */
+  -ms-interpolation-mode: bicubic; 
 }
-.badge-container a .badge-img:hover {
-  opacity: 1;
-}
+
 .next-prev {
   border: none;
   background-color: transparent;
@@ -6731,7 +6732,7 @@ header.profile {
   overflow: hidden;
 }
 
-.archive .badge-container a img.off {
+.archive .badge-container img.off {
   opacity: 0.7;
   position: relative;
   display: block;
@@ -6748,12 +6749,12 @@ header.profile {
   transform: rotate(180deg);
 }
 
-.archive .badge-container a img.on {
+.archive .badge-container img.on {
   opacity: 1;
 }
 
 .reto-background {
-  padding-top: 150px;
+  padding-top: 15%;
   background-color: #fff;
 }
 
@@ -6835,4 +6836,98 @@ body.single {
     width: 20px;
   }
 }
+
+.alert {
+  padding-top: 30px;
+  font-size: 20px;
+}
+
+.alert-info {
+  background-image: url('../img/blue-background.jpg');
+  background-size: 50%;
+  border-color: #1465C0;
+  color: #fff;
+}
+
+.reto-bg {
+  background: rgba(14, 18, 119, 0.6);
+  text-align: center;
+  padding-top: 30px;
+  height: 220px;
+  overflow: hidden;
+}
+
+.badge-boxes {
+  width: 100%;
+  position: relative;
+  padding: 0 1%;
+}
+
+.badge-box {
+  display: inline-block;
+  width: 18%;
+}
+
+.badge-box img {
+  width: 100%;
+}
+
+.badge-box.space {
+  
+}
+
+.badge-box.off {
+
+}
+
+.badge-box.on {
+  position: absolute;
+  margin-left: -9%;
+  top: 90px;
+}
+
+@media (min-width: 1300px) {
+  .reto-bg {
+    height: 220px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .reto-bg {
+    height: 160px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .reto-bg {
+    height: 130px;
+  }
+}
+
+
+@media (max-width: 1000px) {
+  .reto-bg {
+    height: 120px;
+  }
+}
+
+@media (max-width: 850px) {
+  .reto-bg {
+    height: 100px;
+  }
+}
+
+@media (max-width: 700px) {
+  .reto-bg {
+    height: 80px;
+  }
+}
+
+@media (max-width: 550px) {
+  .reto-bg {
+    height: 60px;
+  }
+}
+
+
 /*# sourceMappingURL=main.css.map */
