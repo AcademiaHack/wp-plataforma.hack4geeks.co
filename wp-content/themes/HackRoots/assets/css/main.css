@@ -6913,8 +6913,62 @@ footer {
   display: none;
 }
 
-.menu-username{
+.menu-username {
   display: block !important;
+  float: right !important;
+  min-width: 165px;
+}
+
+.menu-username > a {
+  border: 1px solid #000B1C;
+  background-color: transparent;
+  color: #000B1C !important;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  z-index: 999;
+}
+
+.menu-username.open > a {
+  border: 1px solid #000B1C !important;
+  background-color: #000B1C !important;
+  color: #fff !important;
+  border-bottom-right-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  -moz-border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -moz-border-bottom-left-radius: 0;
+}
+
+.menu-username a b {
+  color: #000B1C;
+}
+
+.menu-username.open a b {
+  color: #fff;
+}
+
+.menu-username .dropdown-menu {
+  width: 100% !important;
+  margin-top: -5px !important;
+  padding: 0;
+  padding-top: 4px;
+  z-index: 998;
+}
+
+.menu-username .dropdown-menu li {
+  width: 100% !important;
+}
+
+.menu-username .dropdown-menu li a {
+  height: auto !important;
+  padding: 10px 0 !important;
+}
+
+.menu-username .dropdown-menu li a:hover {
+  background-color: #0D4F99;
+  color: #fff;
 }
 
 #mergeOption {
