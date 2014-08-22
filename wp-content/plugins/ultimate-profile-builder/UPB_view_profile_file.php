@@ -109,16 +109,14 @@
 						<div class="col-sm-6">
 							<h1><?php the_author_meta('first_name',$current_id); ?>&nbsp;<?php the_author_meta('last_name',$current_id); ?></h1>
 							<div class="user-info">
-								<?php if (checkfieldname("upb_nicknameshowhide","yes")==true && (get_user_meta($current_id,'nickname', true) !="")) : ?>
-									<div class="user-name-info"><strong>Nombre:</strong> <?php the_author_meta('nickname',$current_id); ?></div>
-								<?php endif; ?>
+								 
 								<?php if (checkfieldname("upb_usernameshowhide","yes")==true ) : ?>
-									<div class="user-name-info"><strong>Usuario:</strong> <?php the_author_meta('user_login',$current_id); ?></div>
+									<div class="user-name-info"><img src="/wp-content/themes/HackRoots/assets/img/list-hexagon.png" alt=""> <?php echo " @";the_author_meta('user_login',$current_id); ?></div>
 								<?php endif; ?>
 								<?php if (checkfieldname("upb_emailshowhide","yes")==true) : ?>
-									<div class="user-email-info"><strong>Correo electrónico:</strong> <?php the_author_meta('user_email',$current_id); ?></div>
+									<div class="user-email-info"><img src="/wp-content/themes/HackRoots/assets/img/list-hexagon.png" alt=""><?php the_author_meta('user_email',$current_id); ?></div>
 								<?php endif; ?>
-								<?php if (checkfieldname("upb_websiteshowhide","yes")==true) : ?>
+							<!-- 	<?php if (checkfieldname("upb_websiteshowhide","yes")==true) : ?>
 									<div class="user-web-info"><strong>Página web:</strong> <?php the_author_meta('user_url',$current_id); ?></div>
 								<?php endif; ?>
 								<br>
@@ -130,9 +128,9 @@
 								<?php endif; ?>
 								<?php if (checkfieldname("upb_jabbergoogletalkshowhide","yes")==true && (get_user_meta($current_id,'jabber', true) !="")) : ?>
 									<div class="user-gtalk-info"><strong>Gtalk:</strong> <?php the_author_meta('jabber',$current_id); ?></div>
-								<?php endif; ?>
+								<?php endif; ?> -->
 							</div>
-							<div class="row">
+							 <div class="row">
 								<div class="col-sm-6">
 									<a class="btn btn-default btn-flat btn-block" href="<?php echo $pageURL; ?><?php echo $sign; ?>login5=1" title="Edit Profile">
 										Editar
@@ -143,14 +141,14 @@
 										Cerrar sesión
 									</a>
 								</div>
-							</div>
+							</div>  
 						</div>
 					</div>
 				</div>
 			</header>
 
 			<div id="upb-form">
-				<div> 
+				<!--<div> 
 						<div class="my-post">
 
 							<?php
@@ -208,7 +206,7 @@
 						</div>
 					</div>
 				</div>
-
+					-->
 				<?php
 
 
