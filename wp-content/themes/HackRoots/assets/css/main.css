@@ -6778,10 +6778,12 @@ body.single {
   background-color: #EBE9E9;
 }
 
-#respond {
+.comment-respond {
   background-color: #fff;
   padding: 10px 20px;
   margin-bottom: 20px;
+  width: 60%;
+  margin-left: 20%;
 }
 
 .navbar-toggle {
@@ -6913,6 +6915,57 @@ footer {
 
 .menu-username{
   display: block !important;
+}
+
+#mergeOption {
+  display: inline-flex;
+  width: 100%;
+}
+
+.form-submit {
+  display: inline-block;
+  width: 48%;
+  margin: 0 1%;
+}
+
+#comment-form-upload {
+  position: relative;
+  display: inline-block;
+  width: 48%;
+  margin: 0 1%;
+}
+
+#comment-form-upload p {
+  opacity: 0;
+  margin: 0;
+  display: inline-block;
+  width: 100%;
+}
+
+#comment-form-upload p input {
+  width: 100%;
+  height: 34px;
+  cursor: pointer;
+}
+
+#comment-form-upload:before {
+  content: "Adjuntar";
+  color: #fff;
+  background-color: #3276b1;
+  border: 1px solid #285e8e;
+  text-align: center;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  position: absolute;
+  width: 100%;
+}
+
+#comment-form-upload:before:hover {
+  border: 1px solid #1461B9;
+  background-color: rgba(11, 52, 156, 0.5);
 }
 
 @media (min-width: 1300px) {
