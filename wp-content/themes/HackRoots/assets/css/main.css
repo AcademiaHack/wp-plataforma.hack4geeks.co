@@ -6661,7 +6661,7 @@ header.profile {
   background-repeat: no-repeat;
   background-position: 50%;
   background-image: url('../img/default.jpg');
-  -webkit-background-size: 120% auto;
+  -webkit-background-size: 130% auto;
   background-size: 120% auto;
   visibility: visible;
   -webkit-transform: rotate(-60deg);
