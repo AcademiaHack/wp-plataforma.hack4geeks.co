@@ -1,101 +1,30 @@
 <?php 
 
 	$path =  plugin_dir_url(__FILE__); // define path to link and scripts
-
-
-
 	$pageURL = get_permalink();
-
-
-
 	$sign = strpos($pageURL,'?')?'&':'?';
-
-
-
 	global $wpdb;
-
-
-
 	$upb_fields =$wpdb->prefix."upb_fields";
-
-
-
 	extract($_REQUEST);
 
 
-
-
-
-
-
 	if($login1)
-
-
-
 	{
-
-
-
 		include 'UPB_register_file.php';
-
-
-
 	}
-
-
-
 	else if($login2)
-
-
-
 	{
-
-
-
 		include 'UPB_login_file.php';
-
-
-
 	}
-
-
-
 	else if($login3)
-
-
-
 	{
-
-
-
 		include 'UPB_recover_password_file.php';
-
-
-
 	}
-
-
-
 	else if($login4)
-
-
-
 	{
-
-
-
 		include 'UPB_view_profile_file.php';
-
-
-
 	}
-
-
-
 	else
-
-
-
 	{
 
 
@@ -669,19 +598,15 @@
 
 
 						</div> -->
-						<div class="col-sm-2 col-sm-offset-10"><br><br>
-							<a class="btn btn-primary btn-block" href="javascript:void(0);" onclick="javascript:history.back();">
-								Volver
-							</a>
-						</div>
+						
 
 						<script type="text/javascript">
 
-							function ValidateFileUpload() {
+						function ValidateFileUpload() {
 
-								var fuData = document.getElementById('avtar_image');
+							var fuData = document.getElementById('avtar_image');
 
-								var FileUploadPath = fuData.value;
+							var FileUploadPath = fuData.value;
 
 
 
@@ -693,11 +618,11 @@ if (FileUploadPath == '') {
 
 
 
-         } else {
+       } else {
 
-         	var Extension = FileUploadPath.substring(
+       	var Extension = FileUploadPath.substring(
 
-         		FileUploadPath.lastIndexOf('.') + 1).toLowerCase();
+       		FileUploadPath.lastIndexOf('.') + 1).toLowerCase();
 
 
 
@@ -759,17 +684,17 @@ else {
 
 
 
-	function validateyour_profile()
+function validateyour_profile()
 
 
 
-	{
+{
 
 
 
-		var fuData = document.getElementById('avtar_image');
+	var fuData = document.getElementById('avtar_image');
 
-		var FileUploadPath = fuData.value;
+	var FileUploadPath = fuData.value;
 
 
 
@@ -781,11 +706,11 @@ if (FileUploadPath == '') {
 
 
 
-          } else {
+        } else {
 
-          	var Extension = FileUploadPath.substring(
+        	var Extension = FileUploadPath.substring(
 
-          		FileUploadPath.lastIndexOf('.') + 1).toLowerCase();
+        		FileUploadPath.lastIndexOf('.') + 1).toLowerCase();
 
 
 
@@ -1428,11 +1353,17 @@ return true;
 																											<br>
 																											<div class="container">
 																												<div class="row">
-																													<div class="col-sm-4 col-sm-offset-4">
+																													<div class="col-sm-2 col-sm-offset-4">
 																														<input type="submit" value="Guardar" class="btn btn-primary btn-block" id="EPSubmit" name="EPSubmit">
+																													</div>
+																													<div class="col-sm-2">
+																														<a class="btn btn-primary btn-block" href="javascript:void(0);" onclick="javascript:history.back();">
+																															Volver
+																														</a>
 																													</div>
 																												</div>
 																											</div>
+
 
 
 
@@ -1563,9 +1494,9 @@ return true;
 
 																					<script>
 
-																						$("#EPSubmit").click(function () {
+																					$("#EPSubmit").click(function () {
 
-																							if (!$('#avtar_image').hasExtension(['.jpg', '.png', '.gif'])) {
+																						if (!$('#avtar_image').hasExtension(['.jpg', '.png', '.gif'])) {
 
     // ... block upload
 
@@ -1573,15 +1504,15 @@ return true;
 
     return false;
 
-  }
+}
 
-  else
+else
 
-  {
+{
 
-  	return true;	
+	return true;	
 
-  }
+}
 
 });
 

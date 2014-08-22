@@ -48,17 +48,17 @@
 
 'fields' => apply_filters( 'comment_form_default_fields', array(
 
-'author' => '<p class="comment-form-author">' . '<label for="author">' . __( 'Your Good Name' ) . '</label> ' . ( $req ? '<span>*</span>' : '' ) .
+'author' => '<p class="comment-form-author">' . '<label for="author">' . __( 'Nombre' ) . '</label> ' . ( $req ? '<span>*</span>' : '' ) .
 
-        '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>',   
+        '<input id="author" class="form-control" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>',   
 
     'email'  => '<p class="comment-form-email">' .
 
-                '<label for="email">' . __( 'Your Email Please' ) . '</label> ' .
+                '<label for="email">' . __( 'Correo electrónico' ) . '</label> ' .
 
                 ( $req ? '<span>*</span>' : '' ) .
 
-                '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' />'.'</p>',
+                '<input id="email" class="form-control" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' />'.'</p>',
 
     'url'    => '' ) ),
 
