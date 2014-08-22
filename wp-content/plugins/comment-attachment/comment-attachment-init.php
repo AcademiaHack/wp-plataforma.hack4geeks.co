@@ -811,7 +811,7 @@ if (!class_exists('wpCommentAttachment')){
                 $attachmentRel  = '';
 
                 // let's do wrapper html
-                $contentBefore  = '<div class="attachmentFile"><p>' . $this->settings[$this->adminPrefix . 'ThumbTitle'] . ' ';
+                $contentBefore  = '<div class="attachmentFile"><p>' . $this->settings[$this->adminPrefix] . ' ';
                 $contentAfter   = '</p><div class="clear clearfix"></div></div>';
 
                 // admin behaves differently
