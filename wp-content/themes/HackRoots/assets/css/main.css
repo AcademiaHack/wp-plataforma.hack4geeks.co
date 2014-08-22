@@ -6733,6 +6733,11 @@ header.profile {
 
 .archive .badge-container img {
   width: 100%;
+  opacity: 0.7;
+}
+
+.archive .badge-container img:hover {
+  opacity: 1;
 }
 
 .archive .badge-container img.off {
