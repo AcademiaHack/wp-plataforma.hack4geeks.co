@@ -6221,7 +6221,7 @@ body {
   padding-top: 40px;
 }
 .logged-in {
-  padding-top: 28px;
+  padding-top: 8px;
 }
 .logo {
   max-height: 100%;
@@ -6445,14 +6445,21 @@ header.navbar-default {
 .entry-summary {
   font-size: 18px;
 }
+.archive {
+  background: #fff;
+}
 .category {
+  padding-top: 28px;
   background-image: url('../img/hexagon-background.png');
   background-position-y: 145%;
   -webkit-background-size: 83% auto;
   background-size: 83% auto;
 }
-.archive {
-  background: #fff;
+.category-activities {
+  background-image: url('../img/hexagon-background.png');
+  background-position-y: 145%;
+  -webkit-background-size: 83% auto;
+  background-size: 83% auto;
 }
 .sprint {
   margin: 0 0 30px;
@@ -6471,7 +6478,7 @@ header.navbar-default {
   border-right: 1px solid #CBD0D5;
   border-left: 1px solid #CBD0D5;
   border-bottom: 1px solid #fff;
-  margin: 50px auto 20px;
+  margin: 70px auto 20px;
   font-size: 28px;
   display: table;
 }
@@ -6636,6 +6643,7 @@ header.profile {
   background-size: 70% 70%;
   padding: 70px 0 30px;
   color: #fff;
+  margin-top: -12px;
 }
 .hexagon {
   overflow: hidden;
@@ -6731,6 +6739,10 @@ header.profile {
   overflow: hidden;
 }
 
+.archive .badge-container img {
+  width: 100%;
+}
+
 .archive .badge-container img.off {
   opacity: 0.7;
   position: relative;
@@ -6790,6 +6802,10 @@ body.single {
   position: absolute;
   top: 0px;
   right: 10px;
+}
+
+.page-template-template-profile-php {
+  padding-top: 60px;
 }
 
 @media (max-width: 768px) {
@@ -6904,6 +6920,16 @@ body.single {
   width: 15%;
 }
 
+.logged-in .caret_header_2:before {
+  width: 20%;
+}
+
+.post .entry-content {
+  background-color: #fff;
+  padding: 20px 30px;
+  margin-bottom: 20px;
+}
+
 .comment-form-comment label {
   display: none;
 }
@@ -6964,6 +6990,11 @@ footer {
 .menu-username .dropdown-menu li a {
   height: auto !important;
   padding: 10px 0 !important;
+}
+
+.menu-username .dropdown-menu .active a {
+  background-color: #105FB8;
+  color: #fff;
 }
 
 .menu-username .dropdown-menu li a:hover {
