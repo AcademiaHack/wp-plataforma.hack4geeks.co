@@ -4,6 +4,9 @@
   query_posts('cat='.$noticias_id);
 ?>
 
+<!-- Agregando el caret al header -->
+<script>$(".menu-noticias").attr("class","active");</script>
+
 <?php if (!have_posts()) : ?>
   <div class="alert alert-info">
     <?php _e('No se encontro ningun artículo.', 'roots'); ?>
