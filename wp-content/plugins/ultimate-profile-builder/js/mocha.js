@@ -216,7 +216,7 @@ function outputResult()
 
 	{
 
-		complexity.html("Weak!").removeClass("strong stronger strongest").addClass("weak");
+		complexity.html("Clave débil!").removeClass("strong stronger strongest").addClass("weak");
 
 		document.getElementById('complexity').style.display = 'block';
 
@@ -228,7 +228,7 @@ function outputResult()
 
 	{
 
-		complexity.html("Weak!").removeClass("strong stronger strongest").addClass("weak");
+		complexity.html("Clave débil!").removeClass("strong stronger strongest").addClass("weak");
 
 		document.getElementById('complexity').style.display = 'block';
 
@@ -240,7 +240,7 @@ function outputResult()
 
 	{
 
-		complexity.html("Average!").removeClass("stronger strongest").addClass("strong");
+		complexity.html("Clave simple!").removeClass("stronger strongest").addClass("strong");
 
 		document.getElementById('complexity').style.display = 'block';
 
@@ -252,7 +252,7 @@ function outputResult()
 
 	{
 
-		complexity.html("√ &nbsp; Strong!").removeClass("strongest").addClass("stronger");
+		complexity.html("√ &nbsp; Clave fuerte!").removeClass("strongest").addClass("stronger");
 
 		document.getElementById('complexity').style.display = 'block';
 
@@ -264,7 +264,7 @@ function outputResult()
 
 	{
 
-		complexity.html("√ &nbsp; Secure!").addClass("strongest");
+		complexity.html("√ &nbsp; Misión imposible!").addClass("strongest");
 
 		document.getElementById('complexity').style.display = 'block'; 
 

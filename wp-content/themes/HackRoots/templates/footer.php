@@ -16,7 +16,7 @@
 		echo("<div id='username-text' class='hidden-xs hidden-sm hidden-md hidden-lg'>Usuario</div>");
 	}
 ?>
-<a style="display: none;"   id="logoutPerfil" href="<?php echo wp_logout_url( get_permalink() ); ?>" title="Logout">
+<a style="display: none;"   id="logoutPerfil" href="<?php echo wp_logout_url(get_bloginfo('url')); ?>" title="Logout">
 										Cerrar sesión
 									</a>
 <script> 

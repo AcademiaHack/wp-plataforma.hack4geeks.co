@@ -71,8 +71,8 @@
          </style>
 
          <div>
-         <h3 class="text-center">Ya se encuentra registrado en el sístema</h3>
-          <div class="col-sm-4 col-sm-offset-4">
+           <h3 class="text-center">Ya se encuentra registrado en el sístema</h3>
+           <div class="col-sm-4 col-sm-offset-4">
             <div class="row">
               <div class="col-sm-6">
                 <a class="btn btn-primary btn-block" href="<?php echo site_url(); ?>">
@@ -129,10 +129,11 @@
           background-color: #FFBABA;
         }
       </style>
-      <div class="error" align="center"> Sorry, you didn't enter the correct captcha code. </div>
-      <br />
-      <br />
-      <br />
+      <div class="col-sm-4 col-sm-offset-4">
+        <div class="error" align="center">
+          Código captcha incorrecto.
+        </div>
+      </div>
       <?php
       $submit = 0;
     }
@@ -199,16 +200,14 @@ if ( !$user_id and email_exists($user_email) == false )
    background-color: #DFF2BF;
  }
 </style>
-<div id="upb-form">
-  <div>
-    <div class="info-text-success" align="center"> ¡Registro exitoso! Verifique su correo electronico para obtener una contraseña <br />
-      <span style="font-style:italic;"> Para reenviar su contraseña haga <a href="<?php echo $pageURL; ?><?php echo $sign; ?>login3=1" title="Lost Password">click aquí</a> </span> </div>
-    </div>
-  </div>
-  <div class="UltimatePB-Button-area" style="padding-bottom: 59px;">
-    <div class="UltimatePB-Button-inp upb-success-page" style="margin-top: 12px;"> <a href="<?php echo $pageURL; ?><?php echo $sign; ?>login2=1" title="Registration"> Inicie sesión </a> </div>
-  </div>
-  <?php
+<h4 class="text-center">
+  ¡Registro exitoso! Verifique su correo electronico para obtener una contraseña <br />
+  <span style="font-style:italic;"> Para reenviar su contraseña haga <a href="<?php echo $pageURL; ?><?php echo $sign; ?>login3=1" title="Lost Password">click aquí</a> </span>
+</h4>
+<div class="col-sm-4 col-sm-offset-4">
+<a class="btn btn-primary btn-block" href="<?php echo $pageURL; ?><?php echo $sign; ?>login2=1" title="Registration"> Inicie sesión </a>
+</div>
+<?php
 }
 else
 {
@@ -218,17 +217,26 @@ else
   ?>
   <div upb-form>
     <div>
-      <div class="main-edit-profile" align="center"> Disculpe, el nombre de usuario o correo ya está siendo utilizado <br />
-        <br />
-        <div align="center" style="width:430px;"> <a href="javascript:void(0);" onclick="javascript:history.back();" title="Registration">
-          <div class="UltimatePB-Button"> Volver al registro </div>
-        </a> &nbsp; <a href="<?php echo site_url(); ?>">
-        <div class="UltimatePB-Button"> Volver al inicio </div>
-      </a> </div>
+      <h4 class="text-center">
+        Disculpe, el nombre de usuario o correo ya está siendo utilizado
+      </h4>
+      <div class="col-sm-6 col-sm-offset-3">
+        <div class="row">
+          <div class="col-sm-6">
+            <a class="btn btn-primary btn-block" href="javascript:void(0);" onclick="javascript:history.back();" title="Registration">
+              Volver al registro
+            </a>
+          </div>
+          <div class="col-sm-6">
+            <a class="btn btn-primary btn-block" href="<?php echo site_url(); ?>">
+              Volver al inicio
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-<?php
+  <?php
 }
 }
 else
@@ -568,7 +576,7 @@ else
 <br class="clear">
 </div>
 <div class="col-sm-4 col-sm-offset-4">
-  <div class="row">
+  <div class="row bottom_space">
     <div class="col-sm-6">
       <input type="submit" value="Registar" class="btn btn-primary btn-block" id="submit" name="submit" >
     </div>

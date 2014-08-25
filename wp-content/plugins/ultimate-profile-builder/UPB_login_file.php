@@ -299,7 +299,7 @@ if ($login1) {
                             <input type="text" size="20" value="<?php
                 echo $user_login;
 ?>" class="form-control" id="user_login" name="user_login" >
-                            <div class="reg_frontErr" id="divuser_login" style="display:none;margin: -16px 0 23px !important; margin-left: 223px !important;">
+                            <div class="reg_frontErr" id="divuser_login" style="display:none;">
                                 Nombre de usuario es requerido
                             </div>
                             <label for="user_pass">Contraseña</label>
@@ -545,7 +545,7 @@ if ($login1) {
                         <input type="text" size="20" value="<?php
             echo $user_login;
 ?>" id="user_login" name="user_login" class="form-control">
-                        <div class="reg_frontErr" id="divuser_login" style="display:none;margin: -16px 0 23px !important; margin-left: 223px !important;">
+                        <div class="reg_frontErr" id="divuser_login" style="display:none;">
                             Nombre de usuario es requerido
                         </div>
                         <label for="user_pass">Contraseña</label>
