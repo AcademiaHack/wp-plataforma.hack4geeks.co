@@ -200,16 +200,14 @@ if ( !$user_id and email_exists($user_email) == false )
    background-color: #DFF2BF;
  }
 </style>
-<div id="upb-form">
-  <div>
-    <div class="info-text-success" align="center"> ¡Registro exitoso! Verifique su correo electronico para obtener una contraseña <br />
-      <span style="font-style:italic;"> Para reenviar su contraseña haga <a href="<?php echo $pageURL; ?><?php echo $sign; ?>login3=1" title="Lost Password">click aquí</a> </span> </div>
-    </div>
-  </div>
-  <div class="UltimatePB-Button-area" style="padding-bottom: 59px;">
-    <div class="UltimatePB-Button-inp upb-success-page" style="margin-top: 12px;"> <a href="<?php echo $pageURL; ?><?php echo $sign; ?>login2=1" title="Registration"> Inicie sesión </a> </div>
-  </div>
-  <?php
+<h4 class="text-center">
+  ¡Registro exitoso! Verifique su correo electronico para obtener una contraseña <br />
+  <span style="font-style:italic;"> Para reenviar su contraseña haga <a href="<?php echo $pageURL; ?><?php echo $sign; ?>login3=1" title="Lost Password">click aquí</a> </span>
+</h4>
+<div class="col-sm-4 col-sm-offset-4">
+<a class="btn btn-primary btn-block" href="<?php echo $pageURL; ?><?php echo $sign; ?>login2=1" title="Registration"> Inicie sesión </a>
+</div>
+<?php
 }
 else
 {
@@ -219,7 +217,7 @@ else
   ?>
   <div upb-form>
     <div>
-    <h4 class="text-center">
+      <h4 class="text-center">
         Disculpe, el nombre de usuario o correo ya está siendo utilizado
       </h4>
       <div class="col-sm-6 col-sm-offset-3">
