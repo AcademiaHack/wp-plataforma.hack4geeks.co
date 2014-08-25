@@ -129,10 +129,11 @@
           background-color: #FFBABA;
         }
       </style>
-      <div class="error" align="center"> Sorry, you didn't enter the correct captcha code. </div>
-      <br />
-      <br />
-      <br />
+        <div class="col-sm-4 col-sm-offset-4">
+          <div class="error" align="center">
+            Código captcha incorrecto.
+          </div>
+        </div>
       <?php
       $submit = 0;
     }
@@ -568,7 +569,7 @@ else
 <br class="clear">
 </div>
 <div class="col-sm-4 col-sm-offset-4">
-  <div class="row">
+  <div class="row bottom_space">
     <div class="col-sm-6">
       <input type="submit" value="Registar" class="btn btn-primary btn-block" id="submit" name="submit" >
     </div>
