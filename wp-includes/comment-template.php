@@ -1296,7 +1296,7 @@ function get_comment_reply_link($args = array(), $comment = null, $post = null) 
 	$defaults = array(
 		'add_below'  => 'comment',
 		'respond_id' => 'respond',
-		'reply_text' => __('Reply'),
+		'reply_text' => '<span class="glyphicon glyphicon-comment"></span>',
 		'login_text' => __('Log in to Reply'),
 		'depth'      => 0,
 		'before'     => '',
