@@ -490,7 +490,7 @@
 
 
 
-	 				margin: -20px 0 23px 223px !important;					
+	 				margin: 6px 0 !important;					
 
 
 

@@ -484,104 +484,46 @@
 
 
 				?>
-
-
-
-				<div align="center" >
-
-
-
-					<div class="profile-updated-succ"> Your profile has been updated successfully.</div>
-
-
-
-
-
-					<div>
-
-
-
-						<div align="center"  class="updated-successfully-upb-device" >
-
-
-
-							<div class="all-log-device margin-left2"><a href="javascript:void(0);" onclick="javascript:history.back();">
-
-
-
-								<div class="UltimatePB-Button">
-
-
-
-									Go back to edit-profile
-
-
-
-								</div>
-
-
-
+				
+				<h4 class="text-center">
+					Tu perfil ha sido actualizado exitosamente.
+				</h4>
+				<div class="col-sm-6 col-sm-offset-3">
+					<div class="row">
+						<div class="col-sm-6">
+							<a class="btn btn-primary btn-block" href="javascript:void(0);" onclick="javascript:history.back();">
+							Volver al editor
 							</a>
-
-
-
-							&nbsp;
-
-
-
-							<a href="<?php echo $pageURL.$sign; ?>login4=1" title="Home-Page">
-
-
-
-								<div class="UltimatePB-Button">
-
-
-
-									Go back to site
-
-
-
-								</div>
-
-
-
-							</a>
-
 						</div>
+						<div class="col-sm-6">
+							<a class="btn btn-primary btn-block" href="<?php echo $pageURL.$sign; ?>login4=1" title="Home-Page">
+								Volver al inicio
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<?php
 
 
 
-
-
-					</div></div>
-
+			}
 
 
 
+			else
 
 
 
-					<?php
+			{
 
 
 
-				}
+				?>
 
 
 
-				else
-
-
-
-				{
-
-
-
-					?>
-
-
-
-					<div class="wrap edit-profile-top-area-device">
+				<div class="wrap edit-profile-top-area-device">
 						<!-- <div class="edit-info">
 							<div class="upb-button">
 
@@ -602,11 +544,11 @@
 
 						<script type="text/javascript">
 
-						function ValidateFileUpload() {
+							function ValidateFileUpload() {
 
-							var fuData = document.getElementById('avtar_image');
+								var fuData = document.getElementById('avtar_image');
 
-							var FileUploadPath = fuData.value;
+								var FileUploadPath = fuData.value;
 
 
 
@@ -684,17 +626,17 @@ else {
 
 
 
-function validateyour_profile()
+	function validateyour_profile()
 
 
 
-{
+	{
 
 
 
-	var fuData = document.getElementById('avtar_image');
+		var fuData = document.getElementById('avtar_image');
 
-	var FileUploadPath = fuData.value;
+		var FileUploadPath = fuData.value;
 
 
 
@@ -1494,9 +1436,9 @@ return true;
 
 																					<script>
 
-																					$("#EPSubmit").click(function () {
+																						$("#EPSubmit").click(function () {
 
-																						if (!$('#avtar_image').hasExtension(['.jpg', '.png', '.gif'])) {
+																							if (!$('#avtar_image').hasExtension(['.jpg', '.png', '.gif'])) {
 
     // ... block upload
 
