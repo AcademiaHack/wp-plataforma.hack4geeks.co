@@ -1,5 +1,8 @@
-<?php get_template_part('templates/page', 'header');
- $activity = get_category_by_slug('activities');
+<?php 
+
+get_template_part('templates/page', 'header');
+
+$activity = get_category_by_slug('activities');
 $args = array(
   'orderby' => 'id',
   'order' => 'ASC',  

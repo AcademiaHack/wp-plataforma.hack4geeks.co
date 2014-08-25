@@ -1,4 +1,6 @@
-<?php get_template_part('templates/page', 'header'); 
+<?php 
+
+get_template_part('templates/page', 'header'); 
 global $wpdb;
 
 $category =get_queried_object(); 
@@ -38,6 +40,9 @@ else if ($nimagen+2>=56)
 $posts = query_posts( 'cat='.$category->term_id	 ); 
 
 ?>
+
+<!-- Agregando el caret al header -->
+<script>$(".menu-actividades").attr("class","active");</script>
 
 <header class="reto-bg">
 	<div class="badge-boxes">

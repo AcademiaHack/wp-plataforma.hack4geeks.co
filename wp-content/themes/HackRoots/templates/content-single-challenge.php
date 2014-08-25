@@ -1,3 +1,6 @@
+<!-- Agregando el caret al header -->
+<script>$(".menu-actividades").attr("class","active");</script>
+
 <?php while (have_posts()) : the_post();
 
 $nimagen = get_tax_meta(get_the_category()[0]->term_id,'text_cat_id'); 
