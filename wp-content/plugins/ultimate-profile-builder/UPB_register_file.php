@@ -71,8 +71,8 @@
          </style>
 
          <div>
-         <h3 class="text-center">Ya se encuentra registrado en el sístema</h3>
-          <div class="col-sm-4 col-sm-offset-4">
+           <h3 class="text-center">Ya se encuentra registrado en el sístema</h3>
+           <div class="col-sm-4 col-sm-offset-4">
             <div class="row">
               <div class="col-sm-6">
                 <a class="btn btn-primary btn-block" href="<?php echo site_url(); ?>">
@@ -129,11 +129,11 @@
           background-color: #FFBABA;
         }
       </style>
-        <div class="col-sm-4 col-sm-offset-4">
-          <div class="error" align="center">
-            Código captcha incorrecto.
-          </div>
+      <div class="col-sm-4 col-sm-offset-4">
+        <div class="error" align="center">
+          Código captcha incorrecto.
         </div>
+      </div>
       <?php
       $submit = 0;
     }
@@ -219,17 +219,26 @@ else
   ?>
   <div upb-form>
     <div>
-      <div class="main-edit-profile" align="center"> Disculpe, el nombre de usuario o correo ya está siendo utilizado <br />
-        <br />
-        <div align="center" style="width:430px;"> <a href="javascript:void(0);" onclick="javascript:history.back();" title="Registration">
-          <div class="UltimatePB-Button"> Volver al registro </div>
-        </a> &nbsp; <a href="<?php echo site_url(); ?>">
-        <div class="UltimatePB-Button"> Volver al inicio </div>
-      </a> </div>
+    <h4 class="text-center">
+        Disculpe, el nombre de usuario o correo ya está siendo utilizado
+      </h4>
+      <div class="col-sm-6 col-sm-offset-3">
+        <div class="row">
+          <div class="col-sm-6">
+            <a class="btn btn-primary btn-block" href="javascript:void(0);" onclick="javascript:history.back();" title="Registration">
+              Volver al registro
+            </a>
+          </div>
+          <div class="col-sm-6">
+            <a class="btn btn-primary btn-block" href="<?php echo site_url(); ?>">
+              Volver al inicio
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-<?php
+  <?php
 }
 }
 else
