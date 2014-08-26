@@ -79,8 +79,7 @@ define('WPLANG', 'es_VE');
  * in their development environments.
  */
 define('WP_DEBUG', false);
-
-define('RELOCATE', false);
+ 
 
 /* That's all, stop editing! Happy blogging. */
 
@@ -89,6 +88,5 @@ if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
 /** Sets up WordPress vars and included files. */
-require_once(ABSPATH . 'wp-settings.php');
-define('WP_ENV', 'development');
+require_once(ABSPATH . 'wp-settings.php'); 
 define('RELOCATE',true);
