@@ -95,17 +95,17 @@
   {
    $countusers = count_users();
 			//print_r($countusers);
-   if($countusers['total_users']<=100)
+   if($countusers['total_users']<=100000)
    {
      require_once('recaptchalib.php');
 			// Get a key from https://www.google.com/recaptcha/admin/create
-     $publickey = "6LfLhOESAAAAAPWB64QP-rxYyuE2DcxfQZd0Anot";
-     $privatekey = "6LfLhOESAAAAAIu-Y4ySfijTeb_yVAdv28fVXS-p";
+     $publickey = "6LfoLvkSAAAAACmpQrtICE2xOul88FIIAszNa5VA";
+     $privatekey = "6LfoLvkSAAAAAFR_SXe4cXdG9AL8CXAEf-fNleDB";
 			# the response from reCAPTCHA
      $resp = null;
 			# the error code from reCAPTCHA, if any
      $error = null;
-			# was there a reCAPTCHA response?
+			# was there a reCAPTCHA response? 
      if ($_POST["recaptcha_response_field"])
      {
       $resp = recaptcha_check_answer ($privatekey,
@@ -114,130 +114,150 @@
         $_POST["recaptcha_response_field"]);
       if ($resp->is_valid)
       {
-       $submit = 1;
-     }
-     else
-     {
-      ?>
-      <style type="text/css">
-        .error
-        {
-          border: 1px solid #00529B;
-          padding-bottom:15px;
-          padding-top:15px;
-          color: #D8000C;
-          background-color: #FFBABA;
-        }
-      </style>
-      <div class="col-sm-4 col-sm-offset-4">
-        <div class="error" align="center">
-          Código captcha incorrecto.
+       $submitt = 1;
+      }
+       else
+       {
+        ?>
+        <style type="text/css">
+          .error
+          {
+            border: 1px solid #00529B;
+            padding-bottom:15px;
+            padding-top:15px;
+            color: #D8000C;
+            background-color: #FFBABA;
+          }
+        </style>
+        <div class="col-sm-4 col-sm-offset-4">
+          <div class="error" align="center">
+            Código captcha incorrecto.
+          </div>
         </div>
-      </div>
-      <?php
-      $submit = 0;
-    }
+        <?php 
+      }
   }
-if($submit) // checking if the submit button is pressed or not
-{
-$user_name = $_POST['user_name']; // receiving username
-$user_email = $_POST['user_email']; // receving email address
-$inputPassword = $_POST['inputPassword']; // receiving password
-$user_confirm_password = $_POST['user_confirm_password']; // receving confirm password
-$user_id = username_exists( $user_name ); // checking if username is already exists.
-if ( !$user_id and email_exists($user_email) == false )
-{
-  if($pwd_show != "no")
-  {
-   $random_password = $inputPassword;
-//echo $random_password;die;
- }
- else
- {
-   $random_password = $inputPassword;
- }
- $user_id = wp_create_user( $user_name, $random_password, $user_email );
- $subject = get_bloginfo('name');
- $subject .= " - Registration";
- $message = "This is your password : " . $random_password;
- $qry1 = "select * from $upb_fields where registration = '1' and user_group like '%".$content['role']."%' order by ordering asc";
- $reg1 = $wpdb->get_results($qry1);
-//$reg1=mysql_query($qry1);
-
-//$count = mysql_num_rows($reg1);
- if(!empty($reg1))
- {
-   foreach($reg1 as $row1)
-   {
-     $Customfield = str_replace(" ","_",$row1->Name);
-	//echo $Customfield;die;
-     add_user_meta( $user_id, $Customfield, $_POST[$Customfield], true );	
-     update_user_meta( $user_id, $Customfield, $_POST[$Customfield], $prev_value );
-   }
-
- }
- if($content['role']!="")
- {   
-   if($content['role']=='Subscriber' || $content['role']=='Administrator' || $content['role']=='Editor' || $content['role']=='Author' || $content['role']=='Contributor')
-   {
-     $role = strtolower($content['role']);
-   }
-   else
-   {
-     $role = $content['role'];	
-   }
-   $user_id = wp_update_user( array( 'ID' => $user_id, 'role' => $content['role'] ) );
- }
- wp_mail( $user_email, $subject, $message );
+  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+   if (!$_POST["recaptcha_response_field"]){ // …
  ?>
- <style type="text/css">
-  .success
-  {
-   border: 1px solid #00529B;
-   padding-bottom:15px;
-   padding-top:15px;
-   color: #4F8A10;
-   background-color: #DFF2BF;
- }
-</style>
-<h4 class="text-center">
-  ¡Registro exitoso! Verifique su correo electronico para obtener una contraseña <br />
-  <span style="font-style:italic;"> Para reenviar su contraseña haga <a href="<?php echo $pageURL; ?><?php echo $sign; ?>login3=1" title="Lost Password">click aquí</a> </span>
-</h4>
-<div class="col-sm-4 col-sm-offset-4">
-<a class="btn btn-primary btn-block" href="<?php echo $pageURL; ?><?php echo $sign; ?>login2=1" title="Registration"> Inicie sesión </a>
-</div>
-<?php
-}
-else
-{
-	$random_password = __('User already exists.  Password inherited.');
-//					print_r($random_password);
-//					print_r($user_id);
-  ?>
-  <div upb-form>
-    <div>
-      <h4 class="text-center">
-        Disculpe, el nombre de usuario o correo ya está siendo utilizado
-      </h4>
-      <div class="col-sm-6 col-sm-offset-3">
-        <div class="row">
-          <div class="col-sm-6">
-            <a class="btn btn-primary btn-block" href="javascript:void(0);" onclick="javascript:history.back();" title="Registration">
-              Volver al registro
-            </a>
+    <style type="text/css">
+          .error
+          {
+            border: 1px solid #00529B;
+            padding-bottom:15px;
+            padding-top:15px;
+            color: #D8000C;
+            background-color: #FFBABA;
+          }
+        </style>
+        <div class="col-sm-4 col-sm-offset-4">
+          <div class="error" align="center">
+            Código captcha incorrecto.
           </div>
-          <div class="col-sm-6">
-            <a class="btn btn-primary btn-block" href="<?php echo site_url(); ?>">
-              Volver al inicio
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <?php
-}
+        </div><?php 
+  }}
+  
+if($submitt) // checking if the submit button is pressed or not
+{ 
+	 
+	$user_name = $_POST['user_name']; // receiving username
+	$user_email = $_POST['user_email']; // receving email address
+	$inputPassword = $_POST['inputPassword']; // receiving password
+	$user_confirm_password = $_POST['user_confirm_password']; // receving confirm password
+	$user_id = username_exists( $user_name ); // checking if username is already exists.
+	if ( !$user_id and email_exists($user_email) == false )
+	{
+	  if($pwd_show != "no")
+	  {
+	   $random_password = $inputPassword;
+	//echo $random_password;die;
+	 }
+	 else
+	 {
+	   $random_password = $inputPassword;
+	 }
+	 $user_id = wp_create_user( $user_name, $random_password, $user_email );
+	 $subject = get_bloginfo('name');
+	 $subject .= " - Registration";
+	 $message = "This is your password : " . $random_password;
+	 $qry1 = "select * from $upb_fields where registration = '1' and user_group like '%".$content['role']."%' order by ordering asc";
+	 $reg1 = $wpdb->get_results($qry1);
+	//$reg1=mysql_query($qry1);
+
+	//$count = mysql_num_rows($reg1);
+	 if(!empty($reg1))
+	 {
+	   foreach($reg1 as $row1)
+	   {
+		 $Customfield = str_replace(" ","_",$row1->Name);
+		//echo $Customfield;die;
+		 add_user_meta( $user_id, $Customfield, $_POST[$Customfield], true );	
+		 update_user_meta( $user_id, $Customfield, $_POST[$Customfield], $prev_value );
+	   }
+
+	 }
+	 if($content['role']!="")
+	 {   
+	   if($content['role']=='Subscriber' || $content['role']=='Administrator' || $content['role']=='Editor' || $content['role']=='Author' || $content['role']=='Contributor')
+	   {
+		 $role = strtolower($content['role']);
+	   }
+	   else
+	   {
+		 $role = $content['role'];	
+	   }
+	   $user_id = wp_update_user( array( 'ID' => $user_id, 'role' => $content['role'] ) );
+	 }
+	 wp_mail( $user_email, $subject, $message );
+	 ?>
+	 <style type="text/css">
+	  .success
+	  {
+	   border: 1px solid #00529B;
+	   padding-bottom:15px;
+	   padding-top:15px;
+	   color: #4F8A10;
+	   background-color: #DFF2BF;
+	 }
+	</style>
+	<h4 class="text-center">
+	  ¡Registro exitoso! 
+	   
+	</h4>
+	<div class="col-sm-4 col-sm-offset-4">
+	<a class="btn btn-primary btn-block" href="<?php echo $pageURL; ?><?php echo $sign; ?>login2=1" title="Registration"> Inicie sesión </a>
+	</div>
+	<?php
+	}
+	else
+	{
+		$random_password = __('User already exists.  Password inherited.');
+	//					print_r($random_password);
+	//					print_r($user_id);
+	  ?>
+	  <div upb-form>
+		<div>
+		  <h4 class="text-center">
+			Disculpe, el nombre de usuario o correo ya está siendo utilizado
+		  </h4>
+		  <div class="col-sm-6 col-sm-offset-3">
+			<div class="row">
+			  <div class="col-sm-6">
+				<a class="btn btn-primary btn-block" href="javascript:void(0);" onclick="javascript:history.back();" title="Registration">
+				  Volver al registro
+				</a>
+			  </div>
+			  <div class="col-sm-6">
+				<a class="btn btn-primary btn-block" href="<?php echo site_url(); ?>">
+				  Volver al inicio
+				</a>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div> 	
+	  <?php
+	} 
 }
 else
 {
@@ -245,11 +265,13 @@ else
   <script type="text/javascript">
     function validateRegister()
     {
+	 
       var user_name = document.getElementById("user_name").value;
       var inputPassword = document.getElementById("inputPassword").value;
       var user_confirm_password = document.getElementById("user_confirm_password").value;
       var user_email = document.getElementById('user_email').value;
       var recaptcha_response_field = document.getElementById('recaptcha_response_field').value;
+
       if (user_name==null || user_name=="")
       {
         document.getElementById('divuser_name').style.display = 'block';
@@ -308,17 +330,14 @@ else
         return false;
       }
       if(recaptcha_response_field==null || recaptcha_response_field=="")
-      {
+      { 
         with(document.getElementById('divrecaptcha_response_field'))
         {
           style.display = 'block';								
           style.width = '299px';
           style.marginLeft = '170px';								
         }
-        document.getElementById('divuser_confirm_password').style.display = 'none';
-        document.getElementById('divinputPassword').style.display = 'none';
-        document.getElementById('divuser_name').style.display = 'none';
-        document.getElementById('divuser_email').style.display = 'none';
+       
         document.getElementById("recaptcha_response_field").focus();
         return false;
       }
@@ -326,7 +345,7 @@ else
     }
   </script>
   <div>
-    <form method="post" action="" id="registerform" name="registerform" onsubmit="javascript:return validateRegister();">
+    <form method="post" action="" id="registerform" name="registerform" onsubmit="return validateRegister();">
 
       <div>
         <div class="col-sm-4 col-sm-offset-4">
@@ -572,7 +591,7 @@ else
 <!-- Custom field in Registration form end -->
 
 <div class="formtable" align="center"> <?php echo recaptcha_get_html($publickey, $error); ?> </div>
-<div class="reg_frontErr" id="divrecaptcha_response_field" style="display:none;width: 299px !important; margin-left: 170px !important;"> Please fill this to prove you aren't a robot. </div>
+<div class="reg_frontErr" id="divrecaptcha_response_field" style="display:none;width: 299px !important; margin-left: 170px !important;"> Por favor completar. </div>
 <br class="clear">
 </div>
 <div class="col-sm-4 col-sm-offset-4">
@@ -597,6 +616,7 @@ else
 
  var name=false;
  var email=false;
+
  function validete_userName()
  {
   jQuery.ajax(
@@ -609,7 +629,7 @@ else
 						if(serverResponse=="true")
 						{
 
-							jQuery("#nameErr").html("Sorry, username already exist");
+							jQuery("#nameErr").html("Lo siento, nombre de usuario existe");
 							jQuery("#nameErr").addClass("reg_frontErr");
 							jQuery("#submit").attr('disabled',true);						
 
@@ -640,7 +660,7 @@ function validete_email()
 						if(serverResponse=="true")
 						{
 							email=false;						
-							jQuery("#emailErr").html("Sorry, email already exist");
+							jQuery("#emailErr").html("Correo ya existe");
 							jQuery("#emailErr").addClass("reg_frontErr");
 							jQuery("#submit").attr('disabled',true);						
 
