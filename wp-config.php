@@ -22,7 +22,7 @@ define('DB_NAME', 'hackdb');
 define('DB_USER', 'hackdbuser');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'B2VanGolijQ');
+define('DB_PASSWORD', 'B2VanGoljQ');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
