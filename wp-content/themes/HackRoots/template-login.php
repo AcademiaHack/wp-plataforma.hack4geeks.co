@@ -2,16 +2,7 @@
 /*
 Template Name: Login Template
 */
-?>
-
-<?php 
-	$loginID = get_page_by_title('Login')->ID;
-	if(is_user_logged_in()){
-		$homeURL = get_home_url();
-?>
-	<script> window.location = "<?php echo $homeURL ?>"; </script>
-<?php
-	}else{
+$homeURL = get_home_url();
 ?>
 
 <header class="login-header text-center">
@@ -21,4 +12,14 @@ Template Name: Login Template
 	<?php get_template_part('templates/content', 'page'); ?>
 <?php endwhile; ?>
 
-<?php } ?>
+<?php 
+	if(is_user_logged_in()){	
+?>
+	<script> 
+		setTimeout(function(){ window.location = "<?php echo $homeURL ?>"; }, 2000);
+	</script>
+<?php
+	}
+?>
+
+
