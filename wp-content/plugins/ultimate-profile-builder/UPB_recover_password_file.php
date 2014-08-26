@@ -260,7 +260,7 @@
 
 
 
-	 				Password has been sent to your registered email.
+	 				Contraseña enviada al correo.
 
 
 
@@ -268,48 +268,27 @@
 
 	 				<div id="main-upb-form">  
 
-	 					<div class="UPB-margin-left3">
+	 					 
 
 
+ 
 
-	 						<a href="<?php echo site_url(); ?>">
+   <div class="col-sm-4 col-sm-offset-4">
+            <div class="row">
+              <div class="col-sm-6">
+                <a class="btn btn-primary btn-block" href="<?php echo site_url(); ?>">
+                  Volver al inicio
+                </a>
+              </div>
+              <div class="col-sm-6">
+                <a class="btn btn-primary btn-block" href="<?php echo $pageURL; ?><?php echo $sign; ?>login2=1" title="Logout">
+                	Volver al login
+                </a>
+              </div>
+            </div>
+          </div>
 
-
-
-	 							<div class="UltimatePB-Button">
-
-
-
-	 								Go back to Home-Page
-
-
-
-	 							</div>
-
-
-
-	 						</a>
-
-
-
-	 						<a href="<?php echo $pageURL; ?><?php echo $sign; ?>login2=1" title="Login">
-
-
-
-	 							<div class="UltimatePB-Button">
-
-
-
-	 								Go back to Login
-
-
-
-	 							</div>
-
-
-
-	 						</a>
-
+	 						 
 
 
 	 					</div>
@@ -390,7 +369,7 @@
 
 
 
-	 			Password has been sent to your registered email.
+	 			Contraseña enviada al correo indicado.
 
 
 
@@ -400,45 +379,22 @@
 
 	 			<div class="margin-left">
 
+ <div class="col-sm-4 col-sm-offset-4">
+            <div class="row">
+              <div class="col-sm-6">
+                <a class="btn btn-primary btn-block" href="<?php echo site_url(); ?>">
+                  Volver al inicio
+                </a>
+              </div>
+              <div class="col-sm-6">
+                <a class="btn btn-primary btn-block" href="<?php echo $pageURL; ?><?php echo $sign; ?>login2=1" title="Logout">
+                	Volver al login
+                </a>
+              </div>
+            </div>
+          </div>
 
-
-	 				<a href="<?php echo site_url(); ?>">
-
-
-
-	 					<div class="UltimatePB-Button">
-
-
-
-	 						Go back to Home-Page
-
-
-
-	 					</div>
-
-
-
-	 				</a>
-
-
-
-	 				<a href="<?php echo $pageURL; ?><?php echo $sign; ?>login2=1" title="Login">
-
-
-
-	 					<div class="UltimatePB-Button">
-
-
-
-	 						Go back to Login
-
-
-
-	 					</div>
-
-
-
-	 				</a>
+	 				 
 
 
 
