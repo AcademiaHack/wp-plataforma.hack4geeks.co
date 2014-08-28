@@ -28,7 +28,9 @@ $categories = get_categories($args);
 $category = get_categories($args);
 	?>
     <div class="item <?php if ($key==0){echo active;}?>">
-      <h1 class="text-center"><?php echo $value->name ?></h1>
+      <h1 class="text-center">
+        <?php echo $value->name ?>
+      </h1>
       <div class="badges">
       	<div class="badges">
 		<?php  
@@ -47,7 +49,11 @@ $category = get_categories($args);
 	 <?php
 	 }
 	 ?>
-    
+    <div class="text-center">
+      <div class="badge-title">
+        ¿Qué es cloud computing? VM, recursos, gitlab, owncloud, etc.
+      </div>
+    </div>
   </div>
 
   <!-- Indicators -->
@@ -66,10 +72,10 @@ $category = get_categories($args);
 
     <!-- Controls -->
     <a class="left carousel-control" href="#badges_carousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
+      <img class="img-responsive" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/arrow-left.png" alt="">
     </a>
     <a class="right carousel-control" href="#badges_carousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
+      <img class="img-responsive" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/arrow-right.png" alt="">
     </a>
 
 </div>

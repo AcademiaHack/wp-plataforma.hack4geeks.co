@@ -6452,31 +6452,15 @@ header.navbar-default {
   padding-top: 28px;
 }
 .category-activities {
-  background-image: url('../img/hexagon-background.png');
-  background-position-y: 145%;
-  -webkit-background-size: 83% auto;
-  background-size: 83% auto;
+  background-image: url('../img/fondo_mosaico.jpg');
 }
 .sprint {
   margin: 0 0 30px;
   color: #124F9F;
 }
 #badges_carousel h1 {
-  margin: 0;
-  padding-top: 80px;
-  color: #7D6D6D;
-  background-color: #D8DDE1;
-  padding: 2px 5px;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-top: 1px solid #AAAFB3;
-  border-right: 1px solid #CBD0D5;
-  border-left: 1px solid #CBD0D5;
-  border-bottom: 1px solid #fff;
-  margin: 70px auto 20px;
-  font-size: 28px;
-  display: table;
+  color: #fff;
+  margin-top: 60px;
 }
 #badges_carousel .item {
   /*background: rgba(14, 18, 119, 0.6);*/
@@ -6489,6 +6473,14 @@ header.navbar-default {
 
 #badges_carousel .carousel-control {
   width: 8%;
+}
+
+#badges_carousel .carousel-control img {
+  position: absolute;
+  top: 40%;
+  z-index: 5;
+  display: inline-block;
+  width: 20px;
 }
 
 #badges_carousel .carousel-control.left,
@@ -6565,13 +6557,14 @@ header.navbar-default {
   color: #fff;
 }
 .badges {
-  padding: 1% 4.5%;
+  padding: 1% 4%;
+  margin-left: 25px;
 }
 .badge-container {
   width: 20%;
   float: left;
   position: relative;
-  margin: 0 -1px;
+  margin: 0 -5px;
 }
 
 .badge-container .badge-img.off {
@@ -6580,6 +6573,18 @@ header.navbar-default {
   height: auto !important;
   width: auto\9; /* ie8+9 */
   -ms-interpolation-mode: bicubic; 
+}
+
+.badge-title {
+  background-color: #A7BACB;
+  color: #1A5E9D;
+  padding: 5px 10px;
+  font-size: 24px;
+  display: table;
+  margin: 30px auto 0;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
 }
 
 .next-prev {
@@ -6735,7 +6740,7 @@ header.profile {
 
 .archive .badge-container img {
   width: 100%;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 .archive .badge-container img:hover {

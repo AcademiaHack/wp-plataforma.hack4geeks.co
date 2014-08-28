@@ -95,3 +95,5 @@ define('WP_ENV', 'development');
 
 define('RELOCATE',true);
 define('RELOCATE',true);
+
+define('WP_ENV', 'development');
