@@ -50,8 +50,8 @@ $category = get_categories($args);
 	 }
 	 ?>
     <div class="text-center">
-      <div class="badge-title">
-        ¿Qué es cloud computing? VM, recursos, gitlab, owncloud, etc.
+      <div class="badge-title" id="badge-title">
+        <?php echo $category[0]->name ?>
       </div>
     </div>
   </div>
@@ -79,3 +79,16 @@ $category = get_categories($args);
     </a>
 
 </div>
+
+<script type="text/javascript">
+
+ 
+ $(function() { 
+    $(".badge-img").hover(function(){ 
+        $("#badge-title").text(this.title);
+    });   
+    $("#badges_carousel").on('slide.bs.carousel', function(event) {
+     console.log('slid event');
+   });
+  });
+</script>
