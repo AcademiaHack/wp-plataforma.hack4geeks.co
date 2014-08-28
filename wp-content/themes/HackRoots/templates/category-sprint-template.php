@@ -16,6 +16,7 @@ $categories = get_categories($args);
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
   <?php 
+
   foreach ($categories as $key => $value){
    
     $args = array(
@@ -34,7 +35,10 @@ $category = get_categories($args);
       <div class="badges">
       	<div class="badges">
 		<?php  
-			foreach ($category as $cat){  
+			foreach ($category as $count => $cat){  
+        if (($count==0)&&(!isset($primera))){
+          $primera = $cat;
+          } 
 		?>
 		
       		<div class="badge-container">
@@ -51,7 +55,7 @@ $category = get_categories($args);
 	 ?>
     <div class="text-center">
       <div class="badge-title" id="badge-title">
-        <?php echo $category[0]->name ?>
+        <?php echo $primera->name ?>
       </div>
     </div>
   </div>
@@ -82,13 +86,15 @@ $category = get_categories($args);
 
 <script type="text/javascript">
 
- 
  $(function() { 
     $(".badge-img").hover(function(){ 
         $("#badge-title").text(this.title);
-    });   
-    $("#badges_carousel").on('slide.bs.carousel', function(event) {
-     console.log('slid event');
+    });  
+     
+   $("#badges_carousel").on('slid.bs.carousel', function(event) {
+     var allListElements = $( ".badges" );
+    var d = $(".active").find(allListElements).children().first().find("a").find("img");
+     $("#badge-title").text(d[0].title);
    });
   });
 </script>
