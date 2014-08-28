@@ -45,23 +45,24 @@ $posts = query_posts( 'cat='.$category->term_id	 );
 <script>$(".menu-actividades").attr("class","active");</script>
 
 <header class="reto-bg">
-	<div class="badge-boxes">
-		<div class="badge-box off">
-			<img class="img-responsive" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $naanterior?>.png" alt="">
+	<div class="container">
+		<div class="badge-boxes">
+			<div class="badge-box off">
+				<img class="img-responsive" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $naanterior?>.png" alt="">
+			</div>
+			<div class="badge-box off">
+				<img class="img-responsive" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $nanterior?>.png" alt="">
+			</div>
+			<div class="badge-box on">
+				<img class="img-responsive" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $nimagen?>.png" alt="">
+			</div>
+			<div class="badge-box off">
+				<img class="img-responsive" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $nposterior?>.png" alt="">
+			</div>
+			<div class="badge-box off">
+				<img class="img-responsive" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $npposterior?>.png" alt="">
+			</div>
 		</div>
-		<div class="badge-box off">
-			<img class="img-responsive" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $nanterior?>.png" alt="">
-		</div>
-		<div class="badge-box space"></div>
-		<div class="badge-box off">
-			<img class="img-responsive" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $nposterior?>.png" alt="">
-		</div>
-		<div class="badge-box off">
-			<img class="img-responsive" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $npposterior?>.png" alt="">
-		</div>
-	</div>
-	<div class="badge-box on">
-		<img class="img-responsive" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $nimagen?>.png" alt="">
 	</div>
 </header>
 
@@ -82,9 +83,9 @@ $posts = query_posts( 'cat='.$category->term_id	 );
 			foreach ($posts as $post){
 
 				?>
-				<div class="col-sm-6"> 
+				<div class="col-sm-6 col-md-4">
+					<h2 class="reto-title text-center"><?php echo $post->post_title ?></h2>
 					<img class="img-responsive" src="<?php echo wp_get_attachment_url(get_post_thumbnail_id( $post->ID)) ?>" alt="">
-					<h2 class="text-center"><?php echo $post->post_title ?></h2>
 					<a href="<?php echo $post->guid ?>" class="btn btn-primary btn-block btn-flat btn-large">
 						<img src="/wp-content/themes/HackRoots/assets/img/list-hexagon.png" alt="">
 						<?php _e('¡Hazlo!','roots'); ?>

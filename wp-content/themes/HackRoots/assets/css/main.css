@@ -6769,13 +6769,16 @@ header.profile {
 }
 
 .reto-background {
-  padding-top: 10%;
+  padding-top: 200px;
   background-color: #fff;
+}
+
+.reto-background h1 {
+  color: #005098;
 }
 
 .btn-large {
   font-size: 30px;
-  margin: 20px 0;
 }
 
 .parent-category {
@@ -7052,33 +7055,24 @@ body.single {
 
 .reto-bg {
   text-align: center;
-  height: 220px;
-  overflow: hidden;
-  background-image: url('../img/hexagon-background.png');
-  background-position-y: 145%;
-  -webkit-background-size: 83% auto;
-  background-size: 83% auto;
+  background-image: url('../img/fondo_mosaico.jpg');
 }
 
 .badge-boxes {
   width: 100%;
   position: relative;
-  padding: 0 1%;
-  background: rgba(14, 18, 119, 0.6);
-  padding-top: 30px;
+  padding-top: 50px;
 }
 
 .badge-box {
   display: inline-block;
-  width: 18%;
+  width: 227px;
+  margin: 0 -5px;
+  margin-bottom: -140px;
 }
 
 .badge-box img {
   width: 100%;
-}
-
-.badge-box.space {
-  
 }
 
 .badge-box.off {
@@ -7086,9 +7080,19 @@ body.single {
 }
 
 .badge-box.on {
-  position: absolute;
-  margin-left: -9%;
-  top: 90px;
+  background-image: url('../img/hexagon-shadow.png');
+  background-position: -9px -5px;
+  position: relative;
+  z-index: 999;
+  width: 231px;
+  height: 265px;
+  margin: 0 -12px;
+  margin-bottom: -138px;
+}
+
+.badge-box.on img {
+  width: 227px;
+  margin: 0 auto;
 }
 
 .page-template-template-profile-php .caret_header_3:after {
@@ -7309,22 +7313,15 @@ footer {
   margin: 10px 0;
 }
 
-@media (min-width: 1300px) {
-  .reto-bg {
-    height: 220px;
-  }
-}
-
-@media (max-width: 1400px) {
-  .reto-bg {
-    height: 160px;
-  }
+.reto-title {
+  margin: 0;
+  background-color: #D5D4D4;
+  color: #7E7E7E;
+  padding: 5px 0;
+  width: 100%;
 }
 
 @media (max-width: 1200px) {
-  .reto-bg {
-    height: 130px;
-  }
   .caret_header_3:before {
     left: 900px;
   }
@@ -7332,12 +7329,18 @@ footer {
   .caret_header_3:after {
     right: 970px;
   }
-}
-
-
-@media (max-width: 1000px) {
-  .reto-bg {
-    height: 120px;
+  .badge-box.on img {
+      width:188px;
+  }
+  .badge-box.on {
+    width: 190px; 
+    height: 220px;
+    background-size: 108% 104%;
+    margin-bottom: -100px;
+  }
+  .badge-box {
+    width: 190px;
+    margin-bottom: -100px;
   }
 }
 
@@ -7349,11 +7352,16 @@ footer {
   .caret_header_3:after {
     right: 750px;
   }
-}
-
-@media (max-width: 850px) {
-  .reto-bg {
-    height: 100px;
+  .badge-box.on img {
+      width:148px;
+  }
+  .badge-box.on {
+    width: 150px; 
+    height: 174px;
+    background-size: 110% 104%;
+  }
+  .badge-box {
+    width: 150px;
   }
 }
 
@@ -7365,19 +7373,47 @@ footer {
   .caret_header_3:after {
     right: 50%;
   }
-}
-
-@media (max-width: 700px) {
-  .reto-bg {
-    height: 80px;
+  .badge-box.on img {
+      width:108px;
+  }
+  .badge-box.on {
+    width: 110px; 
+    height: 128px;
+    margin: 0 -8px;
+    background-size: 115% 104%;
+    margin-bottom: -70px;
+  }
+  .badge-box {
+    width: 110px;
+    margin-bottom: -70px;
+  }
+  .reto-background {
+    padding-top: 50px;
   }
 }
 
-@media (max-width: 550px) {
-  .reto-bg {
-    height: 60px;
+@media (max-width: 540px) {
+  .badge-box.on img {
+      width:63px;
+  }
+  .badge-box.on {
+    width: 65px;
+    height: 76px;
+    margin: 0 -6px;
+    background-size: 100% 102%;
+    margin-bottom: -45px;
+    background-position: 0px -2px;
+  }
+  .badge-boxes {
+    padding-top: 20px;
+  }
+  .badge-box {
+    width: 65px;
+    margin-bottom: -45px;
+  }
+  .reto-background {
+    padding-top: 50px;
   }
 }
-
 
 /*# sourceMappingURL=main.css.map 
