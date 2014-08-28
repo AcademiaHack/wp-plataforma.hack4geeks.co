@@ -16,13 +16,13 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'hackdb');
+define('DB_NAME', 'wordpress');
 
 /** MySQL database username */
-define('DB_USER', 'hackdbuser');
+define('DB_USER', 'wordpress');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'B2VanGoljQ');
+define('DB_PASSWORD', 'wordpress');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
@@ -79,7 +79,8 @@ define('WPLANG', 'es_VE');
  * in their development environments.
  */
 define('WP_DEBUG', false);
- 
+
+define('RELOCATE', false);
 
 /* That's all, stop editing! Happy blogging. */
 
@@ -89,4 +90,8 @@ if ( !defined('ABSPATH') )
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php'); 
+define('WP_ENV', 'development');
+
+
+define('RELOCATE',true);
 define('RELOCATE',true);
