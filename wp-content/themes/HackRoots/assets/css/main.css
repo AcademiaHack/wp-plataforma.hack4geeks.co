@@ -6462,20 +6462,17 @@ header.navbar-default {
   color: #fff;
   margin-top: 60px;
 }
-#badges_carousel .item {
-  /*background: rgba(14, 18, 119, 0.6);*/
-}
 
-#badges_carousel .carousel-inner > .active, .carousel-inner > .next, .carousel-inner > .prev {
+.carousel-inner > .active, .carousel-inner > .next, .carousel-inner > .prev {
   display: inline-block;
   width: 100%;
 }
 
-#badges_carousel .carousel-control {
+.carousel-control {
   width: 8%;
 }
 
-#badges_carousel .carousel-control img {
+.carousel-control img {
   position: absolute;
   top: 40%;
   z-index: 5;
@@ -6483,11 +6480,11 @@ header.navbar-default {
   width: 20px;
 }
 
-#badges_carousel .carousel-control.left,
-#badges_carousel .carousel-control.right {
+.carousel-control.left,
+.carousel-control.right {
   background: transparent;
 }
-#badges_carousel #breadcumb {
+#breadcrumb {
   background-color: #D8DDE1;
   padding: 2px 5px;
   border-radius: 10px;
@@ -6501,12 +6498,12 @@ header.navbar-default {
   display: table;
 }
 
-#badges_carousel #breadcumb.active {
+#breadcrumb.active {
   width: auto;
   display: table;
 }
 
-#badges_carousel .carousel-indicators {
+.carousel-indicators {
   position: relative;
   display: inline-block;
   margin: 0;
@@ -6514,7 +6511,7 @@ header.navbar-default {
   left: 0;
   bottom: 0;
 }
-#badges_carousel .carousel-indicators li {
+.carousel-indicators li {
   text-indent: 0;
   border: none;
   background-color: transparent;
@@ -6526,17 +6523,17 @@ header.navbar-default {
   color: #0D4F99;
   vertical-align: top;
 }
-#badges_carousel .carousel-indicators li:hover {
+.carousel-indicators li:hover {
   background-image: url('../img/breadcumb-on.png');
   color: #fff;
 }
-#badges_carousel .next-prev:hover .arrow-right {
+.next-prev:hover .arrow-right {
   border-left: 8px solid #fff;
 }
-#badges_carousel .next-prev:hover .arrow-left {
+.next-prev:hover .arrow-left {
   border-right: 8px solid #fff;
 }
-#badges_carousel .next-prev .arrow-right {
+.next-prev .arrow-right {
   width: 0;
   height: 0;
   border-top: 7px solid transparent;
@@ -6544,7 +6541,7 @@ header.navbar-default {
   border-left: 8px solid #0D4F99;
   margin: 11px 18px;
 }
-#badges_carousel .next-prev .arrow-left {
+.next-prev .arrow-left {
   width: 0;
   height: 0;
   border-top: 7px solid transparent;
@@ -6552,9 +6549,12 @@ header.navbar-default {
   border-right: 8px solid #0D4F99;
   margin: 10px auto;
 }
-#badges_carousel .carousel-indicators .active {
+.carousel-indicators .active {
   background-image: url('../img/breadcumb-on.png');
   color: #fff;
+  width: 37px;
+  height: 41px;
+  background-color: transparent;
 }
 .badges {
   padding: 1% 4%;
