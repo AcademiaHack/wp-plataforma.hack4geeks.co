@@ -14,7 +14,8 @@ $categories = get_categories($args);
 ?>
 <div id="badges_carousel" class="carousel slide" data-ride="carousel" data-interval="false">
   <!-- Wrapper for slides -->
-  <div class="carousel-inner">
+  
+ <div class="carousel-inner">
   <?php 
 
   foreach ($categories as $key => $value){
@@ -59,12 +60,10 @@ $category = get_categories($args);
       </div>
     </div>
   </div>
-</div>
-
-<!-- Indicators -->
-<div id="breadcrumb">
+  <div id="breadcrumb">
   <a class="next-prev" data-target="#badges_carousel" data-slide="prev"><div class="arrow-left"></div></a>
   <ol class="carousel-indicators">
+    
     <?php 
     foreach ($categories as $key => $value){
      ?>
@@ -74,6 +73,10 @@ $category = get_categories($args);
    </ol>
    <a class="next-prev" data-target="#badges_carousel" data-slide="next"><div class="arrow-right"></div></a>
  </div>
+</div>
+
+<!-- Indicators -->
+
 
  <!-- Controls -->
  <a class="left carousel-control" href="#badges_carousel" role="button" data-slide="prev">
@@ -88,6 +91,7 @@ $category = get_categories($args);
 <script type="text/javascript">
 
  $(function() { 
+
     $(".badge-img").hover(function(){ 
         $("#badge-title").text(this.title);
     });  
