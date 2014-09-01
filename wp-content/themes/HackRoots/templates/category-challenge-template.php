@@ -48,19 +48,31 @@ $posts = query_posts( 'cat='.$category->term_id	 );
 	<div class="container">
 		<div class="badge-boxes">
 			<div class="badge-box off">
-				<img class="img-responsive" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $naanterior?>.png" alt="">
+				<a href="#">
+					<img class="img-responsive" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $naanterior?>.png" alt="">
+					<img class="img-responsive black_hexagon" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/black_hexagon.png">
+				</a>
 			</div>
 			<div class="badge-box off">
-				<img class="img-responsive" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $nanterior?>.png" alt="">
+				<a href="#">
+					<img class="img-responsive" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $nanterior?>.png" alt="">
+					<img class="img-responsive black_hexagon" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/black_hexagon.png">
+				</a>
 			</div>
 			<div class="badge-box on">
 				<img class="img-responsive" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $nimagen?>.png" alt="">
 			</div>
 			<div class="badge-box off">
-				<img class="img-responsive" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $nposterior?>.png" alt="">
+				<a href="#">
+					<img class="img-responsive" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $nposterior?>.png" alt="">
+					<img class="img-responsive black_hexagon" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/black_hexagon.png">
+				</a>
 			</div>
 			<div class="badge-box off">
-				<img class="img-responsive" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $npposterior?>.png" alt="">
+				<a href="#">
+					<img class="img-responsive" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $npposterior?>.png" alt="">
+					<img class="img-responsive black_hexagon" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/black_hexagon.png">
+				</a>
 			</div>
 		</div>
 	</div>

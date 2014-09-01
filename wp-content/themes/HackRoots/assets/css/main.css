@@ -6759,6 +6759,10 @@ header.profile {
   opacity: 0 !important;
 }
 
+.cero.black_hexagon:hover {
+  opacity: 1 !important;
+}
+
 .archive .badge-container img:hover {
   opacity: 1;
 }
@@ -7092,12 +7096,10 @@ body.single {
 }
 
 .badge-box.off {
-
+  position: relative;
 }
 
 .badge-box.on {
-  background-image: url('../img/hexagon-shadow.png');
-  background-position: -9px -5px;
   position: relative;
   z-index: 999;
   width: 231px;
