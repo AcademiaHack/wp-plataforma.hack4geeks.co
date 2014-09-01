@@ -44,7 +44,8 @@ $category = get_categories($args);
 		
       		<div class="badge-container">
       			<a href="<?php  echo get_category_link( $cat->cat_ID )?>">
-      				<img class="img-responsive badge-img" title="<?php echo $cat->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php  echo get_tax_meta($cat->term_id,'text_cat_id'); ?>.png" alt="">
+              <img class="img-responsive badge-img" title="<?php echo $cat->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php  echo get_tax_meta($cat->term_id,'text_cat_id'); ?>.png" alt="">
+      				<img class="img-responsive black_hexagon" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/black_hexagon.png">
       			</a>
       		</div>
       		 <?php } ?>
