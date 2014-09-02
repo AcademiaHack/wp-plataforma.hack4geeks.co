@@ -6759,6 +6759,10 @@ header.profile {
   opacity: 0 !important;
 }
 
+.cero.black_hexagon {
+  opacity: 1 !important;
+}
+
 .cero.black_hexagon:hover {
   opacity: 1 !important;
 }

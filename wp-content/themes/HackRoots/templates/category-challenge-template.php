@@ -139,9 +139,7 @@ echo get_theme_root_uri();
 ?>/HackRoots/assets/img/cat/<?php
 echo $nimagen;
 ?>.png" alt="">
-					<img class="img-responsive black_hexagon" src="<?php
-echo get_theme_root_uri();
-?>/HackRoots/assets/img/black_hexagon.png">
+					 
 			</div>
 			<div class="badge-box off"> 
 					<?php
