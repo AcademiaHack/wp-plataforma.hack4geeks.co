@@ -6760,11 +6760,11 @@ header.profile {
 }
 
 .cero.black_hexagon {
-  opacity: 1 !important;
+  opacity: 0.5 !important;
 }
 
 .cero.black_hexagon:hover {
-  opacity: 1 !important;
+  opacity: 0.5 !important;
 }
 
 .archive .badge-container img:hover {
