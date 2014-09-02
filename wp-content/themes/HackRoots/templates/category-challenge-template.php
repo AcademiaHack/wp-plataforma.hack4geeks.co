@@ -21,15 +21,18 @@ foreach ($testcat as $key => $value) {
         
     }
 }
+$args = array(
+  'orderby' => 'id',
+  'order' => 'ASC',  
+  'hierarchical' =>0,
+  'hide_empty' =>0,
+  'parent' =>strval($activity->cat_ID)
+  ); 
 $nimagen     = get_tax_meta($category->term_id, 'text_cat_id');
 $nanterior   = $nimagen - 1;
-$naanterior  = $nanterior - 2;
+$naanterior  = $nimagen - 2;
 $nposterior  = $nimagen + 1;
-$npposterior = $nimagen + 2;
-$lanterior   = $nimagen - 1;
-$laanterior  = $nanterior - 2;
-$lposterior  = $nanterior + 1;
-$lpposterior = $nanterior + 2;
+$npposterior = $nimagen + 2; 
 if ($nimagen - 1 <= 0) {
     $nanterior    = 0;
     $naanterior   = 0;
@@ -38,7 +41,7 @@ if ($nimagen - 1 <= 0) {
     
 } else if ($nimagen - 2 <= 0) {
     $naanterior   = 0;
-    $nlaanterior  = $testcat[$keynumber - 2]->term_id;
+    $nlanterior  = $testcat[$keynumber - 1]->term_id;
     $nlposterior  = $testcat[$keynumber + 1]->term_id;
     $nlpposterior = $testcat[$keynumber + 2]->term_id;
 } else if ($nimagen + 1 >= 56) {
@@ -51,7 +54,7 @@ if ($nimagen - 1 <= 0) {
     $npposterior = 0;
     $nlanterior  = $testcat[$keynumber - 1]->term_id;
     $nlaanterior = $testcat[$keynumber - 2]->term_id;
-} else {
+} else { 
     $nlanterior   = $testcat[$keynumber - 1]->term_id;
     $nlaanterior  = $testcat[$keynumber - 2]->term_id;
     $nlposterior  = $testcat[$keynumber + 1]->term_id;
