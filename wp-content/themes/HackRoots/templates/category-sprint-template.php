@@ -11,13 +11,21 @@ $args = array(
   'parent' =>strval($activity->cat_ID)
   );
 $categories = get_categories($args);
+ $args = array(  
+  'orderby' => 'id',
+  'order' => 'ASC',  
+  'hierarchical' =>0,
+  'hide_empty' =>0,
+  'parent' =>strval($value->cat_ID)
+  ); 
 ?>
 <div id="badges_carousel" class="carousel slide" data-ride="carousel" data-interval="false">
   <!-- Wrapper for slides -->
   
  <div class="carousel-inner">
-  <?php 
 
+  <?php  
+ 
   foreach ($categories as $key => $value){
    
     $args = array(
