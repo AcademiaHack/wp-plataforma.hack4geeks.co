@@ -67,12 +67,13 @@ $args = array(
         <?php
       }
       ?>
+    
+    </div>
       <div class="text-center">
         <div class="badge-title" id="badge-title">
           <?php echo $primera->name ?>
         </div>
       </div>
-    </div>
     <div id="breadcrumb">
       <a class="next-prev" data-target="#badges_carousel" data-slide="prev"><div class="arrow-left"></div></a>
       <ol class="carousel-indicators">
@@ -86,6 +87,7 @@ $args = array(
        </ol>
        <a class="next-prev" data-target="#badges_carousel" data-slide="next"><div class="arrow-right"></div></a>
      </div>
+
    </div>
 
  </div>
