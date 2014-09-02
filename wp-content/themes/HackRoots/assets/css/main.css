@@ -6476,15 +6476,24 @@ header.navbar-default {
 
 .carousel-control img {
   position: absolute;
-  top: 40%;
+  margin-top: 110%;
   z-index: 5;
   display: inline-block;
   width: 20px;
 }
 
+.carousel-control.left {
+  left: -60px;
+}
+
+.carousel-control.right {
+  right: 10px;
+}
+
 .carousel-control.left,
 .carousel-control.right {
   background: transparent;
+  height: 0;
 }
 #breadcrumb {
   background-color: #D8DDE1;
@@ -6496,7 +6505,7 @@ header.navbar-default {
   border-right: 1px solid #CBD0D5;
   border-left: 1px solid #CBD0D5;
   border-bottom: 1px solid #fff;
-  margin: 50px auto;
+  margin: 40px auto;
   display: table;
 }
 
@@ -6560,7 +6569,8 @@ header.navbar-default {
 }
 .badges {
   padding: 1% 4%;
-  margin-left: 25px;
+  margin-left: 60px;
+  position: relative;
 }
 .badge-container {
   width: 20%;
@@ -6793,8 +6803,9 @@ header.profile {
 }
 
 .reto-background {
-  padding-top: 200px;
+  padding-top: 140px;
   background-color: #fff;
+  font-size: 18px;
 }
 
 .reto-background h1 {
@@ -6802,7 +6813,7 @@ header.profile {
 }
 
 .btn-large {
-  font-size: 30px;
+  font-size: 24px;
 }
 
 .parent-category {
@@ -7339,8 +7350,10 @@ footer {
   margin: 0;
   background-color: #D5D4D4;
   color: #7E7E7E;
-  padding: 5px 0;
+  padding: 10px;
   width: 100%;
+  font-size: 26px;
+  min-height: 76px;
 }
 
 @media (max-width: 1200px) {
@@ -7385,6 +7398,9 @@ footer {
   .badge-box {
     width: 150px;
   }
+  .carousel-control img {
+    width: 15px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -7411,6 +7427,9 @@ footer {
   }
   .reto-background {
     padding-top: 50px;
+  }
+  .carousel-control img {
+    width: 10px;
   }
 }
 

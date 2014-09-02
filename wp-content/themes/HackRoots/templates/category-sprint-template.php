@@ -11,106 +11,99 @@ $args = array(
   'parent' =>strval($activity->cat_ID)
   );
 $categories = get_categories($args);
- $args = array(  
+$args = array(  
   'orderby' => 'id',
   'order' => 'ASC',  
   'hierarchical' =>0,
   'hide_empty' =>0,
   'parent' =>strval($value->cat_ID)
   ); 
-?>
-<div id="badges_carousel" class="carousel slide" data-ride="carousel" data-interval="false">
-  <!-- Wrapper for slides -->
-  
- <div class="carousel-inner">
+  ?>
+  <div id="badges_carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+    <!-- Wrapper for slides -->
 
-  <?php  
- 
-  foreach ($categories as $key => $value){
-   
-    $args = array(
-  'orderby' => 'id',
-  'order' => 'ASC',  
-  'hierarchical' =>0,
-  'hide_empty' =>0,
-  'parent' =>strval($value->cat_ID)
-  );
-$category = get_categories($args);
-	?>
-    <div class="item <?php if ($key==0){echo active;}?>">
-      <h1 class="text-center">
-        <?php echo $value->name ?>
-      </h1>
-      <div class="badges">
-      	<div class="badges">
-		<?php  
-			foreach ($category as $count => $cat){  
-        if (($count==0)&&(!isset($primera))){
-          $primera = $cat;
-          } 
-		?>
-		
-      		<div class="badge-container">
-      			<a href="<?php  echo get_category_link( $cat->cat_ID )?>">
-              <img class="img-responsive badge-img" title="<?php echo $cat->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php  echo get_tax_meta($cat->term_id,'text_cat_id'); ?>.png" alt="">
-      				<img class="img-responsive black_hexagon"  title="<?php echo $cat->name; ?>"  src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/black_hexagon.png">
-      			</a>
-      		</div>
-      		 <?php } ?>
-      	</div>
+    <div class="carousel-inner">
+
+      <?php  
+
+      foreach ($categories as $key => $value){
+
+        $args = array(
+          'orderby' => 'id',
+          'order' => 'ASC',  
+          'hierarchical' =>0,
+          'hide_empty' =>0,
+          'parent' =>strval($value->cat_ID)
+          );
+        $category = get_categories($args);
+        ?>
+        <div class="item <?php if ($key==0){echo active;}?>">
+          <h1 class="text-center">
+            <?php echo $value->name ?>
+          </h1>
+          <div class="badges">
+            <a class="left carousel-control" href="#badges_carousel" role="button" data-slide="prev">
+              <img class="img-responsive" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/arrow-left.png" alt="">
+            </a>
+            <a class="right carousel-control" href="#badges_carousel" role="button" data-slide="next">
+              <img class="img-responsive" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/arrow-right.png" alt="">
+            </a>
+            <?php  
+            foreach ($category as $count => $cat){  
+              if (($count==0)&&(!isset($primera))){
+                $primera = $cat;
+              } 
+              ?>
+
+              <div class="badge-container">
+               <a href="<?php  echo get_category_link( $cat->cat_ID )?>">
+                <img class="img-responsive badge-img" title="<?php echo $cat->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php  echo get_tax_meta($cat->term_id,'text_cat_id'); ?>.png" alt="">
+                <img class="img-responsive black_hexagon"  title="<?php echo $cat->name; ?>"  src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/black_hexagon.png">
+              </a>
+            </div>
+            <?php } ?>
+          </div>
+        </div>
+        <?php
+      }
+      ?>
+      <div class="text-center">
+        <div class="badge-title" id="badge-title">
+          <?php echo $primera->name ?>
+        </div>
       </div>
     </div>
-	 <?php
-	 }
-	 ?>
-    <div class="text-center">
-      <div class="badge-title" id="badge-title">
-        <?php echo $primera->name ?>
-      </div>
-    </div>
-  </div>
-  <div id="breadcrumb">
-  <a class="next-prev" data-target="#badges_carousel" data-slide="prev"><div class="arrow-left"></div></a>
-  <ol class="carousel-indicators">
-    
-    <?php 
-    foreach ($categories as $key => $value){
-     ?>
-     <li data-target="#badges_carousel" data-slide-to="<?php echo $key ?>" <?php if ($key==0){echo "class='active'";}?>><?php echo $key+1 ?></li>
-     <?php } ?>
+    <div id="breadcrumb">
+      <a class="next-prev" data-target="#badges_carousel" data-slide="prev"><div class="arrow-left"></div></a>
+      <ol class="carousel-indicators">
 
-   </ol>
-   <a class="next-prev" data-target="#badges_carousel" data-slide="next"><div class="arrow-right"></div></a>
+        <?php 
+        foreach ($categories as $key => $value){
+         ?>
+         <li data-target="#badges_carousel" data-slide-to="<?php echo $key ?>" <?php if ($key==0){echo "class='active'";}?>><?php echo $key+1 ?></li>
+         <?php } ?>
+
+       </ol>
+       <a class="next-prev" data-target="#badges_carousel" data-slide="next"><div class="arrow-right"></div></a>
+     </div>
+   </div>
+
  </div>
-</div>
 
-<!-- Indicators -->
+ <script type="text/javascript">
 
-
- <!-- Controls -->
- <a class="left carousel-control" href="#badges_carousel" role="button" data-slide="prev">
-  <img class="img-responsive" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/arrow-left.png" alt="">
-</a>
-<a class="right carousel-control" href="#badges_carousel" role="button" data-slide="next">
-  <img class="img-responsive" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/arrow-right.png" alt="">
-</a>
-
-</div>
-
-<script type="text/javascript">
-
- $(function() { 
- $(".black_hexagon").hover(function(){ 
-        $("#badge-title").text(this.title);
+   $(function() { 
+     $(".black_hexagon").hover(function(){ 
+      $("#badge-title").text(this.title);
     }); 
-    $(".badge-img").hover(function(){ 
-        $("#badge-title").text(this.title);
+     $(".badge-img").hover(function(){ 
+      $("#badge-title").text(this.title);
     });  
-     
-   $("#badges_carousel").on('slid.bs.carousel', function(event) {
-     var allListElements = $( ".badges" );
-    var d = $(".active").find(allListElements).children().first().find("a").find("img");
-     $("#badge-title").text(d[0].title);
+
+     $("#badges_carousel").on('slid.bs.carousel', function(event) {
+       var allListElements = $( ".badges" );
+       var d = $(".active").find(allListElements).children().first().find("a").find("img");
+       $("#badge-title").text(d[0].title);
+     });
    });
-  });
-</script>
+ </script>
