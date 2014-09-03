@@ -7355,7 +7355,9 @@ footer {
   font-size: 26px;
   min-height: 76px;
 }
-
+.recaptchatable { 
+  width: 100%;
+}
 @media (max-width: 1200px) {
   .caret_header_3:before {
     left: 900px;

@@ -344,6 +344,11 @@ else
       return true;
     }
   </script>
+  <script type="text/javascript">
+ var RecaptchaOptions = {
+    theme : 'clean'
+ };
+ </script>
   <div>
     <form method="post" action="" id="registerform" name="registerform" onsubmit="return validateRegister();">
 
@@ -674,6 +679,7 @@ function validete_email()
 					}
 				})
 }
+
 </script>
 <?php
 }
