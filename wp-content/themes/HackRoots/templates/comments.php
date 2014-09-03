@@ -5,12 +5,9 @@
 ?>
 
 <section id="comments">
-
-  <?php if (current_user_can( 'manage_options' )) : ?>
-
+ 
   <?php if (have_comments()) : ?>
-    <h3><?php printf(_n('Una respuesta to &ldquo;%2$s&rdquo;', '%1$s respuestas a &ldquo;%2$s&rdquo;', get_comments_number(), 'roots'), number_format_i18n(get_comments_number()), get_the_title()); ?></h3>
-
+     
     <ol class="media-list">
       <?php wp_list_comments(array('walker' => new Roots_Walker_Comment)); ?>
     </ol>
@@ -36,10 +33,9 @@
   <?php elseif(!comments_open() && !is_page() && post_type_supports(get_post_type(), 'comments')) : ?>
     <div class="alert alert-warning">
       <?php _e('Comments are closed.', 'roots'); ?>
-    </div
+    </div>
 	
-  <?php endif; ?>
-  <?php endif; ?>
+  <?php endif; ?> 
 </section><!-- /#comments -->
  
 <section id="respond">
