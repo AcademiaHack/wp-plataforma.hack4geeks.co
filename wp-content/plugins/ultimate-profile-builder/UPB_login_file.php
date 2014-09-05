@@ -28,7 +28,7 @@ if ($login1) {
     <div id="upb-form">
         <div class="col-sm-4 col-sm-offset-4">
             <div class="row">
-                <div class="col-sm-12">
+                <div class="col-sm-12 text-center">
                     <h2>Usted ya accedió al sistema</h2>
                     <p>Redireccionando al inicio. Si se tarda mucho la redirección haz click aca:</p>
                 </div>
@@ -47,7 +47,7 @@ if ($login1) {
             </div>
         </div>
         <script>
-            setTimeout(function(){ window.location = "<?php echo $homeURL ?>"; }, 2000);
+             setTimeout(function(){ window.location = "<?php echo $homeURL ?>"; }, 2000);
         </script>
         <!-- <div id="main-upb-form">
             <div class="main-edit-profile" align="center">
@@ -171,7 +171,7 @@ if ($login1) {
     <div id="upb-form">
         <div class="col-sm-4 col-sm-offset-4">
             <div class="row">
-                <div class="col-sm-12">
+                <div class="col-sm-12 text-center">
                     <h2>Bienvenido a Hack4Geeks!</h2>
                     <p>Ingresando al sistema, si se tarda mucho, haz click aca:</p>
                 </div>
@@ -225,7 +225,7 @@ if ($login1) {
     </div>
 
     <script> 
-        setTimeout(function(){ window.location = "<?php echo $homeURL ?>"; }, 2000);
+         setTimeout(function(){ window.location = "<?php echo $homeURL ?>"; }, 2000);
     </script>
 
     <?php
