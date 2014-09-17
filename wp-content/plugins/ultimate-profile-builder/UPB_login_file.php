@@ -135,7 +135,7 @@ if ($login1) {
 
             <form method="post" action="#" id="loginform" name="loginform" onsubmit="javascript:return validateLogin();">
                 <div class="col-sm-4 col-sm-offset-4">
-                    <label for="user_login">Usuario</label>
+                    <label for="user_login">Email o Nombre de usuario</label>
                     <input type="text" size="20" value="<?php echo $user_login; ?>" class="form-control" id="user_login" name="user_login" >
                     <div class="reg_frontErr" id="divuser_login" style="display:none;">
                         Nombre de usuario es requerido
@@ -260,7 +260,7 @@ if ($login1) {
         <form method="post" action="#" id="loginform" name="loginform" onsubmit="javascript:return validateLogin();">
 
             <div class="col-sm-4 col-sm-offset-4">
-                <label for="user_login">Usuario</label>
+                <label for="user_login">Email o Nombre de usuario</label>
                 <input type="text" size="20" value="<?php echo $user_login; ?>" id="user_login" name="user_login" class="form-control">
                 <div class="reg_frontErr" id="divuser_login" style="display:none;">
                     Nombre de usuario es requerido
