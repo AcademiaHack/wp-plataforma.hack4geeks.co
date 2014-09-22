@@ -6634,6 +6634,16 @@ header.navbar-default {
   background-color: rgba(11, 52, 156, 0.5);
   color: #fff;
 }
+
+.reto-title {
+  margin: 0;
+  background-color: #D5D4D4;
+  color: #7E7E7E;
+  padding: 10px;
+  width: 100%;
+  font-size: 26px;
+  min-height: 76px;
+}
 a {
   color: #3276b1;
 }
@@ -6653,7 +6663,8 @@ header.profile {
   background-image: url('../img/fondo_mosaico.jpg');
   padding: 70px 0 30px;
   color: #fff;
-  margin-top: -12px;
+  margin-top: -40px;
+  overflow: hidden;
 }
 .hexagon {
   overflow: hidden;
@@ -6835,6 +6846,7 @@ body.single {
   background-color: #fff;
   padding: 10px 20px;
   margin-bottom: 20px;
+  margin-top: 10px;
   width: 100%;
 }
 
@@ -7049,23 +7061,141 @@ body.single {
     border: 1px solid #ddd;
     border-top: none;
   }
+  #categorias ul li a {
+    background-color: #ddd;
+    color: #777 !important;
+    border: none;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    height: 40px;
+  }
+  #categorias ul li a:hover {
+    background-color: #c4c4c4;
+    color: #fff !important;
+  }
   #categorias ul .active a {
-    color: #fff;
+    background-color: #c4c4c4;
+    color: #fff !important;
   }
   #categorias ul .active {
-    background-color: #ddd;
+    background-color: transparent;
+  }
+  #categorias ul li {
+    background-color: transparent;
+  }
+  .form-submit {
+    width: 100% !important;
   }
   .caret_header {
     display: none;
   }
   .post header .entry-title {
-    font-size: 30px;
+    font-size: 22px;
+  }
+  h1 {
+    font-size: 26px;
+  }
+  h2 {
+    font-size: 22px;
+  }
+  h3 {
+    font-size: 18px;
   }
   .entry-title img {
     width: 30px;
   }
   .post header .entry-title a {
     padding: 0 4%;
+  }
+  #breadcrumb {
+    padding: 5px 0;
+    margin: 20px auto;
+  }
+  .next-prev {
+    background-size: 30px auto;
+    width: 20px;
+    height: 24px;
+    margin: 0 4px;
+  }
+  .next-prev .arrow-left {
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 6px solid #0D4F99;
+    margin: 6px auto;
+  }
+  .next-prev .arrow-right {
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 6px solid #0D4F99;
+    margin: 7px 9px;
+  }
+  .carousel-indicators li {
+    background-size: 30px auto;
+    width: 20px;
+    height: 25px;
+    line-height: 22px;
+    font-size: 12px;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+  }
+  .carousel-indicators .active {
+    background-size: 30px auto;
+    width: 20px;
+    height: 25px;
+    line-height: 22px;
+  }
+  .badge-title {
+    font-size: 16px;
+  }
+  #badges_carousel h1 {
+    margin-top: 22px;
+    font-size: 22px;
+  }
+  .logo {
+    width: 130px;
+    margin: 10px;
+  }
+  .carousel-control img {
+    margin-top: 80%;
+  }
+  .carousel-control.left {
+    left: -10px;
+  }
+  .badges {
+    padding: 1% 0;
+    margin-left: 10px;
+  }
+  .badge-container {
+    margin: 0 -1px;
+  }
+  .carousel-control img {
+    margin-top: -150%;
+  }
+  .carousel-control.left {
+    left: -10px;
+  }
+  .carousel-control.right {
+    right: 10px;
+  }
+  .reto-title {
+    font-size: 20px;
+  }
+  .btn-large {
+  font-size: 18px;
+  }
+  .badge-box {
+    width: 40px;
+    margin-bottom: -30px;
+  }
+  .badge-box.on {
+    width: 100px;
+    height: 100px;
+    margin: 0 -2px;
+  }
+  .badge-box.on img {
+    width: 100%;
   }
 }
 
@@ -7345,15 +7475,6 @@ footer {
   margin: 10px 0;
 }
 
-.reto-title {
-  margin: 0;
-  background-color: #D5D4D4;
-  color: #7E7E7E;
-  padding: 10px;
-  width: 100%;
-  font-size: 26px;
-  min-height: 76px;
-}
 .recaptchatable { 
   width: 100%;
 }
@@ -7422,9 +7543,13 @@ footer {
     background-size: 115% 104%;
     margin-bottom: -70px;
   }
+  .badge-boxes {
+    padding-top: 20px;
+  }
   .badge-box {
-    width: 110px;
-    margin-bottom: -70px;
+    width: 50px;
+    margin: 0 -3px;
+    margin-bottom: -34px;
   }
   .reto-background {
     padding-top: 50px;
@@ -7432,10 +7557,49 @@ footer {
   .carousel-control img {
     width: 10px;
   }
+  .badge-box.on {
+    margin: 0 -4px;
+    margin-bottom: -70px;
+  }
+  .media > .pull-left {
+    width: 40px;
+    height: 40px;
+  }
+  .media-body {
+    margin-left: 55px;
+    font-size: 12px;
+  }
+  .media-body:before {
+    top: 5px;
+    left: -10px;
+  }
+  .media-body .media-body {
+    margin-left: 55px;
+    font-size: 12px;
+  }
+  .media-body .media-body:before {
+    top: 5px;
+    left: -10px;
+  }
+  .user-pic {
+    height: 300px;
+  }
+  .edit-info {
+    display: none;
+  }
+  .reg_frontErr, #password_info, .formtable .input-box .reg_frontErr {
+    padding: 5px;
+  }
+  .btn.btn-primary.btn-block {
+    margin-bottom: 10px;
+  }
+  #your-profile {
+    overflow-x: hidden;
+  }
 }
 
 @media (max-width: 540px) {
-  .badge-box.on img {
+  /*.badge-box.on img {
       width:63px;
   }
   .badge-box.on {
@@ -7452,7 +7616,7 @@ footer {
   .badge-box {
     width: 65px;
     margin-bottom: -45px;
-  }
+  }*/
   .reto-background {
     padding-top: 50px;
   }
