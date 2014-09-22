@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container margin-block">
   <div class="row">
     <div class="col-sm-12 text-center">
       <div class="img-container2">

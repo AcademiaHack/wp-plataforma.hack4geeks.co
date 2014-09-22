@@ -28,7 +28,7 @@ if ($login1) {
     <div id="upb-form">
         <div class="col-sm-4 col-sm-offset-4">
             <div class="row">
-                <div class="col-sm-12">
+                <div class="col-sm-12 text-center">
                     <h2>Usted ya accedió al sistema</h2>
                     <p>Redireccionando al inicio. Si se tarda mucho la redirección haz click aca:</p>
                 </div>
@@ -47,7 +47,7 @@ if ($login1) {
             </div>
         </div>
         <script>
-            setTimeout(function(){ window.location = "<?php echo $homeURL ?>"; }, 2000);
+             setTimeout(function(){ window.location = "<?php echo $homeURL ?>"; }, 2000);
         </script>
         <!-- <div id="main-upb-form">
             <div class="main-edit-profile" align="center">
@@ -135,7 +135,7 @@ if ($login1) {
 
             <form method="post" action="#" id="loginform" name="loginform" onsubmit="javascript:return validateLogin();">
                 <div class="col-sm-4 col-sm-offset-4">
-                    <label for="user_login">Usuario</label>
+                    <label for="user_login">Email o Nombre de usuario</label>
                     <input type="text" size="20" value="<?php echo $user_login; ?>" class="form-control" id="user_login" name="user_login" >
                     <div class="reg_frontErr" id="divuser_login" style="display:none;">
                         Nombre de usuario es requerido
@@ -171,7 +171,7 @@ if ($login1) {
     <div id="upb-form">
         <div class="col-sm-4 col-sm-offset-4">
             <div class="row">
-                <div class="col-sm-12">
+                <div class="col-sm-12 text-center">
                     <h2>Bienvenido a Hack4Geeks!</h2>
                     <p>Ingresando al sistema, si se tarda mucho, haz click aca:</p>
                 </div>
@@ -225,7 +225,7 @@ if ($login1) {
     </div>
 
     <script> 
-        setTimeout(function(){ window.location = "<?php echo $homeURL ?>"; }, 2000);
+         setTimeout(function(){ window.location = "<?php echo $homeURL ?>"; }, 2000);
     </script>
 
     <?php
@@ -260,7 +260,7 @@ if ($login1) {
         <form method="post" action="#" id="loginform" name="loginform" onsubmit="javascript:return validateLogin();">
 
             <div class="col-sm-4 col-sm-offset-4">
-                <label for="user_login">Usuario</label>
+                <label for="user_login">Email o Nombre de usuario</label>
                 <input type="text" size="20" value="<?php echo $user_login; ?>" id="user_login" name="user_login" class="form-control">
                 <div class="reg_frontErr" id="divuser_login" style="display:none;">
                     Nombre de usuario es requerido

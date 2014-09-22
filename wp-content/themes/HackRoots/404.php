@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container margin-block">
   <div class="row">
     <div class="col-xs-12 col-sm-6">
       <img src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/404_guy.png" alt="">

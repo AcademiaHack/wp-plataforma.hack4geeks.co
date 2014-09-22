@@ -6937,7 +6937,9 @@ body.single {
   color: #333;
   font-size: 32px;
 }
-
+.margin-block {
+  margin-top: 5%;
+}
 .media-list li > img {
   border-radius: 50%;
   -webkit-border-radius: 50%;
