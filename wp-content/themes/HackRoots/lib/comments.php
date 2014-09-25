@@ -6,15 +6,21 @@
  */
 class Roots_Walker_Comment extends Walker_Comment {
   function start_lvl(&$output, $depth = 0, $args = array()) {
-    $GLOBALS['comment_depth'] = $depth + 1; ?>
-    <ul <?php comment_class('media list-unstyled comment-' . get_comment_ID()); ?>>
+    $GLOBALS['comment_depth'] = $depth + 1; 
+    if (($comment->comment_author==wp_get_current_user()->user_login )||(current_user_can( 'manage_options' ))):
+    ?>
+      <ul <?php comment_class('media list-unstyled comment-' . get_comment_ID()); ?>>
     <?php
+    endif;
   }
 
   function end_lvl(&$output, $depth = 0, $args = array()) {
     $GLOBALS['comment_depth'] = $depth + 1;
-    echo '</ul>';
-  }
+    //if is the user or is admin
+    if (($comment->comment_author==wp_get_current_user()->user_login )||(current_user_can( 'manage_options' ))): 
+      echo '</ul>';
+    endif;
+ }
 
   function start_el(&$output, $comment, $depth = 0, $args = array(), $id = 0) {
     $depth++;
@@ -26,11 +32,15 @@ class Roots_Walker_Comment extends Walker_Comment {
       return;
     }
 
-    extract($args, EXTR_SKIP); ?>
+    extract($args, EXTR_SKIP); 
+    //if is the user or is admin
+    if (($comment->comment_author==wp_get_current_user()->user_login )||(current_user_can( 'manage_options' ))):
+    ?>
 
-  <li id="comment-<?php comment_ID(); ?>" <?php comment_class('media comment-' . get_comment_ID()); ?>>
-    <?php include(locate_template('templates/comment.php')); ?>
+    <li id="comment-<?php comment_ID(); ?>" <?php comment_class('media comment-' . get_comment_ID()); ?>>
+      <?php include(locate_template('templates/comment.php')); ?>
   <?php
+    endif;
   }
 
   function end_el(&$output, $comment, $depth = 0, $args = array()) {
@@ -38,8 +48,11 @@ class Roots_Walker_Comment extends Walker_Comment {
       call_user_func($args['end-callback'], $comment, $args, $depth);
       return;
     }
-    // Close ".media-body" <div> located in templates/comment.php, and then the comment's <li>
-    echo "</div></li>\n";
+    //if is the user or is admin
+    if (($comment->comment_author==wp_get_current_user()->user_login )||(current_user_can( 'manage_options' ))):
+      // Close ".media-body" <div> located in templates/comment.php, and then the comment's <li>
+      echo "</div></li>\n";
+    endif;
   }
 }
 

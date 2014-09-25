@@ -75,6 +75,13 @@ comment_form($comment_args); ?>
 	$( "<div id='mergeOption'></div>" ).insertAfter( ".form-submit" ); 
 	$( "#comment-form-upload" ).appendTo( "#mergeOption" );
 	$( ".form-submit" ).appendTo( "#mergeOption" ); 
-});
+
+  //QUICK BUGFIX DE LOS COMENTARIOS
+  /*$("li.comment").each(function(){
+      if($(this).html().trim() == ""){
+        $(this).css('display','none');
+      }
+  })*/
+  });
   </script>
 </section><!-- /#respond -->
