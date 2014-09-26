@@ -7392,7 +7392,7 @@ footer {
 }
 
 #comment-form-upload:before {
-  content: "Adjuntar";
+  content: "Adjuntar" attr(data-content);
   color: #fff;
   background-color: #3276b1;
   border: 1px solid #285e8e;

@@ -72,9 +72,16 @@ comment_form($comment_args); ?>
   <script>
   
   $(function() {
-	$( "<div id='mergeOption'></div>" ).insertAfter( ".form-submit" ); 
-	$( "#comment-form-upload" ).appendTo( "#mergeOption" );
-	$( ".form-submit" ).appendTo( "#mergeOption" ); 
+  	$( "<div id='mergeOption'></div>" ).insertAfter( ".form-submit" ); 
+  	$( "#comment-form-upload" ).appendTo( "#mergeOption" );
+  	$( ".form-submit" ).appendTo( "#mergeOption" ); 
+    
+    $("#attachment").change(function(){
+      var name = $(this).val().split('\\').pop().split('/').pop();
+      console.log(name);
+      $('#comment-form-upload').attr('data-content', ': '+name);
+      //submit the form here
+    });
   });
   </script>
 </section><!-- /#respond -->
