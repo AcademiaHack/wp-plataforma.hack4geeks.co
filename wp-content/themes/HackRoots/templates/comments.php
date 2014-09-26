@@ -75,6 +75,6 @@ comment_form($comment_args); ?>
 	$( "<div id='mergeOption'></div>" ).insertAfter( ".form-submit" ); 
 	$( "#comment-form-upload" ).appendTo( "#mergeOption" );
 	$( ".form-submit" ).appendTo( "#mergeOption" ); 
-});
+  });
   </script>
 </section><!-- /#respond -->

@@ -1,7 +1,3 @@
-
-<?php  
-  if (($comment->comment_author==wp_get_current_user()->user_login )||(current_user_can( 'manage_options' ))):
-?> 
 <?php echo get_avatar($comment, $size = '64'); ?>
 <div class="media-body">
   <h4 class="media-heading"><?php echo get_comment_author_link(); ?></h4>
@@ -12,8 +8,9 @@
       <?php _e('Your comment is awaiting moderation.', 'roots'); ?>
     </div>
   <?php endif; ?>
-
+  
   <?php comment_text(); ?>
+
   <div class="row">
     <div class="col-sm-12 text-right">
       <?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
@@ -23,4 +20,4 @@
       </a>
     </div>
   </div>
-<?php endif; ?>
+<!-- the .media-body div is closed in the walker -->
