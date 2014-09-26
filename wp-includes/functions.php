@@ -2347,15 +2347,30 @@ function _default_wp_die_handler( $message, $title = '', $args = array() ) {
 			background: #f1f1f1;
 		}
 		body {
+			margin-top: 0 !important;
+			margin: 0;
 			background: #fff;
 			color: #444;
 			font-family: "Open Sans", sans-serif;
-			margin: 2em auto;
-			padding: 1em 2em;
-			max-width: 700px;
 			-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.13);
 			box-shadow: 0 1px 3px rgba(0,0,0,0.13);
+			background-image: url('../wp-content/themes/HackRoots/assets/img/fondo_mosaico.jpg');
+			position: absolute;
+			height: 100%;
+			width: 100%;
 		}
+
+		.box {
+			position: relative;
+			background-color: #fff;
+			width: 50%;
+			margin-left: 25%;
+			padding: 20px;
+			margin-top: 100px;
+			font-size: 18px;
+			text-align: center;
+		}
+
 		h1 {
 			border-bottom: 1px solid #dadada;
 			clear: both;
@@ -2369,7 +2384,6 @@ function _default_wp_die_handler( $message, $title = '', $args = array() ) {
 			margin-top: 50px;
 		}
 		#error-page p {
-			font-size: 14px;
 			line-height: 1.5;
 			margin: 25px 0 20px;
 		}
@@ -2438,6 +2452,27 @@ function _default_wp_die_handler( $message, $title = '', $args = array() ) {
 		 	box-shadow: inset 0 2px 5px -3px rgba( 0, 0, 0, 0.5 );
 		}
 
+		.btn-back {
+			background-color: #1461B9;
+			border: 1px solid #1461B9;
+			transition: all 0.3s;
+			-webkit-transition: all 0.3s;
+			-all-transition: all 0.3s;
+			padding: 10px 16px;
+			font-size: 18px;
+			line-height: 1.33;
+			color: #fff;
+			border-color: #357ebd;
+			width: 60%;
+		}
+
+		.btn-back:hover {
+			border: 1px solid #1461B9;
+			background-color: rgba(11,52,156,0.5);
+			color: #fff;
+			cursor: pointer;
+		}
+
 		<?php if ( 'rtl' == $text_direction ) : ?>
 		body { font-family: Tahoma, Arial; }
 		<?php endif; ?>
@@ -2445,8 +2480,10 @@ function _default_wp_die_handler( $message, $title = '', $args = array() ) {
 </head>
 <body id="error-page">
 <?php endif; // ! did_action( 'admin_head' ) ?>
-	<?php echo $message; ?>
-	<input type="button" value="Volver" onclick="window.history.back()" /> 
+	<div class="box">
+		<?php echo $message; ?>
+		<input class="btn-back" type="button" value="Volver" onclick="window.history.back()" />
+	</div> 
 </body>
 </html>
 <?php
