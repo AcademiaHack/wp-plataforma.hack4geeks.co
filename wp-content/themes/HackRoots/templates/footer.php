@@ -23,9 +23,13 @@ if(isset($current_user)){
 	$(function() { 
 		$(".menu-username>a").text($("#username-text").text()); 
 		
-		$(".editperfil").find("a").attr("href",$("#editPerfil").attr('href'));
+		//Menu superior Boton de editar0
+		//$(".editperfil").find("a").attr("href",$("#editPerfil").attr('href'));
+
+		//Menu superior: Boton de Salir
 		$(".outperfil").find("a").attr("href",$("#logoutPerfil").attr('href'));
-		$("#editPerfil").remove();
+		$(".outperfil").find("a").html("<span class='glyphicon glyphicon-off'></span>");
+		// $("#editPerfil").remove();
 	});
 	
 </script> 
