@@ -73,71 +73,73 @@
 			<header class="profile">
 				<div class="container">
 					<div class="row">
-						<div class="col-sm-4 text-center">
-							<div class="user-pic">
-								<div class="white-border">
-									<div class="hexagon hexagon1">
-										<div class="hexagon-in1">
-											<div class="hexagon-border"></div>
+						<div class="col-sm-4">
+							<div class="row">
+								<div class="col-sm-12">
+									<div class="user-pic">
+										<div class="white-border">
+											<div class="hexagon hexagon1">
+												<div class="hexagon-in1">
+													<div class="hexagon-border"></div>
+												</div>
+											</div>
+										</div>
+										<div class="hexagon hexagon2">
+											<div class="hexagon-in1">
+												<?php
+													if($avtar_image[0])
+													{
+														echo '<div class="hexagon-in2" style="background-image: url(' . $avtar_image[0] . ');"></div>';		
+													}
+													else
+													{
+												?>
+														<div class="hexagon-in2"></div>
+												<?php
+													}
+												?>
+											</div>
 										</div>
 									</div>
 								</div>
-								<div class="hexagon hexagon2">
-									<div class="hexagon-in1">
-										<?php
-
-
-
-										if($avtar_image[0])
-										{
-											echo '<div class="hexagon-in2" style="background-image: url(' . $avtar_image[0] . ');"></div>';		
-										}
-										else
-										{
-											?>
-
-											<div class="hexagon-in2"></div>
-
-											<?php
-										}
-										?>
-
+							</div>
+							<div class="row">
+								<div class="col-sm-12">
+									<h1><?php the_author_meta('first_name',$current_id); ?>&nbsp;<?php the_author_meta('last_name',$current_id); ?></h1>
+									<div class="user-info">
+										 
+										<?php if (checkfieldname("upb_usernameshowhide","yes")==true ) : ?>
+											<div class="user-name-info"><img src="/wp-content/themes/HackRoots/assets/img/list-hexagon.png" alt=""> <?php echo " @";the_author_meta('user_login',$current_id); ?></div>
+										<?php endif; ?>
+										<?php if (checkfieldname("upb_emailshowhide","yes")==true) : ?>
+											<div class="user-email-info"><img src="/wp-content/themes/HackRoots/assets/img/list-hexagon.png" alt=""> <?php the_author_meta('user_email',$current_id); ?></div>
+										<?php endif; ?>
+									<!-- 	<?php if (checkfieldname("upb_websiteshowhide","yes")==true) : ?>
+											<div class="user-web-info"><strong>Página web:</strong> <?php the_author_meta('user_url',$current_id); ?></div>
+										<?php endif; ?>
+										<br>
+										<?php if (checkfieldname("upb_aimshowhide","yes")==true && (get_user_meta($current_id,'aim', true) !="")) : ?>
+											<div class="user-aim-info"><strong>AIM:</strong> <?php the_author_meta('aim',$current_id); ?></div>
+										<?php endif; ?>
+										<?php if (checkfieldname("upb_yahooimshowhide","yes")==true && (get_user_meta($current_id,'yim', true) !="")) : ?>
+											<div class="user-yahoo-info"><strong>Yahoo:</strong> <?php the_author_meta('yim',$current_id); ?></div>
+										<?php endif; ?>
+										<?php if (checkfieldname("upb_jabbergoogletalkshowhide","yes")==true && (get_user_meta($current_id,'jabber', true) !="")) : ?>
+											<div class="user-gtalk-info"><strong>Gtalk:</strong> <?php the_author_meta('jabber',$current_id); ?></div>
+										<?php endif; ?> -->
+									</div>
+									<div class="row">
+										<div class="col-sm-10 col-sm-offset-1">
+											<a class="btn btn-default btn-flat btn-block" id="editPerfil" href="<?php echo $pageURL; ?><?php echo $sign; ?>login5=1" title="Edit Profile">
+												Editar
+											</a>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col-sm-6">
-							<h1><?php the_author_meta('first_name',$current_id); ?>&nbsp;<?php the_author_meta('last_name',$current_id); ?></h1>
-							<div class="user-info">
-								 
-								<?php if (checkfieldname("upb_usernameshowhide","yes")==true ) : ?>
-									<div class="user-name-info"><img src="/wp-content/themes/HackRoots/assets/img/list-hexagon.png" alt=""> <?php echo " @";the_author_meta('user_login',$current_id); ?></div>
-								<?php endif; ?>
-								<?php if (checkfieldname("upb_emailshowhide","yes")==true) : ?>
-									<div class="user-email-info"><img src="/wp-content/themes/HackRoots/assets/img/list-hexagon.png" alt=""><?php the_author_meta('user_email',$current_id); ?></div>
-								<?php endif; ?>
-							<!-- 	<?php if (checkfieldname("upb_websiteshowhide","yes")==true) : ?>
-									<div class="user-web-info"><strong>Página web:</strong> <?php the_author_meta('user_url',$current_id); ?></div>
-								<?php endif; ?>
-								<br>
-								<?php if (checkfieldname("upb_aimshowhide","yes")==true && (get_user_meta($current_id,'aim', true) !="")) : ?>
-									<div class="user-aim-info"><strong>AIM:</strong> <?php the_author_meta('aim',$current_id); ?></div>
-								<?php endif; ?>
-								<?php if (checkfieldname("upb_yahooimshowhide","yes")==true && (get_user_meta($current_id,'yim', true) !="")) : ?>
-									<div class="user-yahoo-info"><strong>Yahoo:</strong> <?php the_author_meta('yim',$current_id); ?></div>
-								<?php endif; ?>
-								<?php if (checkfieldname("upb_jabbergoogletalkshowhide","yes")==true && (get_user_meta($current_id,'jabber', true) !="")) : ?>
-									<div class="user-gtalk-info"><strong>Gtalk:</strong> <?php the_author_meta('jabber',$current_id); ?></div>
-								<?php endif; ?> -->
-							</div>
-							 <div class="row">
-								<div class="col-sm-6">
-									<a class="btn btn-default btn-flat btn-block" id="editPerfil" href="<?php echo $pageURL; ?><?php echo $sign; ?>login5=1" title="Edit Profile">
-										Editar
-									</a>
-								</div>
-								 
-							</div>  
+						<div class="col-sm-6" style="background-color: blue; height: 300px">
+							<h1>Arbol de talentos</h1>
 						</div>
 					</div>
 				</div>
