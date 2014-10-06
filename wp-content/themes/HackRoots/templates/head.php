@@ -6,7 +6,15 @@
   <title><?php wp_title('|', true, 'right'); ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href=" <?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/favicon.ico" />
+  <?php 
+  	if(is_page('Perfil')) {
+  ?>
+  <!-- <link href="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/vendor/skilltree/css/layout.css" rel="stylesheet"> -->
+  <?php 
+  	}
+  ?>
   <?php wp_head(); ?>
 
+  
   <link rel="alternate" type="application/rss+xml" title="<?php echo get_bloginfo('name'); ?> Feed" href="<?php echo esc_url(get_feed_link()); ?>">
 </head>
