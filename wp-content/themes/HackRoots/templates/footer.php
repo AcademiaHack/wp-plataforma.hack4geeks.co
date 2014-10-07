@@ -36,9 +36,9 @@ if(isset($current_user)){
 <?php 
 	if(is_page('Perfil')) {
 ?>
-<script src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/vendor/skilltree/vendor/knockout.min.js"></script>
-<script src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/vendor/skilltree/js/skilltree.js"></script>
-<script src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/vendor/skilltree/default.js"></script>
+<script src="<?php echo plugins_url(); ?>/skilltree-plugin/vendor/knockout.min.js"></script>
+<script src="<?php echo plugins_url(); ?>/skilltree-plugin/js/skilltree.js"></script>
+<script src="<?php echo plugins_url(); ?>/skilltree-plugin/default.js"></script>
 <?php 
 } 
 ?>
