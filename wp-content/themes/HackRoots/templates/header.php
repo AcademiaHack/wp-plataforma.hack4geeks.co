@@ -9,7 +9,7 @@ $category_link = get_category_link( $category_id );
   <div class="container">
     <div class="navbar-header">
       <a class="navbar-brand" href="<?php echo $category_link; ?>">
-        <img class="logo" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/logo.png" alt="">
+        <img class="logo_hack" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/logo.png" alt="">
       </a>
     </div>
     <nav id="categorias" class="collapse navbar-collapse bs-navbar-collapse" role="navigation">

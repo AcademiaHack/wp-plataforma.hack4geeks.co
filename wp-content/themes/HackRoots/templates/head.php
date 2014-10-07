@@ -9,7 +9,7 @@
   <?php 
   	if(is_page('Perfil')) {
   ?>
-  <!-- <link href="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/vendor/skilltree/css/layout.css" rel="stylesheet"> -->
+  <link href="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/vendor/skilltree/css/layout.css" rel="stylesheet">
   <?php 
   	}
   ?>

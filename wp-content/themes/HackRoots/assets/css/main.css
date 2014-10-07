@@ -6228,7 +6228,7 @@ body {
 .logged-in {
   padding-top: 8px;
 }
-.logo {
+.logo_hack {
   max-height: 100%;
 }
 .navbar-brand {
@@ -7499,6 +7499,7 @@ footer {
 }
 .page-template-template-profile-php.logged-in {
   background-image: url('../img/fondo_mosaico1.jpg');
+  background-repeat: repeat;
 }
 .user-pic img {
   width: 150px;
@@ -7514,7 +7515,7 @@ footer {
 .user-info img {
   margin-right: 20px;
 }
-header.profile {
+.profile {
   padding: 0 15px;
   margin-top: -40px;
   overflow: hidden;
@@ -7523,7 +7524,7 @@ header.profile {
   padding: 100px 15px 20px;
   background-color: #0D4F99;
   height: 100%;
-  position: absolute;
+  position: fixed;
   margin-top: -52px;
   width: 20%;
 }
@@ -7531,7 +7532,7 @@ header.profile {
   width: 80%;
   margin-left: 20%;
   position: relative;
-  padding: 50px 0;
+  padding: 30px 0;
 }
 .glyphicon-off{
   font-size: 18px;
@@ -7568,5 +7569,155 @@ header.profile {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   margin-top: -5px;
+}
+.page {
+  width: 100%;
+  position: inherit;
+}
+.talent-tree {
+  position: relative;
+  height: 800px;
+  margin: 0 60px;
+}
+.skill .tool-tip {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  /*position: relative;*/
+}
+/*.skill .tool-tip:before {
+  content: " ";
+  position: absolute;
+  top: 20px;
+  left: -11px;
+  width: 0; 
+  height: 0; 
+  border-top: 11px solid transparent;
+  border-bottom: 11px solid transparent; 
+  border-right:11px solid #ccc; 
+}
+.skill .tool-tip:after {
+  content: " ";
+  position: absolute;
+  top: 20px;
+  left: -10px;
+  width: 0; 
+  height: 0; 
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent; 
+  border-right:10px solid #fff; 
+}*/
+.skill .skill-dependency {
+  background: url(../img/sprite_branches.png);
+}
+[data-skill-id="2"] .skill-dependency {
+  background-position: 485px -2px;
+}
+[data-skill-id="3"] .skill-dependency {
+  background-position: -160px -56px;
+}
+[data-skill-id="4"] .skill-dependency {
+  background-position: -224px -104px;
+}
+[data-skill-id="5"] .skill-dependency {
+  background-position: -194px -289px;
+  margin-bottom: -70px;
+  margin-left: 47px;
+  width: 30px;
+}
+[data-skill-id="7"] .skill-dependency {
+  background-position: -309px -111px;
+  width: 11px;
+  height: 43px;
+  margin-left: -5px;
+  margin-bottom: 14px;
+}
+[data-skill-id="9"] .skill-dependency {
+  background-position: -380px -112px;
+  width: 11px;
+  height: 42px;
+  margin-left: -5px;
+  margin-bottom: 14px;
+}
+[data-skill-id="10"] .skill-dependency {
+  background-position: -380px -219px;
+  width: 11px;
+  height: 43px;
+  margin-left: -5px;
+  margin-bottom: 14px;
+}
+[data-skill-id="12"] .skill-dependency {
+  background-position: -510px -114px;
+  width: 11px;
+  height: 39px;
+  margin-left: -5px;
+  margin-bottom: 18px;
+}
+[data-skill-id="14"] .skill-dependency {
+  background-position: -510px -114px;
+  width: 11px;
+  height: 39px;
+  margin-left: -5px;
+  margin-bottom: 18px;
+}
+[data-skill-id="15"] .skill-dependency {
+  background-position: -516px -220px;
+  width: 71px;
+  height: 42px;
+  margin-left: -35px;
+  margin-bottom: 15px;
+}
+[data-skill-id="16"] .skill-dependency {
+  background-position: -584px -288px;
+  width: 18px;
+  height: 11px;
+  margin-left: -63px; 
+  margin-bottom: -40px;
+}
+[data-skill-id="17"] .skill-dependency {
+  background-position: -418px -288px;
+  width: 102px;
+  height: 11px;
+  margin-left: -53px;
+  margin-bottom: -40px;
+}
+[data-skill-id="19"] .skill-dependency {
+  background-position: -50px -80px;
+  margin-left: 0;
+}
+[data-skill-id="20"] .skill-dependency {
+  background-position: -4px -179px;
+  width: 18px;
+  height: 11px;
+  margin-left: 47px;
+  margin-bottom: -40px;
+}
+[data-skill-id="22"] .skill-dependency {
+  background-position: -54px -219px;
+  width: 71px;
+  height: 38px;
+  margin-left: -36px;
+  margin-bottom: 20px;
+}
+[data-skill-id="23"] .skill-dependency {
+  background-position: -38px -289px;
+  width: 18px;
+  height: 11px;
+  margin-left: 47px;
+  margin-bottom: -40px;
+}
+[data-skill-id="25"] .skill-dependency {
+  background-position: -309px -111px;
+  width: 11px;
+  height: 43px;
+  margin-left: -5px;
+  margin-bottom: 14px;
+}
+[data-skill-id="26"] .skill-dependency {
+  background: url(../img/sprite_branches1.png);
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  margin-left: -273px;
+  width: 720px;
+  height: 170px;
 }
 /*# sourceMappingURL=main.css.map 
