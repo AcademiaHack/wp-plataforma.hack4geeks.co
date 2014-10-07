@@ -70,7 +70,7 @@
 			$user_description = $user_info->user_description;
 			?>
 			
-			<header class="profile">
+			<div class="profile">
 				<div class="row">
 					<div class="blue-sidebar">
 						<div class="row">
@@ -235,7 +235,7 @@
 
 						</div>
 					</div>
-				</header>
+				</div>
 
 				<div id="upb-form">
 				<!--<div> 
