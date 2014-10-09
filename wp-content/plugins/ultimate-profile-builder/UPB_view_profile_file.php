@@ -76,7 +76,7 @@
 						<div class="row">
 							<div class="col-sm-12 text-center">
 								<div class="user-pic">
-									<img src="../wp-content/themes/HackRoots/assets/img/default.jpg" alt="">
+									<img src="../wp-content/themes/HackRoots/assets/img/default.png" alt="">
 
 									<?php
 
@@ -90,7 +90,7 @@
 									{
 										?>
 
-										<div class="hexagon-in2"></div>
+										<div class="user-pic"></div>
 
 										<?php
 									}
@@ -143,7 +143,7 @@
 											<img src="img/logo.png" class="logo">
 										</header> -->
 										<div class="talent-tree">
-							 				<h2 class="start-helper" data-bind="css:{active:noPointsSpent}">Start here!</h2>
+							 				<h2>Arbol de talentos</h2>
 											<!--ko foreach: skills-->
 											<!--ko if: hasDependencies-->
 											<div data-bind="css: { 'can-add-points': canAddPoints, 'has-points': hasPoints, 'has-max-points': hasMaxPoints }, attr: { 'data-skill-id': id }" class="skill">
@@ -191,38 +191,9 @@
 											</div>
 											<!--/ko-->
 										</div>
-										<div class="avatar">
-											<div class="portrait">
-												<img data-bind="attr: { src: portraitURL }">
-											</div>
-											<div class="details">
-												<input data-bind="value: avatarName" class="h2">
-												<div class="level">Level <span data-bind="	text: level" class="value"></span> Web Developer</div>
-												<!-- <div data-bind="text: talentSummary" class="talent-summary"></div> -->
-												<!-- <ul class="stats"> -->
-													<!--ko foreach: stats-->
-													<!-- <li><span data-bind="text: title" class="title"></span>: <span data-bind="	text: value" class="value"></span></li> -->
-													<!--/ko-->
-												<!-- </ul> -->
-											</div>
-										</div>
-										<div class="sign-off">
-											<h2>It's dangerous to go alone!</h2>
-											<p>Throughout the dark corners of the web, doors are always opening to new challenges that will test the mettle of even the most stout developer. Let these watering holes provide a brief respite and an opportunity for you and other heroes to band together:
-											</p>
-											<ul>
-												<li><a onclick="_gaq.push(['_trackEvent','external link','footer','A List Apart']);" href="http://alistapart.com/" target="_blank">A List Apart</a></li>
-												<li><a onclick="_gaq.push(['_trackEvent','external link','footer','Smashing Magazine']);" href="http://www.smashingmagazine.com/" target="_blank">Smashing Magazine</a></li>
-												<li><a onclick="_gaq.push(['_trackEvent','external link','footer','Code Academy']);" href="http://www.codecademy.com/" target="_blank">Code Academy</a></li>
-												<li><a onclick="_gaq.push(['_trackEvent','external link','footer','Stack Overflow']);" href="http://www.stackoverflow.com/" target="_blank">Stack Overflow</a></li>
-												<li><a onclick="_gaq.push(['_trackEvent','external link','footer','reddit']);" href="http://www.reddit.com/r/webdesign/" target="_blank">reddit webdesign</a></li>
-											</ul>
-											<h3>Happy adventuring!</h3>
-										</div>
 									</div>
 								</div>
 								<div class="ltIE9-show ltIE9-warning">
-									<img src="img/logo.png" class="logo">
 									<h2>Please upgrade your browser!</h2>
 									<p>Try one of these free options:</p>
 									<ul>
