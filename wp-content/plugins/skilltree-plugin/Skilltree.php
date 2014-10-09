@@ -62,11 +62,12 @@ add_action('admin_menu', 'skilltree_add_menus');
 
 
 function skilltree_display(){
-	echo '<h2>Arboles de talentos</h2><br>';
-	echo '<label for="skilltree_userDropdown">Usuario </label><br>';
+	echo '<h1>Arboles de talentos</h1>';
+	echo '<label for="skilltree_userDropdown">Usuario </label>';
 	echo '<select id="skilltree_userDropdown">';
 	echo '<option value="0">Seleccione un Usuario</option>';
-	echo '</select><br><hr>';
+	echo '</select><br>';
+	// echo '<h2>Arbol de talentos de <span id="username_title"></span></h2>';
 	
 	// $users = get_users( 'orderby=ID&role=' );
 	// // $users = get_users( array( 'fields' => array( 'ID' ),
@@ -76,7 +77,7 @@ function skilltree_display(){
 	// 	echo '<pre>' . $user->ID . '</pre>';
 	// }
 
-	// echo skilltree_render_toString();
+	echo skilltree_render_toString();
 	echo '<hr>';
 	echo '<input type="submit" value="Guardar">';
 }
@@ -84,14 +85,10 @@ function skilltree_display(){
 function skilltree_render_toString(){
 	$talent_tree = '<div class="ltIE9-hide">
 						<div class="page open">
-							<!-- <header>
-								<img src="img/logo.png" class="logo">
-							</header> -->
 							<div class="talent-tree">
-				 				<h2 class="start-helper" data-bind="css:{active:noPointsSpent}">Start here!</h2>
-								<!--ko foreach: skills-->
+				 				<!--ko foreach: skills-->
 								<!--ko if: hasDependencies-->
-								<div data-bind="css: {\' can-add-points\': canAddPoints, \'has-points\': hasPoints, \'has-max-points\': hasMaxPoints }, attr: { \'data-skill-id\': id }" class="skill">
+								<div data-bind="css: { \'can-add-points\': canAddPoints, \'has-points\': hasPoints, \'has-max-points\': hasMaxPoints }, attr: { \'data-skill-id\': id }" class="skill">
 									<div data-bind="css: { active: dependenciesFulfilled }" class="skill-dependency"></div>
 								</div>
 								<!--/ko-->
@@ -139,7 +136,6 @@ function skilltree_render_toString(){
 						</div>
 					</div>
 					<div class="ltIE9-show ltIE9-warning">
-						<img src="img/logo.png" class="logo">
 						<h2>Please upgrade your browser!</h2>
 						<p>Try one of these free options:</p>
 						<ul>

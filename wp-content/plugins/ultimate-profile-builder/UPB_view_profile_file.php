@@ -139,9 +139,6 @@
 
 								<div class="ltIE9-hide">
 									<div class="page open">
-										<!-- <header>
-											<img src="img/logo.png" class="logo">
-										</header> -->
 										<div class="talent-tree">
 							 				<h2>Arbol de talentos</h2>
 											<!--ko foreach: skills-->
