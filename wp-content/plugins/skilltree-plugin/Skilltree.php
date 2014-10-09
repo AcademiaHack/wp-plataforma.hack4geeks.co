@@ -31,6 +31,18 @@ function skilltree_deactivation() {
 }
 register_deactivation_hook(__FILE__, 'skilltree_deactivation');
 
+add_action( 'user_register', 'skilltree_user_registration_save');
+function skilltree_user_registration_save( $user_id ) {
+	add_user_meta( $user_id, 'user_skilltree', '');
+}
+
+add_action( 'delete_user', 'skilltree_user_delete' );
+function skilltree_user_delete( $user_id ) {
+	if ( ! delete_user_meta( $user_id, 'user_skilltree' ) ) {
+	    echo "Ooops! Error al borrar esta informacion!: ".$user->ID;
+	}
+}
+
 function skilltree_enqueues() 
 {
 	//Stylesheets
@@ -62,11 +74,15 @@ add_action('admin_menu', 'skilltree_add_menus');
 
 
 function skilltree_display(){
+	$users = get_users( 'orderby=ID&role=' );
+
 	echo '<h1>Arboles de talentos</h1>';
-	echo '<label for="skilltree_userDropdown">Usuario </label>';
-	echo '<select id="skilltree_userDropdown">';
-	echo '<option value="0">Seleccione un Usuario</option>';
-	echo '</select><br>';
+	echo '<label for="skilltree_userDropdown">Usuario </label> ';
+	echo '<select id="skilltree_userDropdown"> ';
+	foreach ( $users as $user ) {
+		echo '<option value="'.$user->ID.'">'.$user->display_name.'</option>';
+	}
+	echo '</select><input type="submit" value="Guardar"><br>';
 	// echo '<h2>Arbol de talentos de <span id="username_title"></span></h2>';
 	
 	// $users = get_users( 'orderby=ID&role=' );
@@ -79,7 +95,6 @@ function skilltree_display(){
 
 	echo skilltree_render_toString();
 	echo '<hr>';
-	echo '<input type="submit" value="Guardar">';
 }
 
 function skilltree_render_toString(){

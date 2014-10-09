@@ -52,12 +52,12 @@
 		ko.applyBindings(vm);
 
 		//apply konami code plugin
-		$(window).konami(function () { vm.open(); vm.godMode(); });
+		// $(window).konami(function () { vm.open(); vm.godMode(); });
 
 		//Allow a split second for binding before turning on animated transitions for the UI
-		setTimeout(function(){
-			$('.page').addClass('animated');
-		}, 50);
+		// setTimeout(function(){
+		// 	$('.page').addClass('animated');
+		// }, 50);
 	});
 
 
