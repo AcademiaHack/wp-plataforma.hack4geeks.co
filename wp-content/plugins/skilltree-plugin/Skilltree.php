@@ -8,80 +8,149 @@ Version: 0.1
 Author URI: http://heyyeyaaeyaaaeyaeyaa.com/
 */
 
+
 function skilltree_activation() {
+	// Array of WP_User objects.
+	$users = get_users( 'orderby=ID&role=' );
+	// Add the corresponding meta to the users
+	foreach ( $users as $user ) {
+		add_user_meta( $user->ID, 'user_skilltree', '');
+	}
 }
 register_activation_hook(__FILE__, 'skilltree_activation');
 
 function skilltree_deactivation() {
+	// Array of WP_User objects.
+	$users = get_users( 'orderby=ID&role=' );
+	// Add the corresponding meta to the users
+	foreach ( $users as $user ) {
+		if ( ! delete_user_meta( $user->ID, 'user_skilltree' ) ) {
+		  echo "Ooops! Error al borrar esta informacion!: ".$user->ID;
+		}
+	}
 }
 register_deactivation_hook(__FILE__, 'skilltree_deactivation');
 
+function skilltree_enqueues() 
+{
+	//Stylesheets
+	wp_register_style('skilltree_layout_css', plugins_url('css/layout.css', __FILE__));
+	wp_enqueue_style('skilltree_layout_css');
+	
+	//JS libraries
+	wp_register_script('knockout', plugins_url('vendor/knockout.min.js', __FILE__));
+	wp_register_script('skilltree_js', plugins_url('js/skilltree.js', __FILE__));
+	wp_register_script('skilltree_default', plugins_url('default.js', __FILE__));
+	wp_enqueue_script('knockout');
+	wp_enqueue_script('skilltree_js');
+	wp_enqueue_script('skilltree_default');
 
-function hello_dolly_get_lyric() {
-	/** These are the lyrics to Hello Dolly */
-	$lyrics = "Hello, Dolly
-Well, hello, Dolly
-It's so nice to have you back where you belong
-You're lookin' swell, Dolly
-I can tell, Dolly
-You're still glowin', you're still crowin'
-You're still goin' strong
-We feel the room swayin'
-While the band's playin'
-One of your old favourite songs from way back when
-So, take her wrap, fellas
-Find her an empty lap, fellas
-Dolly'll never go away again
-Hello, Dolly
-Well, hello, Dolly
-It's so nice to have you back where you belong
-You're lookin' swell, Dolly
-I can tell, Dolly
-You're still glowin', you're still crowin'
-You're still goin' strong
-We feel the room swayin'
-While the band's playin'
-One of your old favourite songs from way back when
-Golly, gee, fellas
-Find her a vacant knee, fellas
-Dolly'll never go away
-Dolly'll never go away
-Dolly'll never go away again";
-
-	// Here we split it into lines
-	$lyrics = explode( "\n", $lyrics );
-
-	// And then randomly choose a line
-	return wptexturize( $lyrics[ mt_rand( 0, count( $lyrics ) - 1 ) ] );
 }
-
-// This just echoes the chosen line, we'll position it later
-function hello_dolly() {
-	$chosen = hello_dolly_get_lyric();
-	echo "<p id='dolly'>hello world!!!!!!!!!!!</p>";
-}
-
-// Now we set that function up to execute when the admin_notices action is called
-add_action( 'admin_notices', 'hello_dolly' );
+add_action('wp_enqueue_scripts', 'skilltree_enqueues');
+add_action('admin_enqueue_scripts', 'skilltree_enqueues');
 
 // We need some CSS to position the paragraph
-function dolly_css() {
-	// This makes sure that the positioning is also good for right-to-left languages
-	$x = is_rtl() ? 'left' : 'right';
+function skilltree_css() {
+	echo "<style type='text/css'></style>";
+}
+add_action( 'admin_head', 'skilltree_css' );
 
-	echo "
-	<style type='text/css'>
-	#dolly {
-		float: $x;
-		padding-$x: 15px;
-		padding-top: 5px;		
-		margin: 0;
-		font-size: 14px;
-	}
-	</style>
-	";
+function skilltree_add_menus(){
+	add_users_page('Usuarios > Arboles de Talentos', 'Arboles de Talentos', 'administrator', 'skilltree.php', 'skilltree_display');
+}
+add_action('admin_menu', 'skilltree_add_menus');
+
+
+function skilltree_display(){
+	echo '<h2>Arboles de talentos</h2><br>';
+	echo '<label for="skilltree_userDropdown">Usuario </label><br>';
+	echo '<select id="skilltree_userDropdown">';
+	echo '<option value="0">Seleccione un Usuario</option>';
+	echo '</select><br><hr>';
+	
+	// $users = get_users( 'orderby=ID&role=' );
+	// // $users = get_users( array( 'fields' => array( 'ID' ),
+	// // 						   'orderby' => 'ID'  ) );
+	// // Array of WP_User objects.
+	// foreach ( $users as $user ) {
+	// 	echo '<pre>' . $user->ID . '</pre>';
+	// }
+
+	// echo skilltree_render_toString();
+	echo '<hr>';
+	echo '<input type="submit" value="Guardar">';
 }
 
-add_action( 'admin_head', 'dolly_css' );
+function skilltree_render_toString(){
+	$talent_tree = '<div class="ltIE9-hide">
+						<div class="page open">
+							<!-- <header>
+								<img src="img/logo.png" class="logo">
+							</header> -->
+							<div class="talent-tree">
+				 				<h2 class="start-helper" data-bind="css:{active:noPointsSpent}">Start here!</h2>
+								<!--ko foreach: skills-->
+								<!--ko if: hasDependencies-->
+								<div data-bind="css: {\' can-add-points\': canAddPoints, \'has-points\': hasPoints, \'has-max-points\': hasMaxPoints }, attr: { \'data-skill-id\': id }" class="skill">
+									<div data-bind="css: { active: dependenciesFulfilled }" class="skill-dependency"></div>
+								</div>
+								<!--/ko-->
+								<!--/ko-->
+								<!--ko foreach: skills-->
+								<div data-bind="css: { \'can-add-points\': canAddPoints, \'has-points\': hasPoints, \'has-max-points\': hasMaxPoints }, attr: { \'data-skill-id\': id }" class="skill">
+									<div class="icon-container">
+										<div class="icon"></div>
+									</div>
+									<div class="frame">
+										<div class="tool-tip">
+											<h3 data-bind="text: title" class="skill-name"></h3>
+											<div data-bind="text: helpMessage" class="help-message"></div>
+											<div data-bind="html: description" class="skill-description"></div>
+											
+											<div data-bind="if: currentRankDescription" class="current-rank-description">Current rank: <span data-bind="	text: currentRankDescription"></span></div>
+											<div data-bind="if: nextRankDescription" class="next-rank-description">Next rank: <span data-bind="	text: nextRankDescription"></span></div>
+											
+											<ul class="skill-links">
+												<!--ko foreach: links-->
+												<li>
+													<a data-bind="attr: { href: url }, click: function(){ 
+														_gaq.push([\'_trackEvent\',$parent.title, label, url]);
+														return true;
+														}, text: label" target="_blank"></a>
+												</li>
+												<!--/ko-->
+											</ul>
+											<!-- <ul class="stats"> -->
+												<!--ko foreach: stats-->
+												<!-- <li><span class="value">+<span data-bind="text: value"></span></span> <span data-bind="	text: title" class="title"></span></li> -->
+												<!--/ko-->
+											<!-- </ul> -->
+											<!--ko if: talentSummary-->
+											<!-- <div class="talent-summary">Grants <span data-bind="text: talentSummary"></span></div> -->
+											<!--/ko-->
+											
+										</div>
+										<div class="skill-points"><span data-bind="text: points" class="points"></span>/<span data-bind="	text: maxPoints" class="max-points"></span></div>
+										<div data-bind="click: addPoint, rightClick: removePoint" class="hit-area"></div>
+									</div>
+								</div>
+								<!--/ko-->
+							</div>
+						</div>
+					</div>
+					<div class="ltIE9-show ltIE9-warning">
+						<img src="img/logo.png" class="logo">
+						<h2>Please upgrade your browser!</h2>
+						<p>Try one of these free options:</p>
+						<ul>
+							<li><a onclick="_gaq.push([\'_trackEvent\',\'external link\',\'upgrade browser\',\'Chrome\']);" href="http://google.com/chrome" target="_blank">Google Chrome</a></li>
+							<li><a onclick="_gaq.push([\'_trackEvent\',\'external link\',\'upgrade browser\',\'MSIE\']);" href="http://windows.microsoft.com/en-US/internet-explorer/download-ie" target="_blank">Microsoft Internet Explorer 10</a></li>
+							<li><a onclick="_gaq.push([\'_trackEvent\',\'external link\',\'upgrade browser\',\'Firefox\']);" href="www.mozilla.org/en-US/firefox" target="_blank">Mozilla Firefox</a></li>
+						</ul>
+					</div>';
+
+	return $talent_tree;
+}
+
 
 ?>
