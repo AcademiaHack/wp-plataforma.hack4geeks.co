@@ -101,14 +101,24 @@ add_action('admin_menu', 'skilltree_add_menus');
 function skilltree_display(){
 	$users = get_users( 'orderby=ID&role=' );
 
+	$selected = $_POST["skilltree_userDropdown"];
+
 	echo '<h1>Arboles de talentos</h1>';
-	echo '<label for="skilltree_userDropdown">Usuario </label> ';
-	echo '<select id="skilltree_userDropdown"> ';
+	echo '<form method="post" action="'.home_url('/').'wp-admin/users.php?page=skilltree.php">';
+	echo '<label name="label_userDropdown" for="skilltree_userDropdown">Usuario </label> ';
+	echo '<select id="skilltree_userDropdown" name="skilltree_userDropdown"> ';
 	foreach ( $users as $user ) {
-		echo '<option value="'.$user->ID.'">'.$user->display_name.'</option>';
+		$skilltree_hash = get_user_meta( $user->ID, 'user_skilltree' );
+		if(isset($selected) && $skilltree_hash[0] == $selected ){
+			echo '<option value="'.$skilltree_hash[0].'" selected>'.$user->display_name.'</option>';
+		}else{
+			echo '<option value="'.$skilltree_hash[0].'">'.$user->display_name.'</option>';
+		}
 	}
-	echo '</select><input type="submit" value="Guardar"><br>';
-	
+	echo '</select>';
+	echo '<input type="submit" id="chooseButton" value="Elegir"><br>';
+	echo '</form>';
+
 	// echo '<h2>Arbol de talentos de <span id="username_title"></span></h2>';
 	
 	// $users = get_users( 'orderby=ID&role=' );
@@ -121,8 +131,9 @@ function skilltree_display(){
 
 	echo skilltree_admin_render_toString();
 	echo '<hr>';
-	$skilltree_hash = get_user_meta( $logged_user, 'user_skilltree' );
-	echo '<script>$("#skilltree_userDropdown").change(function(){    });</script>';
+	echo '<input type="submit" id="saveButton" value="Guardar"><br>';
+	
+	// echo '<script>$("#skilltree_userDropdown").change(function(){    });</script>';
 }
 
 /* Renderizarion function */

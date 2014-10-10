@@ -31,14 +31,26 @@
 		var vm = new tft.skilltree.Calculator(data);
 		ko.applyBindings(vm);
 
-		$(".talent-tree").attr("id", "_");
+		vm.useHash("_");
+		// vm.useHash("_abcde");
+		// vm.useHash("_abcdefgh");
+		// vm.useHash("_abcdefghijklmnopqrstuvwxyz");
 
-		$("#skilltree_userDropdown").change(function() {
-			$("#username_title").text($( "#skilltree_userDropdown option:selected" ).text());
-		});
 
 		//Init skilltree with database values
-		vm.useHash($(".talent-tree").attr("id"));
+		vm.useHash($( "#skilltree_userDropdown option:selected" ).val());
+		
+		//Change the skilltree being displayed with the tree for each user
+		// $("#skilltree_userDropdown").change(function() {
+		// 	// vm.useHash("_a2");
+		// 	vm.clearTree();
+		// 	vm.useHash($( "#skilltree_userDropdown option:selected" ).val());
+		// 	console.log("aqui");
+		// });
+
+		// $("#skilltree_saveButton").on(click,function(){
+		// });
+
 	});
 
 

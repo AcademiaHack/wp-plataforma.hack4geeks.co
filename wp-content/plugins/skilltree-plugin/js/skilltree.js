@@ -193,7 +193,8 @@
 				useHash(lastHash);
 			}
 			function updateHash(s) {
-				self.useHash(s);
+				var h = s || newHash; 
+				self.useHash(h);
 				// window.location.hash = s || newHash;
 			}
 			
@@ -212,6 +213,17 @@
 				}
 			});
 
+			self.clearTree = function(){
+ 				// console.log(self.skills()[0].description);
+				ko.utils.arrayForEach(self.skills(), function(item){
+					// console.log(item.description);
+					item.removePoint();
+					item.removePoint();
+					item.removePoint();
+				});
+				// self.useHash("_");
+			}
+
 			// window.onhashchange = function () {
 			// 	self.useHash(window.location.hash.substr(1));
 			// };
@@ -219,7 +231,7 @@
 			//Launch
 			// var currentHash = window.location.hash.substr(1);
 			// self.isOpen(currentHash != ''); //If there is a hash, open the skill tree by default
-			// self.useHash("_");
+			self.clearTree();
 
 			return self;
 		}
