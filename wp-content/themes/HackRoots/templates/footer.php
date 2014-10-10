@@ -23,7 +23,7 @@ if(isset($current_user)){
 	$(function() { 
 		$(".menu-username>a").text($("#username-text").text()); 
 		
-		//Menu superior Boton de editar0
+		//Menu superior Boton de editar
 		//$(".editperfil").find("a").attr("href",$("#editPerfil").attr('href'));
 
 		//Menu superior: Boton de Salir
@@ -33,12 +33,3 @@ if(isset($current_user)){
 	});
 	
 </script> 
-<?php 
-	if(is_page('Perfil')) {
-?>
-<script src="<?php echo plugins_url(); ?>/skilltree-plugin/vendor/knockout.min.js"></script>
-<script src="<?php echo plugins_url(); ?>/skilltree-plugin/js/skilltree.js"></script>
-<script src="<?php echo plugins_url(); ?>/skilltree-plugin/default.js"></script>
-<?php 
-} 
-?>

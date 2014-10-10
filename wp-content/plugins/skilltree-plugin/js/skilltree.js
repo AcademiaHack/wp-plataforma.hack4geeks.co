@@ -219,7 +219,7 @@
 			//Launch
 			// var currentHash = window.location.hash.substr(1);
 			// self.isOpen(currentHash != ''); //If there is a hash, open the skill tree by default
-			self.useHash("_");
+			// self.useHash("_");
 
 			return self;
 		}

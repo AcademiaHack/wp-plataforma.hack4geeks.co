@@ -31,20 +31,14 @@
 		var vm = new tft.skilltree.Calculator(data);
 		ko.applyBindings(vm);
 
-		vm.useHash($(".talent-tree").attr("id"));
+		$(".talent-tree").attr("id", "_");
 
 		$("#skilltree_userDropdown").change(function() {
-		    $("#username_title").text($( "#skilltree_userDropdown option:selected" ).text());
+			$("#username_title").text($( "#skilltree_userDropdown option:selected" ).text());
 		});
 
-
-		//apply konami code plugin
-		// $(window).konami(function () { vm.open(); vm.godMode(); });
-
-		//Allow a split second for binding before turning on animated transitions for the UI
-		// setTimeout(function(){
-		// 	$('.page').addClass('animated');
-		// }, 50);
+		//Init skilltree with database values
+		vm.useHash($(".talent-tree").attr("id"));
 	});
 
 

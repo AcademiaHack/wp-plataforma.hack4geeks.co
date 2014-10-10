@@ -69,8 +69,6 @@
 			$user_info = get_userdata($current_id);
 			$user_description = $user_info->user_description;
 			
-			//skilltree
-			$skilltree_hash = get_user_meta( $current_id, 'user_skilltree' );
 			?>
 			
 			<div class="profile">
@@ -113,8 +111,8 @@
 									<?php if (checkfieldname("upb_emailshowhide","yes")==true) : ?>
 										<div class="user-email-info"><img src="/wp-content/themes/HackRoots/assets/img/list-hexagon.png" alt=""><?php the_author_meta('user_email',$current_id); ?></div>
 									<?php endif; ?>
-									<div class="user-skilltree-info"><img src="/wp-content/themes/HackRoots/assets/img/list-hexagon.png" alt="">HashSt:<?php echo $skilltree_hash[0] ?></div>
-									<div class="user-skilltree-info"><img src="/wp-content/themes/HackRoots/assets/img/list-hexagon.png" alt="">HashSK:<span data-bind="text:hash"></span></div>
+									<!-- <div class="user-skilltree-info"><img src="/wp-content/themes/HackRoots/assets/img/list-hexagon.png" alt="">HashSt:<?php echo $skilltree_hash[0] ?></div> -->
+									<!-- <div class="user-skilltree-info"><img src="/wp-content/themes/HackRoots/assets/img/list-hexagon.png" alt="">HashSK:<span data-bind="text:hash"></span></div> -->
 									<!-- 	<?php if (checkfieldname("upb_websiteshowhide","yes")==true) : ?>
 											<div class="user-web-info"><strong>Página web:</strong> <?php the_author_meta('user_url',$current_id); ?></div>
 										<?php endif; ?>
@@ -141,71 +139,8 @@
 						</div>
 						<div class="right-space">
 							<!-- Talent Tree -->
-
-								<div class="ltIE9-hide">
-									<div class="page open">
-										<div class="talent-tree" id="<?php echo $skilltree_hash[0]; ?>">
-							 				<h2>Arbol de talentos</h2>
-											<!--ko foreach: skills-->
-											<!--ko if: hasDependencies-->
-											<div data-bind="css: { 'can-add-points': canAddPoints, 'has-points': hasPoints, 'has-max-points': hasMaxPoints }, attr: { 'data-skill-id': id }" class="skill">
-												<div data-bind="css: { active: dependenciesFulfilled }" class="skill-dependency"></div>
-											</div>
-											<!--/ko-->
-											<!--/ko-->
-											<!--ko foreach: skills-->
-											<div data-bind="css: { 'can-add-points': canAddPoints, 'has-points': hasPoints, 'has-max-points': hasMaxPoints }, attr: { 'data-skill-id': id }" class="skill">
-												<div class="icon-container">
-													<div class="icon"></div>
-												</div>
-												<div class="frame">
-													<div class="tool-tip">
-														<h3 data-bind="text: title" class="skill-name"></h3>
-														<div data-bind="text: helpMessage" class="help-message"></div>
-														<div data-bind="html: description" class="skill-description"></div>
-														
-														<div data-bind="if: currentRankDescription" class="current-rank-description">Current rank: <span data-bind="	text: currentRankDescription"></span></div>
-														<div data-bind="if: nextRankDescription" class="next-rank-description">Next rank: <span data-bind="	text: nextRankDescription"></span></div>
-														
-														<ul class="skill-links">
-															<!--ko foreach: links-->
-															<li>
-																<a data-bind="attr: { href: url }, click: function(){ 
-																	_gaq.push(['_trackEvent',$parent.title, label, url]);
-																	return true;
-																	}, text: label" target="_blank"></a>
-															</li>
-															<!--/ko-->
-														</ul>
-														<!-- <ul class="stats"> -->
-															<!--ko foreach: stats-->
-															<!-- <li><span class="value">+<span data-bind="text: value"></span></span> <span data-bind="	text: title" class="title"></span></li> -->
-															<!--/ko-->
-														<!-- </ul> -->
-														<!--ko if: talentSummary-->
-														<!-- <div class="talent-summary">Grants <span data-bind="text: talentSummary"></span></div> -->
-														<!--/ko-->
-														
-													</div>
-													<div class="skill-points"><span data-bind="text: points" class="points"></span>/<span data-bind="	text: maxPoints" class="max-points"></span></div>
-													<div data-bind="click: addPoint, rightClick: removePoint" class="hit-area"></div>
-												</div>
-											</div>
-											<!--/ko-->
-										</div>
-									</div>
-								</div>
-								<div class="ltIE9-show ltIE9-warning">
-									<h2>Please upgrade your browser!</h2>
-									<p>Try one of these free options:</p>
-									<ul>
-										<li><a onclick="_gaq.push(['_trackEvent','external link','upgrade browser','Chrome']);" href="http://google.com/chrome" target="_blank">Google Chrome</a></li>
-										<li><a onclick="_gaq.push(['_trackEvent','external link','upgrade browser','MSIE']);" href="http://windows.microsoft.com/en-US/internet-explorer/download-ie" target="_blank">Microsoft Internet Explorer 10</a></li>
-										<li><a onclick="_gaq.push(['_trackEvent','external link','upgrade browser','Firefox']);" href="www.mozilla.org/en-US/firefox" target="_blank">Mozilla Firefox</a></li>
-									</ul>
-								</div>
-
-
+							<div id="skilltree"><?php echo skilltree_profile_render_toString(); ?></div>
+							
 						</div>
 					</div>
 				</div>
