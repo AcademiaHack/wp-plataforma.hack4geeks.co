@@ -14,7 +14,7 @@ function skilltree_activation() {
 	$users = get_users( 'orderby=ID&role=' );
 	// Add the corresponding meta to the users
 	foreach ( $users as $user ) {
-		add_user_meta( $user->ID, 'user_skilltree', '');
+		add_user_meta( $user->ID, 'user_skilltree', '_');
 	}
 }
 register_activation_hook(__FILE__, 'skilltree_activation');
@@ -33,7 +33,7 @@ register_deactivation_hook(__FILE__, 'skilltree_deactivation');
 
 add_action( 'user_register', 'skilltree_user_registration_save');
 function skilltree_user_registration_save( $user_id ) {
-	add_user_meta( $user_id, 'user_skilltree', '');
+	add_user_meta( $user_id, 'user_skilltree', '_');
 }
 
 add_action( 'delete_user', 'skilltree_user_delete' );

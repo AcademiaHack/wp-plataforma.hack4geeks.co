@@ -147,7 +147,7 @@
 			function useHash(hash) {
 				if(hash) {
 					doUpdateHash = false;
-					self.newbMode();
+					// self.newbMode();
 
 					var hashParts = hash.split(hashDelimeter);
 					var s = hashParts[1]; //use the segment after the first delimeter as the skill hash
@@ -193,7 +193,8 @@
 				useHash(lastHash);
 			}
 			function updateHash(s) {
-				window.location.hash = s || newHash;
+				self.useHash(s);
+				// window.location.hash = s || newHash;
 			}
 			
 			var lastHash, useHash_timeout, newHash, updateHash_timeout, doUpdateHash = true;
@@ -203,13 +204,13 @@
 				useHash_timeout = setTimeout(useLastHash, 50);
 			}
 			
-			// self.hash.subscribe(function(newValue){
-			// 	if(doUpdateHash) {
-			// 		newHash = newValue;
-			// 		clearTimeout(updateHash_timeout);
-			// 		updateHash_timeout = setTimeout(updateHash, 50);
-			// 	}
-			// });
+			self.hash.subscribe(function(newValue){
+				if(doUpdateHash) {
+					newHash = newValue;
+					clearTimeout(updateHash_timeout);
+					updateHash_timeout = setTimeout(updateHash, 50);
+				}
+			});
 
 			// window.onhashchange = function () {
 			// 	self.useHash(window.location.hash.substr(1));
@@ -218,7 +219,7 @@
 			//Launch
 			// var currentHash = window.location.hash.substr(1);
 			// self.isOpen(currentHash != ''); //If there is a hash, open the skill tree by default
-			self.useHash("_abcde");
+			self.useHash("_");
 
 			return self;
 		}
@@ -310,7 +311,7 @@
 
 			return self;
 		}
-		
+
 		//VM for a simple hyperlink
 		var Link = ns.Link = function(_e){
 			var e = _e || {};

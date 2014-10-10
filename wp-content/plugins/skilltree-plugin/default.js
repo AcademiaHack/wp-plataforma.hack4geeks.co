@@ -31,11 +31,10 @@
 		var vm = new tft.skilltree.Calculator(data);
 		ko.applyBindings(vm);
 
+		vm.useHash($(".talent-tree").attr("id"));
+
 		$("#skilltree_userDropdown").change(function() {
-
-		    $("#username_title").text($( "#skilltree_userDropdown option:selected" ).val());
-
-		    vm.useHash("_abcde");
+		    $("#username_title").text($( "#skilltree_userDropdown option:selected" ).text());
 		});
 
 

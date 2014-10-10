@@ -113,7 +113,8 @@
 									<?php if (checkfieldname("upb_emailshowhide","yes")==true) : ?>
 										<div class="user-email-info"><img src="/wp-content/themes/HackRoots/assets/img/list-hexagon.png" alt=""><?php the_author_meta('user_email',$current_id); ?></div>
 									<?php endif; ?>
-									<div class="user-skilltree-info"><img src="/wp-content/themes/HackRoots/assets/img/list-hexagon.png" alt=""><?php echo 'Hash: '.$skilltree_hash[0] ?></div>
+									<div class="user-skilltree-info"><img src="/wp-content/themes/HackRoots/assets/img/list-hexagon.png" alt="">HashSt:<?php echo $skilltree_hash[0] ?></div>
+									<div class="user-skilltree-info"><img src="/wp-content/themes/HackRoots/assets/img/list-hexagon.png" alt="">HashSK:<span data-bind="text:hash"></span></div>
 									<!-- 	<?php if (checkfieldname("upb_websiteshowhide","yes")==true) : ?>
 											<div class="user-web-info"><strong>Página web:</strong> <?php the_author_meta('user_url',$current_id); ?></div>
 										<?php endif; ?>
@@ -143,7 +144,7 @@
 
 								<div class="ltIE9-hide">
 									<div class="page open">
-										<div class="talent-tree">
+										<div class="talent-tree" id="<?php echo $skilltree_hash[0]; ?>">
 							 				<h2>Arbol de talentos</h2>
 											<!--ko foreach: skills-->
 											<!--ko if: hasDependencies-->
