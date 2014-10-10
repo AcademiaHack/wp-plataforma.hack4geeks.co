@@ -42,8 +42,6 @@
 			var asciiOffset = 96; //64 for caps, 96 for lower
 			var hashDelimeter = '_';
 
-			var numPortraits = e.numPortraits || 1;
-
 			//Intro vs Talent Tree UI state
 			self.isOpen = ko.observable(true);
 			self.open = function() {
@@ -77,8 +75,6 @@
 				}
 			});
 
-			//Avatar properties
-			self.avatarName = ko.observable('Your Name');
 			//level = total of all points spent
 			self.level = ko.computed(function(){
 				var totalSkillPoints = 0;
@@ -122,33 +118,6 @@
 				});
 				return a.join(', ');
 			});
-			//Portrait stuff
-			self.portrait = ko.observable(Math.ceil(Math.random() * numPortraits));
-			self.portraitURL = ko.computed(function(){
-				return (e.portraitPathTemplate || 'img/portraits/portrait-{n}.jpg').replace('{n}', self.portrait());
-			});
-			self.choosePreviousPortrait = function(){
-				var n = self.portrait() - 1;
-				if(n<1) n = numPortraits;
-				self.portrait(n);
-			};
-			self.chooseNextPortrait = function(){
-				var n = self.portrait() + 1;
-				if(n>numPortraits) n = 1;
-				self.portrait(n);
-			};
-
-			//Utility functions
-			self.newbMode = function(){
-				ko.utils.arrayForEach(self.skills(), function(skill){
-					skill.points(0);
-				});
-			};
-			self.godMode = function(){
-				ko.utils.arrayForEach(self.skills(), function(skill){
-					skill.points(skill.maxPoints);
-				});
-			};
 
 			//Hash functions
 			self.hash = ko.computed(function(){
@@ -160,7 +129,19 @@
 						if(skill.hasMultiplePoints()) a.push(skill.points()); //only include points if they are > 1
 					}
 				});
-				return ['', a.join(''), self.portrait(), self.avatarName()].join(hashDelimeter);
+				return ['', a.join('')].join(hashDelimeter);
+			});
+			//Hashstoring functions
+			self.hashString = ko.computed(function(){
+				var a = [];
+				//compile a flat list of skill ids and values
+				ko.utils.arrayForEach(self.skills(), function(skill){
+					if(skill.hasPoints()) {
+						a.push(String.fromCharCode(skill.id + asciiOffset)); //convert skill id to letter of the alphabet
+						if(skill.hasMultiplePoints()) a.push(skill.points()); //only include points if they are > 1
+					}
+				});
+				return ['',a.join('')].join(hashDelimeter);
 			});
 			//Update the skill tree based on a new hash
 			function useHash(hash) {
@@ -169,9 +150,6 @@
 					self.newbMode();
 
 					var hashParts = hash.split(hashDelimeter);
-					if(hashParts[2]) self.portrait(Number(hashParts[2])); //use the segment after the second delimeter as the portrait index
-					if(hashParts[3]) self.avatarName(hashParts[3]); //use the segment after the third delimeter as the avatar name
-
 					var s = hashParts[1]; //use the segment after the first delimeter as the skill hash
 
 					var pairs = [];
@@ -210,38 +188,41 @@
 
 			//Hash throttling
 
-			//update the address bar when the hash changes
+			// update the address bar when the hash changes
 			function useLastHash() {
 				useHash(lastHash);
 			}
 			function updateHash(s) {
 				window.location.hash = s || newHash;
 			}
+			
 			var lastHash, useHash_timeout, newHash, updateHash_timeout, doUpdateHash = true;
 			self.useHash = function(hash) {
 				lastHash = hash;
 				clearTimeout(useHash_timeout);
 				useHash_timeout = setTimeout(useLastHash, 50);
 			}
-			self.hash.subscribe(function(newValue){
-				if(doUpdateHash) {
-					newHash = newValue;
-					clearTimeout(updateHash_timeout);
-					updateHash_timeout = setTimeout(updateHash, 50);
-				}
-			});
+			
+			// self.hash.subscribe(function(newValue){
+			// 	if(doUpdateHash) {
+			// 		newHash = newValue;
+			// 		clearTimeout(updateHash_timeout);
+			// 		updateHash_timeout = setTimeout(updateHash, 50);
+			// 	}
+			// });
 
-			window.onhashchange = function () {
-				self.useHash(window.location.hash.substr(1));
-			};
+			// window.onhashchange = function () {
+			// 	self.useHash(window.location.hash.substr(1));
+			// };
 
 			//Launch
-			var currentHash = window.location.hash.substr(1);
-			self.isOpen(currentHash != ''); //If there is a hash, open the skill tree by default
-			self.useHash(currentHash);
+			// var currentHash = window.location.hash.substr(1);
+			// self.isOpen(currentHash != ''); //If there is a hash, open the skill tree by default
+			self.useHash("_abcde");
 
 			return self;
 		}
+
 		//VM for individual skills
 		var Skill = ns.Skill = function(_e, allSkills, learnTemplate){
 			var e = _e || {};
@@ -329,6 +310,7 @@
 
 			return self;
 		}
+		
 		//VM for a simple hyperlink
 		var Link = ns.Link = function(_e){
 			var e = _e || {};

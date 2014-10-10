@@ -83,7 +83,7 @@ function skilltree_display(){
 		echo '<option value="'.$user->ID.'">'.$user->display_name.'</option>';
 	}
 	echo '</select><input type="submit" value="Guardar"><br>';
-	// echo '<h2>Arbol de talentos de <span id="username_title"></span></h2>';
+	echo '<h2>Arbol de talentos de <span id="username_title"></span></h2>';
 	
 	// $users = get_users( 'orderby=ID&role=' );
 	// // $users = get_users( array( 'fields' => array( 'ID' ),

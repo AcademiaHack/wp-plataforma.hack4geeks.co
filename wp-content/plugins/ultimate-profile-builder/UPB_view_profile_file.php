@@ -113,7 +113,7 @@
 									<?php if (checkfieldname("upb_emailshowhide","yes")==true) : ?>
 										<div class="user-email-info"><img src="/wp-content/themes/HackRoots/assets/img/list-hexagon.png" alt=""><?php the_author_meta('user_email',$current_id); ?></div>
 									<?php endif; ?>
-										<div class="user-skilltree-info"><img src="/wp-content/themes/HackRoots/assets/img/list-hexagon.png" alt=""><?php echo 'Hash: '.$skilltree_hash[0] ?></div>
+									<div class="user-skilltree-info"><img src="/wp-content/themes/HackRoots/assets/img/list-hexagon.png" alt=""><?php echo 'Hash: '.$skilltree_hash[0] ?></div>
 									<!-- 	<?php if (checkfieldname("upb_websiteshowhide","yes")==true) : ?>
 											<div class="user-web-info"><strong>Página web:</strong> <?php the_author_meta('user_url',$current_id); ?></div>
 										<?php endif; ?>
