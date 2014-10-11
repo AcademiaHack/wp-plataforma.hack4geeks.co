@@ -77,7 +77,8 @@ function skilltree_admin_enqueues()
 
 	wp_enqueue_script('knockout', plugins_url('vendor/knockout.min.js', __FILE__),false,false,true);
 	wp_enqueue_script('skilltree_js', plugins_url('js/skilltree.js', __FILE__),false,false,true);
-	wp_enqueue_script('skilltree_profile_default', plugins_url('admin_init.js', __FILE__),false,false,true);
+	wp_enqueue_script('skilltree_admin_default', plugins_url('admin_init.js', __FILE__),false,false,true);
+	wp_enqueue_script('skilltree_scripts_default', plugins_url('defaultScripts.js', __FILE__),false,false,true);
 }
 add_action('admin_enqueue_scripts', 'skilltree_admin_enqueues');
 
@@ -102,46 +103,84 @@ function skilltree_display(){
 	$users = get_users( 'orderby=ID&role=' );
 
 	$selected = $_POST["skilltree_userDropdown"];
+	$userid = $_POST["userID"];
 
-	echo '<h1>Arboles de talentos</h1>';
+	echo '<h1>Arboles de talentos'.isset($userid).'</h1>';
 	echo '<form method="post" action="'.home_url('/').'wp-admin/users.php?page=skilltree.php">';
 	echo '<label name="label_userDropdown" for="skilltree_userDropdown">Usuario </label> ';
 	echo '<select id="skilltree_userDropdown" name="skilltree_userDropdown"> ';
 	foreach ( $users as $user ) {
 		$skilltree_hash = get_user_meta( $user->ID, 'user_skilltree' );
 		if(isset($selected) && $skilltree_hash[0] == $selected ){
-			echo '<option value="'.$skilltree_hash[0].'" selected>'.$user->display_name.'</option>';
+			echo '<option id="'.$user->ID.'" value="'.$skilltree_hash[0].'" selected>'.$user->display_name.'</option>';
 		}else{
-			echo '<option value="'.$skilltree_hash[0].'">'.$user->display_name.'</option>';
+			echo '<option id="'.$user->ID.'" value="'.$skilltree_hash[0].'">'.$user->display_name.'</option>';
 		}
 	}
 	echo '</select>';
+	echo '<input id="userid" type="text" name="userID" hidden/>';
 	echo '<input type="submit" id="chooseButton" value="Elegir"><br>';
 	echo '</form>';
 
 	// echo '<h2>Arbol de talentos de <span id="username_title"></span></h2>';
 	
-	// $users = get_users( 'orderby=ID&role=' );
-	// // $users = get_users( array( 'fields' => array( 'ID' ),
-	// // 						   'orderby' => 'ID'  ) );
-	// // Array of WP_User objects.
-	// foreach ( $users as $user ) {
-	// 	echo '<pre>' . $user->ID . '</pre>';
-	// }
+	if(isset($selected) ){
+		echo skilltree_admin_render_toString($userid);
+		echo '<hr>';
+		echo '<button id="saveButton">Guardar</button><br>';
+	}
+}
 
-	echo skilltree_admin_render_toString();
-	echo '<hr>';
-	echo '<input type="submit" id="saveButton" value="Guardar"><br>';
+/* Ajax functions */
+add_action( 'admin_footer', 'saveTreeFunction' ); // Write our JS below here
+function saveTreeFunction() { ?>
+	<script type="text/javascript" >
+	jQuery(document).ready(function($){
+		$("#userid").val($( "#skilltree_userDropdown option:selected" ).attr("id"));
+		$("#skilltree_userDropdown").change(function() {
+			$("#userid").val($( "#skilltree_userDropdown option:selected" ).attr("id"));
+			console.log("aqui");
+		});
+
+		$("#saveButton").on('click',function(){
+			var data = {
+				'action': 'save_tree',
+				'user': {
+					'id': $("#userID").text(),
+					'hashString': $("#hashString").text()
+				}
+			};
+
+			// since 2.8 ajaxurl is always defined in the admin header and points to admin-ajax.php
+			$.post(ajaxurl, data, function(response) {
+				alert(response);
+			});
+		});
+	}); 
+
+	</script> <?php
+}
+
+add_action( 'wp_ajax_save_tree', 'save_tree_callback' );
+
+function save_tree_callback() {
+	if ( ! update_user_meta($_POST["user"]["id"], 'user_skilltree', $_POST["user"]["hashString"]) ){
+		echo "Ocurrio un error al guardar el user meta";
+	}else{
+		echo "Guardare, id: ".$_POST["user"]["id"]." - hashString:".$_POST["user"]["hashString"];	
+	}
 	
-	// echo '<script>$("#skilltree_userDropdown").change(function(){    });</script>';
+	die(); // this is required to terminate immediately and return a proper response
 }
 
 /* Renderizarion function */
 
-function skilltree_admin_render_toString(){
+function skilltree_admin_render_toString($userID){
 	$talent_tree = '<div class="ltIE9-hide">
 						<div class="page open">
 							<div class="talent-tree">
+								<h2 id="hashString" data-bind="text:hash" style="visibility: hidden"></h2>
+								<h2 id="userID" style="visibility: hidden">'.$userID.'</h2>
 				 				<!--ko foreach: skills-->
 								<!--ko if: hasDependencies-->
 								<div data-bind="css: { \'can-add-points\': canAddPoints, \'has-points\': hasPoints, \'has-max-points\': hasMaxPoints }, attr: { \'data-skill-id\': id }" class="skill">
