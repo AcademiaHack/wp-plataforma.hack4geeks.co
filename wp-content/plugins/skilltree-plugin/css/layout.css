@@ -382,7 +382,7 @@ li {
 [data-skill-id="19"] .skill-dependency {
   margin-left: -20px;
   width: 120px;
-  height: 80px;
+  height: 164px;
   background-position: -40px 10px;
 }
 [data-skill-id="26"] .skill-dependency {
@@ -496,7 +496,7 @@ li {
 }
 .skill[data-skill-id="13"] {
   left: 700px;
-  top: 120px;
+  top: 10px;
 }
 .skill[data-skill-id="13"] .icon {
   background-position: -120px 0px;
@@ -531,7 +531,7 @@ li {
 }
 .skill[data-skill-id="18"] {
   left: 150px;
-  top: 120px;
+  top: 10px;
 }
 .skill[data-skill-id="18"] .icon {
   background-position: 0px 0px;
@@ -573,7 +573,7 @@ li {
 }
 .skill[data-skill-id="24"] {
   left: 780px;
-  top: 120px;
+  top: 10px;
 }
 .skill[data-skill-id="24"] .icon {
   background-position: -180px 0px;
@@ -602,7 +602,7 @@ html {
 }
 .talent-tree {
   position: relative;
-  height: 540px;
+  height: 520px;
   margin: 0 60px;
 }
 .skill .tool-tip {
@@ -682,11 +682,11 @@ html {
   margin-bottom: 18px;
 }
 [data-skill-id="14"] .skill-dependency {
-  background-position: -510px -114px;
+  background-position: -683px -13px;
   width: 11px;
-  height: 39px;
+  height: 146px;
   margin-left: -10px;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 }
 [data-skill-id="15"] .skill-dependency {
   background-position: -516px -220px;
@@ -710,8 +710,8 @@ html {
   margin-bottom: -34px;
 }
 [data-skill-id="19"] .skill-dependency {
-  background-position: -50px -80px;
-  margin-left: 0;
+  background-position: -50px -3px;
+  margin-left: -3px;
 }
 [data-skill-id="20"] .skill-dependency {
   background-position: -4px -179px;
@@ -735,9 +735,9 @@ html {
   margin-bottom: -40px;
 }
 [data-skill-id="25"] .skill-dependency {
-  background-position: -309px -111px;
+  background-position: -683px -13px;
   width: 11px;
-  height: 43px;
+  height: 146px;
   margin-left: -10px;
   margin-bottom: 14px;
 }
@@ -887,7 +887,7 @@ html {
   top: 300px;
 }
 [data-skill-id="17"] .tool-tip {
-  top: -360px;
+  top: -340px;
 }
 [data-skill-id="17"] .tool-tip:before {
   top: 380px;
@@ -920,11 +920,37 @@ html {
   top: 100px;
 }
 [data-skill-id="14"] .tool-tip {
-  top: -259px;
+  top: -238px;
 }
 [data-skill-id="14"] .tool-tip:before {
   top: 279px;
 }
 [data-skill-id="14"] .tool-tip:after {
   top: 279px;
+}
+
+.wp-admin {
+  overflow-x: hidden;
+}
+
+.wp-admin .skill .icon-container {
+  width: 61px;
+  height: 61px;
+}
+
+.wp-admin .skill .frame {
+  width: 59px;
+  height: 59px;
+}
+
+.wp-admin .skill .skill-points {
+  padding: 0px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+}
+
+.talent-tree h2 {
+  position: absolute;
+  bottom: 30px;
 }
