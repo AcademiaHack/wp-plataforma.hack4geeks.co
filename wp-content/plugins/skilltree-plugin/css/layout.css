@@ -34,7 +34,7 @@ body {
   padding: 0;
   /*color: #eee;*/
   /*font-family: Arial, Helvetica, sans-serif;*/
-  font-size: 12px;
+  
   /*line-height: 1.5em;*/
 }
 button {
@@ -264,8 +264,8 @@ li {
   background: #000;
   position: absolute;
   z-index: 3;
-  top: 5px;
-  left: 70px;
+  top: -5px;
+  left: 64px;
   width: 300px;
   padding: 10px;
   -webkit-box-shadow: 0 6px 11px #000000;
@@ -274,16 +274,15 @@ li {
   border: 1px solid #333;
 }
 .skill .tool-tip .current-rank-description {
-  color: #FC3;
+  color: black;
 }
 .skill .tool-tip .next-rank-description {
   -moz-opacity: 0.35;
   -khtml-opacity: 0.35;
   -webkit-opacity: 0.35;
-  opacity: 0.35;
+  opacity: 0.75;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=35);
   filter: alpha(opacity=35);
-  color: #FC3;
 }
 .skill .tool-tip .talent-summary {
   color: #FC3;
@@ -391,7 +390,7 @@ li {
 [data-skill-id="17"] .tool-tip,
 [data-skill-id="24"] .tool-tip,
 [data-skill-id="25"] .tool-tip {
-  left: -315px;
+  left: -306px;
 }
 /**************************************************
 	ICON POSITIONS & SPRITES
@@ -590,6 +589,10 @@ html {
   position: relative;
   height: 520px;
   margin: 0 60px;
+  font-size: 12px !important;
+}
+.talent-tree h3 {
+  margin-top: 10px;
 }
 .skill .tool-tip {
   box-shadow: 0 0 0 transparent;
@@ -597,6 +600,30 @@ html {
   border: 1px solid #ccc;
   position: absolute;
 }
+.skill .tool-tip .skill-name{
+  font-size: 18px !important;
+  font-weight: bold;
+}
+.skill .tool-tip .skill-description{
+  font-size: 14px !important;
+}
+.skill .tool-tip .current-rank-description,
+.skill .tool-tip .next-rank-description{
+  color: green;
+  padding-top: 5px;
+}
+.skill .tool-tip .skill-links{
+  padding-top: 5px;
+  padding-left: 0;
+  list-style: none;
+}
+.skill-links li{
+  display: inline;
+}
+.skill-links li + li::before {
+  content: " • ";
+}
+
 .skill .tool-tip:before {
   content: " ";
   position: absolute;
@@ -848,6 +875,7 @@ html {
   right: -10px;
   left: 100%;
 }
+
 [data-skill-id="1"] .tool-tip,
 [data-skill-id="13"] .tool-tip,
 [data-skill-id="18"] .tool-tip,
@@ -856,67 +884,76 @@ html {
 }
 
 [data-skill-id="26"] .tool-tip:before {
-  top: 225px;
+  top: 106px;
 }
 [data-skill-id="26"] .tool-tip:after {
-  top: 225px;
+  top: 106px;
 }
 [data-skill-id="26"] .tool-tip {
-  top: -205px;
+  top: -90px;
 }
 [data-skill-id="22"] .tool-tip {
-  top: -150px;
+  top: -65px;
 }
 [data-skill-id="22"] .tool-tip:before {
-  top: 165px;
+  top: 84px;
 }
 [data-skill-id="22"] .tool-tip:after{
-  top: 165px;
+  top: 84px;
 }
 [data-skill-id="23"] .tool-tip {
-  top: -180px;
+  top: -80px;
 }
 [data-skill-id="23"] .tool-tip:before {
-  top: 200px;
+  top: 96px;
 }
 [data-skill-id="23"] .tool-tip:after {
-  top: 200px;
+  top: 96px;
 }
 [data-skill-id="5"] .tool-tip {
-  top: -180px;
+  top: -86px;
 }
 [data-skill-id="5"] .tool-tip:before {
-  top: 200px;
+  top: 100px;
 }
 [data-skill-id="5"] .tool-tip:after {
-  top: 200px;
+  top: 100px;
 }
 [data-skill-id="15"] .tool-tip {
-  top: -180px;
+  top: -100px;
 }
 [data-skill-id="15"] .tool-tip:before {
-  top: 200px;
+  top: 110px;
 }
 [data-skill-id="15"] .tool-tip:after {
-  top: 200px;
+  top: 110px;
 }
 [data-skill-id="16"] .tool-tip {
-  top: -280px;
+  top: -170px;
 }
 [data-skill-id="16"] .tool-tip:before {
-  top: 300px;
+  top: 185px;
 }
 [data-skill-id="16"] .tool-tip:after {
-  top: 300px;
+  top: 185px;
 }
 [data-skill-id="17"] .tool-tip {
-  top: -340px;
+  top: -214px;
 }
 [data-skill-id="17"] .tool-tip:before {
-  top: 380px;
+  top: 228px;
 }
 [data-skill-id="17"] .tool-tip:after {
-  top: 380px;
+  top: 228px;
+}
+[data-skill-id="20"] .tool-tip {
+  top: -28px;
+}
+[data-skill-id="20"] .tool-tip:before {
+  top: 46px;
+}
+[data-skill-id="20"] .tool-tip:after {
+  top: 46px;
 }
 [data-skill-id="7"] .tool-tip,
 [data-skill-id="9"] .tool-tip,
@@ -943,13 +980,13 @@ html {
   top: 100px;
 }
 [data-skill-id="14"] .tool-tip {
-  top: -238px;
+  top: -220px;
 }
 [data-skill-id="14"] .tool-tip:before {
-  top: 279px;
+  top: 238px;
 }
 [data-skill-id="14"] .tool-tip:after {
-  top: 279px;
+  top: 238px;
 }
 
 .wp-admin {
@@ -971,6 +1008,19 @@ html {
   width: 30px;
   height: 30px;
   line-height: 30px;
+}
+
+.wp-admin [data-skill-id="11"] .tool-tip,
+.wp-admin [data-skill-id="12"] .tool-tip,
+.wp-admin [data-skill-id="13"] .tool-tip,
+.wp-admin [data-skill-id="14"] .tool-tip,
+.wp-admin [data-skill-id="15"] .tool-tip,
+.wp-admin [data-skill-id="16"] .tool-tip,
+.wp-admin [data-skill-id="10"] .tool-tip,
+.wp-admin [data-skill-id="17"] .tool-tip,
+.wp-admin [data-skill-id="24"] .tool-tip,
+.wp-admin [data-skill-id="25"] .tool-tip {
+  left: -328px;
 }
 
 .talent-tree h2 {
