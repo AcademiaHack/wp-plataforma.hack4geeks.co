@@ -108,7 +108,7 @@ function skilltree_display(){
 	if(isset($userid))
 		echo '<h1>Árbol de talentos de '.get_user_by('id', $userid)->display_name.'</h1>';
 	else
-		echo '<h1>Árboles de talentos, user-id:'.$userid.'</h1>';
+		echo '<h1>Árboles de talentos</h1>';
 
 	echo '<div id="feedback" hidden></div>';
 
