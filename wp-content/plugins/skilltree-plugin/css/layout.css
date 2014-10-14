@@ -38,25 +38,11 @@ body {
   /*line-height: 1.5em;*/
 }
 button {
-  border: 1px solid #FBF287;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  -webkit-box-shadow: 0 6px 11px #000000;
-  -moz-box-shadow: 0 6px 11px #000000;
-  box-shadow: 0 6px 11px #000000;
-  background: #debd4c;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #c38f1f), color-stop(1, #faed7c));
-  background: -ms-linear-gradient(bottom, #c38f1f, #faed7c);
-  background: -moz-linear-gradient(center bottom, #c38f1f 0%, #faed7c 100%);
-  background: -o-linear-gradient(#faed7c, #c38f1f);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#faed7c', endColorstr='#c38f1f', GradientType=0);
-  font-weight: bold;
-  font-size: 1.5em;
-  line-height: 1em;
-  padding: 0.5em 0.75em;
+  font-size: 14px;
   cursor: pointer;
-  color: #510;
+  position: absolute;
+  bottom: 120px;
+  z-index: 100;
 }
 /*img {
   border: 0 none;
@@ -412,182 +398,182 @@ li {
 **************************************************/
 .skill[data-skill-id="1"] {
   left: 440px;
-  top: 10px;
+  top: 12px;
 }
 .skill[data-skill-id="1"] .icon {
   background-position: -240px 0px;
 }
 .skill[data-skill-id="2"] {
-  left: 330px;
-  top: 120px;
+  left: 335px;
+  top: 115px;
 }
 .skill[data-skill-id="2"] .icon {
   background-position: -300px 0px;
 }
 .skill[data-skill-id="3"] {
-  left: 233px;
-  top: 120px;
+  left: 254px;
+  top: 115px;
 }
 .skill[data-skill-id="3"] .icon {
   background-position: -240px 0px;
 }
 .skill[data-skill-id="4"] {
-  left: 330px;
-  top: 340px;
+  left: 336px;
+  top: 325px;
 }
 .skill[data-skill-id="4"] .icon {
   background-position: -1200px 0px;
 }
 .skill[data-skill-id="5"] {
-  left: 230px;
-  top: 340px;
+  left: 254px;
+  top: 325px;
 }
 .skill[data-skill-id="5"] .icon {
   background-position: -1140px 0px;
 }
 .skill[data-skill-id="6"] {
-  left: 410px;
-  top: 120px;
+  left: 408px;
+  top: 115px;
 }
 .skill[data-skill-id="6"] .icon {
   background-position: -360px 0px;
 }
 .skill[data-skill-id="7"] {
-  left: 410px;
-  top: 230px;
+  left: 408px;
+  top: 223px;
 }
 .skill[data-skill-id="7"] .icon {
   background-position: -720px 0px;
 }
 .skill[data-skill-id="8"] {
-  left: 490px;
-  top: 120px;
+  left: 480px;
+  top: 115px;
 }
 .skill[data-skill-id="8"] .icon {
   background-position: -420px 0px;
 }
 .skill[data-skill-id="9"] {
-  left: 490px;
-  top: 230px;
+  left: 480px;
+  top: 223px;
 }
 .skill[data-skill-id="9"] .icon {
   background-position: -780px 0px;
 }
 .skill[data-skill-id="10"] {
-  left: 490px;
-  top: 340px;
+  left: 480px;
+  top: 325px;
 }
 .skill[data-skill-id="10"] .icon {
   background-position: -1260px 0px;
 }
 .skill[data-skill-id="11"] {
-  left: 610px;
-  top: 120px;
+  left: 608px;
+  top: 115px;
 }
 .skill[data-skill-id="11"] .icon {
   background-position: -480px 0px;
 }
 .skill[data-skill-id="12"] {
-  left: 610px;
-  top: 230px;
+  left: 608px;
+  top: 223px;
 }
 .skill[data-skill-id="12"] .icon {
   background-position: -840px 0px;
 }
 .skill[data-skill-id="13"] {
-  left: 700px;
-  top: 10px;
+  left: 680px;
+  top: 18px;
 }
 .skill[data-skill-id="13"] .icon {
   background-position: -120px 0px;
 }
 .skill[data-skill-id="14"] {
-  left: 700px;
-  top: 230px;
+  left: 680px;
+  top: 223px;
 }
 .skill[data-skill-id="14"] .icon {
   background-position: -900px 0px;
 }
 .skill[data-skill-id="15"] {
-  left: 655px;
-  top: 340px;
+  left: 643px;
+  top: 325px;
 }
 .skill[data-skill-id="15"] .icon {
   background-position: -1380px 0px;
 }
 .skill[data-skill-id="16"] {
-  left: 780px;
-  top: 340px;
+  left: 726px;
+  top: 325px;
 }
 .skill[data-skill-id="16"] .icon {
   background-position: -1440px 0px;
 }
 .skill[data-skill-id="17"] {
-  left: 573px;
-  top: 340px;
+  left: 562px;
+  top: 325px;
 }
 .skill[data-skill-id="17"] .icon {
   background-position: -1320px 0px;
 }
 .skill[data-skill-id="18"] {
-  left: 150px;
-  top: 10px;
+  left: 177px;
+  top: 18px;
 }
 .skill[data-skill-id="18"] .icon {
   background-position: 0px 0px;
 }
 .skill[data-skill-id="19"] {
-  left: 110px;
-  top: 230px;
+  left: 143px;
+  top: 223px;
 }
 .skill[data-skill-id="19"] .icon {
   background-position: -600px 0px;
 }
 .skill[data-skill-id="20"] {
-  left: 10px;
-  top: 230px;
+  left: 61px;
+  top: 223px;
 }
 .skill[data-skill-id="20"] .icon {
   background-position: -540px 0px;
 }
 .skill[data-skill-id="21"] {
-  left: 190px;
-  top: 230px;
+  left: 214px;
+  top: 223px;
 }
 .skill[data-skill-id="21"] .icon {
   background-position: -660px 0px;
 }
 .skill[data-skill-id="22"] {
-  left: 150px;
-  top: 340px;
+  left: 178px;
+  top: 325px;
 }
 .skill[data-skill-id="22"] .icon {
   background-position: -1080px 0px;
 }
 .skill[data-skill-id="23"] {
-  left: 50px;
-  top: 340px;
+  left: 96px;
+  top: 325px;
 }
 .skill[data-skill-id="23"] .icon {
   background-position: -1020px 0px;
 }
 .skill[data-skill-id="24"] {
   left: 780px;
-  top: 10px;
+  top: 18px;
 }
 .skill[data-skill-id="24"] .icon {
   background-position: -180px 0px;
 }
 .skill[data-skill-id="25"] {
   left: 780px;
-  top: 230px;
+  top: 223px;
 }
 .skill[data-skill-id="25"] .icon {
   background-position: -960px 0px;
 }
 .skill[data-skill-id="26"] {
-  left: 440px;
-  top: 450px;
+  left: 438px;
+  top: 430px;
 }
 .skill[data-skill-id="26"] .icon {
   background-position: -1500px 0px;
@@ -641,24 +627,24 @@ html {
 }
 [data-skill-id="2"] .skill-dependency,
 [data-skill-id="2"] .skill-dependency.active {
-  background-position: 485px -2px;
-  margin-bottom: -5px;
+  background-position: 481px -2px;
+  margin-bottom: -13px;
 }
 [data-skill-id="3"] .skill-dependency,
 [data-skill-id="3"] .skill-dependency.active {
-  background-position: -160px -56px;
+  background-position: -176px -56px;
 }
 [data-skill-id="4"] .skill-dependency,
 [data-skill-id="4"] .skill-dependency.active {
-  background-position: -224px -104px;
-  margin-bottom: -15px;
+  background-position: -229px -104px;
+  margin-bottom: -28px;
 }
 [data-skill-id="5"] .skill-dependency,
 [data-skill-id="5"] .skill-dependency.active {
   background-position: 4px -170px;
   width: 25px;
   height: 25px;
-  margin-left: 39px;
+  margin-left: 20px;
   margin-bottom: -40px;
 }
 [data-skill-id="7"] .skill-dependency,
@@ -666,56 +652,56 @@ html {
   background-position: -300px -111px;
   width: 25px;
   height: 52px;
-  margin-left: -21px;
-  margin-bottom: 5px;
+  margin-left: -19px;
+  margin-bottom: -5px;
 }
 [data-skill-id="9"] .skill-dependency,
 [data-skill-id="9"] .skill-dependency.active {
   background-position: -300px -111px;
   width: 25px;
-  height: 52px;
-  margin-left: -21px;
-  margin-bottom: 5px;
+  height: 55px;
+  margin-left: -20px;
+  margin-bottom: -8px;
 }
 [data-skill-id="10"] .skill-dependency,
 [data-skill-id="10"] .skill-dependency.active {
   background-position: -300px -111px;
   width: 25px;
-  height: 52px;
-  margin-left: -21px;
-  margin-bottom: 5px;
+  height: 55px;
+  margin-left: -20px;
+  margin-bottom: -8px;
 }
 [data-skill-id="12"] .skill-dependency,
 [data-skill-id="12"] .skill-dependency.active {
   background-position: -300px -111px;
   width: 25px;
   height: 52px;
-  margin-left: -21px;
-  margin-bottom: 5px;
+  margin-left: -19px;
+  margin-bottom: -5px;
 }
 [data-skill-id="14"] .skill-dependency,
 [data-skill-id="14"] .skill-dependency.active {
   background-position: -675px -13px;
   width: 30px;
-  height: 150px;
-  margin-left: -20px;
-  margin-bottom: 14px;
+  height: 180px;
+  margin-left: -18px;
+  margin-bottom: -34px;
 }
 [data-skill-id="15"] .skill-dependency,
 [data-skill-id="15"] .skill-dependency.active {
   background-position: -45px -219px;
   width: 90px;
   height: 50px;
-  margin-left: -50px;
-  margin-bottom: 2px;
+  margin-left: -48px;
+  margin-bottom: -8px;
 }
 [data-skill-id="16"] .skill-dependency,
 [data-skill-id="16"] .skill-dependency.active {
   background-position: -583px -284px;
   width: 30px;
   height: 20px;
-  margin-left: -100px;
-  margin-bottom: -38px;
+  margin-left: -56px;
+  margin-bottom: -40px;
 }
 [data-skill-id="17"] .skill-dependency,
 [data-skill-id="17"] .skill-dependency.active {
@@ -728,14 +714,15 @@ html {
 [data-skill-id="19"] .skill-dependency,
 [data-skill-id="19"] .skill-dependency.active {
   background-position: -41px -3px;
-  margin-left: -13px;
+  margin-left: -18px;
+  margin-bottom: -14px;
 }
 [data-skill-id="20"] .skill-dependency,
 [data-skill-id="20"] .skill-dependency.active {
   background-position: 4px -170px;
   width: 25px;
   height: 25px;
-  margin-left: 39px;
+  margin-left: 20px;
   margin-bottom: -40px;
 }
 [data-skill-id="22"] .skill-dependency,
@@ -743,15 +730,15 @@ html {
   background-position: -45px -219px;
   width: 90px;
   height: 50px;
-  margin-left: -50px;
-  margin-bottom: 2px;
+  margin-left: -48px;
+  margin-bottom: -8px;
 }
 [data-skill-id="23"] .skill-dependency,
 [data-skill-id="23"] .skill-dependency.active {
   background-position: 4px -170px;
   width: 25px;
   height: 25px;
-  margin-left: 39px;
+  margin-left: 20px;
   margin-bottom: -40px;
 }
 [data-skill-id="25"] .skill-dependency,
@@ -759,25 +746,25 @@ html {
   background-position: -675px -13px;
   width: 30px;
   height: 150px;
-  margin-left: -20px;
-  margin-bottom: 14px;
+  margin-left: -18px;
+  margin-bottom: -4px;
 }
 [data-skill-id="26"] .skill-dependency {
   background: url(../img/sprite_branches1.png);
   background-position: 0px 0px;
   background-repeat: no-repeat;
-  margin-left: -270px;
+  margin-left: -268px;
   width: 720px;
   height: 170px;
-  margin-bottom: -5px;
+  margin-bottom: -17px;
 }
 [data-skill-id="26"] .skill-dependency.active {
   background: url(../img/sprite_branches2.png);
   background-repeat: no-repeat;
-  margin-left: -276px;
+  margin-left: -275px;
   width: 720px;
   height: 170px;
-  margin-bottom: -1px;
+  margin-bottom: -10px;
 }
 .skill .icon-container {
   position: absolute;
@@ -1016,4 +1003,72 @@ html {
 .blue-sidebar .btn-default:hover {
   background-color: #093C75;
   color: #fff;
+}
+
+#message{
+  margin-top: 5px;
+  width: 50%;
+  font-size: 14px;
+}
+.alert {
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.alert > p {
+  margin-bottom: 0;
+}
+.alert > p + p {
+  margin-top: 5px;
+}
+.alert .alert-link{
+  font-weight: bold;
+  font-size: 20px;
+  float: right;
+  cursor: pointer;
+}
+.alert-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+.alert-success hr {
+  border-top-color: #c9e2b3;
+}
+.alert-success .alert-link {
+  color: #2b542c;
+}
+.alert-info {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+.alert-info hr {
+  border-top-color: #a6e1ec;
+}
+.alert-info .alert-link {
+  color: #245269;
+}
+.alert-warning {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+}
+.alert-warning hr {
+  border-top-color: #f7e1b5;
+}
+.alert-warning .alert-link {
+  color: #66512c;
+}
+.alert-danger {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+.alert-danger hr {
+  border-top-color: #e4b9c0;
+}
+.alert-danger .alert-link {
+  color: #843534;
 }
