@@ -105,9 +105,15 @@ function skilltree_display(){
 	$selected = $_POST["skilltree_userDropdown"];
 	$userid = $_POST["userID"];
 
-	echo '<h1>Arboles de talentos'.isset($userid).'</h1>';
+	if(isset($userid))
+		echo '<h1>Árbol de talentos de '.get_user_by('id', $userid)->display_name.'</h1>';
+	else
+		echo '<h1>Árboles de talentos, user-id:'.$userid.'</h1>';
+
+	echo '<div id="feedback" hidden></div>';
+
 	echo '<form method="post" action="'.home_url('/').'wp-admin/users.php?page=skilltree.php">';
-	echo '<label name="label_userDropdown" for="skilltree_userDropdown">Usuario </label> ';
+	echo '<label name="label_userDropdown" for="skilltree_userDropdown">Seleccione un usuario: </label><br>';
 	echo '<select id="skilltree_userDropdown" name="skilltree_userDropdown"> ';
 	foreach ( $users as $user ) {
 		$skilltree_hash = get_user_meta( $user->ID, 'user_skilltree' );
@@ -119,56 +125,32 @@ function skilltree_display(){
 	}
 	echo '</select>';
 	echo '<input id="userid" type="text" name="userID" hidden/>';
-	echo '<input type="submit" id="chooseButton" value="Elegir"><br>';
+	echo '<input type="submit" id="chooseButton" value="Elegir">';
 	echo '</form>';
 
 	// echo '<h2>Arbol de talentos de <span id="username_title"></span></h2>';
 	
 	if(isset($selected) ){
 		echo skilltree_admin_render_toString($userid);
-		echo '<hr>';
 		echo '<button id="saveButton">Guardar</button><br>';
 	}
 }
 
 /* Ajax functions */
-add_action( 'admin_footer', 'saveTreeFunction' ); // Write our JS below here
-function saveTreeFunction() { ?>
-	<script type="text/javascript" >
-	jQuery(document).ready(function($){
-		$("#userid").val($( "#skilltree_userDropdown option:selected" ).attr("id"));
-		$("#skilltree_userDropdown").change(function() {
-			$("#userid").val($( "#skilltree_userDropdown option:selected" ).attr("id"));
-			console.log("aqui");
-		});
-
-		$("#saveButton").on('click',function(){
-			var data = {
-				'action': 'save_tree',
-				'user': {
-					'id': $("#userID").text(),
-					'hashString': $("#hashString").text()
-				}
-			};
-
-			// since 2.8 ajaxurl is always defined in the admin header and points to admin-ajax.php
-			$.post(ajaxurl, data, function(response) {
-				alert(response);
-			});
-		});
-	}); 
-
-	</script> <?php
-}
+// ajax is called from defaultScripts.js
+// save_tree action is then called from ajax in that js function.
 
 add_action( 'wp_ajax_save_tree', 'save_tree_callback' );
-
 function save_tree_callback() {
 	if ( ! update_user_meta($_POST["user"]["id"], 'user_skilltree', $_POST["user"]["hashString"]) ){
-		echo "Ocurrio un error al guardar el user meta";
+		echo '<div id="message" class="alert alert-danger" role="alert">';
+		echo "<strong>Error!</strong> No se pudo guardar el arbol de talentos.<a class='alert-link'>&times;</a>";
 	}else{
-		echo "Guardare, id: ".$_POST["user"]["id"]." - hashString:".$_POST["user"]["hashString"];	
+		echo '<div id="message" class="alert alert-success" role="alert">';
+		echo "<strong>Exito!</strong> Se ha guardado el arbol para ".get_user_by( "id",  $_POST["user"]["id"])->display_name."!<a class='alert-link'>&times;</a>";
+		// echo "Guardare, id: ".$_POST["user"]["id"]." - hashString:".$_POST["user"]["hashString"];	
 	}
+	echo '</div>';
 	
 	die(); // this is required to terminate immediately and return a proper response
 }
@@ -248,12 +230,12 @@ function skilltree_profile_render_toString(){
 	{
 		//skilltree
 		$logged_user = wp_get_current_user();
-		$skilltree_hash = get_user_meta( $logged_user, 'user_skilltree' );
+		$skilltree_hash = get_user_meta( $logged_user->id, 'user_skilltree' );
 
 		$talent_tree = '<div class="ltIE9-hide">
 							<div class="page open">
 								<div class="talent-tree" id="'.$skilltree_hash[0].'">
-					 				<h2>Arbol de talentos</h2>
+					 				<h2>Mi arbol de habilidades</h2>
 									<!--ko foreach: skills-->
 									<!--ko if: hasDependencies-->
 									<div data-bind="css: { \'can-add-points\': canAddPoints, \'has-points\': hasPoints, \'has-max-points\': hasMaxPoints }, attr: { \'data-skill-id\': id }" class="skill">
