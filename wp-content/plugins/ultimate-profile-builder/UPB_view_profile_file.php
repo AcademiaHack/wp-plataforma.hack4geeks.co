@@ -106,10 +106,10 @@
 								<div class="user-info">
 
 									<?php if (checkfieldname("upb_usernameshowhide","yes")==true ) : ?>
-										<div class="user-name-info"><img src="/wp-content/themes/HackRoots/assets/img/list-hexagon.png" alt=""> <?php echo " @";the_author_meta('user_login',$current_id); ?></div>
+										<div class="user-name-info text-center"><?php echo " @";the_author_meta('user_login',$current_id); ?></div>
 									<?php endif; ?>
 									<?php if (checkfieldname("upb_emailshowhide","yes")==true) : ?>
-										<div class="user-email-info"><img src="/wp-content/themes/HackRoots/assets/img/list-hexagon.png" alt=""><?php the_author_meta('user_email',$current_id); ?></div>
+										<div class="user-email-info text-center"><?php the_author_meta('user_email',$current_id); ?></div>
 									<?php endif; ?>
 									<!-- <div class="user-skilltree-info"><img src="/wp-content/themes/HackRoots/assets/img/list-hexagon.png" alt="">HashSt:<?php echo $skilltree_hash[0] ?></div> -->
 									<!-- <div class="user-skilltree-info"><img src="/wp-content/themes/HackRoots/assets/img/list-hexagon.png" alt="">HashSK:<span data-bind="text:hash"></span></div> -->
