@@ -391,11 +391,7 @@ li {
 [data-skill-id="17"] .tool-tip,
 [data-skill-id="24"] .tool-tip,
 [data-skill-id="25"] .tool-tip {
-<<<<<<< HEAD
   left: -315px;
-=======
-  left: -330px;
->>>>>>> 58edf5bc7b9a93f9c27782edac714581b14f119a
 }
 /**************************************************
 	ICON POSITIONS & SPRITES
@@ -592,8 +588,7 @@ html {
 }
 .talent-tree {
   position: relative;
-  height: 520px;
-  margin: 20px 20px;
+  margin: 0 20px;
 }
 .skill .tool-tip {
   box-shadow: 0 0 0 transparent;
@@ -626,7 +621,6 @@ html {
 .skill .skill-dependency {
   background: url(../img/sprite_branches.png);
 }
-<<<<<<< HEAD
 .skill .skill-dependency.active {
   background: url(../img/sprite_branches_on.png);
 }
@@ -666,8 +660,7 @@ html {
   width: 25px;
   height: 52px;
   margin-left: -21px;
-  margin-bottom: 5px;
-=======
+}
 [data-skill-id="2"] .skill-dependency {
   background-position: 480px 6px;
   margin-bottom: -5px;
@@ -698,7 +691,6 @@ html {
   height: 42px;
   margin-left: -19px;
   margin-bottom: 12px;
->>>>>>> 58edf5bc7b9a93f9c27782edac714581b14f119a
 }
 [data-skill-id="10"] .skill-dependency,
 [data-skill-id="10"] .skill-dependency.active {
@@ -1011,8 +1003,9 @@ html {
 
 .talent-tree h2 {
   position: absolute;
+  font-size: 26px;
   bottom: -10px;
-  left: -60px;
+  left: -20px;
   background-color: #0D4F99;
   color: #fff;
   padding: 10px 30px;
