@@ -21,13 +21,13 @@ register_activation_hook(__FILE__, 'skilltree_activation');
 
 function skilltree_deactivation() {
 	// Array of WP_User objects.
-	$users = get_users( 'orderby=ID&role=' );
-	// Add the corresponding meta to the users
-	foreach ( $users as $user ) {
-		if ( ! delete_user_meta( $user->ID, 'user_skilltree' ) ) {
-		  echo "Ooops! Error al borrar esta informacion!: ".$user->ID;
-		}
-	}
+	// $users = get_users( 'orderby=ID&role=' );
+	// // Add the corresponding meta to the users
+	// foreach ( $users as $user ) {
+	// 	if ( ! delete_user_meta( $user->ID, 'user_skilltree' ) ) {
+	// 	  echo "Ooops! Error al borrar esta informacion!: ".$user->ID;
+	// 	}
+	// }
 }
 register_deactivation_hook(__FILE__, 'skilltree_deactivation');
 
@@ -93,7 +93,7 @@ add_action( 'admin_head', 'skilltree_css' );
 /* Admin Menu adding */
 
 function skilltree_add_menus(){
-	add_users_page('Usuarios > Arboles de Talentos', 'Arboles de Talentos', 'administrator', 'skilltree.php', 'skilltree_display');
+	add_users_page('Usuarios > árboles de Talentos', 'Árboles de Talentos', 'administrator', 'skilltree.php', 'skilltree_display');
 }
 add_action('admin_menu', 'skilltree_add_menus');
 
@@ -128,7 +128,7 @@ function skilltree_display(){
 	echo '<input type="submit" id="chooseButton" value="Elegir">';
 	echo '</form>';
 
-	// echo '<h2>Arbol de talentos de <span id="username_title"></span></h2>';
+	// echo '<h2>árbol de talentos de <span id="username_title"></span></h2>';
 	
 	if(isset($selected) ){
 		echo skilltree_admin_render_toString($userid);
@@ -144,10 +144,10 @@ add_action( 'wp_ajax_save_tree', 'save_tree_callback' );
 function save_tree_callback() {
 	if ( ! update_user_meta($_POST["user"]["id"], 'user_skilltree', $_POST["user"]["hashString"]) ){
 		echo '<div id="message" class="alert alert-danger" role="alert">';
-		echo "<strong>Error!</strong> No se pudo guardar el arbol de talentos.<a class='alert-link'>&times;</a>";
+		echo "<strong>Error!</strong> No se pudo guardar el árbol de talentos.<a class='alert-link'>&times;</a>";
 	}else{
 		echo '<div id="message" class="alert alert-success" role="alert">';
-		echo "<strong>Exito!</strong> Se ha guardado el arbol para ".get_user_by( "id",  $_POST["user"]["id"])->display_name."!<a class='alert-link'>&times;</a>";
+		echo "<strong>Exito!</strong> Se ha guardado el árbol para ".get_user_by( "id",  $_POST["user"]["id"])->display_name."!<a class='alert-link'>&times;</a>";
 		// echo "Guardare, id: ".$_POST["user"]["id"]." - hashString:".$_POST["user"]["hashString"];	
 	}
 	echo '</div>';
@@ -235,7 +235,7 @@ function skilltree_profile_render_toString(){
 		$talent_tree = '<div class="ltIE9-hide">
 							<div class="page open">
 								<div class="talent-tree" id="'.$skilltree_hash[0].'">
-					 				<h2>Mi arbol de habilidades</h2>
+					 				<h2>Mi árbol de habilidades</h2>
 									<!--ko foreach: skills-->
 									<!--ko if: hasDependencies-->
 									<div data-bind="css: { \'can-add-points\': canAddPoints, \'has-points\': hasPoints, \'has-max-points\': hasMaxPoints }, attr: { \'data-skill-id\': id }" class="skill">
