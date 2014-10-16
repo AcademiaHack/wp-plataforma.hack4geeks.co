@@ -241,7 +241,7 @@ foreach ($postsManana as $post) {
 				<?php echo $post->post_title;?>
 			</h2>
 			<img class="img-responsive" src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID));?>" alt="">
-			<a href="<?php echo $post->guid; ?>" class="btn btn-primary btn-block btn-flat btn-large">
+			<a href="<?php echo get_permalink(); ?>" class="btn btn-primary btn-block btn-flat btn-large">
 				<img src="/wp-content/themes/HackRoots/assets/img/list-hexagon.png" alt="">
 				<?php _e('¡Hazlo!', 'roots'); ?>
 			</a>
@@ -264,7 +264,7 @@ foreach ($postsTarde as $post) {
 				<?php echo $post->post_title;?>
 			</h2>
 			<img class="img-responsive" src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID));?>" alt="">
-			<a href="<?php echo $post->guid; ?>" class="btn btn-primary btn-block btn-flat btn-large">
+			<a href="<?php echo get_permalink(); ?>" class="btn btn-primary btn-block btn-flat btn-large">
 				<img src="/wp-content/themes/HackRoots/assets/img/list-hexagon.png" alt="">
 				<?php _e('¡Hazlo!', 'roots'); ?>
 			</a>
