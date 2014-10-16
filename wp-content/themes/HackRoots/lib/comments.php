@@ -6,8 +6,11 @@
  */
 class Roots_Walker_Comment extends Walker_Comment {
   function start_lvl(&$output, $depth = 0, $args = array()) {
+    //if is the user or is admin
+    // previous version
+    // if (($comment->comment_author==wp_get_current_user()->user_login )||(current_user_can( 'manage_options' ))):
+    if ($comment->comment_author==wp_get_current_user()->user_login || user_can( get_user_by( 'login', $comment->comment_author)->ID , 'manage_options') || current_user_can( 'manage_options' )):
     $GLOBALS['comment_depth'] = $depth + 1; 
-    if (($comment->comment_author==wp_get_current_user()->user_login )||(current_user_can( 'manage_options' ))):
     ?>
       <ul <?php comment_class('media list-unstyled comment-' . get_comment_ID()); ?>>
     <?php
@@ -15,14 +18,20 @@ class Roots_Walker_Comment extends Walker_Comment {
   }
 
   function end_lvl(&$output, $depth = 0, $args = array()) {
-    $GLOBALS['comment_depth'] = $depth + 1;
     //if is the user or is admin
-    if (($comment->comment_author==wp_get_current_user()->user_login )||(current_user_can( 'manage_options' ))): 
+    // previous version
+    // if (($comment->comment_author==wp_get_current_user()->user_login )||(current_user_can( 'manage_options' ))):
+    if ($comment->comment_author==wp_get_current_user()->user_login || user_can( get_user_by( 'login', $comment->comment_author)->ID , 'manage_options') || current_user_can( 'manage_options' )):
+    $GLOBALS['comment_depth'] = $depth + 1;
       echo '</ul>';
     endif;
  }
 
   function start_el(&$output, $comment, $depth = 0, $args = array(), $id = 0) {
+    //if is the user  or is admin
+    // previous version
+    // if (($comment->comment_author==wp_get_current_user()->user_login )||(current_user_can( 'manage_options' ))):
+    if ($comment->comment_author==wp_get_current_user()->user_login || user_can( get_user_by( 'login', $comment->comment_author)->ID , 'manage_options') || current_user_can( 'manage_options' )):
     $depth++;
     $GLOBALS['comment_depth'] = $depth;
     $GLOBALS['comment'] = $comment;
@@ -33,8 +42,6 @@ class Roots_Walker_Comment extends Walker_Comment {
     }
 
     extract($args, EXTR_SKIP); 
-    //if is the user or is admin
-    if (($comment->comment_author==wp_get_current_user()->user_login )||(current_user_can( 'manage_options' ))):
     ?>
 
     <li id="comment-<?php comment_ID(); ?>" <?php comment_class('media comment-' . get_comment_ID()); ?>>
@@ -44,12 +51,15 @@ class Roots_Walker_Comment extends Walker_Comment {
   }
 
   function end_el(&$output, $comment, $depth = 0, $args = array()) {
+    //if is the user or is a comment from the admin,  or is admin
+    // previous version
+    // if (($comment->comment_author==wp_get_current_user()->user_login )||(current_user_can( 'manage_options' ))):
+    if ($comment->comment_author==wp_get_current_user()->user_login || user_can( get_user_by( 'login', $comment->comment_author)->ID , 'manage_options') || current_user_can( 'manage_options' )):
+
     if (!empty($args['end-callback'])) {
       call_user_func($args['end-callback'], $comment, $args, $depth);
       return;
     }
-    //if is the user or is admin
-    if (($comment->comment_author==wp_get_current_user()->user_login )||(current_user_can( 'manage_options' ))):
       // Close ".media-body" <div> located in templates/comment.php, and then the comment's <li>
       echo "</div></li>\n";
     endif;

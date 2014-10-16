@@ -1,4 +1,4 @@
-<?php
+	<?php
 
 get_template_part('templates/page', 'header');
 global $wpdb;
@@ -61,7 +61,6 @@ if ($nimagen - 1 <= 0) {
     $nlpposterior = $testcat[$keynumber + 2]->term_id;
     
 }
-$posts = query_posts('cat=' . $category->term_id);
 
 ?>
 
@@ -229,30 +228,51 @@ echo $category->category_description;
 			</div>
 		</div>
 		<div class="row">
-			<?php
-foreach ($posts as $post) {
+
+<?php
+
+$postsManana = query_posts('cat=' . $category->term_id."&tag=manana");
+
+foreach ($postsManana as $post) {
     
 ?>
-				<div class="col-sm-6 col-md-4">
-					<h2 class="reto-title text-center"><?php
-    echo $post->post_title;
-?></h2>
-					<img class="img-responsive" src="<?php
-    echo wp_get_attachment_url(get_post_thumbnail_id($post->ID));
-?>" alt="">
-					<a href="<?php
-    echo $post->guid;
-?>" class="btn btn-primary btn-block btn-flat btn-large">
-						<img src="/wp-content/themes/HackRoots/assets/img/list-hexagon.png" alt="">
-						<?php
-    _e('¡Hazlo!', 'roots');
-?>
-					</a>
-				</div>
-
-				<?php
+		<div class="col-sm-6 col-md-4">
+			<h2 class="reto-title text-center">
+				<?php echo $post->post_title;?>
+			</h2>
+			<img class="img-responsive" src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID));?>" alt="">
+			<a href="<?php echo $post->guid; ?>" class="btn btn-primary btn-block btn-flat btn-large">
+				<img src="/wp-content/themes/HackRoots/assets/img/list-hexagon.png" alt="">
+				<?php _e('¡Hazlo!', 'roots'); ?>
+			</a>
+		</div>
+<?php
 }
 ?>
-			</div>
+		</div>
+		<hr>
+		<div>
+<?php
+wp_reset_query();
+
+$postsTarde = query_posts('cat='.$category->term_id."&tag=tarde");
+
+foreach ($postsTarde as $post) {
+?>
+		<div class="col-sm-6 col-md-4">
+			<h2 class="reto-title text-center">
+				<?php echo $post->post_title;?>
+			</h2>
+			<img class="img-responsive" src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID));?>" alt="">
+			<a href="<?php echo $post->guid; ?>" class="btn btn-primary btn-block btn-flat btn-large">
+				<img src="/wp-content/themes/HackRoots/assets/img/list-hexagon.png" alt="">
+				<?php _e('¡Hazlo!', 'roots'); ?>
+			</a>
+		</div>
+<?php
+}
+wp_reset_query();
+?>
 		</div>
 	</div>
+</div>

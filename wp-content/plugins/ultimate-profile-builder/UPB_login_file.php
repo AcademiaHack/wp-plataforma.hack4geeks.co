@@ -47,7 +47,7 @@ if ($login1) {
             </div>
         </div>
         <script>
-             setTimeout(function(){ window.location = "<?php echo $homeURL ?>"; }, 2000);
+             setTimeout(function(){ window.location = "<?php echo $homeURL ?>"; }, 0);
         </script>
         <!-- <div id="main-upb-form">
             <div class="main-edit-profile" align="center">
@@ -225,7 +225,7 @@ if ($login1) {
     </div>
 
     <script> 
-         setTimeout(function(){ window.location = "<?php echo $homeURL ?>"; }, 2000);
+         setTimeout(function(){ window.location = "<?php echo $homeURL ?>"; }, 0);
     </script>
 
     <?php

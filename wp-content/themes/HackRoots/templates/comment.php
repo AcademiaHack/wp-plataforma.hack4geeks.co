@@ -15,9 +15,11 @@
     <div class="col-sm-12 text-right">
       <?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
       <?php $url = clean_url(wp_nonce_url( "/wp-admin/comment.php?action=deletecomment&p=$comment->comment_post_ID&c=$comment->comment_ID", "delete-comment_$comment->comment_ID" ));?>
+      <?php if ( current_user_can('moderate_comments') ) { ?>
       <a href="<?php echo $url ?>" class="btn btn-danger">
         <span class="glyphicon glyphicon-trash"></span>
       </a>
+      <?php } ?>
     </div>
   </div>
 <!-- the .media-body div is closed in the walker -->
