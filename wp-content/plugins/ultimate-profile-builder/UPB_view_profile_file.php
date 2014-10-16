@@ -77,7 +77,6 @@
 						<div class="row">
 							<div class="col-sm-12 text-center">
 								<div class="user-pic">
-									<img src="../wp-content/themes/HackRoots/assets/img/default.png" alt="">
 
 									<?php
 
@@ -85,15 +84,13 @@
 
 									if($avtar_image[0])
 									{
-										echo '<img src="$avtar_image[0]">';		
+										echo '<img src="'.$avtar_image[0].'">';		
 									}
 									else
 									{
-										?>
-
-										<div class="user-pic"></div>
-
-										<?php
+									?>
+										<img src="../wp-content/themes/HackRoots/assets/img/default.png" alt="">
+									<?php
 									}
 									?>
 
@@ -102,7 +99,8 @@
 						</div>
 						<div class="row">
 							<div class="col-sm-12">
-								<h3><?php the_author_meta('first_name',$current_id); ?>&nbsp;<?php the_author_meta('last_name',$current_id); ?></h3>
+								<!-- <h3><?php the_author_meta('first_name',$current_id); ?>&nbsp;<?php the_author_meta('last_name',$current_id); ?></h3> -->
+								<br>
 								<div class="user-info">
 
 									<?php if (checkfieldname("upb_usernameshowhide","yes")==true ) : ?>

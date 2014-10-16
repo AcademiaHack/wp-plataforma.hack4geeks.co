@@ -231,7 +231,7 @@ echo $category->category_description;
 
 <?php
 
-$postsManana = query_posts('cat=' . $category->term_id."&tag=manana");
+$postsManana = query_posts('cat=' . $category->term_id."&tag=manana&orderby=title&order=ASC");
 
 foreach ($postsManana as $post) {
     
@@ -255,7 +255,7 @@ foreach ($postsManana as $post) {
 <?php
 wp_reset_query();
 
-$postsTarde = query_posts('cat='.$category->term_id."&tag=tarde");
+$postsTarde = query_posts('cat='.$category->term_id."&tag=tarde&orderby=title&order=ASC");
 
 foreach ($postsTarde as $post) {
 ?>
