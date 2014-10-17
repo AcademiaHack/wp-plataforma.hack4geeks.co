@@ -238,9 +238,9 @@ foreach ($postsManana as $post) {
     
 ?>
 		<div class="col-sm-6 col-md-4">
-			<h2 class="reto-title text-center">
-				<?php echo $post->post_title;?>
-			</h2>
+			<div class="title-vert-container">
+				<h2 class="reto-title text-center"> <?php echo $post->post_title;?> </h2>
+			</div>
 			<div class="img-holder">
 				<img class="img-responsive center-block reto-img" src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID));?>" alt="">
 			</div>
@@ -254,7 +254,7 @@ foreach ($postsManana as $post) {
 ?>
 		</div>
 		<h2><?php _e('Retos de la tarde:', 'roots'); ?></h2><br>
-		<div>
+		<div class="row">
 <?php
 wp_reset_query();
 
@@ -263,9 +263,9 @@ $postsTarde = query_posts('cat='.$category->term_id."&tag=tarde&orderby=title&or
 foreach ($postsTarde as $post) {
 ?>
 		<div class="col-sm-6 col-md-4">
-			<h2 class="reto-title text-center"	>
-				<?php echo $post->post_title;?>
-			</h2>
+			<div class="title-vert-container">
+				<h2 class="reto-title text-center"> <?php echo $post->post_title;?> </h2>
+			</div>
 			<div class="img-holder">
 				<img class="img-responsive center-block reto-img" src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID));?>" alt="">
 			</div>
