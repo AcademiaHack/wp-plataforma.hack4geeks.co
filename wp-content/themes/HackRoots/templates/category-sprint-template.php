@@ -55,11 +55,19 @@ $args = array(
               } 
               ?>
 
-              <div class="badge-container">
-               <a href="<?php  echo get_category_link( $cat->cat_ID )?>">
-                <img class="img-responsive badge-img" title="<?php echo $cat->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php  echo get_tax_meta($cat->term_id,'text_cat_id'); ?>.png" alt="">
-                <img class="img-responsive black_hexagon"  title="<?php echo $cat->name; ?>"  src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/black_hexagon.png">
-              </a>
+            <div class="badge-container">
+             <?php if(get_tax_meta($value->cat_ID,'text_cat_id') > 9000){ ?>
+             <a href="<?php  echo get_category_link( $cat->cat_ID )?>">
+              <img class="img-responsive badge-img" title="<?php echo $cat->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php  echo get_tax_meta($cat->term_id,'text_cat_id'); ?>.png" alt="">
+              <img class="img-responsive black_hexagon"  title="<?php echo $cat->name; ?>"  src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/black_hexagon.png">
+             </a>
+             <?php }else{ ?>
+             <a>
+              <img class="img-responsive badge-img" title="<?php echo $cat->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php  echo get_tax_meta($cat->term_id,'text_cat_id'); ?>.png" alt="">
+              <img class="img-responsive lockedBG"  title="<?php echo $cat->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/black_hexagon.png">
+              <img class="img-responsive locked"  title="<?php echo $cat->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/locked.png">
+             </a>
+             <?php } ?>
             </div>
             <?php } ?>
           </div>
@@ -100,7 +108,10 @@ $args = array(
     }); 
      $(".badge-img").hover(function(){ 
       $("#badge-title").text(this.title);
-    });  
+    });
+     $(".locked").hover(function(){ 
+      $("#badge-title").text(this.title);
+    });
 
      $("#badges_carousel").on('slid.bs.carousel', function(event) {
        var allListElements = $( ".badges" );
