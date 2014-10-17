@@ -227,6 +227,7 @@ echo $category->category_description;
 				 </p>
 			</div>
 		</div>
+		<h2><?php _e('Retos de la mañana:', 'roots'); ?></h2><br>
 		<div class="row">
 
 <?php
@@ -240,7 +241,9 @@ foreach ($postsManana as $post) {
 			<h2 class="reto-title text-center">
 				<?php echo $post->post_title;?>
 			</h2>
-			<img class="img-responsive" src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID));?>" alt="">
+			<div class="img-holder">
+				<img class="img-responsive center-block reto-img" src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID));?>" alt="">
+			</div>
 			<a href="<?php echo get_permalink(); ?>" class="btn btn-primary btn-block btn-flat btn-large">
 				<img src="/wp-content/themes/HackRoots/assets/img/list-hexagon.png" alt="">
 				<?php _e('¡Hazlo!', 'roots'); ?>
@@ -250,7 +253,7 @@ foreach ($postsManana as $post) {
 }
 ?>
 		</div>
-		<hr>
+		<h2><?php _e('Retos de la tarde:', 'roots'); ?></h2><br>
 		<div>
 <?php
 wp_reset_query();
@@ -260,10 +263,12 @@ $postsTarde = query_posts('cat='.$category->term_id."&tag=tarde&orderby=title&or
 foreach ($postsTarde as $post) {
 ?>
 		<div class="col-sm-6 col-md-4">
-			<h2 class="reto-title text-center">
+			<h2 class="reto-title text-center"	>
 				<?php echo $post->post_title;?>
 			</h2>
-			<img class="img-responsive" src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID));?>" alt="">
+			<div class="img-holder">
+				<img class="img-responsive center-block reto-img" src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID));?>" alt="">
+			</div>
 			<a href="<?php echo get_permalink(); ?>" class="btn btn-primary btn-block btn-flat btn-large">
 				<img src="/wp-content/themes/HackRoots/assets/img/list-hexagon.png" alt="">
 				<?php _e('¡Hazlo!', 'roots'); ?>
