@@ -7648,5 +7648,8 @@ footer {
   .menu-username a {
     text-align: center;
   }
+  .navbar-toggle {
+    height: 40px;
+  }
 }
 /*# sourceMappingURL=main.css.map 
