@@ -295,7 +295,7 @@ function skilltree_profile_render_toString(){
 						</div>';
 
 		$skill_tree .= '<div class="blocked">
-							<img class="img-responsive candado center-block" title="Patrones y convenciones en diseño, Bootstrap." src="http://localhost:8080/wp-content/themes/HackRoots/assets/img/locked.png">
+							<img class="img-responsive candado center-block" title="Próximamente!" src="'.get_theme_root_uri().'/HackRoots/assets/img/locked.png">
 						 </div>';
 
 		return $skill_tree;
