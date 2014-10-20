@@ -200,6 +200,7 @@ li {
   -o-transition: all 0.3s 0.3s ease-out;
   transition: all 0.3s 0.3s ease-out;
 }
+
 .skill .hit-area {
   position: absolute;
   width: 100%;
@@ -589,6 +590,19 @@ html {
   height: 520px;
   margin: 0 60px;
   font-size: 12px !important;
+  z-index: -1;
+}
+.talent-tree h2 {
+  position: absolute;
+  bottom: -10px;
+  left: -60px;
+  background-color: #0D4F99;
+  color: #fff;
+  padding: 10px 30px;
+  border-radius: 0 15px 15px 0;
+  -webkit-border-radius: 0 15px 15px 0;
+  -moz-border-radius: 0 15px 15px 0;
+  font-size: 24px;
 }
 .talent-tree h3 {
   margin-top: 10px;
@@ -1039,20 +1053,6 @@ html {
 .wp-admin .skill.can-add-points .frame {
   cursor: pointer;
 }
-
-.talent-tree h2 {
-  position: absolute;
-  bottom: -10px;
-  left: -60px;
-  background-color: #0D4F99;
-  color: #fff;
-  padding: 10px 30px;
-  border-radius: 0 15px 15px 0;
-  -webkit-border-radius: 0 15px 15px 0;
-  -moz-border-radius: 0 15px 15px 0;
-  font-size: 24px;
-}
-
 #message{
   margin-top: 5px;
   width: 50%;
@@ -1120,3 +1120,17 @@ html {
 .alert-danger .alert-link {
   color: #843534;
 }
+.blocked {
+  position: fixed !important;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 20%;
+  width: 80%;
+  background-color:rgba(0, 0, 0, 0.5);
+}
+.candado{
+  opacity: 1 !important;
+  margin-top: 175px;
+}
+

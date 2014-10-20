@@ -7592,7 +7592,15 @@ footer {
   margin-left: 20%;
   position: relative;
   padding: 30px 0;
+  height: 100%;
 }
+/*html,
+.page-template-template-profile-php,
+.wrap, .content
+{
+  height: 100%;
+  min-height: 100%
+}*/
 .glyphicon-off{
   font-size: 18px;
 }

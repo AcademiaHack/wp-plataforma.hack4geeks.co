@@ -8,7 +8,6 @@ Version: 0.1
 Author URI: http://heyyeyaaeyaaaeyaeyaa.com/
 */
 
-
 function skilltree_activation() {
 	// Array of WP_User objects.
 	$users = get_users( 'orderby=ID&role=' );
@@ -93,7 +92,7 @@ add_action( 'admin_head', 'skilltree_css' );
 /* Admin Menu adding */
 
 function skilltree_add_menus(){
-	add_users_page('Usuarios > árboles de Talentos', 'Árboles de Talentos', 'administrator', 'skilltree.php', 'skilltree_display');
+	add_users_page('Usuarios > árboles de Habilidades', 'Árboles de Habilidades', 'administrator', 'skilltree.php', 'skilltree_display');
 }
 add_action('admin_menu', 'skilltree_add_menus');
 
@@ -106,9 +105,9 @@ function skilltree_display(){
 	$userid = $_POST["userID"];
 
 	if(isset($userid))
-		echo '<h1>Árbol de talentos de '.get_user_by('id', $userid)->display_name.'</h1>';
+		echo '<h1>Árbol de habilidades de '.get_user_by('id', $userid)->display_name.'</h1>';
 	else
-		echo '<h1>Árboles de talentos</h1>';
+		echo '<h1>Árboles de habilidades</h1>';
 
 	echo '<div id="feedback" hidden></div>';
 
@@ -128,7 +127,7 @@ function skilltree_display(){
 	echo '<input type="submit" id="chooseButton" value="Elegir">';
 	echo '</form>';
 
-	// echo '<h2>árbol de talentos de <span id="username_title"></span></h2>';
+	// echo '<h2>árbol de habilidades de <span id="username_title"></span></h2>';
 	
 	if(isset($selected) ){
 		echo skilltree_admin_render_toString($userid);
@@ -144,7 +143,7 @@ add_action( 'wp_ajax_save_tree', 'save_tree_callback' );
 function save_tree_callback() {
 	if ( ! update_user_meta($_POST["user"]["id"], 'user_skilltree', $_POST["user"]["hashString"]) ){
 		echo '<div id="message" class="alert alert-danger" role="alert">';
-		echo "<strong>Error!</strong> No se pudo guardar el árbol de talentos.<a class='alert-link'>&times;</a>";
+		echo "<strong>Error!</strong> No se pudo guardar el árbol de habilidades.<a class='alert-link'>&times;</a>";
 	}else{
 		echo '<div id="message" class="alert alert-success" role="alert">';
 		echo "<strong>Exito!</strong> Se ha guardado el árbol para ".get_user_by( "id",  $_POST["user"]["id"])->display_name."!<a class='alert-link'>&times;</a>";
@@ -158,7 +157,7 @@ function save_tree_callback() {
 /* Renderizarion function */
 
 function skilltree_admin_render_toString($userID){
-	$talent_tree = '<div class="ltIE9-hide">
+	$skill_tree = '<div class="ltIE9-hide">
 						<div class="page open">
 							<div class="talent-tree">
 								<h2 id="hashString" data-bind="text:hash" style="visibility: hidden"></h2>
@@ -222,7 +221,7 @@ function skilltree_admin_render_toString($userID){
 						</ul>
 					</div>';
 
-	return $talent_tree;
+	return $skill_tree;
 }
 
 function skilltree_profile_render_toString(){
@@ -232,7 +231,7 @@ function skilltree_profile_render_toString(){
 		$logged_user = wp_get_current_user();
 		$skilltree_hash = get_user_meta( $logged_user->id, 'user_skilltree' );
 
-		$talent_tree = '<div class="ltIE9-hide">
+		$skill_tree = '<div class="ltIE9-hide">
 							<div class="page open">
 								<div class="talent-tree" id="'.$skilltree_hash[0].'">
 					 				<h2>Mi árbol de habilidades</h2>
@@ -295,7 +294,12 @@ function skilltree_profile_render_toString(){
 							</ul>
 						</div>';
 
-		return $talent_tree;
+		$skill_tree .= '<div class="blocked">
+							<img class="img-responsive candado center-block" title="Patrones y convenciones en diseño, Bootstrap." src="http://localhost:8080/wp-content/themes/HackRoots/assets/img/locked.png">
+						 </div>';
+
+		return $skill_tree;
+
 	}else{
 		return '';
 	}

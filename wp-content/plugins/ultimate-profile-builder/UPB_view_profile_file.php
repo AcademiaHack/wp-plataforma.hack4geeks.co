@@ -138,7 +138,6 @@
 						<div class="right-space">
 							<!-- Talent Tree -->
 							<div id="skilltree"><?php echo skilltree_profile_render_toString(); ?></div>
-							
 						</div>
 					</div>
 				</div>
