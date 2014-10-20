@@ -231,7 +231,7 @@ function skilltree_profile_render_toString(){
 		$logged_user = wp_get_current_user();
 		$skilltree_hash = get_user_meta( $logged_user->id, 'user_skilltree' );
 
-		$skill_tree = '<div class="ltIE9-hide">
+		/*$skill_tree = '<div class="ltIE9-hide">
 							<div class="page open">
 								<div class="talent-tree" id="'.$skilltree_hash[0].'">
 					 				<h2>Mi árbol de habilidades</h2>
@@ -292,11 +292,10 @@ function skilltree_profile_render_toString(){
 								<li><a onclick="_gaq.push([\'_trackEvent\',\'external link\',\'upgrade browser\',\'MSIE\']);" href="http://windows.microsoft.com/en-US/internet-explorer/download-ie" target="_blank">Microsoft Internet Explorer 10</a></li>
 								<li><a onclick="_gaq.push([\'_trackEvent\',\'external link\',\'upgrade browser\',\'Firefox\']);" href="www.mozilla.org/en-US/firefox" target="_blank">Mozilla Firefox</a></li>
 							</ul>
-						</div>';
+						</div>';*/
 
-		$skill_tree .= '<div class="blocked">
-							<img class="img-responsive candado center-block" title="Próximamente!" src="'.get_theme_root_uri().'/HackRoots/assets/img/locked.png">
-						 </div>';
+		$skill_tree .= '<div class="blocked"></div>
+						<img class="img-responsive candado center-block" title="Próximamente!" src="'.get_theme_root_uri().'/HackRoots/assets/img/locked.png">';
 
 		return $skill_tree;
 
