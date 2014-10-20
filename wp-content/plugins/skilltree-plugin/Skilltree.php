@@ -57,7 +57,7 @@ function skilltree_enqueues()
 		// wp_register_script('skilltree_profile_default', plugins_url('profile_init.js', __FILE__));
 		wp_enqueue_script('knockout', plugins_url('vendor/knockout.min.js', __FILE__),false,false,true);
 		wp_enqueue_script('skilltree_js', plugins_url('js/skilltree.js', __FILE__),false,false,true);
-		wp_enqueue_script('skilltree_profile_default', plugins_url('admin_init.js', __FILE__),false,false,true);
+		wp_enqueue_script('skilltree_default', plugins_url('skilltree_init.js', __FILE__),false,false,true);
 	}
 }
 add_action('wp_enqueue_scripts', 'skilltree_enqueues');
@@ -76,7 +76,7 @@ function skilltree_admin_enqueues()
 
 	wp_enqueue_script('knockout', plugins_url('vendor/knockout.min.js', __FILE__),false,false,true);
 	wp_enqueue_script('skilltree_js', plugins_url('js/skilltree.js', __FILE__),false,false,true);
-	wp_enqueue_script('skilltree_admin_default', plugins_url('admin_init.js', __FILE__),false,false,true);
+	wp_enqueue_script('skilltree_default', plugins_url('skilltree_init.js', __FILE__),false,false,true);
 	wp_enqueue_script('skilltree_scripts_default', plugins_url('defaultScripts.js', __FILE__),false,false,true);
 }
 add_action('admin_enqueue_scripts', 'skilltree_admin_enqueues');
