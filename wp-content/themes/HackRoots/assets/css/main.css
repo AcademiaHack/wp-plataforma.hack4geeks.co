@@ -7640,4 +7640,10 @@ footer {
 .reto-background .btn-large {
   margin-bottom: 30px;
 }
+@media (max-width: 768px) {
+  .menu-username,
+  .outperfil {
+    width: 100% !important;
+  }
+}
 /*# sourceMappingURL=main.css.map 
