@@ -605,7 +605,7 @@ html {
   font-size: 24px;
 }
 .talent-tree h3 {
-  margin-top: 10px;
+  margin: 10px 0;
 }
 .skill .tool-tip {
   box-shadow: 0 0 0 transparent;
@@ -933,31 +933,31 @@ html {
   top: 100px;
 }
 [data-skill-id="15"] .tool-tip {
-  top: -100px;
+  top: -75px;
 }
 [data-skill-id="15"] .tool-tip:before {
-  top: 110px;
+  top: 92px;
 }
 [data-skill-id="15"] .tool-tip:after {
-  top: 110px;
+  top: 92px;
 }
 [data-skill-id="16"] .tool-tip {
-  top: -170px;
+  top: -125px;
 }
 [data-skill-id="16"] .tool-tip:before {
-  top: 185px;
+  top: 140px;
 }
 [data-skill-id="16"] .tool-tip:after {
-  top: 185px;
+  top: 140px;
 }
 [data-skill-id="17"] .tool-tip {
-  top: -214px;
+  top: -160px;
 }
 [data-skill-id="17"] .tool-tip:before {
-  top: 228px;
+  top: 178px;
 }
 [data-skill-id="17"] .tool-tip:after {
-  top: 228px;
+  top: 178px;
 }
 [data-skill-id="20"] .tool-tip {
   top: -28px;

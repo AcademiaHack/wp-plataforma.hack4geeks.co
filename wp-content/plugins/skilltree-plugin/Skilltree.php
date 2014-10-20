@@ -57,7 +57,7 @@ function skilltree_enqueues()
 		// wp_register_script('skilltree_profile_default', plugins_url('profile_init.js', __FILE__));
 		wp_enqueue_script('knockout', plugins_url('vendor/knockout.min.js', __FILE__),false,false,true);
 		wp_enqueue_script('skilltree_js', plugins_url('js/skilltree.js', __FILE__),false,false,true);
-		wp_enqueue_script('skilltree_profile_default', plugins_url('profile_init.js', __FILE__),false,false,true);
+		wp_enqueue_script('skilltree_profile_default', plugins_url('admin_init.js', __FILE__),false,false,true);
 	}
 }
 add_action('wp_enqueue_scripts', 'skilltree_enqueues');
@@ -105,7 +105,7 @@ function skilltree_display(){
 	$userid = $_POST["userID"];
 
 	if(isset($userid))
-		echo '<h1>Árbol de habilidades de '.get_user_by('id', $userid)->display_name.'</h1>';
+		echo '<h1 id="'.$selected.'" class="usrSel">Árbol de habilidades de '.get_user_by('id', $userid)->display_name.'</h1>';
 	else
 		echo '<h1>Árboles de habilidades</h1>';
 
@@ -178,32 +178,28 @@ function skilltree_admin_render_toString($userID){
 										<div class="tool-tip">
 											<h3 data-bind="text: title" class="skill-name"></h3>
 											<div data-bind="text: helpMessage" class="help-message"></div>
+											
 											<div data-bind="html: description" class="skill-description"></div>
 											
-											<div data-bind="if: currentRankDescription" class="current-rank-description">Current rank: <span data-bind="	text: currentRankDescription"></span></div>
-											<div data-bind="if: nextRankDescription" class="next-rank-description">Next rank: <span data-bind="	text: nextRankDescription"></span></div>
-											
-											<ul class="skill-links">
+											<div data-bind="if: currentRankDescription" class="current-rank-description">Ahora: <span data-bind="	text: currentRankDescription"></span></div>
+											<div data-bind="if: nextRankDescription" class="next-rank-description">Próximo nivel: <span data-bind="	text: nextRankDescription"></span></div>
+											<!-- <hr><h4>Enlaces útiles:</h4> -->
+											<!-- <ul class="skill-links"> -->
 												<!--ko foreach: links-->
-												<li>
-													<a data-bind="attr: { href: url }, click: function(){ 
-														_gaq.push([\'_trackEvent\',$parent.title, label, url]);
-														return true;
-														}, text: label" target="_blank"></a>
-												</li>
+												<!-- <li><a data-bind="attr: { href: url }, text: label" target="_blank"></a></li> -->
 												<!--/ko-->
-											</ul>
+											<!-- </ul> -->
 											<!-- <ul class="stats"> -->
 												<!--ko foreach: stats-->
-												<!-- <li><span class="value">+<span data-bind="text: value"></span></span> <span data-bind="	text: title" class="title"></span></li> -->
+												<!-- <li><span class="value">+<span data-bind="text: value"></span></span> <span data-bind="text: title" class="title"></span></li> -->
 												<!--/ko-->
 											<!-- </ul> -->
 											<!--ko if: talentSummary-->
-											<!-- <div class="talent-summary">Grants <span data-bind="text: talentSummary"></span></div> -->
+											<!-- <div class="talent-summary">Aprenderlo te convierte hace <span data-bind="text: talentSummary"></span></div> -->
 											<!--/ko-->
 											
 										</div>
-										<div class="skill-points"><span data-bind="text: points" class="points"></span>/<span data-bind="	text: maxPoints" class="max-points"></span></div>
+										<div class="skill-points"><span data-bind="text: points" class="points"></span>/<span data-bind="text: maxPoints" class="max-points"></span></div>
 										<div data-bind="click: addPoint, rightClick: removePoint" class="hit-area"></div>
 									</div>
 								</div>
@@ -212,12 +208,12 @@ function skilltree_admin_render_toString($userID){
 						</div>
 					</div>
 					<div class="ltIE9-show ltIE9-warning">
-						<h2>Please upgrade your browser!</h2>
-						<p>Try one of these free options:</p>
+						<h2>Actualiza tu navegador!</h2>
+						<p>Has accedido a hack desde otroe spacio temporal. Por favor vuelve a una época actual, o prueba uno de estos navegadores:</p>
 						<ul>
-							<li><a onclick="_gaq.push([\'_trackEvent\',\'external link\',\'upgrade browser\',\'Chrome\']);" href="http://google.com/chrome" target="_blank">Google Chrome</a></li>
-							<li><a onclick="_gaq.push([\'_trackEvent\',\'external link\',\'upgrade browser\',\'MSIE\']);" href="http://windows.microsoft.com/en-US/internet-explorer/download-ie" target="_blank">Microsoft Internet Explorer 10</a></li>
-							<li><a onclick="_gaq.push([\'_trackEvent\',\'external link\',\'upgrade browser\',\'Firefox\']);" href="www.mozilla.org/en-US/firefox" target="_blank">Mozilla Firefox</a></li>
+							<li><a href="http://google.com/chrome" target="_blank">Google Chrome</a></li>
+							<li><a href="http://windows.microsoft.com/en-US/internet-explorer/download-ie" target="_blank">Microsoft Internet Explorer 10</a></li>
+							<li><a href="www.mozilla.org/en-US/firefox" target="_blank">Mozilla Firefox</a></li>
 						</ul>
 					</div>';
 
@@ -251,32 +247,28 @@ function skilltree_profile_render_toString(){
 											<div class="tool-tip">
 												<h3 data-bind="text: title" class="skill-name"></h3>
 												<div data-bind="text: helpMessage" class="help-message"></div>
+												
 												<div data-bind="html: description" class="skill-description"></div>
 												
-												<div data-bind="if: currentRankDescription" class="current-rank-description">Current rank: <span data-bind="	text: currentRankDescription"></span></div>
-												<div data-bind="if: nextRankDescription" class="next-rank-description">Next rank: <span data-bind="	text: nextRankDescription"></span></div>
-												
-												<ul class="skill-links">
+												<div data-bind="if: currentRankDescription" class="current-rank-description">Ahora: <span data-bind="	text: currentRankDescription"></span></div>
+												<div data-bind="if: nextRankDescription" class="next-rank-description">Próximo nivel: <span data-bind="	text: nextRankDescription"></span></div>
+												<!-- <hr><h4>Enlaces útiles:</h4> -->
+												<!-- <ul class="skill-links"> -->
 													<!--ko foreach: links-->
-													<li>
-														<a data-bind="attr: { href: url }, click: function(){ 
-															_gaq.push([\'_trackEvent\',$parent.title, label, url]);
-															return true;
-															}, text: label" target="_blank"></a>
-													</li>
+													<!-- <li><a data-bind="attr: { href: url }, text: label" target="_blank"></a></li> -->
 													<!--/ko-->
-												</ul>
+												<!-- </ul> -->
 												<!-- <ul class="stats"> -->
 													<!--ko foreach: stats-->
-													<!-- <li><span class="value">+<span data-bind="text: value"></span></span> <span data-bind="	text: title" class="title"></span></li> -->
+													<!-- <li><span class="value">+<span data-bind="text: value"></span></span> <span data-bind="text: title" class="title"></span></li> -->
 													<!--/ko-->
 												<!-- </ul> -->
 												<!--ko if: talentSummary-->
-												<!-- <div class="talent-summary">Grants <span data-bind="text: talentSummary"></span></div> -->
+												<!-- <div class="talent-summary">Aprenderlo te convierte hace <span data-bind="text: talentSummary"></span></div> -->
 												<!--/ko-->
 												
 											</div>
-											<div class="skill-points"><span data-bind="text: points" class="points"></span>/<span data-bind="	text: maxPoints" class="max-points"></span></div>
+											<div class="skill-points"><span data-bind="text: points" class="points"></span>/<span data-bind="text: maxPoints" class="max-points"></span></div>
 											<!-- <div data-bind="click: addPoint, rightClick: removePoint" class="hit-area"></div> -->
 										</div>
 									</div>
@@ -285,12 +277,12 @@ function skilltree_profile_render_toString(){
 							</div>
 						</div>
 						<div class="ltIE9-show ltIE9-warning">
-							<h2>Please upgrade your browser!</h2>
-							<p>Try one of these free options:</p>
+							<h2>Actualiza tu navegador!</h2>
+							<p>Has accedido a hack desde otroe spacio temporal. Por favor vuelve a una época actual, o prueba uno de estos navegadores:</p>
 							<ul>
-								<li><a onclick="_gaq.push([\'_trackEvent\',\'external link\',\'upgrade browser\',\'Chrome\']);" href="http://google.com/chrome" target="_blank">Google Chrome</a></li>
-								<li><a onclick="_gaq.push([\'_trackEvent\',\'external link\',\'upgrade browser\',\'MSIE\']);" href="http://windows.microsoft.com/en-US/internet-explorer/download-ie" target="_blank">Microsoft Internet Explorer 10</a></li>
-								<li><a onclick="_gaq.push([\'_trackEvent\',\'external link\',\'upgrade browser\',\'Firefox\']);" href="www.mozilla.org/en-US/firefox" target="_blank">Mozilla Firefox</a></li>
+								<li><a href="http://google.com/chrome" target="_blank">Google Chrome</a></li>
+								<li><a href="http://windows.microsoft.com/en-US/internet-explorer/download-ie" target="_blank">Microsoft Internet Explorer 10</a></li>
+								<li><a href="www.mozilla.org/en-US/firefox" target="_blank">Mozilla Firefox</a></li>
 							</ul>
 						</div>';*/
 

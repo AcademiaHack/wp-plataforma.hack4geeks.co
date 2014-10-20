@@ -1,9 +1,13 @@
 jQuery(document).ready(function($){
-	$("#userid").val($( "#skilltree_userDropdown option:selected" ).attr("id"));
+	if($(".usrSel").length){
+		$("#skilltree_userDropdown").val($(".usrSel").attr("id"));
+		console.log("Ya esta un usario seleccionado! "+$(".usrSel").attr("id"));
+	}
 	
+	$("#userid").val($( "#skilltree_userDropdown option:selected" ).attr("id"));
+
 	$("#skilltree_userDropdown").change(function() {
 		$("#userid").val($( "#skilltree_userDropdown option:selected" ).attr("id"));
-		console.log("aqui");
 	});
 
 	$("#message .alert-link").on('click',function(){

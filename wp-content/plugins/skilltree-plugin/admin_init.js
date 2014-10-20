@@ -31,15 +31,20 @@
 		var vm = new tft.skilltree.Calculator(data);
 		ko.applyBindings(vm);
 
-		vm.useHash("_");
-		// vm.useHash("_abcde");
-		// vm.useHash("_abcdefgh");
-		// vm.useHash("_abcdefghijklmnopqrstuvwxyz");
+		if ($('.wp-admin').length) {
+			//console.log("estoy en el admin!");
+			
+			vm.useHash("_");
 
+			//Init skilltree with database values
+			vm.useHash($( "#skilltree_userDropdown option:selected" ).val());
+		}else{
+			//console.log("estoy en el perfil!");
+			
+			//Init skilltree with database values
+			vm.useHash($(".talent-tree").attr("id"));
+		}
 
-		//Init skilltree with database values
-		vm.useHash($( "#skilltree_userDropdown option:selected" ).val());
-		
 		//Change the skilltree being displayed with the tree for each user
 		// $("#skilltree_userDropdown").change(function() {
 		// 	// vm.useHash("_a2");
@@ -56,59 +61,41 @@
 
 })(window.jQuery, window.ko, {
 	learnTemplate: 'Apender primero {n} para desbloquear.',
-	portraitPathTemplate: 'img/portraits/portrait-{n}.jpg', 
-	numPortraits: 22, 
-	defaultStats: {
-		'Carisma': 9
-		, 'Destreza': 9
-		, 'Resistencia': 9
-		, 'Intelecto': 9
-		, 'Fuerza': 9
-		, 'Conocimiento': 9
-	},
 	skills: [
 		{
 			id: 1
 			, title: 'HTML'
-			, description: 'The main language for creating web pages, HTML is written in the form of tags enclosed in angle brackets (like <html>).'
+			, maxPoints: 2
+			, description: 'El lenguaje principal para crear páginas web. Está escrito en base a etiquetas o "tags" rodeadas por corchetes angulares (ej: <html>).'
 			, rankDescriptions: [
-				'You understand how to create and view a basic web page.'
-				, 'You understand how to link pages together, design multi-column layouts, and work with form fields and media elements.'
+				'Entiendes como crear y ver una página web básica.'
+				, 'Entiendes como vincular páginas entre sí, diseñar layouts multi-columnas, y trabajar con formularios y elementos multimedia.'
 			]
             , links: [
                 {
-                    label: 'HTML.net Tutorials'
+                    label: 'Tutoriales HTML.net'
                     , url: 'http://www.html.net/tutorials/html/'
                 }
                 , {
-                    label: 'Sublime Text 3, a great code editor'
+                    label: 'Sublime Text 3, un editor de codigo genial'
 	                , url: 'http://www.sublimetext.com/'
                 }
             ]
-			, maxPoints: 2
-			, stats: [
-				{
-					title: 'Intelecto'
-					, value: 1
-				}
-				,{
-					title: 'Carisma'
-					, value: 1
-				}
-				,{
-					title: 'Fuerza'
-					, value: 1
-				}
-			]
 		},
 
 		{
 			id: 2
 			, title: 'CSS'
-			, dependsOn: [1]
+            , dependsOn: [1]
+			, maxPoints: 2 
+            , description: 'Cascading Style Sheets (CSS) es un lenguaje para darle estilo a páginas web. Las "reglas" CSS afectan elementos en el documento HTML para especificar su presentación y visualización. Algunas de ellas son fuente, el color, el espaciado y tamaño.'
+			, rankDescriptions: [
+                'Estas familiarizado con los conceptos básicos de CSS y comprendes el "modelo de caja"'
+                , 'Estas familiarizado con "media queries" y "responsive design" para adaptar tu diseño a las diferentes plataformas.'
+            ]
             , links: [
                 {
-                    label: 'CSS Tutorials'
+                    label: 'Tutoriales de CSS'
 	                , url: 'http://www.htmldog.com/guides/css/'
                 }
                 , {
@@ -116,24 +103,17 @@
                     , url: 'http://caniuse.com/#cats=CSS'
                 }
             ]
-			, maxPoints: 2
-			, stats: [
-				{
-					title: 'Carisma'
-					, value: 3
-				}
-			]
-            , rankDescriptions: [
-                'You are familiar with the basics of CSS formatting and the box model.'
-                , 'You are familiar with media queries and responsive design for adapting your design to fit different devices.'
-            ]
-            , description: 'Cascading Style Sheets (CSS) is a language for styling web pages.  CSS rules target elements in the HTML document to specify the presentation, such as font, color, spacing, and size.'
-			, talents: ['Stylish']
 		},
 		{
 			id: 3
-			, title: 'CSS Tools'
+			, title: 'Herramientas de CSS'
 			, dependsOn: [2]
+			, maxPoints: 2
+            , description: 'Preprocesadores como LESS y SASS te ayudan a escribir CSS más estructurada y eficientemente, mediante herramientas como las variables, funciones, y anidación.'
+            , rankDescriptions: [
+                'Estas familiarizado con las variables y la anidación.'
+                , 'Puedes usar herramientas avanzadas como "mix-ins" y escribir algunos personalizados.'
+            ]
             , links: [
                 {
                     label: 'Sass vs. LESS'
@@ -152,40 +132,25 @@
                     , url: 'http://learnboost.github.io/stylus/'
                 }
             ]
-			, maxPoints: 2
-            , rankDescriptions: [
-                'You are familiar with variables and nesting.'
-                , 'You can use advanced tools like mix-ins and sometimes write your own.'
-            ]
-            , description: 'Preprocessors like LESS and SASS help you write more structured and efficient CSS by adding features like variables, functions, and nesting.'
-			, stats: [
-				{
-					title: 'Carisma'
-					, value: 2
-				}
-				, {
-					title: 'Destreza'
-					, value: 1
-				}
-			]
 		},
 		{
 			id: 4
-			, title: 'Web Design Mastery'
+			, title: 'Experto en Diseño Web'
 			, dependsOn: [2]
-            , description: 'You can bring design ideas to life by translating them into the requisite HTML document with CSS styles.'
-			, stats: [
-				{
-					title: 'Carisma'
-					, value: 10
-				}
-			]
+            , description: 'Puedes traer ideas de diseño a la vida, plasmándolas en el documento HTML estilizado con CSS.'
 		},
 		{
 			id: 5
 			, title: 'jQuery Effects'
 			, dependsOn: [4]
-            , links: [
+			, maxPoints: 3
+            , description: 'jQuery ofrece técnicas y métodos para la manipulación del lado del cliente de los elementos de la página web.'
+            , rankDescriptions: [
+                'Estás familiarizado con la manipulación del "Document Object Model" (DOM) modificando valores, contenidos, propiedades, elementos completos, entre otros.'
+                , 'Puedes agregar animaciones estándar a una página web.'
+                , 'Puedes crear y agregar efectos personalizados a una página web.'
+            ]
+		    , links: [
                 {
                     label: 'Codecademy jQuery'
 	                , url: 'http://www.codecademy.com/tracks/jquery'
@@ -199,30 +164,12 @@
                     , url: 'http://api.jquery.com/category/effects/'
                 }
             ]
-			, maxPoints: 3
-            , rankDescriptions: [
-                'You are familiar with manipulating the document object model (DOM) - modifying values, content, properties, entire elements, etc.'
-                , 'You are familiar with adding standard animation to a web page.'
-                , 'You are familiar with creating and adding custom effects to a web page.'
-            ]
-            , description: 'jQuery provides techniques and methods for client-side manipulation of the web page elements.'
-			, talents: ['Sizzlin']
-			, stats: [
-				{
-					title: 'Carisma'
-					, value: 2
-				}
-				, {
-					title: 'Destreza'
-					, value: 1
-				}
-			]
-		},
-
+        },
 		{
 			id: 6
-			, title: 'Search Engine Optimization (SEO)'
+			, title: 'Optimización en Motores de Búsqueda'
 			, dependsOn: [1]
+            , description: 'También conocido como Search Engine Optimization (SEO) por sus siglas en ingles, es el proceso de optimizar el ranking/visibilidad de un sitio o página web en los resultados de los motores de búsqueda.'
             , links: [
                 {
                     label: 'Search Engine Optimization (Google)'
@@ -237,22 +184,12 @@
                     , url: 'http://www.bing.com/toolbox/webmaster'
                 }
             ]
-            , description: 'The process of affecting the ranking/visibility of a website or web page in a search engines results.'
-			, stats: [
-				{
-					title: 'Intelecto'
-					, value: 2
-				}
-				, {
-					title: 'Conocimiento'
-					, value: 1
-				}
-			]
 		},
 		{
 			id: 7
 			, title: 'Analytics'
 			, dependsOn: [6]
+            , description: 'Analytics provee datos de rendimiento de un sitio web, así como la información necesaria para medir el éxito del SEO.'
             , links: [
                 {
                     label: '10 SEO Analysis Tools You Should Be Using'
@@ -271,27 +208,16 @@
                     , url: 'http://www.bing.com/toolbox/seo-analyzer'
                 }
             ]
-            , description: 'Analytics provide performance data about a website as well as information that is usable to measure the success of SEO.'
-			, stats: [
-				{
-					title: 'Intelecto'
-					, value: 1
-				}
-				, {
-					title: 'Conocimiento'
-					, value: 2
-				}
-			]
-			, talents: ['Crafty']
 		},
 
 		{
 			id: 8
 			, title: 'Javascript'
 			, dependsOn: [1]
+            , description: 'JavaScript es el lenguaje mas importante para la programación web del lado del cliente. Se ejecuta en el navegador del usuario para manipular el documento HTML después de haberse cargado. Puede hacer desde cosas tan simples como mostrar elementos ocultos, o más avanzadas como contactar con el servidor para cargar más datos.'
             , links: [
                 {
-                    label: 'JavaScript Tutorial'
+                    label: 'Tutorial de JavaScript'
 	                , url: 'http://www.htmldog.com/guides/javascript/'
                 }
                 , {
@@ -299,7 +225,7 @@
                     , url: 'http://www.codecademy.com/tracks/javascript'
                 }
                 , {
-                    label: 'List of Videos for Beginner JavaScript'
+                    label: 'Lista de videos para principiantes en JavaScript'
                     , url: 'http://thenewboston.org/list.php?cat=10'
                 }
                 , {
@@ -307,105 +233,69 @@
                 	, url: 'http://javascript.crockford.com/'
                 }
             ]
-            , description: 'JavaScript is the dominant language for client-side programming.  It executes in the user&rsquo;s browser to manipulate the HTML document after it has loaded.  This may be as simple as showing hidden elements, or more advanced like contacting the server to load more data.'
-			, stats: [
-				{
-					title: 'Destreza'
-					, value: 3
-				}
-			]
 		},
 		{
 			id: 9
-			, title: 'JS Libraries & Frameworks'
+			, title: 'JS Librerías & Frameworks'
 			, dependsOn: [8]
 			, maxPoints: 2
+            , description: 'Una vez que te sientas cómodo con el lenguaje JavaScript, hay una multitud de liberías y frameworks para optimizar tareas comunes y mejorar tu desarrollo.'
             , rankDescriptions: [
-                'You tap into libraries like jQuery, MooTools, Prototype, Dojo, and YUI to streamline your work.'
-                , 'You use frameworks like KnockoutJS, Ember.js, AngularJS, and Backbone.js to structure complex frontend functionality.'
+                'Has revisado librerias como jQuery, MooTools, Prototype, Dojo, o YUI para aligerar tu trabajo.'
+                , 'Eres capaz de usar frameworks como AngularJS, y Backbone.js, Ember.js o KnockoutJS para estructurar funcionalidades complejas del frontend'
             ]
-            , description: 'Once you&rsquo;re comfortable with the JavaScript language, there&rsquo;s a multitude of libraries and frameworks to accomplish common tasks and enhance your development.'
-			, stats: [
-				{
-					title: 'Destreza'
-					, value: 2
-				}
-				, {
-					title: 'Conocimiento'
-					, value: 1
-				}
-			]
-			, talents: ['Nimble']
 		},
 		{
 			id: 10
-			, title: 'Front-end Development Mastery'
+			, title: 'Experto en desarrollo Front-end'
 			, dependsOn: [9]  
-			, stats: [
-				{
-					title: 'Destreza'
-					, value: 10
-				}
-			]
+            , description: 'Puedes construir y desarrollar la interfaz gráfica de una aplicación o página web, ayudandote con JS y sus frameworks y diversas funcionalidades.'
 		},
-
 		{
 			id: 11
-			, title: 'Server-side Programming'
+			, title: 'Programación del lado del servidor'
 			, dependsOn: [1]
+            , description: 'Desarrollar scripts (funciones, código) que se ejecuta en el servidor (Server-side) en lugar de la máquina del usuario (client-side).'
             , links: [
                 {
                     label: 'Server-side scripting Wiki'
                     , url: 'http://en.wikipedia.org/wiki/Server-side_scripting'
                 }
             ]
-            , description: 'Developing items (code) that executes on the server (server-side) instead of the user&raquo;s (client&raquo;s) machine.'
-			, stats: [
-				{
-					title: 'Fuerza'
-					, value: 3
-				}
-			]
 		},
 		{
 			id: 12
-			, title: 'Server-side Frameworks'
+			, title: 'Frameworks del lado del servidor'
 			, dependsOn: [11]
+            , description: 'Es una colección de paquetes o módulos y frameworks, que permiten a los desarrolladores escribir aplicaciones o servicios, sin tener que manejar la sobrecarga de actividades comunes y los detalles de bajo nivel, tales como el manejo de sesiones, el acceso a las base de datos, entre otras cosas.'
             , links: [
                 {
-                    label: 'Comparison of web application frameworks'
+                    label: 'Comparación de frameworks para web applications'
                     , url: 'http://en.wikipedia.org/wiki/Comparison_of_web_application_frameworks'
                 }
                 , {
-		            label: 'Web development - server side coding'
+		            label: 'Desarrollo web - desarrollo del lado del servidor'
                     , url: 'http://en.wikipedia.org/wiki/Web_development#Server_side_coding'
                 }
             ]
-            , description: 'These are software frameworks and collection of packages or modules that allow developers to write applications or services without having to handle the overhead of common activities and lower level details, such as session management, database access, etc.'
-			, stats: [
-				{
-					title: 'Fuerza'
-					, value: 2
-				}
-				, {
-					title: 'Conocimiento'
-					, value: 1
-				}
-			]
-			, talents: ['Beefcake']
 		},
 
 		{
 			id: 13
-			, title: 'Database Authoring'
-			//, dependsOn: [1]
+			, title: 'Creación de bases de datos'
+			, maxPoints: 2
+            , description: 'Las bases de datos son motores poderosos para almacenar, organizar y recuperar datos. Existe una amplia variedad de plataformas de base de datos para elegir. El lenguaje de base de datos más utilizado es el Structured Query Language (SQL). Crear la arquitectura de sus datos eficientemente facilita mucho la programación del lado del servidor.'
+            , rankDescriptions: [
+                'Entiendes como crear tablas.'
+                , 'Entiendes como las bases de datos relacionales organizan sus datos.'
+            ]
             , links: [
                 {
-                    label: 'w3schools.com SQL Tutorial'
+                    label: 'Tutorial SQL w3schools.com'
 	                , url: 'http://www.w3schools.com/sql/'
                 }                    
                 ,{
-		            label: 'SQLZOO Interactive SQL Tutorial'
+		            label: 'SQLZOO: Tutorial Interactivo de SQL'
                     , url: 'http://sqlzoo.net/wiki/'
                 }                    
                 ,{
@@ -413,23 +303,17 @@
                     , url: 'https://en.wikipedia.org/wiki/Database_normalization'
                 }
             ]
-			, maxPoints: 2
-            , rankDescriptions: [
-                'You understand how to setup tables.'
-                , 'You understand how relational databases organize data.'
-            ]
-            , description: 'Databases are powerful engines for storing, organizing, and retrieving data.  There is a wide variety of database platforms to choose from.  The most widely used database language is Structured Query Language (SQL).  Properly architecting your data will facilitate your site&rsquo;s server-side programming.'
-			, stats: [
-				{
-					title: 'Fuerza'
-					, value: 3
-				}
-			]
 		},
 		{
 			id: 14
-			, title: 'Advanced DB Management'
+			, title: 'Gestión Avanzada de Bases de Datos'
 			, dependsOn: [13]
+			, maxPoints: 2
+            , description: 'Además de crear tablas básicas y relacionar los datos entre si, las bases de datos permiten la creación de "procedimientos almacenados" (stored procedures), los cuales no son más que conjuntos de instrucciones SQL que se almacenan en la base de datos, y "funciones definidas por el usuario" (User-defined functions, UDF), que son funciones que se pueden utilizar en sentencias SQL. Hacer una buena arquitectura de base de datos no es suficiente. La base de datos también debe ser optimizadas y refinadas para aumentar su rendimiento.'
+            , rankDescriptions: [
+                'Escribes stored procedures y user-defined functions para hacer tus consultas mas eficientes.'
+                , 'Puedes detectar las causas de los problemas de rendimiento y ajustar con precisión una base de datos como un experto.'
+            ]
             , links: [
                 {
                     label: 'Stored Procedure - Wiki'
@@ -440,57 +324,35 @@
 	                , url: 'http://en.wikipedia.org/wiki/User_defined_function'
                 }
                 , {
-                    label: 'Database Tuning Wiki'
+                    label: 'Afinación de la Base de datos Wiki'
                     , url: 'http://en.wikipedia.org/wiki/Database_tuning'
                 }
                 , {
-                    label: 'Performance Monitoring and Tuning How-to Topics (SQL Server)'
+                    label: 'Monitoreo de Rendimiento y topicos de como afinar (SQL Server)'
                     , url: 'http://technet.microsoft.com/en-us/library/ms187830(v=sql.105).aspx'
                 }
                 , {
-                    label: 'Sql Server Performance Tuning Tips'
+                    label: 'Sql Server Tips de afinación del rendimiento'
                     , url: 'http://www.mssqltips.com/sql-server-tip-category/9/performance-tuning/'
                 }
                 , {
-                    label: 'Oracle database Performance Tuning FAQ'
+                    label: 'Oracle database FAQ de Afinación del rendimiento'
                     , url: 'http://www.orafaq.com/wiki/Oracle_database_Performance_Tuning_FAQ'
                 }
             ]
-			, maxPoints: 2
-            , rankDescriptions: [
-                'You write stored procedures and user-defined functions for more efficient querying.'
-                , 'You can detect causes of performance deficiencies and fine tune a database like a rock star.'
-            ]
-            , description: 'Besides creating basic tables and relating data, databases allow for the creation of stored procedures, sets of SQL statements that are stored in the database, and user-defined functions (UDFs) , functions that can be used in SQL statements.  Just architecting the database is not enough.  The database also needs to be optimized or tuned to increase performance.'
-			, stats: [
-				{
-					title: 'Fuerza'
-					, value: 2
-				}
-				, {
-					title: 'Destreza'
-					, value: 1
-				}
-			]
-			, talents: ['XXL Knapsack']
 		},
 
 		{
 			id: 15
-			, title: 'Server-side Development Mastery'
+			, title: 'Experto en desarrollo Back-end'
 			, dependsOn: [12, 14]
             , description: 'You are capable of architecting and building an application\'s backend to efficiently store and retrieve data.'
-			, stats: [
-				{
-					title: 'Fuerza'
-					, value: 10
-				}
-			]
 		},
 		{
 			id: 16
-			, title: 'User Authentication and Authorization'
+			, title: 'Autenticación y autorización de usuarios'
 			, dependsOn: [15]
+            , description: 'La autenticación es el proceso de determinar si alguien o algo es quién o qué dice ser. La autorización es el proceso de determinar si se permite a un usuario realizar una acción o tiene acceso a un recurso.'
             , links: [
                 {
                     label: 'ASP.NET authentication and authorization - CodeProject'
@@ -509,19 +371,12 @@
                     , url: 'http://msdn.microsoft.com/en-us/library/wce3kxhd(v=vs.100).aspx'
                 }
             ]
-            , description: 'Authentication is the process determining whether someone or something is who or what it is declared to be. Authorization is the process of determining if a user is allowed to perform an action or has access to a resource.'
-			, stats: [
-				{
-					title: 'Resistencia'
-					, value: 5
-				}
-			]
-			, talents: ['Truthseeker']
 		},
 		{
 			id: 17
 			, title: 'AJAX & APIs'
 			, dependsOn: [10, 15]
+            , description: 'La tecnología existe para permitir que sistemas separados se comuniquen entre sí de diversas maneras, permitiendo a las interfaces ser más interactivas. Estas incluyen el uso de "Asynchronous JavaScript And XML" (AJAX), generalmente en el lado del cliente, para comunicarse con un sistema externo. Otras tecnologías, como los "Servicios Web", se utilizan para configurar "end-points" para permitir la comunicación con un sistema externo.'
             , links: [
                 {
                     label: 'AJAX (programming) Wiki'
@@ -544,186 +399,114 @@
                     , url: 'http://en.wikipedia.org/wiki/Representational_state_transfer'
                 }
             ]
-            , description: 'Technology exists to allow separate systems to communicate between each other in various ways as well as allowing interfaces to be more intractive.  These include the use of Asynchronous JavaScript and XML (AJAX), usually on the client-side, to communicate with an external system.  Other technologies, such as web services, are used to setup end-points for allowing communication with an external system.'
-			, stats: [
-				{
-					title: 'Fuerza'
-					, value: 1
-				}
-				,{
-					title: 'Destreza'
-					, value: 1
-				}
-				,{
-					title: 'Intelecto'
-					, value: 1
-				}
-			]
-			, talents: ['Mindweaver']
 		},
-
 		{
 			id: 18
-			, title: 'User Discovery'
+			, title: 'Descubriendo al usuario'
 			, maxPoints: 2
+            , description: 'Uno de los primeros pasos antes de que algo sea diseñado es determinar que es lo que el cliente (tanto el solicitante del sitio como el usuario del sitio) quiere y/o necesita. Las técnicas aca referidas incluyen dibujos simples, maquetación en papel y mapeo de la experiencia del usuario.'
 			, rankDescriptions: [
-				'You know the right questions to ask, and use sketches to confirm your ideas.'
-				, 'You use advanced techniques like experience mapping to lead conversations with stakeholders.'
+				'Sabes cuales son las preguntas correctas para hacer, y usas borradores para confirmar tus ideas.'
+				, 'Usas técnicas avanzadas como mapeo de experiencia para liderar conversaciones con los clientes.'
 			]
             , links: [
              	{ 
-             		label: 'The anatomy of an experience map'
+             		label: 'La anatomía de un mapa de experiencia'
              		, url: 'http://www.adaptivepath.com/ideas/the-anatomy-of-an-experience-map'
              	}
             ]
-            , description: 'One of the first steps taken before anything is designed is to determine what the client (both the site requestor and the site user) wants and/or needs. Techniques include simple sketching, card-sortting and experience mapping.'
-			, stats: [
-				{
-					title: 'Conocimiento'
-					, value: 2
-				}
-				,{
-					title: 'Carisma'
-					, value: 1
-				}
-			]
-			, talents: ['Mindreader']
 		},
 		{
 			id: 19
-			, title: 'Graphic Design'
-			, maxPoints: 2
-			, rankDescriptions: [
-				'You can create a balanced, complementary layout with a clear message.'
-				, 'You understand how to create a strikingly unique design, which supports traditional design values as well as your underlying message.'
-			]
+			, title: 'Diseño Gráfico'
 			, dependsOn: [18]
+            , description: 'El diseño gráfico trata sobre la estética y la facilidad de uso. Los buenos diseños son atractivos y fáciles de entender, por el uso sólido de color, la tipografía, el equilibrio, la jerarquía y los espacios en blanco.'
+			, rankDescriptions: [
+				'Eres capaz de crear un diseño complementario balanceado, que deja un mensaje claro.'
+				, 'Entiendes cómo crear un diseño sorprendentemente único, que es compatible con los estándares tradicionales de diseño, así como con tu mensaje de fondo'
+			]
             , links: [
                 {
-                    label: 'Graphic Design Wiki'
+                    label: 'Diseño Gráfico Wiki'
                     , url: 'http://en.wikipedia.org/wiki/Graphic_design'
                 }
                 ,{
                     label: 'Behance'
 	                , url: 'http://www.behance.net/'
                 }
-                , {
-                    label: 'User experience design Wiki'
-                    , url: 'http://en.wikipedia.org/wiki/User_experience_design'
-                }
                 ,{
                     label: 'Awwwards'
 	                , url: 'http://www.awwwards.com/'
                 }
+                , {
+                    label: 'User experience design Wiki'
+                    , url: 'http://en.wikipedia.org/wiki/User_experience_design'
+                }
             ]
-            , description: 'Graphic design is about aesthetics and usability. Good designs are inviting and easy to understand, by solid use of color, typography, balance, hierarchy and white space.'
-			, stats: [
-				{
-					title: 'Carisma'
-					, value: 3
-				}
-			]
-			, talents: ['Artistic']
 		},
 		{
 			id: 20
-			, title: 'Graphic Design Tools'
+			, title: 'Herramientas de Diseño Gráfico'
 			, dependsOn: [19]
+			, maxPoints: 2
+            , description: 'Programas como Photoshop y dispositivos como tabletas de dibujo se utilizan para crear diseños, trabajar con tipografía, retoque de fotos, y otras actividades para agregar un toque profesional a sus diseños.'
             , links: [
                 {
-                    label: '100 Top Tools for Graphic Designers | Graphic Design Classes'
+                    label: 'Las 100 mejores herramientas para Diseñadores Gráficos | Graphic Design Classes'
                     , url: 'http://graphicdesignclasses.net/design-tools/'
                 }
             ]
-            , description: 'Software such as Photoshop and devices like drawing tablets are used to create layouts, work with type, touch-up photos, and other activities to add professional polish to your designs.'
-			, stats: [
-				{
-					title: 'Carisma'
-					, value: 2
-				}
-				,{
-					title: 'Intelecto'
-					, value: 1
-				}
-			]
 		},
 		{
 			id: 21
-			, title: 'Prototypes'
+			, title: 'Prototipos'
 			, dependsOn: [18]
+            , description: 'Modelar un nuevo diseño sin construir toda la funcionalidad subyacente es una manera rápida y eficaz para transmitir ideas, probar un nuevo concepto, e identificar los problemas anticipadamente.'
             , links: [
                 {
-                    label: 'Design Better And Faster With Rapid Prototyping'
+                    label: 'Diseña mejor y más rápido con Prototipaje Rápido'
 	                , url: 'http://www.smashingmagazine.com/2010/06/16/design-better-faster-with-rapid-prototyping/'
                 }
                 , {
-                    label: '16 Design Tools for Prototyping and Wireframing'
+                    label: '16 Herramientas de Diseño para Prototipaje y Maquetado'
                     , url: 'http://www.sitepoint.com/tools-prototyping-wireframing/'
                 }
             ]
-            , description: 'Modeling a new design without building all the underlying functionality is a fast and efficient way to convey ideas, test a new concept, and identify problems you didn\'t anticipate.'
-			, stats: [
-				{
-					title: 'Conocimiento'
-					, value: 1
-				}
-				,{
-					title: 'Intelecto'
-					, value: 2
-				}
-			]
-			, talents: ['Conjurer']
 		},
 		{
 			id: 22
-			, title: 'User Experience Design Mastery'
+			, title: 'Experto en Diseño de la Experiencia del Usuario'
 			, dependsOn: [19, 21]
-            , description: 'You are capable of converting project requirements to an attractive design that promotes a pleasant user experience.'
-			, stats: [
-				{
-					title: 'Conocimiento'
-					, value: 1
-				}
-				,{
-					title: 'Carisma'
-					, value: 2
-				}
-			]
+            , description: 'Eres capaz de convertir los requisitos del proyecto a un diseño atractivo que promueve una experiencia de usuario agradable.'
 		},
 		{
 			id: 23
-			, title: 'User Testing'
+			, title: 'Pruebas de Usabilidad'
 			, dependsOn: [22]
+            , description: 'Es una técnica que se utiliza para evaluar un sitio web probándolo en los usuarios. Es de gran importancia para la experiencia del usuario. '
             , links: [
                 {
-                    label: 'My big list of 24 Web Site Usability Testing Tools'
+                    label: '24 Herramientas para pruebas de usabilidad en páginas web'
 	                , url: 'http://www.usefulusability.com/24-usability-testing-tools/'
                 }
                 , {
-                    label: 'Usability Testing Wiki'
+                    label: 'Pruebas de Usabilidad Wiki'
                     , url: 'http://en.wikipedia.org/wiki/Usability_testing'
                 }
             ]
-            , description: 'It is a technique, also known as usability testing, that is used to evaluate a website by testing it on users.'
-            , stats: [
-				{
-					title: 'Carisma'
-					, value: 1
-				}
-				,{
-					title: 'Conocimiento'
-					, value: 2
-				}
-			]
-			, talents: ['Alchemist']
-		},
-
+        },
 		{
 			id: 24
-			, title: 'Server Administration'
-            , links: [
+			, title: 'Administración de Servidores'
+			, maxPoints: 2
+            , description: 'Incluso las aplicaciones web más simples requieren un servidor para ejecutarlas. Hay varios servidores web populares full equipados para elegir, aunque el lenguaje de programación del lado del servidor de la aplicación puede limitar tus opciones. Aprender a gestionar y configurar el servidor web te ayudará a mantener tu sitio funcionando sin problemas.'
+            , rankDescriptions: [
+                'Eres capaz de configurar su aplicación en un nuevo entorno.'
+                , 'Estas familiarizado con herramientas de reescritura de URL como "mod_rewrite".'
+            ]
+        	, links: [
                 {
-                    label: 'Comparison of web server software Wiki'
+                    label: 'Comparación de software de lado del servidor Wiki'
 	                , url: 'http://en.wikipedia.org/wiki/Comparison_of_web_server_software'
                 }
                 , {
@@ -731,96 +514,47 @@
                     , url: 'http://httpd.apache.org/docs/2.4/rewrite/'
                 }
             ]
-			, maxPoints: 2
-            , rankDescriptions: [
-                'You are capable of setting up your application in a new environment.'
-                , 'You are familiar with server-side URL rewriting tools like mod_rewrite.'
-            ]
-            , description: 'Even the simplest web applications will require a server to run them.  There are several popular and fully-featured web servers to choose from, though your application\'s server-side programming language may limit your options.  Learning to manage and configure your web server will help you keep your site up and running smoothly.'
-            , stats: [
-				{
-					title: 'Resistencia'
-					, value: 3
-				}
-			]
-			, talents: ['Stewardship']
-		},
+        },
 		{
 			id: 25
-			, title: 'Deployment'
+			, title: 'Implementación y Deployment'
+			, maxPoints: 2
 			, dependsOn: [24]
+            , description: 'Antes de compartir tu aplicación con el mundo, sigue las mejores prácticas para la seguridad y el rendimiento de su apliación en el servidor.'
+            , rankDescriptions: [
+                'Configuras la minificación (minifying) de tus archivos de cara al público y usas archivos comprimidos para ahorrar ancho de banda y mejorar la velocidad de tu sitio.'
+                , 'Usted asegura el tráfico de información sensible a través de HTTPS utilizando un certificado SSL.'
+            ]
             , links: [
                 {
-                    label: 'SSL Certificate Installation'
+                    label: 'Instalación del certificado SSL'
 	                , url: 'http://www.sslshopper.com/ssl-certificate-installation.html'
                 }
                 , {
-                    label: 'Minimize payload size - Google Developers'
+                    label: 'Minimizar el tamaño de la carga - Google Developers'
                     , url: 'https://developers.google.com/speed/docs/best-practices/payload'
                 }
                 , {
-                    label: 'Parallelize downloads across hostnames - Google Developers'
+                    label: 'Paralelizar las descargas a través de nombres de host - Google Developers'
                     , url: 'https://developers.google.com/speed/docs/best-practices/rtt#ParallelizeDownloads'
                 }
             ]
-			, maxPoints: 2
-            , rankDescriptions: [
-                'You minify your public-facing files and serve compressed files to save bandwidth and improve your site&raquo;s speed.'
-                , 'You secure sensitive traffic over HTTPS using an SSL certificate.'
-            ]
-            , description: 'Before sharing your application with the world, follow the best practices for security and performance on the server.'
-            , stats: [
-				{
-					title: 'Resistencia'
-					, value: 2
-				}
-				,{
-					title: 'Destreza'
-					, value: 1
-				}
-			]
-			, talents: ['Spectral Guide']
-		},
+        },
 
 		{
 			id: 26
-			, title: 'Web Development Mastery'
-			, dependsOn: [4, 10, 15, 22, 25]
+			, title: 'Hacker: Experto en Desarrollo Web'
+			, dependsOn: [4, 7, 10, 15, 22, 25]
+            , description: 'Un Hacker solo es aquel que tiene los conocimientos de diseño, creación y mantenimiento necesarios para la gestion de un sitio web o sistema web.'
+            , rankDescriptions: [
+                'Eres capaz de cambiar el mundo, una linea de código a la vez.'
+            ]
             , links: [
                 {
-                    label: 'Web Development Wiki'
+                    label: 'Desarrollo Web Wiki'
 	                , url: 'http://en.wikipedia.org/wiki/Web_development'
                 }
             ]
-            , description: 'This refers to designing, creating, and maintaining a website.'
-			, stats: [
-				{
-					title: 'Carisma'
-					, value: 3
-				}
-				,{
-					title: 'Destreza'
-					, value: 3
-				}
-				,{
-					title: 'Resistencia'
-					, value: 3
-				}
-				,{
-					title: 'Intelecto'
-					, value: 3
-				}
-				,{
-					title: 'Fuerza'
-					, value: 3
-				}
-				,{
-					title: 'Conocimiento'
-					, value: 3
-				}
-			]
-			, talents: ['Demigod']
 		}
-
 	]
 });
