@@ -613,6 +613,15 @@ html {
   border: 1px solid #ccc;
   position: absolute;
 }
+.skill .tool-tip h4{
+  margin: 5px 0;
+}
+.skill .tool-tip hr {
+  margin: 5px 0;
+}
+.skill .tool-tip h4 {
+  font-size: 14px;
+}
 .skill .tool-tip .skill-name{
   font-size: 18px !important;
   font-weight: bold;
@@ -623,11 +632,14 @@ html {
 .skill .tool-tip .current-rank-description,
 .skill .tool-tip .next-rank-description{
   color: green;
+  font-weight: bold;
+  font-size: 13px;
   padding-top: 5px;
 }
 .skill .tool-tip .skill-links{
   padding-top: 5px;
   padding-left: 0;
+  margin: 5px 0;
   list-style: none;
 }
 .skill-links li{

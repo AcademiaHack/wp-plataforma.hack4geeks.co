@@ -192,7 +192,7 @@
             , description: 'Analytics provee datos de rendimiento de un sitio web, así como la información necesaria para medir el éxito del SEO.'
             , links: [
                 {
-                    label: '10 SEO Analysis Tools You Should Be Using'
+                    label: '10 herramientas de Análisis de SEO que deberías utilizar'
 	                , url: 'http://www.webgnomes.org/blog/10-seo-analysis-tools/'
                 }
                 , {
@@ -346,7 +346,7 @@
 			id: 15
 			, title: 'Experto en desarrollo Back-end'
 			, dependsOn: [12, 14]
-            , description: 'You are capable of architecting and building an application\'s backend to efficiently store and retrieve data.'
+            , description: 'Eres capaz de imaginar y plasmar la arquitectura del Back-end de una aplicación de para almacenar y recuperar datos de manera eficiente.'
 		},
 		{
 			id: 16
@@ -403,7 +403,7 @@
 		{
 			id: 18
 			, title: 'Descubriendo al usuario'
-			, maxPoints: 2
+            , maxPoints: 2
             , description: 'Uno de los primeros pasos antes de que algo sea diseñado es determinar que es lo que el cliente (tanto el solicitante del sitio como el usuario del sitio) quiere y/o necesita. Las técnicas aca referidas incluyen dibujos simples, maquetación en papel y mapeo de la experiencia del usuario.'
 			, rankDescriptions: [
 				'Sabes cuales son las preguntas correctas para hacer, y usas borradores para confirmar tus ideas.'
@@ -419,6 +419,7 @@
 		{
 			id: 19
 			, title: 'Diseño Gráfico'
+            , maxPoints: 2
 			, dependsOn: [18]
             , description: 'El diseño gráfico trata sobre la estética y la facilidad de uso. Los buenos diseños son atractivos y fáciles de entender, por el uso sólido de color, la tipografía, el equilibrio, la jerarquía y los espacios en blanco.'
 			, rankDescriptions: [
@@ -475,7 +476,7 @@
 		},
 		{
 			id: 22
-			, title: 'Experto en Diseño de la Experiencia del Usuario'
+			, title: 'Experto en Diseño de la Experiencia del Usuario (UX)'
 			, dependsOn: [19, 21]
             , description: 'Eres capaz de convertir los requisitos del proyecto a un diseño atractivo que promueve una experiencia de usuario agradable.'
 		},
@@ -523,7 +524,7 @@
             , description: 'Antes de compartir tu aplicación con el mundo, sigue las mejores prácticas para la seguridad y el rendimiento de su apliación en el servidor.'
             , rankDescriptions: [
                 'Configuras la minificación (minifying) de tus archivos de cara al público y usas archivos comprimidos para ahorrar ancho de banda y mejorar la velocidad de tu sitio.'
-                , 'Usted asegura el tráfico de información sensible a través de HTTPS utilizando un certificado SSL.'
+                , 'Logras asegurar el tráfico de información sensible a través de HTTPS utilizando un certificado SSL.'
             ]
             , links: [
                 {

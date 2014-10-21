@@ -180,15 +180,19 @@ function skilltree_admin_render_toString($userID){
 											<div data-bind="text: helpMessage" class="help-message"></div>
 											
 											<div data-bind="html: description" class="skill-description"></div>
-											
-											<div data-bind="if: currentRankDescription" class="current-rank-description">Ahora: <span data-bind="	text: currentRankDescription"></span></div>
-											<div data-bind="if: nextRankDescription" class="next-rank-description">Próximo nivel: <span data-bind="	text: nextRankDescription"></span></div>
-											<!-- <hr><h4>Enlaces útiles:</h4> -->
-											<!-- <ul class="skill-links"> -->
-												<!--ko foreach: links-->
-												<!-- <li><a data-bind="attr: { href: url }, text: label" target="_blank"></a></li> -->
-												<!--/ko-->
-											<!-- </ul> -->
+											<!--ko if: currentRankDescription-->
+												<hr>
+												<div data-bind="if: currentRankDescription" class="current-rank-description">Ahora: <span data-bind="	text: currentRankDescription"></span></div>
+												<div data-bind="if: nextRankDescription" class="next-rank-description">Próximo nivel: <span data-bind="	text: nextRankDescription"></span></div>
+											<!--/ko-->
+											<!--ko if: hasLinks-->
+												<hr><h4>Enlaces útiles:</h4>
+												<ul class="skill-links">
+													<!--ko foreach: links-->
+													<li><a data-bind="attr: { href: url }, text: label" target="_blank"></a></li>
+													<!--/ko-->
+												</ul>
+											<!--/ko-->
 											<!-- <ul class="stats"> -->
 												<!--ko foreach: stats-->
 												<!-- <li><span class="value">+<span data-bind="text: value"></span></span> <span data-bind="text: title" class="title"></span></li> -->
@@ -249,15 +253,19 @@ function skilltree_profile_render_toString(){
 												<div data-bind="text: helpMessage" class="help-message"></div>
 												
 												<div data-bind="html: description" class="skill-description"></div>
-												
-												<div data-bind="if: currentRankDescription" class="current-rank-description">Ahora: <span data-bind="	text: currentRankDescription"></span></div>
-												<div data-bind="if: nextRankDescription" class="next-rank-description">Próximo nivel: <span data-bind="	text: nextRankDescription"></span></div>
-												<!-- <hr><h4>Enlaces útiles:</h4> -->
-												<!-- <ul class="skill-links"> -->
-													<!--ko foreach: links-->
-													<!-- <li><a data-bind="attr: { href: url }, text: label" target="_blank"></a></li> -->
-													<!--/ko-->
-												<!-- </ul> -->
+												<!--ko if: currentRankDescription-->
+													<hr>
+													<div data-bind="if: currentRankDescription" class="current-rank-description">Ahora: <span data-bind="	text: currentRankDescription"></span></div>
+													<div data-bind="if: nextRankDescription" class="next-rank-description">Próximo nivel: <span data-bind="	text: nextRankDescription"></span></div>
+												<!--/ko-->
+												<!--ko if: hasLinks-->
+													<hr><h4>Enlaces útiles:</h4>
+													<ul class="skill-links">
+														<!--ko foreach: links-->
+														<li><a data-bind="attr: { href: url }, text: label" target="_blank"></a></li>
+														<!--/ko-->
+													</ul>
+												<!--/ko-->
 												<!-- <ul class="stats"> -->
 													<!--ko foreach: stats-->
 													<!-- <li><span class="value">+<span data-bind="text: value"></span></span> <span data-bind="text: title" class="title"></span></li> -->

@@ -250,6 +250,7 @@
 			self.links = ko.utils.arrayMap(e.links, function(item){
 				return new Link(item);
 			});
+			self.enlaces = ko.observableArray(self.links);
 			self.dependencies = ko.observableArray([]);
 			self.dependents = ko.observableArray([]);
 			self.stats = e.stats || [];
@@ -257,6 +258,9 @@
 			self.talents = e.talents || [];
 
 			//Computed values
+			self.hasLinks = ko.computed(function(){
+				return self.enlaces().length > 0;
+			});
 			self.hasDependencies = ko.computed(function(){
 				return self.dependencies().length > 0;
 			});
