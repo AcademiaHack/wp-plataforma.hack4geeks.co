@@ -57,3 +57,29 @@ function addEmailToLogin( $translated_text, $text, $domain ) {
         $translated_text .= __( ' o Email');
     return $translated_text;
 }
+
+//Returns true if the current user is admin
+function isCurrentAdmin(){
+  return current_user_can( 'manage_options' );
+}
+
+//Returns true if $login is admin
+function isAdmin($login){
+  return user_can( get_user_by( 'login', $login)->ID , 'manage_options');
+}
+
+//Returns true if $login is the current user
+function isCurrentUser($login){
+  return $login == wp_get_current_user()->user_login;
+}
+
+//Returns true if the comment is inside of one of a user comments
+function isMyReply($comment){
+  $comm=$comment;
+
+  while ($comm->comment_parent != 0){
+    $comm=get_comment($comm->comment_parent);
+  }
+
+  return $comm->comment_author == wp_get_current_user()->user_login;
+}
