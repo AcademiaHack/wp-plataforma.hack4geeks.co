@@ -46,11 +46,9 @@
       'email'  => '<p class="comment-form-email">'.'<label for="email">' . __( 'Correo electrónico' ) . '</label> ' . ( $req ? '<span>*</span>' : '' ) . '<input id="email" class="form-control" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' />'.'</p>',
       'url'    => '' ) ),
       'comment_notes_after' => '',
-      //'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun' ) . '</label><div id="comment" class="form-control comment-box" name="comment" cols="45" rows="8" aria-required="true" onClick="this.contentEditable=true"></div></p>',
-      );
+);
 
 comment_form($comment_args); 
-
 ?>
 	 
     
@@ -63,16 +61,11 @@ comment_form($comment_args);
   	$( "#comment-form-upload" ).appendTo( "#mergeOption" );
   	$( ".form-submit" ).appendTo( "#mergeOption" ); 
     
-    $(".comment-box").contentEditable='true';
-
     $("#attachment").change(function(){
       var name = $(this).val().split('\\').pop().split('/').pop();
       console.log(name);
       $('#comment-form-upload').attr('data-content', ': '+name);
-
       //submit the form here
-      
-
     });
   });
   </script>
