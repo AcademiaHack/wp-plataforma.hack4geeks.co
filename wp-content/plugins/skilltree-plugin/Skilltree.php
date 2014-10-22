@@ -115,7 +115,7 @@ function skilltree_display(){
 	if(isset($userid))
 		echo '<h1 id="'.$userid.'" data-hash="'.$selectedHash.'" class="usrSel">Árbol de habilidades de '.get_user_by('id', $userid)->display_name.'</h1>';
 	else
-		echo '<h1>Árboles de habilida`des</h1>';
+		echo '<h1>Árboles de habilidades</h1>';
 
 	// error or success message
 	echo '<div id="feedback" hidden></div>';
