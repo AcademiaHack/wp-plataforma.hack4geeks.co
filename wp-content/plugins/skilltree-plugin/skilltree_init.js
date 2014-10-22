@@ -34,28 +34,19 @@
 		if ($('.wp-admin').length) {
 			//console.log("estoy en el admin!");
 			
-			vm.useHash("_");
-
-			//Init skilltree with database values
-			vm.useHash($( "#skilltree_userDropdown option:selected" ).val());
+            if($(".usrSel").length){
+    			//Init skilltree with database values
+                vm.useHash($( ".usrSel" ).data("hash"));
+    			// vm.useHash($( "#skilltree_userDropdown option:selected" ).val());
+            }else{
+                vm.useHash("_");
+            }
 		}else{
 			//console.log("estoy en el perfil!");
 			
 			//Init skilltree with database values
 			vm.useHash($(".talent-tree").attr("id"));
 		}
-
-		//Change the skilltree being displayed with the tree for each user
-		// $("#skilltree_userDropdown").change(function() {
-		// 	// vm.useHash("_a2");
-		// 	vm.clearTree();
-		// 	vm.useHash($( "#skilltree_userDropdown option:selected" ).val());
-		// 	console.log("aqui");
-		// });
-
-		// $("#skilltree_saveButton").on(click,function(){
-		// });
-
 	});
 
 
