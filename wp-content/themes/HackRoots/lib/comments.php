@@ -38,7 +38,7 @@ class Roots_Walker_Comment extends Walker_Comment {
     }
 
     extract($args, EXTR_SKIP); 
-    echo "<hr>";
+    
     //if the comment is a comment from the current user or from an admin
     if (isCurrentAdmin() || isCurrentUser($comment->comment_author) || (isAdmin($comment->comment_author) && isMyReply($comment))) {
     ?>
