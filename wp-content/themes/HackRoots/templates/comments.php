@@ -37,7 +37,7 @@
 	
   <?php endif; ?> 
 </section><!-- /#comments -->
- 
+
 <section id="respond">
   <?php if (comments_open()) : ?>
     <?php $comment_args = array( 
@@ -45,6 +45,17 @@
       'author' => '<p class="comment-form-author">'.'<label for="author">' . __( 'Nombre' ) . '</label> ' . ( $req ? '<span>*</span>' : '' ) . '<input id="author" class="form-control" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>',
       'email'  => '<p class="comment-form-email">'.'<label for="email">' . __( 'Correo electrónico' ) . '</label> ' . ( $req ? '<span>*</span>' : '' ) . '<input id="email" class="form-control" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' />'.'</p>',
       'url'    => '' ) ),
+      'comment_field' => '<div class="comment-reply-content">
+                            <div class="attachment-container">
+                              <div class="preview-upload"></div>
+                            </div>
+                            <div class="comment-textarea-container">
+                              <p class="comment-form-comment">
+                                <label for="comment">' . _x( 'Comment', 'noun' ) . '</label>
+                                <textarea id="comment" class="form-control" name="comment" cols="45" rows="8" aria-required="true"></textarea>
+                              </p>
+                            </div>
+                          </div>',
       'comment_notes_after' => '',
 );
 
@@ -57,7 +68,7 @@ comment_form($comment_args);
   <script>
   
   $(function() {
-  	$( "<div id='mergeOption'></div>" ).insertAfter( ".form-submit" ); 
+  	// $( "<div id='mergeOption'></div>" ).insertAfter( ".form-submit" ); 
   	$( "#comment-form-upload" ).appendTo( "#mergeOption" );
   	$( ".form-submit" ).appendTo( "#mergeOption" ); 
     
