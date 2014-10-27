@@ -853,7 +853,10 @@ if (!class_exists('wpCommentAttachment')){
                             $contentInnerFinal .= $contentInner;
                         $contentInnerFinal .= '</a>';
                     } else {
-                        $contentInnerFinal = $contentInner;
+                        $contentInnerFinal = '<a '.$attachmentRel.' class="attachmentLink" target="_blank" href="'. $attachmentLink .'" title="Download: '. $attachmentName .'">';
+                            $contentInnerFinal .= $contentInner;
+                        $contentInnerFinal .= '</a>';
+                        // $contentInnerFinal = $contentInner;
                     }
                 }
 
