@@ -158,47 +158,21 @@
         },
 		{
 			id: 6
-			, title: 'Optimización en Motores de Búsqueda'
+			, title: 'Bootstrap'
 			, dependsOn: [1]
-            , description: 'También conocido como Search Engine Optimization (SEO) por sus siglas en ingles, es el proceso de optimizar el ranking/visibilidad de un sitio o página web en los resultados de los motores de búsqueda.'
+            , description: 'Es un conjunto de herramientas de diseño de sitios y aplicaciones web. Contiene plantillas de diseño con tipografía, formularios, botones, cuadros, menús de navegación y otros elementos de diseño basado en HTML y CSS, así como, extensiones de JavaScript opcionales adicionales.'
             , links: [
                 {
-                    label: 'Search Engine Optimization (Google)'
-	                , url: 'https://support.google.com/webmasters/answer/35291'
-                }
-                , {
-                    label: 'Webmaster Tools (Google)'
-                    , url: 'http://www.google.com/webmasters/tools/'
-                }
-                , {
-                    label: 'Bing - Webmaster Tools'
-                    , url: 'http://www.bing.com/toolbox/webmaster'
+                    label: 'Página oficial'
+	                , url: 'http://getbootstrap.com/getting-started/'
                 }
             ]
 		},
 		{
 			id: 7
-			, title: 'Analytics'
+			, title: 'Bootstrap Avanzado'
 			, dependsOn: [6]
-            , description: 'Analytics provee datos de rendimiento de un sitio web, así como la información necesaria para medir el éxito del SEO.'
-            , links: [
-                {
-                    label: '10 herramientas de Análisis de SEO que deberías utilizar'
-	                , url: 'http://www.webgnomes.org/blog/10-seo-analysis-tools/'
-                }
-                , {
-                    label: 'Configuring SEO data in Analytics (Google)'
-                    , url: 'https://support.google.com/analytics/answer/1308621?hl=en'
-                }
-                , {
-                    label: 'Using the SEO Reports (Google)'
-                    , url: 'http://www.bing.com/toolbox/webmaster'
-                }
-                , {
-                    label: 'Bing - SEO Analyzer'
-                    , url: 'http://www.bing.com/toolbox/seo-analyzer'
-                }
-            ]
+            , description: 'Estas en la capacidad de utilizar las herramientas proporcionadas por bootstrap a su perfección y extenderlas para mejorar su funcionalidad. '
 		},
 
 		{
