@@ -16,7 +16,9 @@ function skilltree_activation() {
 	$users = get_users( 'orderby=ID&role=' );
 	// Add the corresponding meta to the users
 	foreach ( $users as $user ) {
-		update_user_meta( $user->ID, 'user_skilltree', '_');
+		if(get_user_meta( $user->ID, 'user_skilltree', true) == ""){
+			add_user_meta( $user->ID, 'user_skilltree', '_');
+		}		
 	}
 }
 register_activation_hook(__FILE__, 'skilltree_activation');
@@ -42,7 +44,11 @@ register_deactivation_hook(__FILE__, 'skilltree_deactivation');
 */
 add_action( 'user_register', 'skilltree_user_registration_save');
 function skilltree_user_registration_save( $user_id ) {
-	update_user_meta( $user_id, 'user_skilltree', '_');
+	if(get_user_meta( $user_id, 'user_skilltree', true) == ""){
+		add_user_meta( $user_id, 'user_skilltree', '_');
+	}else{
+		update_user_meta( $user_id, 'user_skilltree', '_');
+	}
 }
 
 /*
@@ -185,21 +191,23 @@ function skilltree_admin_render_toString(){
 									<div class="frame">
 										<div class="tool-tip">
 											<h3 data-bind="text: title" class="skill-name"></h3>
-											<div data-bind="text: helpMessage" class="help-message"></div>
 											
 											<div data-bind="html: description" class="skill-description"></div>
-											<!--ko if: currentRankDescription-->
+											<div data-bind="text: helpMessage" class="help-message"></div>
+											<!--ko if: nextRankDescription && canAddPoints-->
 												<hr>
-												<div data-bind="if: currentRankDescription" class="current-rank-description">Ahora: <span data-bind="	text: currentRankDescription"></span></div>
-												<div data-bind="if: nextRankDescription" class="next-rank-description">Próximo nivel: <span data-bind="	text: nextRankDescription"></span></div>
+												<div data-bind="if: currentRankDescription" class="current-rank-description">Reto anterior: <span data-bind="	text: currentRankDescription"></span></div>
+												<div data-bind="if: nextRankDescription" class="next-rank-description">Para obtener: <span data-bind="	text: nextRankDescription"></span></div>
 											<!--/ko-->
-											<!--ko if: hasLinks-->
-												<hr><h4>Enlaces útiles:</h4>
-												<ul class="skill-links">
-													<!--ko foreach: links-->
-													<li><a data-bind="attr: { href: url }, text: label" target="_blank"></a></li>
-													<!--/ko-->
-												</ul>
+											<!--ko if: canAddPoints-->
+												<!--ko if: hasLinks-->
+													<hr><h4>Enlaces útiles:</h4>
+													<ul class="skill-links">
+														<!--ko foreach: links-->
+														<li><a data-bind="attr: { href: url }, text: label" target="_blank"></a></li>
+														<!--/ko-->
+													</ul>
+												<!--/ko-->
 											<!--/ko-->
 											<!-- <ul class="stats"> -->
 												<!--ko foreach: stats-->
@@ -242,7 +250,7 @@ function skilltree_profile_render_toString(){
 		$logged_user = wp_get_current_user();
 		$skilltree_hash = get_user_meta( $logged_user->id, 'user_skilltree' );
 
-		/*$skill_tree = '<div class="ltIE9-hide">
+		$skill_tree = '<div class="ltIE9-hide">
 							<div class="page open">
 								<div class="talent-tree" id="'.$skilltree_hash[0].'">
 					 				<h2>Mi árbol de habilidades</h2>
@@ -261,21 +269,23 @@ function skilltree_profile_render_toString(){
 										<div class="frame">
 											<div class="tool-tip">
 												<h3 data-bind="text: title" class="skill-name"></h3>
-												<div data-bind="text: helpMessage" class="help-message"></div>
 												
 												<div data-bind="html: description" class="skill-description"></div>
-												<!--ko if: currentRankDescription-->
+												<div data-bind="text: helpMessage" class="help-message"></div>
+												<!--ko if: nextRankDescription && canAddPoints-->
 													<hr>
-													<div data-bind="if: currentRankDescription" class="current-rank-description">Ahora: <span data-bind="	text: currentRankDescription"></span></div>
-													<div data-bind="if: nextRankDescription" class="next-rank-description">Próximo nivel: <span data-bind="	text: nextRankDescription"></span></div>
+													<div data-bind="if: currentRankDescription" class="current-rank-description">Reto anterior: <span data-bind="	text: currentRankDescription"></span></div>
+													<div data-bind="if: nextRankDescription" class="next-rank-description">Para obtener: <span data-bind="	text: nextRankDescription"></span></div>
 												<!--/ko-->
-												<!--ko if: hasLinks-->
-													<hr><h4>Enlaces útiles:</h4>
-													<ul class="skill-links">
-														<!--ko foreach: links-->
-														<li><a data-bind="attr: { href: url }, text: label" target="_blank"></a></li>
-														<!--/ko-->
-													</ul>
+												<!--ko if: canAddPoints-->
+													<!--ko if: hasLinks-->
+														<hr><h4>Enlaces útiles:</h4>
+														<ul class="skill-links">
+															<!--ko foreach: links-->
+															<li><a data-bind="attr: { href: url }, text: label" target="_blank"></a></li>
+															<!--/ko-->
+														</ul>
+													<!--/ko-->
 												<!--/ko-->
 												<!-- <ul class="stats"> -->
 													<!--ko foreach: stats-->
@@ -303,10 +313,10 @@ function skilltree_profile_render_toString(){
 								<li><a href="http://windows.microsoft.com/en-US/internet-explorer/download-ie" target="_blank">Microsoft Internet Explorer 10</a></li>
 								<li><a href="www.mozilla.org/en-US/firefox" target="_blank">Mozilla Firefox</a></li>
 							</ul>
-						</div>';*/
+						</div>';
 
-		$skill_tree .= '<div class="blocked"></div>
-						<img class="img-responsive candado center-block" title="Próximamente!" src="'.get_theme_root_uri().'/HackRoots/assets/img/locked.png">';
+		// $skill_tree .= '<div class="blocked"></div>
+		// 				<img class="img-responsive candado center-block" title="Próximamente!" src="'.get_theme_root_uri().'/HackRoots/assets/img/locked.png">';
 
 		return $skill_tree;
 

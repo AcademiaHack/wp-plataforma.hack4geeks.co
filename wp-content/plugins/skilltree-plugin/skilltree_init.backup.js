@@ -59,8 +59,8 @@
 			, maxPoints: 2
 			, description: 'El lenguaje principal para crear páginas web. Está escrito en base a etiquetas o "tags" rodeadas por corchetes angulares (ej: <html>).'
 			, rankDescriptions: [
-				'Maquetar SIN BOOTSTRAP un clon EXACTO de youtube.'
-				, 'Próximamente!'
+				'Entiendes como crear y ver una página web básica.'
+				, 'Entiendes como vincular páginas entre sí, diseñar layouts multi-columnas, y trabajar con formularios y elementos multimedia.'
 			]
             , links: [
                 {
@@ -71,26 +71,18 @@
                     label: 'Sublime Text 3, un editor de codigo genial'
 	                , url: 'http://www.sublimetext.com/'
                 }
-                , {
-                    label: 'Awesome Screenshot'
-                    , url: 'http://awesomescreenshot.com/'
-                }
-                , {
-                    label: 'Screencastify'
-                    , url: 'https://chrome.google.com/webstore/detail/screencastify-screen-vide/mmeijimgabbpbgpdklnllpncmdofkcpn'
-                }
             ]
 		},
 
 		{
 			id: 2
 			, title: 'CSS'
-			, maxPoints: 2 
             , dependsOn: [1]
+			, maxPoints: 2 
             , description: 'Cascading Style Sheets (CSS) es un lenguaje para darle estilo a páginas web. Las "reglas" CSS afectan elementos en el documento HTML para especificar su presentación y visualización. Algunas de ellas son fuente, el color, el espaciado y tamaño.'
 			, rankDescriptions: [
-                'Maquetar SIN BOOTSTRAP NI POSITION ABSOLUTE, solo usando el tag <div> el logo de NPM'
-                , 'Próximamente!'
+                'Estas familiarizado con los conceptos básicos de CSS y comprendes el "modelo de caja"'
+                , 'Estas familiarizado con "media queries" y "responsive design" para adaptar tu diseño a las diferentes plataformas.'
             ]
             , links: [
                 {
@@ -106,12 +98,12 @@
 		{
 			id: 3
 			, title: 'Herramientas de CSS'
+			, dependsOn: [2]
 			, maxPoints: 2
-            , dependsOn: [2]
             , description: 'Preprocesadores como LESS y SASS te ayudan a escribir CSS más estructurada y eficientemente, mediante herramientas como las variables, funciones, y anidación.'
             , rankDescriptions: [
-                'Próximamente!'
-                , 'Próximamente!'
+                'Estas familiarizado con las variables y la anidación.'
+                , 'Puedes usar herramientas avanzadas como "mix-ins" y escribir algunos personalizados.'
             ]
             , links: [
                 {
@@ -137,9 +129,6 @@
 			, title: 'Experto en Diseño Web'
 			, dependsOn: [2]
             , description: 'Puedes traer ideas de diseño a la vida, plasmándolas en el documento HTML estilizado con CSS.'
-            , rankDescriptions: [
-                'Próximamente!'
-            ]
 		},
 		{
 			id: 5
@@ -148,9 +137,9 @@
 			, maxPoints: 3
             , description: 'jQuery ofrece técnicas y métodos para la manipulación del lado del cliente de los elementos de la página web.'
             , rankDescriptions: [
-                'Próximamente!'
-                , 'Próximamente!'
-                , 'Próximamente!'
+                'Estás familiarizado con la manipulación del "Document Object Model" (DOM) modificando valores, contenidos, propiedades, elementos completos, entre otros.'
+                , 'Puedes agregar animaciones estándar a una página web.'
+                , 'Puedes crear y agregar efectos personalizados a una página web.'
             ]
 		    , links: [
                 {
@@ -172,9 +161,6 @@
 			, title: 'Bootstrap'
 			, dependsOn: [1]
             , description: 'Es un conjunto de herramientas de diseño de sitios y aplicaciones web. Contiene plantillas de diseño con tipografía, formularios, botones, cuadros, menús de navegación y otros elementos de diseño basado en HTML y CSS, así como, extensiones de JavaScript opcionales adicionales.'
-            , rankDescriptions: [
-                'Próximamente!'
-            ]
             , links: [
                 {
                     label: 'Página oficial'
@@ -187,19 +173,13 @@
 			, title: 'Bootstrap Avanzado'
 			, dependsOn: [6]
             , description: 'Estas en la capacidad de utilizar las herramientas proporcionadas por bootstrap a su perfección y extenderlas para mejorar su funcionalidad. '
-		    , rankDescriptions: [
-                'Próximamente!'
-            ]
-        },
+		},
 
 		{
 			id: 8
 			, title: 'Javascript'
 			, dependsOn: [1]
             , description: 'JavaScript es el lenguaje mas importante para la programación web del lado del cliente. Se ejecuta en el navegador del usuario para manipular el documento HTML después de haberse cargado. Puede hacer desde cosas tan simples como mostrar elementos ocultos, o más avanzadas como contactar con el servidor para cargar más datos.'
-            , rankDescriptions: [
-                'Próximamente!'
-            ]
             , links: [
                 {
                     label: 'Tutorial de JavaScript'
@@ -222,12 +202,12 @@
 		{
 			id: 9
 			, title: 'JS Librerías & Frameworks'
+			, dependsOn: [8]
 			, maxPoints: 2
-            , dependsOn: [8]
             , description: 'Una vez que te sientas cómodo con el lenguaje JavaScript, hay una multitud de liberías y frameworks para optimizar tareas comunes y mejorar tu desarrollo.'
             , rankDescriptions: [
-                'Próximamente!'
-                , 'Próximamente!'
+                'Has revisado librerias como jQuery, MooTools, Prototype, Dojo, o YUI para aligerar tu trabajo.'
+                , 'Eres capaz de usar frameworks como AngularJS, y Backbone.js, Ember.js o KnockoutJS para estructurar funcionalidades complejas del frontend'
             ]
 		},
 		{
@@ -235,18 +215,12 @@
 			, title: 'Experto en desarrollo Front-end'
 			, dependsOn: [9]  
             , description: 'Puedes construir y desarrollar la interfaz gráfica de una aplicación o página web, ayudandote con JS y sus frameworks y diversas funcionalidades.'
-            , rankDescriptions: [
-                'Próximamente!'
-            ]
 		},
 		{
 			id: 11
 			, title: 'Programación del lado del servidor'
 			, dependsOn: [1]
             , description: 'Desarrollar scripts (funciones, código) que se ejecuta en el servidor (Server-side) en lugar de la máquina del usuario (client-side).'
-            , rankDescriptions: [
-                'Próximamente!'
-            ]
             , links: [
                 {
                     label: 'Server-side scripting Wiki'
@@ -259,9 +233,6 @@
 			, title: 'Frameworks del lado del servidor'
 			, dependsOn: [11]
             , description: 'Es una colección de paquetes o módulos y frameworks, que permiten a los desarrolladores escribir aplicaciones o servicios, sin tener que manejar la sobrecarga de actividades comunes y los detalles de bajo nivel, tales como el manejo de sesiones, el acceso a las base de datos, entre otras cosas.'
-            , rankDescriptions: [
-                'Próximamente!'
-            ]
             , links: [
                 {
                     label: 'Comparación de frameworks para web applications'
@@ -280,8 +251,8 @@
 			, maxPoints: 2
             , description: 'Las bases de datos son motores poderosos para almacenar, organizar y recuperar datos. Existe una amplia variedad de plataformas de base de datos para elegir. El lenguaje de base de datos más utilizado es el Structured Query Language (SQL). Crear la arquitectura de sus datos eficientemente facilita mucho la programación del lado del servidor.'
             , rankDescriptions: [
-                'Próximamente!'
-                , 'Próximamente!'
+                'Entiendes como crear tablas.'
+                , 'Entiendes como las bases de datos relacionales organizan sus datos.'
             ]
             , links: [
                 {
@@ -301,12 +272,12 @@
 		{
 			id: 14
 			, title: 'Gestión Avanzada de Bases de Datos'
+			, dependsOn: [13]
 			, maxPoints: 2
-            , dependsOn: [13]
             , description: 'Además de crear tablas básicas y relacionar los datos entre si, las bases de datos permiten la creación de "procedimientos almacenados" (stored procedures), los cuales no son más que conjuntos de instrucciones SQL que se almacenan en la base de datos, y "funciones definidas por el usuario" (User-defined functions, UDF), que son funciones que se pueden utilizar en sentencias SQL. Hacer una buena arquitectura de base de datos no es suficiente. La base de datos también debe ser optimizadas y refinadas para aumentar su rendimiento.'
             , rankDescriptions: [
-                'Próximamente!'
-                , 'Próximamente!'
+                'Escribes stored procedures y user-defined functions para hacer tus consultas mas eficientes.'
+                , 'Puedes detectar las causas de los problemas de rendimiento y ajustar con precisión una base de datos como un experto.'
             ]
             , links: [
                 {
@@ -341,18 +312,12 @@
 			, title: 'Experto en desarrollo Back-end'
 			, dependsOn: [12, 14]
             , description: 'Eres capaz de imaginar y plasmar la arquitectura del Back-end de una aplicación de para almacenar y recuperar datos de manera eficiente.'
-		    , rankDescriptions: [
-                'Próximamente!'
-            ]
-        },
+		},
 		{
 			id: 16
 			, title: 'Autenticación y autorización de usuarios'
 			, dependsOn: [15]
             , description: 'La autenticación es el proceso de determinar si alguien o algo es quién o qué dice ser. La autorización es el proceso de determinar si se permite a un usuario realizar una acción o tiene acceso a un recurso.'
-            , rankDescriptions: [
-                'Próximamente!'
-            ]
             , links: [
                 {
                     label: 'ASP.NET authentication and authorization - CodeProject'
@@ -377,9 +342,6 @@
 			, title: 'AJAX & APIs'
 			, dependsOn: [10, 15]
             , description: 'La tecnología existe para permitir que sistemas separados se comuniquen entre sí de diversas maneras, permitiendo a las interfaces ser más interactivas. Estas incluyen el uso de "Asynchronous JavaScript And XML" (AJAX), generalmente en el lado del cliente, para comunicarse con un sistema externo. Otras tecnologías, como los "Servicios Web", se utilizan para configurar "end-points" para permitir la comunicación con un sistema externo.'
-            , rankDescriptions: [
-                'Próximamente!'
-            ]
             , links: [
                 {
                     label: 'AJAX (programming) Wiki'
@@ -409,8 +371,8 @@
             , maxPoints: 2
             , description: 'Uno de los primeros pasos antes de que algo sea diseñado es determinar que es lo que el cliente (tanto el solicitante del sitio como el usuario del sitio) quiere y/o necesita. Las técnicas aca referidas incluyen dibujos simples, maquetación en papel y mapeo de la experiencia del usuario.'
 			, rankDescriptions: [
-				'Próximamente!'
-				, 'Próximamente!'
+				'Sabes cuales son las preguntas correctas para hacer, y usas borradores para confirmar tus ideas.'
+				, 'Usas técnicas avanzadas como mapeo de experiencia para liderar conversaciones con los clientes.'
 			]
             , links: [
              	{ 
@@ -426,8 +388,8 @@
 			, dependsOn: [18]
             , description: 'El diseño gráfico trata sobre la estética y la facilidad de uso. Los buenos diseños son atractivos y fáciles de entender, por el uso sólido de color, la tipografía, el equilibrio, la jerarquía y los espacios en blanco.'
 			, rankDescriptions: [
-				'Próximamente!'
-				, 'Próximamente!'
+				'Eres capaz de crear un diseño complementario balanceado, que deja un mensaje claro.'
+				, 'Entiendes cómo crear un diseño sorprendentemente único, que es compatible con los estándares tradicionales de diseño, así como con tu mensaje de fondo'
 			]
             , links: [
                 {
@@ -450,14 +412,10 @@
 		},
 		{
 			id: 20
-            , title: 'Herramientas de Diseño Gráfico'
+			, title: 'Herramientas de Diseño Gráfico'
+			, dependsOn: [19]
 			, maxPoints: 2
-            , dependsOn: [19]
             , description: 'Programas como Photoshop y dispositivos como tabletas de dibujo se utilizan para crear diseños, trabajar con tipografía, retoque de fotos, y otras actividades para agregar un toque profesional a sus diseños.'
-            , rankDescriptions: [
-                'Próximamente!'
-                , 'Próximamente!'
-            ]
             , links: [
                 {
                     label: 'Las 100 mejores herramientas para Diseñadores Gráficos | Graphic Design Classes'
@@ -470,9 +428,6 @@
 			, title: 'Prototipos'
 			, dependsOn: [18]
             , description: 'Modelar un nuevo diseño sin construir toda la funcionalidad subyacente es una manera rápida y eficaz para transmitir ideas, probar un nuevo concepto, e identificar los problemas anticipadamente.'
-            , rankDescriptions: [
-                'Próximamente!'
-            ]
             , links: [
                 {
                     label: 'Diseña mejor y más rápido con Prototipaje Rápido'
@@ -489,18 +444,12 @@
 			, title: 'Experto en Diseño de la Experiencia del Usuario (UX)'
 			, dependsOn: [19, 21]
             , description: 'Eres capaz de convertir los requisitos del proyecto a un diseño atractivo que promueve una experiencia de usuario agradable.'
-		    , rankDescriptions: [
-                'Próximamente!'
-            ]
-        },
+		},
 		{
 			id: 23
 			, title: 'Pruebas de Usabilidad'
 			, dependsOn: [22]
             , description: 'Es una técnica que se utiliza para evaluar un sitio web probándolo en los usuarios. Es de gran importancia para la experiencia del usuario. '
-            , rankDescriptions: [
-                'Próximamente!'
-            ]
             , links: [
                 {
                     label: '24 Herramientas para pruebas de usabilidad en páginas web'
@@ -518,8 +467,8 @@
 			, maxPoints: 2
             , description: 'Incluso las aplicaciones web más simples requieren un servidor para ejecutarlas. Hay varios servidores web populares full equipados para elegir, aunque el lenguaje de programación del lado del servidor de la aplicación puede limitar tus opciones. Aprender a gestionar y configurar el servidor web te ayudará a mantener tu sitio funcionando sin problemas.'
             , rankDescriptions: [
-                'Próximamente!'
-                , 'Próximamente!'
+                'Eres capaz de configurar su aplicación en un nuevo entorno.'
+                , 'Estas familiarizado con herramientas de reescritura de URL como "mod_rewrite".'
             ]
         	, links: [
                 {
@@ -539,8 +488,8 @@
 			, dependsOn: [24]
             , description: 'Antes de compartir tu aplicación con el mundo, sigue las mejores prácticas para la seguridad y el rendimiento de su apliación en el servidor.'
             , rankDescriptions: [
-                'Próximamente!'
-                , 'Próximamente!'
+                'Configuras la minificación (minifying) de tus archivos de cara al público y usas archivos comprimidos para ahorrar ancho de banda y mejorar la velocidad de tu sitio.'
+                , 'Logras asegurar el tráfico de información sensible a través de HTTPS utilizando un certificado SSL.'
             ]
             , links: [
                 {
@@ -562,9 +511,9 @@
 			id: 26
 			, title: 'Hacker: Experto en Desarrollo Web'
 			, dependsOn: [4, 7, 10, 15, 22, 25]
-            , description: 'Un Hacker solo es aquel que tiene los conocimientos de diseño, creación y mantenimiento necesarios para la gestion de un sitio web o sistema web. Un verdadero Hacker es capaz de cambiar el mundo, una linea de código a la vez.'
+            , description: 'Un Hacker solo es aquel que tiene los conocimientos de diseño, creación y mantenimiento necesarios para la gestion de un sitio web o sistema web.'
             , rankDescriptions: [
-                'Próximamente!'
+                'Eres capaz de cambiar el mundo, una linea de código a la vez.'
             ]
             , links: [
                 {
