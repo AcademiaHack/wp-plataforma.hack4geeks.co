@@ -18,6 +18,8 @@ $args = array(
   'hide_empty' =>0,
   'parent' =>strval($value->cat_ID)
   ); 
+
+$active_week = 3;
   ?>
   <div id="badges_carousel" class="carousel slide" data-ride="carousel" data-interval="false">
     <!-- Wrapper for slides -->
@@ -37,7 +39,7 @@ $args = array(
           );
         $category = get_categories($args);
         ?>
-        <div class="item <?php if ($key==0){echo active;}?>">
+        <div class="item <?php if ($key==$active_week-1){echo active;}?>">
           <h1 class="text-center">
             <?php echo $value->name ?>
           </h1>
@@ -89,7 +91,7 @@ $args = array(
         <?php 
         foreach ($categories as $key => $value){
          ?>
-         <li data-target="#badges_carousel" data-slide-to="<?php echo $key ?>" <?php if ($key==0){echo "class='active'";}?>><?php echo $key+1 ?></li>
+         <li data-target="#badges_carousel" data-slide-to="<?php echo $key ?>" <?php if ($key==$active_week-1){echo "class='active'";}?>><?php echo $key+1 ?></li>
          <?php } ?>
 
        </ol>
