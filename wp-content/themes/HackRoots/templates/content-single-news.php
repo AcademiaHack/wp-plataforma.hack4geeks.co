@@ -8,7 +8,7 @@
       <?php get_template_part('templates/entry-meta'); ?>
     </header>
     <div class="entry-content">
-	<div class="row">
+    	<div class="row">
         <div class="col-sm-10 col-sm-offset-1">
           <div class="row">
             <div class="col-sm-12 text-justify">
@@ -21,6 +21,20 @@
     <footer>
       <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
     </footer>
-     <?php comments_template('/templates/commentsnew.php'); ?>
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+          <div class="row">
+            <div class="col-sm-12 text-justify">
+            <?php 
+              if(has_tag( "skilltree", $post->ID)){ 
+                comments_template('/templates/comments.php'); 
+              }else{
+                comments_template('/templates/commentsnew.php'); 
+              }
+            ?>
+            </div>
+          </div>
+        </div>
+      </div>
   </article>
 <?php endwhile; ?>
