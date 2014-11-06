@@ -61,10 +61,15 @@ if ($nanterior <= 0) {
     $nlpposterior = $testcat[$keynumber + 2]->term_id;
 }
 
-$unlockedaant = get_tax_meta($testcat[$keynumber - 2]->parent, 'text_cat_id') > 9000;
-$unlockedant = get_tax_meta($testcat[$keynumber - 1]->parent, 'text_cat_id') > 9000;
-$unlockedpost = get_tax_meta($testcat[$keynumber + 1]->parent, 'text_cat_id') > 9000;
-$unlockedppost = get_tax_meta($testcat[$keynumber + 2]->parent, 'text_cat_id') > 9000;
+$fullfilledaant = get_tax_meta($testcat[$keynumber - 2]->parent, 'text_cat_id') > 9000;
+$fullfilledant = get_tax_meta($testcat[$keynumber - 1]->parent, 'text_cat_id') > 9000;
+$fullfilledpost = get_tax_meta($testcat[$keynumber + 1]->parent, 'text_cat_id') > 9000;
+$fullfilledppost = get_tax_meta($testcat[$keynumber + 2]->parent, 'text_cat_id') > 9000;
+
+$unlockedaant = get_tax_meta($testcat[$keynumber - 2]->parent, 'text_cat_id') == 9000;
+$unlockedant = get_tax_meta($testcat[$keynumber - 1]->parent, 'text_cat_id') == 9000;
+$unlockedpost = get_tax_meta($testcat[$keynumber + 1]->parent, 'text_cat_id') == 9000;
+$unlockedppost = get_tax_meta($testcat[$keynumber + 2]->parent, 'text_cat_id') == 9000;
 
 ?>
 
@@ -79,16 +84,20 @@ $unlockedppost = get_tax_meta($testcat[$keynumber + 2]->parent, 'text_cat_id') >
 				if ($nlaanterior != 0){
 			?>
 				<?php if($unlockedaant){ ?>
-				<a href="<?php echo get_category_link($nlaanterior); ?>" >
-					<img class="img-responsive" title="<?php echo $testcat[$keynumber - 2]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $naanterior; ?>.png" alt="">
-					<img class="img-responsive black_hexagon" title="<?php echo $testcat[$keynumber - 2]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/black_hexagon.png">
-				</a>
-				<?php }else{ ?>
-				<a>
-					<img class="img-responsive" title="<?php echo $testcat[$keynumber - 2]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $naanterior; ?>.png" alt="">
-	            	<img class="img-responsive lockedBG" title="<?php echo $testcat[$keynumber - 2]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/black_hexagon.png">
-	            	<img class="img-responsive locked" title="<?php echo $testcat[$keynumber - 2]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/locked.png">
-	            </a>
+				 <a href="<?php echo get_category_link($nlaanterior); ?>" >
+				<?php } ?>
+				   <img class="img-responsive" title="<?php echo $testcat[$keynumber - 2]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $naanterior; ?>.png" alt="">
+				   <?php if($unlockedaant){ ?>
+				     <img class="img-responsive black_hexagon" title="<?php echo $testcat[$keynumber - 2]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/black_hexagon.png">
+				   <?php } else if($fullfilledaant){ ?>
+				     <img class="img-responsive lockedBG" title="<?php echo $testcat[$keynumber - 2]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/black_hexagon.png">
+	            	 <img class="img-responsive locked" title="<?php echo $testcat[$keynumber - 2]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/fullfilled.png">
+				   <?php } else { ?>
+				     <img class="img-responsive lockedBG" title="<?php echo $testcat[$keynumber - 2]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/black_hexagon.png">
+	            	 <img class="img-responsive locked" title="<?php echo $testcat[$keynumber - 2]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/locked.png">
+				   <?php } ?>
+				<?php if($unlockedaant){ ?>
+				 </a>
 				<?php } ?>
 			<?php
 				}else{
@@ -105,16 +114,20 @@ $unlockedppost = get_tax_meta($testcat[$keynumber + 2]->parent, 'text_cat_id') >
 				if ($nlanterior != 0){
 			?>
 				<?php if($unlockedant){ ?>
-				<a href="<?php echo get_category_link($nlanterior); ?>" >
-					<img class="img-responsive" title="<?php echo $testcat[$keynumber - 1]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $nanterior; ?>.png" alt="">
-					<img class="img-responsive black_hexagon" title="<?php echo $testcat[$keynumber - 1]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/black_hexagon.png">
-				</a>
-				<?php }else{ ?>
-				<a>
-					<img class="img-responsive" title="<?php echo $testcat[$keynumber - 1]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $nanterior; ?>.png" alt="">
-	            	<img class="img-responsive lockedBG" title="<?php echo $testcat[$keynumber - 1]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/black_hexagon.png">
-	            	<img class="img-responsive locked" title="<?php echo $testcat[$keynumber - 1]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/locked.png">
-	            </a>
+				 <a href="<?php echo get_category_link($nlanterior); ?>" >
+				<?php } ?>
+				   <img class="img-responsive" title="<?php echo $testcat[$keynumber - 1]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $nanterior; ?>.png" alt="">
+				   <?php if($unlockedant){ ?>
+				     <img class="img-responsive black_hexagon" title="<?php echo $testcat[$keynumber - 1]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/black_hexagon.png">
+				   <?php } else if($fullfilledant){ ?>
+				     <img class="img-responsive lockedBG" title="<?php echo $testcat[$keynumber - 1]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/black_hexagon.png">
+	            	 <img class="img-responsive locked" title="<?php echo $testcat[$keynumber - 1]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/fullfilled.png">
+				   <?php } else { ?>
+				     <img class="img-responsive lockedBG" title="<?php echo $testcat[$keynumber - 1]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/black_hexagon.png">
+	            	 <img class="img-responsive locked" title="<?php echo $testcat[$keynumber - 1]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/locked.png">
+				   <?php } ?>
+				<?php if($unlockedant){ ?>
+				 </a>
 				<?php } ?>
 			<?php
 				}else{
@@ -135,16 +148,20 @@ $unlockedppost = get_tax_meta($testcat[$keynumber + 2]->parent, 'text_cat_id') >
 				if ($nlposterior != 0){
 			?>
 				<?php if($unlockedpost){ ?>
-				<a href="<?php echo get_category_link($nlposterior); ?>" >
-					<img class="img-responsive" title="<?php echo $testcat[$keynumber + 1]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $nposterior; ?>.png" alt="">
- 					<img class="img-responsive black_hexagon" title="<?php echo $testcat[$keynumber + 1]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/black_hexagon.png">
- 				</a>
- 				<?php }else{ ?>
-				<a>
-					<img class="img-responsive" title="<?php echo $testcat[$keynumber + 1]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $nposterior; ?>.png" alt="">
-	            	<img class="img-responsive lockedBG" title="<?php echo $testcat[$keynumber + 1]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/black_hexagon.png">
-	            	<img class="img-responsive locked" title="<?php echo $testcat[$keynumber + 1]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/locked.png">
-	            </a>
+				 <a href="<?php echo get_category_link($nlposterior); ?>" >
+				<?php } ?>
+				   <img class="img-responsive" title="<?php echo $testcat[$keynumber + 1]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $nposterior; ?>.png" alt="">
+				   <?php if($unlockedpost){ ?>
+				     <img class="img-responsive black_hexagon" title="<?php echo $testcat[$keynumber + 1]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/black_hexagon.png">
+				   <?php } else if($fullfilledpost){ ?>
+				     <img class="img-responsive lockedBG" title="<?php echo $testcat[$keynumber + 1]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/black_hexagon.png">
+	            	 <img class="img-responsive locked" title="<?php echo $testcat[$keynumber + 1]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/fullfilled.png">
+				   <?php } else { ?>
+				     <img class="img-responsive lockedBG" title="<?php echo $testcat[$keynumber + 1]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/black_hexagon.png">
+	            	 <img class="img-responsive locked" title="<?php echo $testcat[$keynumber + 1]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/locked.png">
+				   <?php } ?>
+				<?php if($unlockedpost){ ?>
+				 </a>
 				<?php } ?>
 			<?php
 				}else{
@@ -159,18 +176,22 @@ $unlockedppost = get_tax_meta($testcat[$keynumber + 2]->parent, 'text_cat_id') >
 			<div class="badge-box off">
 			<?php
 				if ($nlpposterior != 0){
-			?>
+			?>	
 				<?php if($unlockedppost){ ?>
-				<a href="<?php echo get_category_link($nlpposterior); ?>" >
-					<img class="img-responsive" title="<?php echo $testcat[$keynumber + 2]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $npposterior; ?>.png" alt="">
-					<img class="img-responsive black_hexagon" title="<?php echo $testcat[$keynumber + 2]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/black_hexagon.png">
-				</a>
-				<?php }else{ ?>
-				<a>
-					<img class="img-responsive" title="<?php echo $testcat[$keynumber + 2]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $npposterior; ?>.png" alt="">
-					<img class="img-responsive lockedBG" title="<?php echo $testcat[$keynumber + 2]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/black_hexagon.png">
-					<img class="img-responsive locked" title="<?php echo $testcat[$keynumber + 2]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/locked.png">
-				</a>
+				 <a href="<?php echo get_category_link($nlpposterior); ?>" >
+				<?php } ?>
+				   <img class="img-responsive" title="<?php echo $testcat[$keynumber + 2]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/cat/<?php echo $npposterior; ?>.png" alt="">
+				   <?php if($unlockedppost){ ?>
+				     <img class="img-responsive black_hexagon" title="<?php echo $testcat[$keynumber + 2]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/black_hexagon.png">
+				   <?php } else if($fullfilledppost){ ?>
+				     <img class="img-responsive lockedBG" title="<?php echo $testcat[$keynumber + 2]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/black_hexagon.png">
+	            	 <img class="img-responsive locked" title="<?php echo $testcat[$keynumber + 2]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/fullfilled.png">
+				   <?php } else { ?>
+				     <img class="img-responsive lockedBG" title="<?php echo $testcat[$keynumber + 2]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/black_hexagon.png">
+	            	 <img class="img-responsive locked" title="<?php echo $testcat[$keynumber + 2]->name; ?>" src="<?php echo get_theme_root_uri(); ?>/HackRoots/assets/img/locked.png">
+				   <?php } ?>
+				<?php if($unlockedppost){ ?>
+				 </a>
 				<?php } ?>
 			<?php
 				}else{
