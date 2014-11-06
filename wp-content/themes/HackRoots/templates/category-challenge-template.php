@@ -5,7 +5,7 @@ global $wpdb;
 
 $category  = get_queried_object();
 $args      = array(
-    'orderby' => 'id',
+    'orderby' => 'slug',
     'order' => 'ASC',
     'hierarchical' => 0,
     'hide_empty' => 0
