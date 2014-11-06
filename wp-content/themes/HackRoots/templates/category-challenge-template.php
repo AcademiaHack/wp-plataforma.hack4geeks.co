@@ -36,6 +36,8 @@ $nanterior   =   isset($testcat[$keynumber - 1]->term_id)==true? get_tax_meta($t
 $naanterior  =   isset($testcat[$keynumber - 2]->term_id)==true? get_tax_meta($testcat[$keynumber - 2]->term_id, 'text_cat_id')!=""? get_tax_meta($testcat[$keynumber - 2]->term_id, 'text_cat_id'):0:0;
 $nposterior  =    isset($testcat[$keynumber + 1]->term_id)==true? get_tax_meta($testcat[$keynumber + 1]->term_id, 'text_cat_id')!=""? get_tax_meta($testcat[$keynumber + 1]->term_id, 'text_cat_id'):0:0;
 $npposterior =    isset($testcat[$keynumber + 2]->term_id)==true? get_tax_meta($testcat[$keynumber + 2]->term_id, 'text_cat_id')!=""? get_tax_meta($testcat[$keynumber + 2]->term_id, 'text_cat_id'):0:0;
+$nanterior = $nanterior>1000?0:$nanterior;
+$naanterior = $naanterior>1000?0:$naanterior;
 $nlanterior   = $nanterior!=0?$testcat[$keynumber - 1]->term_id!=""?$testcat[$keynumber - 1]->term_id:0:0;
 $nlaanterior   = $naanterior!=0?$testcat[$keynumber - 2]->term_id:0;
 $nlposterior   = $nposterior!=0?$testcat[$keynumber + 1]->term_id:0;
