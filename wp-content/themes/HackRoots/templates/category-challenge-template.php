@@ -28,39 +28,18 @@ $args = array(
   'hide_empty' =>0,
   'parent' =>strval($activity->cat_ID)
   ); 
-
+  $sprintslength = sizeof($testcat);
 $nimagen     = get_tax_meta($category->term_id, 'text_cat_id');
-$nanterior   = $nimagen - 1;
-$naanterior  = $nimagen - 2;
-$nposterior  = $nimagen + 1;
-$npposterior = $nimagen + 2; 
-if ($nanterior <= 0) {
-    $nanterior    = 0;
-    $naanterior   = 0;
-    $nlposterior  = $testcat[$keynumber + 1]->term_id;
-    $nlpposterior = $testcat[$keynumber + 2]->term_id;
-} else if ($naanterior <= 0) {
-    $naanterior   = 0;
-    $nlanterior  = $testcat[$keynumber - 1]->term_id;
-    $nlposterior  = $testcat[$keynumber + 1]->term_id;
-    $nlpposterior = $testcat[$keynumber + 2]->term_id;
-} else if ($nposterior >= 56) {
-    $nposterior  = 0;
-    $npposterior = 0;
-    $nlposterior = $testcat[$keynumber + 1]->term_id;
-    $nlanterior  = $testcat[$keynumber - 1]->term_id;
-    $nlaanterior = $testcat[$keynumber - 2]->term_id;
-} else if ($npposterior >= 56) {
-    $npposterior = 0;
-    $nlanterior  = $testcat[$keynumber - 1]->term_id;
-    $nlaanterior = $testcat[$keynumber - 2]->term_id;
-} else { 
-    $nlanterior   = $testcat[$keynumber - 1]->term_id;
-    $nlaanterior  = $testcat[$keynumber - 2]->term_id;
-    $nlposterior  = $testcat[$keynumber + 1]->term_id;
-    $nlpposterior = $testcat[$keynumber + 2]->term_id;
-}
-
+$nanterior   = $nimagen - 1>0?$nimagen - 1:0;
+$naanterior  = $nimagen - 2>0?$nimagen - 2:0;
+$nposterior  = $nimagen + 1<=$sprintslength?$nimagen + 1:0;
+$npposterior = $nimagen + 2<=$sprintslength?$nimagen + 2:0; 
+ 
+ $nlanterior   = $nanterior>0?$testcat[$keynumber - 1]->term_id:0;
+ $nlaanterior   = $naanterior>0?$testcat[$keynumber - 2]->term_id:0;
+ $nlposterior   = $nposterior<=$sprintslength?$testcat[$keynumber + 1]->term_id:0;
+ $nlpposterior   = $npposterior<=$sprintslength?$testcat[$keynumber + 2]->term_id:0;
+    
 $fullfilledaant = get_tax_meta($testcat[$keynumber - 2]->parent, 'text_cat_id') > 9000;
 $fullfilledant = get_tax_meta($testcat[$keynumber - 1]->parent, 'text_cat_id') > 9000;
 $fullfilledpost = get_tax_meta($testcat[$keynumber + 1]->parent, 'text_cat_id') > 9000;
@@ -209,7 +188,17 @@ $unlockedppost = get_tax_meta($testcat[$keynumber + 2]->parent, 'text_cat_id') =
 <div class="reto-background">
 	<div class="container">
 		<h1 class="text-center">
-			<?php echo $category->name; ?> 
+		 	<?php echo $category->name; ?> 
+			<?php echo $nanterior ?>  
+			<?php echo $naanterior ?>  
+			<?php echo $nposterior ?>  
+			<?php echo $npposterior ?>   
+  <?php echo "<br/>" ?>  
+  <?php echo $nlanterior ?> 
+			<?php echo $nlaanterior ?>  
+			<?php echo $nlposterior ?>  
+			<?php echo $nlpposterior ?>  
+  
 		</h1>
 		<div class="row">
 			<div class="col-sm-8 col-sm-offset-2">

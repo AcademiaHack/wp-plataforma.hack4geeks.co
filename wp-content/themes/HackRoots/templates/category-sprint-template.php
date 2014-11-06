@@ -4,7 +4,7 @@ get_template_part('templates/page', 'header');
 
 $activity = get_category_by_slug('activities');
 $args = array(
-  'orderby' => 'id',
+  'orderby' => 'slug',
   'order' => 'ASC',  
   'hierarchical' =>0,
   'hide_empty' =>0,
@@ -12,7 +12,7 @@ $args = array(
   );
 $categories = get_categories($args);
 $args = array(  
-  'orderby' => 'id',
+  'orderby' => 'slug',
   'order' => 'ASC',  
   'hierarchical' =>0,
   'hide_empty' =>0,
