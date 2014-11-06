@@ -189,15 +189,7 @@ $unlockedppost = get_tax_meta($testcat[$keynumber + 2]->parent, 'text_cat_id') =
 	<div class="container">
 		<h1 class="text-center">
 		 	<?php echo $category->name; ?> 
-			<?php echo $nanterior ?>  
-			<?php echo $naanterior ?>  
-			<?php echo $nposterior ?>  
-			<?php echo $npposterior ?>   
-  <?php echo "<br/>" ?>  
-  <?php echo $nlanterior ?> 
-			<?php echo $nlaanterior ?>  
-			<?php echo $nlposterior ?>  
-			<?php echo $nlpposterior ?>  
+		 
   
 		</h1>
 		<div class="row">
