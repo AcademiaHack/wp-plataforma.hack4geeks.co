@@ -22,7 +22,7 @@ foreach ($testcat as $key => $value) {
     }
 }
 $args = array(
-  'orderby' => 'id',
+  'orderby' => 'slug',
   'order' => 'ASC',  
   'hierarchical' =>0,
   'hide_empty' =>0,
@@ -30,16 +30,16 @@ $args = array(
   ); 
   $sprintslength = sizeof($testcat);
 $nimagen     = get_tax_meta($category->term_id, 'text_cat_id');
-$nanterior   = $nimagen - 1>0?$nimagen - 1:0;
-$naanterior  = $nimagen - 2>0?$nimagen - 2:0;
-$nposterior  = $nimagen + 1<=$sprintslength?$nimagen + 1:0;
-$npposterior = $nimagen + 2<=$sprintslength?$nimagen + 2:0; 
  
- $nlanterior   = $nanterior>0?$testcat[$keynumber - 1]->term_id:0;
- $nlaanterior   = $naanterior>0?$testcat[$keynumber - 2]->term_id:0;
- $nlposterior   = $nposterior<=$sprintslength?$testcat[$keynumber + 1]->term_id:0;
- $nlpposterior   = $npposterior<=$sprintslength?$testcat[$keynumber + 2]->term_id:0;
-    
+ 
+$nanterior   =   isset($testcat[$keynumber - 1]->term_id)==true? get_tax_meta($testcat[$keynumber - 1]->term_id, 'text_cat_id')!=""?get_tax_meta($testcat[$keynumber - 1]->term_id, 'text_cat_id'):0:0;
+$naanterior  =   isset($testcat[$keynumber - 2]->term_id)==true? get_tax_meta($testcat[$keynumber - 2]->term_id, 'text_cat_id')!=""? get_tax_meta($testcat[$keynumber - 2]->term_id, 'text_cat_id'):0:0;
+$nposterior  =    isset($testcat[$keynumber + 1]->term_id)==true? get_tax_meta($testcat[$keynumber + 1]->term_id, 'text_cat_id')!=""? get_tax_meta($testcat[$keynumber + 1]->term_id, 'text_cat_id'):0:0;
+$npposterior =    isset($testcat[$keynumber + 2]->term_id)==true? get_tax_meta($testcat[$keynumber + 2]->term_id, 'text_cat_id')!=""? get_tax_meta($testcat[$keynumber + 2]->term_id, 'text_cat_id'):0:0;
+$nlanterior   = $nanterior!=0?$testcat[$keynumber - 1]->term_id!=""?$testcat[$keynumber - 1]->term_id:0:0;
+$nlaanterior   = $naanterior!=0?$testcat[$keynumber - 2]->term_id:0;
+$nlposterior   = $nposterior!=0?$testcat[$keynumber + 1]->term_id:0;
+$nlpposterior   = $npposterior!=0?$testcat[$keynumber + 2]->term_id:0;
 $fullfilledaant = get_tax_meta($testcat[$keynumber - 2]->parent, 'text_cat_id') > 9000;
 $fullfilledant = get_tax_meta($testcat[$keynumber - 1]->parent, 'text_cat_id') > 9000;
 $fullfilledpost = get_tax_meta($testcat[$keynumber + 1]->parent, 'text_cat_id') > 9000;
@@ -189,8 +189,7 @@ $unlockedppost = get_tax_meta($testcat[$keynumber + 2]->parent, 'text_cat_id') =
 	<div class="container">
 		<h1 class="text-center">
 		 	<?php echo $category->name; ?> 
-		 
-  
+		  
 		</h1>
 		<div class="row">
 			<div class="col-sm-8 col-sm-offset-2">
