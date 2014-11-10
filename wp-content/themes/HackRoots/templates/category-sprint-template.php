@@ -43,7 +43,7 @@ $active_week = 3;
           );
         $category = get_categories($args);
         ?>
-        <div class="item <?php if ($key==$active_week-1){echo active;}?>">
+        <div class="item <?php if ($key==$active_week-1){echo active;}?>" name="sprint-<?php echo $key;?>">
           <h1 class="text-center">
             <?php echo $value->name ?>
           </h1>
