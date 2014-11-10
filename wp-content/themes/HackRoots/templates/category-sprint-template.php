@@ -19,7 +19,7 @@ $args = array(
   'parent' =>strval($value->cat_ID)
   ); 
 
-$active_week = 3;
+$active_week = 4;
   ?>
   <div id="badges_carousel" class="carousel slide" data-ride="carousel" data-interval="false">
     <!-- Wrapper for slides -->
