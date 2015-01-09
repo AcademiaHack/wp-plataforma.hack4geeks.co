@@ -18,7 +18,13 @@ function skilltree_activation() {
 	foreach ( $users as $user ) {
 		if(get_user_meta( $user->ID, 'user_skilltree', true) == ""){
 			add_user_meta( $user->ID, 'user_skilltree', '_');
-		}		
+		}
+		if(get_user_meta( $user->ID, 'user_attendance', true) == ""){
+			add_user_meta( $user->ID, 'user_attendance', '');
+		}
+		if(get_user_meta( $user->ID, 'user_homeworks', true) == ""){
+			add_user_meta( $user->ID, 'user_homeworks', '');
+		}
 	}
 }
 register_activation_hook(__FILE__, 'skilltree_activation');
@@ -49,6 +55,18 @@ function skilltree_user_registration_save( $user_id ) {
 	}else{
 		update_user_meta( $user_id, 'user_skilltree', '_');
 	}
+	
+	if(get_user_meta( $user_id, 'user_attendance', true) == ""){
+		add_user_meta( $user_id, 'user_attendance', '');
+	}else{
+		update_user_meta( $user_id, 'user_attendance', '');
+	}
+
+	if(get_user_meta( $user_id, 'user_homeworks', true) == ""){
+		add_user_meta( $user_id, 'user_homeworks', '');
+	}else{
+		update_user_meta( $user_id, 'user_homeworks', '');
+	}
 }
 
 /*
@@ -56,7 +74,7 @@ function skilltree_user_registration_save( $user_id ) {
 */
 add_action( 'delete_user', 'skilltree_user_delete' );
 function skilltree_user_delete( $user_id ) {
-	if ( ! delete_user_meta( $user_id, 'user_skilltree' ) ) {
+	if ( ! delete_user_meta( $user_id, 'user_skilltree' ) || ! delete_user_meta( $user_id, 'user_attendance' ) || ! delete_user_meta( $user_id, 'user_homeworks' ) ) {
 	    echo "Ooops! Error al borrar esta informacion!: ".$user->ID;
 	}
 }
