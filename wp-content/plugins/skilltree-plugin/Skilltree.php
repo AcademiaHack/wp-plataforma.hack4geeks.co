@@ -20,10 +20,10 @@ function skilltree_activation() {
 			add_user_meta( $user->ID, 'user_skilltree', '_');
 		}
 		if(get_user_meta( $user->ID, 'user_attendance', true) == ""){
-			add_user_meta( $user->ID, 'user_attendance', '');
+			add_user_meta( $user->ID, 'user_attendance', '*');
 		}
 		if(get_user_meta( $user->ID, 'user_homeworks', true) == ""){
-			add_user_meta( $user->ID, 'user_homeworks', '');
+			add_user_meta( $user->ID, 'user_homeworks', '*');
 		}
 	}
 }
@@ -52,20 +52,14 @@ add_action( 'user_register', 'skilltree_user_registration_save');
 function skilltree_user_registration_save( $user_id ) {
 	if(get_user_meta( $user_id, 'user_skilltree', true) == ""){
 		add_user_meta( $user_id, 'user_skilltree', '_');
-	}else{
-		update_user_meta( $user_id, 'user_skilltree', '_');
 	}
 	
 	if(get_user_meta( $user_id, 'user_attendance', true) == ""){
-		add_user_meta( $user_id, 'user_attendance', '');
-	}else{
-		update_user_meta( $user_id, 'user_attendance', '');
+		add_user_meta( $user_id, 'user_attendance', '*');
 	}
 
 	if(get_user_meta( $user_id, 'user_homeworks', true) == ""){
-		add_user_meta( $user_id, 'user_homeworks', '');
-	}else{
-		update_user_meta( $user_id, 'user_homeworks', '');
+		add_user_meta( $user_id, 'user_homeworks', '*');
 	}
 }
 
