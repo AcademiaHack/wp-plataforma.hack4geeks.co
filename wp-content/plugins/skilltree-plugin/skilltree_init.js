@@ -59,8 +59,8 @@
 			, maxPoints: 2
 			, description: 'El lenguaje principal para crear páginas web. Está escrito en base a etiquetas o "tags" rodeadas por corchetes angulares (ej: <html>).'
 			, rankDescriptions: [
-				'Maquetar SIN BOOTSTRAP un clon EXACTO de youtube.'
-				, 'Próximamente!'
+				'Maquetar sin bootstrap un clon exacto de youtube.'
+				, 'Maquetar sin bootstrap un clon exacto de facebook (suministrar screenshot de toda la pagina usando awesomescreenshot)'
 			]
             , links: [
                 {
@@ -89,8 +89,8 @@
             , dependsOn: [1]
             , description: 'Cascading Style Sheets (CSS) es un lenguaje para darle estilo a páginas web. Las "reglas" CSS afectan elementos en el documento HTML para especificar su presentación y visualización. Algunas de ellas son fuente, el color, el espaciado y tamaño.'
 			, rankDescriptions: [
-                'Maquetar SIN BOOTSTRAP NI POSITION ABSOLUTE, solo usando el tag <div> el logo de NPM'
-                , 'Próximamente!'
+                'Maquetar SIN BOOTSTRAP NI POSITION ABSOLUTE, solo usando el tag <div> el logo de NPM (http://goo.gl/8210Ro)'
+                , 'Maquetar SIN BOOTSTRAP NI POSITION ABSOLUTE, solo usando el tag <div> el logo este mario (http://goo.gl/pne5Oa)'
             ]
             , links: [
                 {
@@ -138,7 +138,7 @@
 			, dependsOn: [2]
             , description: 'Puedes traer ideas de diseño a la vida, plasmándolas en el documento HTML estilizado con CSS.'
             , rankDescriptions: [
-                'Próximamente!'
+                'Maquetar http://lookfilms.co.uk/ (tomar screenshot de la pagina antes de maquetarla y anexarla al reto)'
             ]
 		},
 		{
@@ -148,9 +148,9 @@
 			, maxPoints: 3
             , description: 'jQuery ofrece técnicas y métodos para la manipulación del lado del cliente de los elementos de la página web.'
             , rankDescriptions: [
-                'Próximamente!'
-                , 'Próximamente!'
-                , 'Próximamente!'
+                'Crear una página con dos menús laterales a cada lado colapsable mediante un boton. Tipo http://mmenu.frebsite.nl/'
+                , 'Reescribir este codepen usando jQuery/javascript http://codepen.io/HugoGiraudel/pen/lDuBK '
+                , 'Hacer una autobiografia (Quien soy? Que he hecho? Cuales son mis aspiraciones? Que me gusta?) usando impressJS http://bartaz.github.io/impress.js'
             ]
 		    , links: [
                 {
@@ -173,7 +173,7 @@
 			, dependsOn: [1]
             , description: 'Es un conjunto de herramientas de diseño de sitios y aplicaciones web. Contiene plantillas de diseño con tipografía, formularios, botones, cuadros, menús de navegación y otros elementos de diseño basado en HTML y CSS, así como, extensiones de JavaScript opcionales adicionales.'
             , rankDescriptions: [
-                'Próximamente!'
+                'Maquetar usando Bootstrap http://www.leodislager.com/ (tomar screenshot de la pagina antes de maquetarla y anexarla al reto)'
             ]
             , links: [
                 {
@@ -188,7 +188,7 @@
 			, dependsOn: [6]
             , description: 'Estas en la capacidad de utilizar las herramientas proporcionadas por bootstrap a su perfección y extenderlas para mejorar su funcionalidad. '
 		    , rankDescriptions: [
-                'Próximamente!'
+                'Maquetar usando Bootstrap http://www.peekcalendar.com/ (tomar screenshot de la pagina antes de maquetarla y anexarla al reto)'
             ]
         },
 
@@ -198,7 +198,7 @@
 			, dependsOn: [1]
             , description: 'JavaScript es el lenguaje mas importante para la programación web del lado del cliente. Se ejecuta en el navegador del usuario para manipular el documento HTML después de haberse cargado. Puede hacer desde cosas tan simples como mostrar elementos ocultos, o más avanzadas como contactar con el servidor para cargar más datos.'
             , rankDescriptions: [
-                'Próximamente!'
+                'Crear la maqueta de http://twitter.com (timeline sencillo) sin usar HTML ni CSS (tomar screenshot de la pagina antes de maquetarla y anexarla al reto).'
             ]
             , links: [
                 {
@@ -226,8 +226,8 @@
             , dependsOn: [8]
             , description: 'Una vez que te sientas cómodo con el lenguaje JavaScript, hay una multitud de liberías y frameworks para optimizar tareas comunes y mejorar tu desarrollo.'
             , rankDescriptions: [
-                'Próximamente!'
-                , 'Próximamente!'
+                'Maquetar usando el home del plugin usando el mismo plugin http://matthew.wagerfield.com/parallax/'
+                , 'Hacer un tutorial completo por cada framework (anexar el tutorial y el resultado de cada framework)'
             ]
 		},
 		{
@@ -236,7 +236,7 @@
 			, dependsOn: [9]  
             , description: 'Puedes construir y desarrollar la interfaz gráfica de una aplicación o página web, ayudandote con JS y sus frameworks y diversas funcionalidades.'
             , rankDescriptions: [
-                'Próximamente!'
+                'Crear un panel analitico usando los plugins y herramientas de http://almsaeedstudio.com/AdminLTE/ el producto a analizar sera definido independientemente para cada alumno (si estas leyendo esto debes comunicarte con alguno de los mentores)'
             ]
 		},
 		{
@@ -245,7 +245,7 @@
 			, dependsOn: [1]
             , description: 'Desarrollar scripts (funciones, código) que se ejecuta en el servidor (Server-side) en lugar de la máquina del usuario (client-side).'
             , rankDescriptions: [
-                'Próximamente!'
+                'Crear un programa en Ruby (program.rb) que pregunte al usuario su nombre, y que tipo de musica le gusta, este programa debe generar un archivo .html con una maqueta sencilla que muestre el nombre del usuario y el listado de generos que le gusta al mismo'
             ]
             , links: [
                 {
@@ -260,7 +260,7 @@
 			, dependsOn: [11]
             , description: 'Es una colección de paquetes o módulos y frameworks, que permiten a los desarrolladores escribir aplicaciones o servicios, sin tener que manejar la sobrecarga de actividades comunes y los detalles de bajo nivel, tales como el manejo de sesiones, el acceso a las base de datos, entre otras cosas.'
             , rankDescriptions: [
-                'Próximamente!'
+                'Crear en Rails una app con un listado de tareas TO DO LIST (no es necesario almacenar las tareas en una base de datos).'
             ]
             , links: [
                 {
@@ -280,8 +280,8 @@
 			, maxPoints: 2
             , description: 'Las bases de datos son motores poderosos para almacenar, organizar y recuperar datos. Existe una amplia variedad de plataformas de base de datos para elegir. El lenguaje de base de datos más utilizado es el Structured Query Language (SQL). Crear la arquitectura de sus datos eficientemente facilita mucho la programación del lado del servidor.'
             , rankDescriptions: [
-                'Próximamente!'
-                , 'Próximamente!'
+                'Crear un modelo de base datos para el manejo y gestión de una GeekStore en mysql workbench'
+                , 'Adaptar el modelo del reto anterior en un proyecto en rails definiendo las relaciones (usando migrations)'
             ]
             , links: [
                 {
@@ -303,10 +303,10 @@
 			, title: 'Gestión Avanzada de Bases de Datos'
 			, maxPoints: 2
             , dependsOn: [13]
-            , description: 'Además de crear tablas básicas y relacionar los datos entre si, las bases de datos permiten la creación de "procedimientos almacenados" (stored procedures), los cuales no son más que conjuntos de instrucciones SQL que se almacenan en la base de datos, y "funciones definidas por el usuario" (User-defined functions, UDF), que son funciones que se pueden utilizar en sentencias SQL. Hacer una buena arquitectura de base de datos no es suficiente. La base de datos también debe ser optimizadas y refinadas para aumentar su rendimiento.'
+            , description: 'Además de crear tablas básicas y relacionar los datos entre si, las bases de datos permiten la creación de "procedimientos almacenados" (stored procedures), y "funciones definidas por el usuario" (User-defined functions, UDF). Hacer una buena arquitectura de base de datos no es suficiente. La base de datos también debe ser optimizadas y refinadas para aumentar su rendimiento.'
             , rankDescriptions: [
-                'Próximamente!'
-                , 'Próximamente!'
+                'Generar stores procedures con las consultas comunes del manejo de inventario de una franquicia de GeekStore'
+                , 'Solicitar la BD y el enunciado del reto "BD rendimiento" a mentores@hack4geeks.co una vez entregado el reto por el equipo de Hack el estudiante debe entregar la solucion en 24hrs'
             ]
             , links: [
                 {
@@ -322,14 +322,6 @@
                     , url: 'http://en.wikipedia.org/wiki/Database_tuning'
                 }
                 , {
-                    label: 'Monitoreo de Rendimiento y topicos de como afinar (SQL Server)'
-                    , url: 'http://technet.microsoft.com/en-us/library/ms187830(v=sql.105).aspx'
-                }
-                , {
-                    label: 'Sql Server Tips de afinación del rendimiento'
-                    , url: 'http://www.mssqltips.com/sql-server-tip-category/9/performance-tuning/'
-                }
-                , {
                     label: 'Oracle database FAQ de Afinación del rendimiento'
                     , url: 'http://www.orafaq.com/wiki/Oracle_database_Performance_Tuning_FAQ'
                 }
@@ -342,7 +334,7 @@
 			, dependsOn: [12, 14]
             , description: 'Eres capaz de imaginar y plasmar la arquitectura del Back-end de una aplicación de para almacenar y recuperar datos de manera eficiente.'
 		    , rankDescriptions: [
-                'Próximamente!'
+                'Generar el sistema de inventario de una franquicia de GeekStore (alguna duda? mentores@hack4geeks.co)'
             ]
         },
 		{
@@ -351,24 +343,16 @@
 			, dependsOn: [15]
             , description: 'La autenticación es el proceso de determinar si alguien o algo es quién o qué dice ser. La autorización es el proceso de determinar si se permite a un usuario realizar una acción o tiene acceso a un recurso.'
             , rankDescriptions: [
-                'Próximamente!'
+                'Hacer un sistema de login (signup, forgot password, login) usando Rails (sin ninguna gema) se debe acceder a una pagina privada que solo puede ser accedida si estas logeado'
             ]
             , links: [
                 {
-                    label: 'ASP.NET authentication and authorization - CodeProject'
-                    , url: 'http://www.codeproject.com/Articles/98950/ASP-NET-authentication-and-authorization'
-                }
-                ,{
                     label: 'OpenID Wiki (authentication)'
 	                , url: 'http://en.wikipedia.org/wiki/OpenID'
                 }
                 , {
                     label: 'OAuth Community'
                     , url: 'http://oauth.net/'
-                }
-                , {
-                    label: 'ASP.NET Authorization'
-                    , url: 'http://msdn.microsoft.com/en-us/library/wce3kxhd(v=vs.100).aspx'
                 }
             ]
 		},
@@ -378,7 +362,7 @@
 			, dependsOn: [10, 15]
             , description: 'La tecnología existe para permitir que sistemas separados se comuniquen entre sí de diversas maneras, permitiendo a las interfaces ser más interactivas. Estas incluyen el uso de "Asynchronous JavaScript And XML" (AJAX), generalmente en el lado del cliente, para comunicarse con un sistema externo. Otras tecnologías, como los "Servicios Web", se utilizan para configurar "end-points" para permitir la comunicación con un sistema externo.'
             , rankDescriptions: [
-                'Próximamente!'
+                'Crear un servicio web que contenga un listado de precios de productos usando apiary, crear una pagina que consuma este servicio mostrando una interfaz de usuario que muestre el precio + un 30%'
             ]
             , links: [
                 {
@@ -409,8 +393,8 @@
             , maxPoints: 2
             , description: 'Uno de los primeros pasos antes de que algo sea diseñado es determinar que es lo que el cliente (tanto el solicitante del sitio como el usuario del sitio) quiere y/o necesita. Las técnicas aca referidas incluyen dibujos simples, maquetación en papel y mapeo de la experiencia del usuario.'
 			, rankDescriptions: [
-				'Próximamente!'
-				, 'Próximamente!'
+				'Consultar a los mentores las especificaciones del sistema para la franquicia de GeekStore (Se debe entregar un listado de historias de usuarios hasta ser aceptado por todos los mentores)'
+				, 'Consultar a los mentores las especificaciones del sistema para la franquicia de GeekStore (Se debe entregar un mockups hasta ser aceptado por todos los mentores)'
 			]
             , links: [
              	{ 
@@ -426,8 +410,8 @@
 			, dependsOn: [18]
             , description: 'El diseño gráfico trata sobre la estética y la facilidad de uso. Los buenos diseños son atractivos y fáciles de entender, por el uso sólido de color, la tipografía, el equilibrio, la jerarquía y los espacios en blanco.'
 			, rankDescriptions: [
-				'Próximamente!'
-				, 'Próximamente!'
+				'Crear un mockup (usando herramientas de creacion de mockups) que muestre una idea clara y funcional para una GeekStore en Venezuela'
+				, 'Crear un mockup totalmente distinto al anterior (usando herramientas de creacion de mockups) que muestre una idea novedosa y creativa (no olvidar que debe ser factible) para una GeekStore en Venezuela'
 			]
             , links: [
                 {
@@ -451,12 +435,11 @@
 		{
 			id: 20
             , title: 'Herramientas de Diseño Gráfico'
-			, maxPoints: 2
+			, maxPoints: 1
             , dependsOn: [19]
             , description: 'Programas como Photoshop y dispositivos como tabletas de dibujo se utilizan para crear diseños, trabajar con tipografía, retoque de fotos, y otras actividades para agregar un toque profesional a sus diseños.'
             , rankDescriptions: [
-                'Próximamente!'
-                , 'Próximamente!'
+                'Generar el diseño del mejor mockup (en base al mockup o al HTML) para la GeekStore en Venezuela'
             ]
             , links: [
                 {
@@ -471,7 +454,7 @@
 			, dependsOn: [18]
             , description: 'Modelar un nuevo diseño sin construir toda la funcionalidad subyacente es una manera rápida y eficaz para transmitir ideas, probar un nuevo concepto, e identificar los problemas anticipadamente.'
             , rankDescriptions: [
-                'Próximamente!'
+                'Crear los mockups usando HTML+Bootstrap+jQuery para mostrar interacciones al cliente o al diseñador para una GeekStore en Venezuela'
             ]
             , links: [
                 {
@@ -490,7 +473,7 @@
 			, dependsOn: [19, 21]
             , description: 'Eres capaz de convertir los requisitos del proyecto a un diseño atractivo que promueve una experiencia de usuario agradable.'
 		    , rankDescriptions: [
-                'Próximamente!'
+                'Maquetar el mejor diseño usando Bootstrap'
             ]
         },
 		{
@@ -499,17 +482,7 @@
 			, dependsOn: [22]
             , description: 'Es una técnica que se utiliza para evaluar un sitio web probándolo en los usuarios. Es de gran importancia para la experiencia del usuario. '
             , rankDescriptions: [
-                'Próximamente!'
-            ]
-            , links: [
-                {
-                    label: '24 Herramientas para pruebas de usabilidad en páginas web'
-	                , url: 'http://www.usefulusability.com/24-usability-testing-tools/'
-                }
-                , {
-                    label: 'Pruebas de Usabilidad Wiki'
-                    , url: 'http://en.wikipedia.org/wiki/Usability_testing'
-                }
+                'Crear un juego de mesa simple (que sea divertido). Competir entre los demas (para ganar este reto al menos deben participar 6 estudiantes) para ganar este reto tu juego debe estar en el top 3'
             ]
         },
 		{
@@ -518,8 +491,8 @@
 			, maxPoints: 2
             , description: 'Incluso las aplicaciones web más simples requieren un servidor para ejecutarlas. Hay varios servidores web populares full equipados para elegir, aunque el lenguaje de programación del lado del servidor de la aplicación puede limitar tus opciones. Aprender a gestionar y configurar el servidor web te ayudará a mantener tu sitio funcionando sin problemas.'
             , rankDescriptions: [
-                'Próximamente!'
-                , 'Próximamente!'
+                'Solicitar en mentores@hack4geeks.co las credenciales ssh de un servidor, donde se debe instalar el stack completo de ruby/rails y montar la app del GeekStore en el servidor'
+                , 'Descargar codeigniter (framework php) y montarlo (tal cual como esta al descargarlo) en el mismo servidor anterior garantizando que no se muestre index.php en el url'
             ]
         	, links: [
                 {
@@ -539,7 +512,7 @@
 			, dependsOn: [24]
             , description: 'Antes de compartir tu aplicación con el mundo, sigue las mejores prácticas para la seguridad y el rendimiento de su apliación en el servidor.'
             , rankDescriptions: [
-                'Próximamente!'
+                'Crear un programa en Ruby que al ingresar un archivo con codigo lo convierta en un archivo de una sola linea removiendo saltos de linea y aun asi la funcionalidad del archivo quede intacta (Tip: cuidado con los comentarios de una sola linea)'
                 , 'Próximamente!'
             ]
             , links: [
@@ -564,7 +537,7 @@
 			, dependsOn: [4, 7, 10, 15, 22, 25]
             , description: 'Un Hacker solo es aquel que tiene los conocimientos de diseño, creación y mantenimiento necesarios para la gestion de un sitio web o sistema web. Un verdadero Hacker es capaz de cambiar el mundo, una linea de código a la vez.'
             , rankDescriptions: [
-                'Próximamente!'
+                'Programa tetris en alguna libreria de juegos de javascript'
             ]
             , links: [
                 {

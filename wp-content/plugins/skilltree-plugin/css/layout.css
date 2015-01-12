@@ -251,6 +251,10 @@ li {
   text-align: center;
 }
 .skill .tool-tip {
+  -webkit-user-select: initial !important;
+  -moz-user-select: initial !important;
+  -ms-user-select: initial !important;
+  user-select: 0;
   visibility: hidden;
   -moz-opacity: 0;
   -khtml-opacity: 0;
@@ -264,7 +268,7 @@ li {
   background: #000;
   position: absolute;
   z-index: 3;
-  top: -5px;
+  top: -28px;
   left: 64px;
   width: 300px;
   padding: 10px;
@@ -652,7 +656,7 @@ html {
 .skill .tool-tip:before {
   content: " ";
   position: absolute;
-  top: 20px;
+  top: 45px;
   left: -11px;
   width: 0; 
   height: 0; 
@@ -663,7 +667,7 @@ html {
 .skill .tool-tip:after {
   content: " ";
   position: absolute;
-  top: 20px;
+  top: 45px;
   left: -10px;
   width: 0; 
   height: 0; 
@@ -905,17 +909,17 @@ html {
 [data-skill-id="13"] .tool-tip,
 [data-skill-id="18"] .tool-tip,
 [data-skill-id="24"] .tool-tip {
-  top: -5px;
+  top: -25px;
 }
 
 [data-skill-id="26"] .tool-tip:before {
-  top: 106px;
+  top: 188px;
 }
 [data-skill-id="26"] .tool-tip:after {
-  top: 106px;
+  top: 188px;
 }
 [data-skill-id="26"] .tool-tip {
-  top: -90px;
+  top: -170px;
 }
 [data-skill-id="22"] .tool-tip {
   top: -65px;
@@ -1008,10 +1012,10 @@ html {
   top: -220px;
 }
 [data-skill-id="14"] .tool-tip:before {
-  top: 238px;
+  top: 235px;
 }
 [data-skill-id="14"] .tool-tip:after {
-  top: 238px;
+  top: 235px;
 }
 
 .wp-admin {
